@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Al's AI Drop Ship | Sentient delivery drone",
+      "hasCanvas": false,
+      "bodyTextLen": 2965,
+      "bodyTextHash": "c08ebec99217b68a8be7411f59a511924435c44f9200900f0b7e92cebbeeab58",
+      "bodyTextPrefix": "Al's DROP SHIP Cargo Hail Al ONLINE · PROGRAMMED TO DELIVER Al's",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Al's AI Drop Ship | Sentient delivery drone",
+      "hasCanvas": false,
+      "bodyTextLen": 2942,
+      "bodyTextHash": "ca3ec897ab666bce2a29d1a9fd9886de209c4447f97e89d4d55f1607146a4c16",
+      "bodyTextPrefix": "Al's DROP SHIP ONLINE · PROGRAMMED TO DELIVER Al's AI Drop Ship ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}
