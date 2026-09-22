@@ -1,4 +1,9 @@
 node_modules/
+# Vercel deploys the committed Build Output API tree as-is. Nitro traces
+# runtime packages into the serverless function's node_modules, which must
+# stay in git or production 500s with ERR_MODULE_NOT_FOUND.
+!.vercel/output/functions/**/node_modules/
+!.vercel/output/functions/**/node_modules/**
 .project_id
 .github_repo
 .env
