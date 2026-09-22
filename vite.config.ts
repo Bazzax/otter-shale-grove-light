@@ -175,6 +175,10 @@ export default defineConfig(({ command, isPreview }) => ({
             // manifest + head-tag middleware). Nitro v3 defaults serverDir to
             // false, so removing this silently unwires /?install=1 on deploys.
             serverDir: "./server",
+            // nf3 marks `tslib` non-bundleable (Radix SSR imports helpers from
+            // it) but only writes the name into the function package.json.
+            // Full-trace copies the actual files so Vercel can resolve them.
+            traceDeps: ["tslib*"],
           }),
         ]
       : []),
