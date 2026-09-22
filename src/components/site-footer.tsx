@@ -1,10 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { APP_NAME } from "@/lib/seo";
+import { APP_NAME, CONTACT_EMAIL } from "@/lib/seo";
 
 export function SiteFooter() {
   return (
     <footer className="mt-auto border-t border-line bg-cream">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-3 md:py-16">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 md:py-16">
         <div className="md:col-span-1">
           <p className="font-display text-2xl font-medium tracking-tight text-clay">{APP_NAME}</p>
           <p className="mt-2 max-w-xs text-sm leading-relaxed text-pretty text-stone">
@@ -33,6 +33,19 @@ export function SiteFooter() {
             </li>
           </ul>
         </nav>
+        <div>
+          <p className="text-xs font-medium tracking-widest text-dust uppercase">Comms</p>
+          <p className="mt-3 text-sm leading-relaxed text-pretty text-stone">
+            Hail ground control — cargo questions, affiliate marks, or the drone
+            itself.
+          </p>
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="mt-2 inline-block text-sm text-ink hover:text-clay"
+          >
+            {CONTACT_EMAIL}
+          </a>
+        </div>
         <div>
           <p className="text-xs font-medium tracking-widest text-dust uppercase">Disclosure</p>
           <p className="mt-3 text-sm leading-relaxed text-pretty text-stone">
