@@ -2,6 +2,7 @@ export const APP_NAME = "Al's AI Drop Ship";
 export const APP_TAGLINE = "A sentient dropship drone, online, programmed to deliver.";
 export const APP_DESCRIPTION =
   "Al is a mock sentient delivery drone. Hail Al for a short tech catalog — dropship cargo from suppliers, or follow marked affiliate links. Demo checkout; nothing is billed.";
+export const CONTACT_EMAIL = "alsaidropship@gmail.com";
 
 export function pageHead(title: string, description: string) {
   return {
@@ -22,6 +23,7 @@ export function websiteJsonLd() {
         name: APP_NAME,
         description: APP_DESCRIPTION,
         slogan: APP_TAGLINE,
+        email: CONTACT_EMAIL,
       },
       {
         "@type": "WebSite",
