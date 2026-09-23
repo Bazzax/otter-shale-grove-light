@@ -1,11 +1,24 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { CONTACT_EMAIL, FORMSUBMIT_AJAX } from "@/lib/seo";
+import { CONTACT_EMAIL, FORMSUBMIT_ACTION, FORMSUBMIT_AJAX, SITE_ORIGIN } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 type Status = "idle" | "sending" | "success" | "pending" | "error";
+
+function joinedFromLocation() {
+  if (typeof window === "undefined") return false;
+  return new URLSearchParams(window.location.search).get("joined") === "1";
+}
+
+function nextUrl() {
+  if (typeof window === "undefined") return `${SITE_ORIGIN}/?joined=1`;
+  const url = new URL(window.location.href);
+  url.searchParams.set("joined", "1");
+  url.hash = "";
+  return url.toString();
+}
 
 export function NewsletterForm({
   source,
@@ -14,11 +27,18 @@ export function NewsletterForm({
   source: "footer" | "home" | "faq";
   compact?: boolean;
 }) {
+  const formRef = useRef<HTMLFormElement>(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [detail, setDetail] = useState<string | null>(null);
+  const [next, setNext] = useState(`${SITE_ORIGIN}/?joined=1`);
+
+  useEffect(() => {
+    setNext(nextUrl());
+    if (joinedFromLocation()) setStatus("success");
+  }, []);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -56,7 +76,7 @@ export function NewsletterForm({
       const ok =
         payload?.success === true ||
         payload?.success === "true" ||
-        response.ok;
+        (response.ok && Boolean(payload));
 
       if (ok && /activat|confirm|check your email/.test(message)) {
         setStatus("pending");
@@ -72,13 +92,18 @@ export function NewsletterForm({
         setEmail("");
         return;
       }
-
-      setStatus("error");
-      setDetail(payload?.message ?? "Signal dropped. Try again, or mail Al directly.");
     } catch {
-      setStatus("error");
-      setDetail("Telemetry dropped. Mail Al if the form stays silent.");
+      // Cloudflare often challenges datacenter AJAX; native POST still reaches the inbox.
     }
+
+    const form = formRef.current;
+    if (form) {
+      form.submit();
+      return;
+    }
+
+    setStatus("error");
+    setDetail(`Signal dropped. Mail ${CONTACT_EMAIL} if the form stays silent.`);
   }
 
   if (status === "success") {
@@ -94,13 +119,27 @@ export function NewsletterForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="relative space-y-3" noValidate>
+    <form
+      ref={formRef}
+      action={FORMSUBMIT_ACTION}
+      method="POST"
+      onSubmit={onSubmit}
+      className="relative space-y-3"
+      noValidate
+    >
+      <input type="hidden" name="_subject" value="Flight log signup — Al's AI Drop Ship" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value={next} />
+      <input type="hidden" name="source" value={source} />
+      <input type="hidden" name="message" value="Newsletter signup for Al's flight log." />
+
       <div className="sr-only" aria-hidden>
         <label>
-          Website
+          Leave blank
           <input
             type="text"
-            name="website"
+            name="_honey"
             tabIndex={-1}
             autoComplete="off"
             value={honeypot}

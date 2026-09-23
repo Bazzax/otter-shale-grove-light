@@ -4,6 +4,7 @@ export const APP_DESCRIPTION =
   "Al is a mock sentient delivery drone. Hail Al for a short tech catalog — GaN chargers, ANC audio, desk kit — then dropship from suppliers or follow marked Amazon UK affiliate links. Demo checkout; nothing is billed.";
 export const CONTACT_EMAIL = "alsaidropship@gmail.com";
 export const SITE_ORIGIN = "https://alsaidropship.com";
+export const FORMSUBMIT_ACTION = `https://formsubmit.co/${CONTACT_EMAIL}`;
 export const FORMSUBMIT_AJAX = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
 export function pageHead(title: string, description: string, path?: string) {
