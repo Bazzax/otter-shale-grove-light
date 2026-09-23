@@ -33,7 +33,7 @@ function GuidesIndex() {
         </Link>{" "}
         if you only want the rules.
       </p>
-      <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-10 grid gap-5 md:grid-cols-2">
         {guides.map((guide) => (
           <GuideCard key={guide.slug} guide={guide} />
         ))}
