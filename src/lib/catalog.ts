@@ -1,5 +1,11 @@
 export const AMAZON_ASSOCIATE_TAG = "alsaidropship-21";
+const AMAZON_UK_DP = "https://www.amazon.co.uk/dp";
 const AMAZON_UK_SEARCH = "https://www.amazon.co.uk/s";
+
+/** Tagged Amazon UK product URL for a verified ASIN. */
+export function affiliateProduct(asin: string) {
+  return `${AMAZON_UK_DP}/${asin}?tag=${AMAZON_ASSOCIATE_TAG}`;
+}
 
 /** Tagged Amazon UK search URL for a product category. */
 export function affiliateSearch(query: string) {
@@ -25,6 +31,7 @@ export type Product = {
   shipsFrom: string;
   etaDays: [number, number];
   image: string;
+  asin: string;
   affiliateUrl: string;
   affiliateLabel: string;
   featured?: boolean;
@@ -50,7 +57,8 @@ export const catalog: Product[] = [
     shipsFrom: "Shenzhen",
     etaDays: [8, 14],
     image: "/products/pulse-one.jpg",
-    affiliateUrl: affiliateSearch("wireless anc headphones"),
+    asin: "B0C3HCD34R",
+    affiliateUrl: affiliateProduct("B0C3HCD34R"),
     affiliateLabel: "Amazon UK",
     featured: true,
   },
@@ -73,7 +81,8 @@ export const catalog: Product[] = [
     shipsFrom: "Taipei",
     etaDays: [10, 16],
     image: "/products/drift-75.jpg",
-    affiliateUrl: affiliateSearch("75 percent mechanical keyboard"),
+    asin: "B0CQ7XPLMQ",
+    affiliateUrl: affiliateProduct("B0CQ7XPLMQ"),
     affiliateLabel: "Amazon UK",
     featured: true,
   },
@@ -96,7 +105,8 @@ export const catalog: Product[] = [
     shipsFrom: "Dongguan",
     etaDays: [6, 11],
     image: "/products/arc-gan.jpg",
-    affiliateUrl: affiliateSearch("65w gan usb-c charger"),
+    asin: "B094JHYK55",
+    affiliateUrl: affiliateProduct("B094JHYK55"),
     affiliateLabel: "Amazon UK",
     featured: true,
   },
@@ -119,7 +129,8 @@ export const catalog: Product[] = [
     shipsFrom: "Seoul",
     etaDays: [7, 13],
     image: "/products/nimbus-ssd.jpg",
-    affiliateUrl: affiliateSearch("2tb portable ssd"),
+    asin: "B087DDGWKL",
+    affiliateUrl: affiliateProduct("B087DDGWKL"),
     affiliateLabel: "Amazon UK",
   },
   {
@@ -141,7 +152,8 @@ export const catalog: Product[] = [
     shipsFrom: "Shenzhen",
     etaDays: [6, 12],
     image: "/products/orbit-bank.jpg",
-    affiliateUrl: affiliateSearch("magnetic power bank 5000mah"),
+    asin: "B0B6DLWMJF",
+    affiliateUrl: affiliateProduct("B0B6DLWMJF"),
     affiliateLabel: "Amazon UK",
   },
   {
@@ -163,7 +175,8 @@ export const catalog: Product[] = [
     shipsFrom: "Taipei",
     etaDays: [8, 13],
     image: "/products/trace-hub.jpg",
-    affiliateUrl: affiliateSearch("usb-c hub hdmi 4k60"),
+    asin: "B0DXJQT19B",
+    affiliateUrl: affiliateProduct("B0DXJQT19B"),
     affiliateLabel: "Amazon UK",
   },
   {
@@ -185,7 +198,8 @@ export const catalog: Product[] = [
     shipsFrom: "Hangzhou",
     etaDays: [9, 15],
     image: "/products/quietframe.jpg",
-    affiliateUrl: affiliateSearch("monitor light bar"),
+    asin: "B0785D93KD",
+    affiliateUrl: affiliateProduct("B0785D93KD"),
     affiliateLabel: "Amazon UK",
   },
   {
@@ -207,7 +221,8 @@ export const catalog: Product[] = [
     shipsFrom: "Shenzhen",
     etaDays: [7, 12],
     image: "/products/ember-buds.jpg",
-    affiliateUrl: affiliateSearch("wireless earbuds anc"),
+    asin: "B0BZV4QFP8",
+    affiliateUrl: affiliateProduct("B0BZV4QFP8"),
     affiliateLabel: "Amazon UK",
   },
   {
@@ -229,7 +244,8 @@ export const catalog: Product[] = [
     shipsFrom: "Ho Chi Minh City",
     etaDays: [8, 14],
     image: "/products/slip-sleeve.jpg",
-    affiliateUrl: affiliateSearch("14 inch laptop sleeve"),
+    asin: "B0B4VG6XBP",
+    affiliateUrl: affiliateProduct("B0B4VG6XBP"),
     affiliateLabel: "Amazon UK",
   },
 ];
