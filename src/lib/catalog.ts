@@ -1,3 +1,15 @@
+export const AMAZON_ASSOCIATE_TAG = "alsaidropship-21";
+const AMAZON_UK_SEARCH = "https://www.amazon.co.uk/s";
+
+/** Tagged Amazon UK search URL for a product category. */
+export function affiliateSearch(query: string) {
+  const params = new URLSearchParams({
+    k: query,
+    tag: AMAZON_ASSOCIATE_TAG,
+  });
+  return `${AMAZON_UK_SEARCH}?${params.toString()}`;
+}
+
 export const CATEGORIES = ["Audio", "Power", "Desk", "Storage", "Carry"] as const;
 export type Category = (typeof CATEGORIES)[number];
 
@@ -38,8 +50,8 @@ export const catalog: Product[] = [
     shipsFrom: "Shenzhen",
     etaDays: [8, 14],
     image: "/products/pulse-one.jpg",
-    affiliateUrl: "https://www.amazon.com/s?k=wireless+anc+headphones",
-    affiliateLabel: "Amazon",
+    affiliateUrl: affiliateSearch("wireless anc headphones"),
+    affiliateLabel: "Amazon UK",
     featured: true,
   },
   {
@@ -61,8 +73,8 @@ export const catalog: Product[] = [
     shipsFrom: "Taipei",
     etaDays: [10, 16],
     image: "/products/drift-75.jpg",
-    affiliateUrl: "https://www.amazon.com/s?k=75+percent+mechanical+keyboard",
-    affiliateLabel: "Amazon",
+    affiliateUrl: affiliateSearch("75 percent mechanical keyboard"),
+    affiliateLabel: "Amazon UK",
     featured: true,
   },
   {
@@ -84,8 +96,8 @@ export const catalog: Product[] = [
     shipsFrom: "Dongguan",
     etaDays: [6, 11],
     image: "/products/arc-gan.jpg",
-    affiliateUrl: "https://www.amazon.com/s?k=65w+gan+usb-c+charger",
-    affiliateLabel: "Amazon",
+    affiliateUrl: affiliateSearch("65w gan usb-c charger"),
+    affiliateLabel: "Amazon UK",
     featured: true,
   },
   {
@@ -107,8 +119,8 @@ export const catalog: Product[] = [
     shipsFrom: "Seoul",
     etaDays: [7, 13],
     image: "/products/nimbus-ssd.jpg",
-    affiliateUrl: "https://www.amazon.com/s?k=2tb+portable+ssd",
-    affiliateLabel: "Amazon",
+    affiliateUrl: affiliateSearch("2tb portable ssd"),
+    affiliateLabel: "Amazon UK",
   },
   {
     slug: "orbit-bank",
@@ -129,8 +141,8 @@ export const catalog: Product[] = [
     shipsFrom: "Shenzhen",
     etaDays: [6, 12],
     image: "/products/orbit-bank.jpg",
-    affiliateUrl: "https://www.amazon.com/s?k=magsafe+power+bank+5000mah",
-    affiliateLabel: "Amazon",
+    affiliateUrl: affiliateSearch("magnetic power bank 5000mah"),
+    affiliateLabel: "Amazon UK",
   },
   {
     slug: "trace-hub",
@@ -151,8 +163,8 @@ export const catalog: Product[] = [
     shipsFrom: "Taipei",
     etaDays: [8, 13],
     image: "/products/trace-hub.jpg",
-    affiliateUrl: "https://www.amazon.com/s?k=usb-c+hub+hdmi+4k60",
-    affiliateLabel: "Amazon",
+    affiliateUrl: affiliateSearch("usb-c hub hdmi 4k60"),
+    affiliateLabel: "Amazon UK",
   },
   {
     slug: "quietframe",
@@ -173,8 +185,8 @@ export const catalog: Product[] = [
     shipsFrom: "Hangzhou",
     etaDays: [9, 15],
     image: "/products/quietframe.jpg",
-    affiliateUrl: "https://www.amazon.com/s?k=monitor+light+bar",
-    affiliateLabel: "Amazon",
+    affiliateUrl: affiliateSearch("monitor light bar"),
+    affiliateLabel: "Amazon UK",
   },
   {
     slug: "ember-buds",
@@ -195,8 +207,8 @@ export const catalog: Product[] = [
     shipsFrom: "Shenzhen",
     etaDays: [7, 12],
     image: "/products/ember-buds.jpg",
-    affiliateUrl: "https://www.amazon.com/s?k=wireless+earbuds+anc",
-    affiliateLabel: "Amazon",
+    affiliateUrl: affiliateSearch("wireless earbuds anc"),
+    affiliateLabel: "Amazon UK",
   },
   {
     slug: "slip-sleeve",
@@ -217,8 +229,8 @@ export const catalog: Product[] = [
     shipsFrom: "Ho Chi Minh City",
     etaDays: [8, 14],
     image: "/products/slip-sleeve.jpg",
-    affiliateUrl: "https://www.amazon.com/s?k=14+inch+laptop+sleeve",
-    affiliateLabel: "Amazon",
+    affiliateUrl: affiliateSearch("14 inch laptop sleeve"),
+    affiliateLabel: "Amazon UK",
   },
 ];
 
