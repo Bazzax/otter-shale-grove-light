@@ -23,7 +23,8 @@ export const Route = createFileRoute("/shop/$slug")({
     if (!product) return pageHead(`Cargo | ${APP_NAME}`, "Product not in the bay.");
     return pageHead(
       `${product.name} — dropship from Al | ${APP_NAME}`,
-      `${product.tagline} Dropships from ${product.shipsFrom}. Affiliate link to ${product.affiliateLabel} on this card.`,
+      `${product.tagline} Dropships from ${product.shipsFrom} in ${product.etaDays[0]}–${product.etaDays[1]} days. Marked ${product.affiliateLabel} affiliate link on this card.`,
+      `/shop/${product.slug}`,
     );
   },
   component: ProductPage,

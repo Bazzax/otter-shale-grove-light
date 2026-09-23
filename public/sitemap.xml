@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>/shop</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>/ask-al</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>/shop/pulse-one</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/shop/drift-75</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/shop/arc-gan</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>/shop/nimbus-ssd</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>/shop/orbit-bank</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>/shop/trace-hub</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>/shop/quietframe</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>/shop/ember-buds</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>/shop/slip-sleeve</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://alsaidropship.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://alsaidropship.com/shop</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://alsaidropship.com/guides</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://alsaidropship.com/faq</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://alsaidropship.com/ask-al</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alsaidropship.com/guides/65w-gan-charger-travel</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alsaidropship.com/guides/anc-headphones-vs-earbuds-commute</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alsaidropship.com/guides/dropship-lead-times</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://alsaidropship.com/shop/pulse-one</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://alsaidropship.com/shop/drift-75</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://alsaidropship.com/shop/arc-gan</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://alsaidropship.com/shop/nimbus-ssd</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://alsaidropship.com/shop/orbit-bank</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://alsaidropship.com/shop/trace-hub</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://alsaidropship.com/shop/quietframe</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://alsaidropship.com/shop/ember-buds</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://alsaidropship.com/shop/slip-sleeve</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
