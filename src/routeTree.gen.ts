@@ -12,7 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AskAlRouteImport } from './routes/ask-al'
 import { Route as CheckoutRouteImport } from './routes/checkout'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as OrderRouteImport } from './routes/order'
+import { Route as GuidesIndexRouteImport } from './routes/guides/index'
+import { Route as GuidesSlugRouteImport } from './routes/guides/$slug'
 import { Route as ShopIndexRouteImport } from './routes/shop/index'
 import { Route as ShopSlugRouteImport } from './routes/shop/$slug'
 
@@ -31,9 +34,24 @@ const CheckoutRoute = CheckoutRouteImport.update({
   path: '/checkout',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OrderRoute = OrderRouteImport.update({
   id: '/order',
   path: '/order',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesIndexRoute = GuidesIndexRouteImport.update({
+  id: '/guides/',
+  path: '/guides/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GuidesSlugRoute = GuidesSlugRouteImport.update({
+  id: '/guides/$slug',
+  path: '/guides/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShopIndexRoute = ShopIndexRouteImport.update({
@@ -51,16 +69,22 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ask-al': typeof AskAlRoute
   '/checkout': typeof CheckoutRoute
+  '/faq': typeof FaqRoute
   '/order': typeof OrderRoute
+  '/guides/$slug': typeof GuidesSlugRoute
   '/shop/$slug': typeof ShopSlugRoute
+  '/guides/': typeof GuidesIndexRoute
   '/shop/': typeof ShopIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ask-al': typeof AskAlRoute
   '/checkout': typeof CheckoutRoute
+  '/faq': typeof FaqRoute
   '/order': typeof OrderRoute
+  '/guides/$slug': typeof GuidesSlugRoute
   '/shop/$slug': typeof ShopSlugRoute
+  '/guides': typeof GuidesIndexRoute
   '/shop': typeof ShopIndexRoute
 }
 export interface FileRoutesById {
@@ -68,22 +92,46 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/ask-al': typeof AskAlRoute
   '/checkout': typeof CheckoutRoute
+  '/faq': typeof FaqRoute
   '/order': typeof OrderRoute
+  '/guides/$slug': typeof GuidesSlugRoute
   '/shop/$slug': typeof ShopSlugRoute
+  '/guides/': typeof GuidesIndexRoute
   '/shop/': typeof ShopIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ask-al' | '/checkout' | '/order' | '/shop/$slug' | '/shop/'
+  fullPaths:
+    | '/'
+    | '/ask-al'
+    | '/checkout'
+    | '/faq'
+    | '/order'
+    | '/guides/$slug'
+    | '/shop/$slug'
+    | '/guides/'
+    | '/shop/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ask-al' | '/checkout' | '/order' | '/shop/$slug' | '/shop'
+  to:
+    | '/'
+    | '/ask-al'
+    | '/checkout'
+    | '/faq'
+    | '/order'
+    | '/guides/$slug'
+    | '/shop/$slug'
+    | '/guides'
+    | '/shop'
   id:
     | '__root__'
     | '/'
     | '/ask-al'
     | '/checkout'
+    | '/faq'
     | '/order'
+    | '/guides/$slug'
     | '/shop/$slug'
+    | '/guides/'
     | '/shop/'
   fileRoutesById: FileRoutesById
 }
@@ -91,8 +139,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AskAlRoute: typeof AskAlRoute
   CheckoutRoute: typeof CheckoutRoute
+  FaqRoute: typeof FaqRoute
   OrderRoute: typeof OrderRoute
+  GuidesSlugRoute: typeof GuidesSlugRoute
   ShopSlugRoute: typeof ShopSlugRoute
+  GuidesIndexRoute: typeof GuidesIndexRoute
   ShopIndexRoute: typeof ShopIndexRoute
 }
 
@@ -119,11 +170,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CheckoutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/order': {
       id: '/order'
       path: '/order'
       fullPath: '/order'
       preLoaderRoute: typeof OrderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/': {
+      id: '/guides/'
+      path: '/guides'
+      fullPath: '/guides/'
+      preLoaderRoute: typeof GuidesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/guides/$slug': {
+      id: '/guides/$slug'
+      path: '/guides/$slug'
+      fullPath: '/guides/$slug'
+      preLoaderRoute: typeof GuidesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shop/': {
@@ -147,8 +219,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AskAlRoute: AskAlRoute,
   CheckoutRoute: CheckoutRoute,
+  FaqRoute: FaqRoute,
   OrderRoute: OrderRoute,
+  GuidesSlugRoute: GuidesSlugRoute,
   ShopSlugRoute: ShopSlugRoute,
+  GuidesIndexRoute: GuidesIndexRoute,
   ShopIndexRoute: ShopIndexRoute,
 }
 export const routeTree = rootRouteImport

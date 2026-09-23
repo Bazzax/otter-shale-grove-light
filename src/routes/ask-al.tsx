@@ -18,7 +18,8 @@ export const Route = createFileRoute("/ask-al")({
   head: () =>
     pageHead(
       `Hail Al | ${APP_NAME}`,
-      "Radio the sentient dropship drone. Al recommends cargo from the bay and flags affiliate links when that is the better buy.",
+      "Radio the sentient dropship drone. Al recommends cargo from the bay and flags Amazon UK affiliate links when that is the better buy.",
+      "/ask-al",
     ),
   component: AskAlPage,
 });

@@ -1,15 +1,22 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { CityTicker } from "@/components/city-ticker";
+import { GuideCard } from "@/components/guide-card";
 import { JsonLd } from "@/components/json-ld";
+import { NewsletterForm } from "@/components/newsletter-form";
 import { ProductCard } from "@/components/product-card";
 import { Telemetry } from "@/components/telemetry";
 import { Button } from "@/components/ui/button";
 import { catalog, featuredProducts } from "@/lib/catalog";
-import { APP_DESCRIPTION, APP_NAME, APP_TAGLINE, FAQS, faqJsonLd, pageHead, websiteJsonLd } from "@/lib/seo";
+import { guides } from "@/lib/guides";
+import { APP_NAME, APP_TAGLINE, FAQS, pageHead, websiteJsonLd } from "@/lib/seo";
+
+const HOME_DESCRIPTION =
+  "Al is a mock sentient dropship drone with a short tech catalog — 65W GaN chargers, ANC headphones, SSDs. Demo checkout. Amazon UK affiliate links when you need it sooner than a Shenzhen window.";
 
 export const Route = createFileRoute("/")({
-  head: () => pageHead(`${APP_NAME} | Sentient delivery drone`, APP_DESCRIPTION),
+  head: () =>
+    pageHead(`${APP_NAME} | Dropship tech catalog & Amazon UK picks`, HOME_DESCRIPTION, "/"),
   component: Home,
 });
 
@@ -22,7 +29,6 @@ function Home() {
   return (
     <main>
       <JsonLd data={websiteJsonLd()} />
-      <JsonLd data={faqJsonLd(FAQS)} />
 
       <section className="relative overflow-hidden">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:gap-12 lg:py-20">
@@ -158,20 +164,70 @@ function Home() {
         </div>
       </section>
 
+      <section className="mx-auto max-w-6xl px-4 pb-14 sm:px-6 sm:pb-20">
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-xs font-medium tracking-widest text-clay uppercase">Flight log</p>
+            <h2 className="mt-2 font-display text-3xl font-medium tracking-tight sm:text-4xl">
+              Field notes from the drone
+            </h2>
+          </div>
+          <Link
+            to="/guides"
+            className="inline-flex items-center gap-1 text-sm font-medium text-clay hover:text-clay-dark"
+          >
+            All logs
+            <ArrowRight className="size-4" />
+          </Link>
+        </div>
+        <div className="grid gap-5 md:grid-cols-3">
+          {guides.map((guide) => (
+            <GuideCard key={guide.slug} guide={guide} />
+          ))}
+        </div>
+      </section>
+
       <section className="border-t border-line bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-20">
-          <p className="text-xs font-medium tracking-widest text-clay uppercase">Briefing</p>
-          <h2 className="mt-2 font-display text-3xl font-medium tracking-tight sm:text-4xl">
-            Questions Al already answered
-          </h2>
-          <dl className="mt-10 grid gap-8 md:grid-cols-2">
-            {FAQS.map((item) => (
-              <div key={item.q}>
-                <dt className="font-display text-xl font-medium tracking-tight">{item.q}</dt>
-                <dd className="mt-2 text-sm leading-relaxed text-stone">{item.a}</dd>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-7">
+              <p className="text-xs font-medium tracking-widest text-clay uppercase">Briefing</p>
+              <h2 className="mt-2 font-display text-3xl font-medium tracking-tight sm:text-4xl">
+                Questions Al already answered
+              </h2>
+              <dl className="mt-10 grid gap-8 sm:grid-cols-2">
+                {FAQS.slice(0, 4).map((item) => (
+                  <div key={item.q}>
+                    <dt className="font-display text-xl font-medium tracking-tight">{item.q}</dt>
+                    <dd className="mt-2 text-sm leading-relaxed text-stone">{item.a}</dd>
+                  </div>
+                ))}
+              </dl>
+              <Link
+                to="/faq"
+                className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-clay hover:text-clay-dark"
+              >
+                Full briefing
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
+            <div className="lg:col-span-5">
+              <div className="rounded-2xl bg-paper p-6 shadow-[var(--shadow-border)]">
+                <p className="text-xs font-medium tracking-widest text-clay uppercase">
+                  Flight log
+                </p>
+                <h2 className="mt-2 font-display text-2xl font-medium tracking-tight">
+                  Occasional notes. No sold lists.
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-stone">
+                  Name optional. Email required. Affiliate site — Al does not run a CRM.
+                </p>
+                <div className="relative mt-5">
+                  <NewsletterForm source="home" />
+                </div>
               </div>
-            ))}
-          </dl>
+            </div>
+          </div>
         </div>
       </section>
     </main>
