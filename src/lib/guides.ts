@@ -4,6 +4,8 @@ import { APP_NAME } from "@/lib/seo";
 export type Guide = {
   slug: string;
   title: string;
+  /** Visible H1 when it should differ from the document title. */
+  heading?: string;
   kicker: string;
   description: string;
   published: string;
@@ -41,6 +43,17 @@ export const guides: Guide[] = [
     published: "2026-09-23",
     relatedSlugs: ["arc-gan", "orbit-bank", "ember-buds", "nimbus-ssd"],
     affiliateSlug: "nimbus-ssd",
+  },
+  {
+    slug: "packing-power-september",
+    title: "What I'd pack for power this month",
+    heading: "What I'd actually pack for power this month",
+    kicker: "Power",
+    description:
+      "Anker, UGREEN, Belkin, and a hotel-desk hub — tagged Amazon UK picks that match how people actually travel right now.",
+    published: "2026-09-23",
+    relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub"],
+    affiliateSlug: "arc-gan",
   },
 ];
 

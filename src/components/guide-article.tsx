@@ -1,5 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { AffiliateLink } from "@/components/affiliate-link";
+import { affiliateProduct } from "@/lib/catalog";
 import type { Guide } from "@/lib/guides";
 
 function ShopLink({ slug, children }: { slug: string; children: ReactNode }) {
@@ -7,6 +9,18 @@ function ShopLink({ slug, children }: { slug: string; children: ReactNode }) {
     <Link to="/shop/$slug" params={{ slug }} className="text-clay hover:text-clay-dark">
       {children}
     </Link>
+  );
+}
+
+function AmazonPick({ asin }: { asin: string }) {
+  return (
+    <p>
+      <AffiliateLink
+        href={affiliateProduct(asin)}
+        label="Amazon UK"
+        className="mt-1 w-full sm:w-auto"
+      />
+    </p>
   );
 }
 
@@ -147,10 +161,72 @@ function LeadTimeBody() {
   );
 }
 
+function PackingPowerBody() {
+  return (
+    <>
+      <p>
+        Skip the loose batteries and the Fire sticks. What is actually moving in the UK accessory
+        charts this month is a power bank that ships with a cable, a foldable GaN that does not stab
+        the sleeve, and a hub you can leave on a hotel desk. That is the pack. Everything else is
+        a second bag.
+      </p>
+      <h2>Anker Zolo 20K, 30W</h2>
+      <p>
+        Twenty thousand milliamp-hours and a 30W USB-C that will top a phone twice and still have
+        leftover for a laptop sip. The cable is in the box. That is the whole pitch. I do not
+        dropship Anker. If you need a bank this week, this is the tagged listing.
+      </p>
+      <AmazonPick asin="B0CZ9LH53B" />
+      <h2>UGREEN Nexode 65W foldable</h2>
+      <p>
+        A foldable 65W GaN is the brick I would actually pack if I were buying tonight and flying
+        tomorrow. Pins fold. Two ports. It is the Amazon version of the job{" "}
+        <ShopLink slug="arc-gan">Arc 65W GaN</ShopLink> does in the bay — wait the 6–11 days from
+        Dongguan if you want the one I put a name on. Need it before the train: tap the listing.
+      </p>
+      <AmazonPick asin="B0B7N4DX1Z" />
+      <h2>Belkin BoostCharge Pro 70W travel</h2>
+      <p>
+        Seventy watts, travel-sized, a name a hotel desk has seen before. If you want a UK return
+        window and a brand that will still exist next year, this is the honest click. Do not buy it
+        because the title says Pro. Buy it because the wattage and the fold match the bag.
+      </p>
+      <AmazonPick asin="B0FK587ZZ6" />
+      <h2>Baseus PicoGo AM52, Qi2.2</h2>
+      <p>
+        A magnetic puck for the phone that still pretends it does not need a cable. Qi2.2, small,
+        airline-safe if the listing capacity stays under the cabin limit.{" "}
+        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> is the bay version — 5,000 mAh, snaps,
+        leaves. This Baseus is the affiliate aisle if you need it on a Tuesday.
+      </p>
+      <AmazonPick asin="B0G4CHTD53" />
+      <h2>ABLEWE 8-in-1 hub</h2>
+      <p>
+        Hotel desk, one cable, HDMI that should hit 4K60 if the listing is not lying. Eight ports
+        is enough. <ShopLink slug="trace-hub">Trace Hub</ShopLink> is the one I dropship —
+        aluminum, 100W passthrough, I actually tested 4K60. ABLEWE is the next-day stand-in.
+      </p>
+      <AmazonPick asin="B0DN9F245H" />
+      <h2>The affiliate bit, once</h2>
+      <p>
+        Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
+        listing, not the title. I do not scrape prices and I do not invent stock.
+      </p>
+      <p>
+        If you want the versions I put a name on, the bay has{" "}
+        <ShopLink slug="arc-gan">Arc</ShopLink>,{" "}
+        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink>, and{" "}
+        <ShopLink slug="trace-hub">Trace</ShopLink>. Lead times printed. No surprise warehouse.
+      </p>
+    </>
+  );
+}
+
 const bodies: Record<string, () => ReactNode> = {
   "65w-gan-charger-travel": GanBody,
   "anc-headphones-vs-earbuds-commute": AncBody,
   "dropship-lead-times": LeadTimeBody,
+  "packing-power-september": PackingPowerBody,
 };
 
 export function GuideArticle({ guide }: { guide: Guide }) {

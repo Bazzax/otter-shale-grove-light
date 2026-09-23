@@ -50,7 +50,7 @@ function GuidePage() {
         <div className="lg:col-span-8">
           <p className="text-xs font-medium tracking-widest text-clay uppercase">{guide.kicker}</p>
           <h1 className="mt-3 font-display text-4xl font-medium tracking-tight sm:text-5xl">
-            {guide.title}
+            {guide.heading ?? guide.title}
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-stone">{guide.description}</p>
           <p className="mt-3 text-xs tracking-wide text-dust uppercase">
