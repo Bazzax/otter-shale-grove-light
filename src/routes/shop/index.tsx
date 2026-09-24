@@ -53,7 +53,7 @@ function ShopPage() {
         Cargo bay
       </h1>
       <p className="mt-3 max-w-xl text-stone">
-        Dropship from the bay, or jump Amazon. Filter by desk, power, audio,
+        Dropship from the bay, or jump to Amazon. Filter by desk, power, audio,
         storage, carry.
       </p>
 
