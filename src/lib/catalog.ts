@@ -7,14 +7,26 @@ export function affiliateProduct(asin: string) {
   return `${AMAZON_UK_DP}/${asin}?tag=${AMAZON_ASSOCIATE_TAG}`;
 }
 
-/** Tagged Amazon UK search URL for a product category. */
+/** Tagged Amazon UK search URL. The associate tag lives only here. */
 export function affiliateSearch(query: string) {
   const params = new URLSearchParams({
-    k: query,
+    k: query.trim(),
     tag: AMAZON_ASSOCIATE_TAG,
   });
   return `${AMAZON_UK_SEARCH}?${params.toString()}`;
 }
+
+export const TECH_SEARCH_CHIPS = [
+  "Chargers",
+  "Power banks",
+  "USB-C hubs",
+  "Headphones",
+  "Keyboards",
+  "Mice",
+  "Monitors",
+  "Webcams",
+  "Laptop stands",
+] as const;
 
 export const CATEGORIES = ["Audio", "Power", "Desk", "Storage", "Carry"] as const;
 export type Category = (typeof CATEGORIES)[number];
@@ -256,6 +268,63 @@ export function getProduct(slug: string) {
 
 export function featuredProducts() {
   return catalog.filter((p) => p.featured);
+}
+
+const STOP_TERMS = new Set(["the", "and", "for", "with", "from"]);
+
+/** Extra search terms so chips like "Keyboards" hit Drift without inventing SKUs. */
+const PRODUCT_SEARCH_HINTS: Record<string, string> = {
+  "drift-75": "keyboard keyboards mechanical keys",
+  "quietframe": "monitor monitors light bar",
+  "slip-sleeve": "laptop sleeve case",
+  "orbit-bank": "power bank puck",
+  "arc-gan": "charger chargers gan brick",
+  "trace-hub": "usb-c hub dongle dock",
+  "pulse-one": "headphones headset cans",
+  "ember-buds": "earbuds buds headphones",
+};
+
+function queryTermGroups(query: string): string[][] {
+  return query
+    .toLowerCase()
+    .split(/[\s,/]+/)
+    .map((raw) => raw.replace(/[^a-z0-9+-]+/g, ""))
+    .filter((term) => term.length > 1 && !STOP_TERMS.has(term))
+    .map((term) => {
+      const opts = new Set([term]);
+      if (term === "mice") opts.add("mouse");
+      if (term === "usbc") opts.add("usb-c");
+      if (term === "usb-c" || term === "usbc") opts.add("usb");
+      if (term.endsWith("s") && term.length > 3) opts.add(term.slice(0, -1));
+      return [...opts];
+    });
+}
+
+function catalogSearchHaystack(product: Product) {
+  return [
+    product.name,
+    product.category,
+    product.tagline,
+    product.description,
+    product.alNote,
+    ...product.details,
+    PRODUCT_SEARCH_HINTS[product.slug] ?? "",
+  ]
+    .join(" ")
+    .toLowerCase();
+}
+
+/** Client-side match on name, category, description, and a few search tags. */
+export function matchCatalog(query: string): Product[] {
+  const needle = query.trim().toLowerCase();
+  if (!needle) return [];
+  const groups = queryTermGroups(needle);
+  if (groups.length === 0) return [];
+  return catalog.filter((product) => {
+    const hay = catalogSearchHaystack(product);
+    if (hay.includes(needle)) return true;
+    return groups.every((opts) => opts.some((term) => hay.includes(term)));
+  });
 }
 
 export const catalogDigest = catalog

@@ -1,24 +1,28 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Search } from "lucide-react";
+import { AmazonSearchLink } from "@/components/amazon-search-link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { askAl, type ChatTurn } from "@/lib/ask-al";
-import { getProduct } from "@/lib/catalog";
+import { parseAskAlReply } from "@/lib/ask-al-reply";
+import { getProduct, matchCatalog, TECH_SEARCH_CHIPS, type Product } from "@/lib/catalog";
 import { formatPrice } from "@/lib/format";
 import { APP_NAME, pageHead } from "@/lib/seo";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 
-type AskSearch = { about?: string };
+type AskSearch = { about?: string; q?: string };
 
 export const Route = createFileRoute("/ask-al")({
   validateSearch: (search: Record<string, unknown>): AskSearch => ({
     about: typeof search.about === "string" ? search.about : undefined,
+    q: typeof search.q === "string" ? search.q : undefined,
   }),
   head: () =>
     pageHead(
       `Hail Al | ${APP_NAME}`,
-      "Radio the sentient dropship drone. Al recommends cargo from the bay and flags Amazon UK affiliate links when that is the better buy.",
+      "Search Amazon UK tech with a tagged affiliate link, or radio the drone. Al matches the bay and will not invent products, prices, or ratings.",
       "/ask-al",
     ),
   component: AskAlPage,
@@ -31,34 +35,52 @@ const SUGGESTIONS = [
   "What ships the fastest?",
 ];
 
-function parseReply(text: string) {
-  const slugs: string[] = [];
-  const cleaned = text.replace(/\[\[([a-z0-9-]+)\]\]/g, (_m, slug: string) => {
-    if (!slugs.includes(slug) && getProduct(slug)) slugs.push(slug);
-    const product = getProduct(slug);
-    return product ? product.name : slug;
-  });
-  return { cleaned, slugs };
-}
+const AFFILIATE_DISCLOSURE =
+  "As an Amazon Associate, Al's AI Drop Ship earns from qualifying purchases. Search links go to Amazon UK and include our affiliate tag.";
 
 function AskAlPage() {
-  const { about } = Route.useSearch();
+  const { about, q } = Route.useSearch();
+  const navigate = useNavigate({ from: "/ask-al" });
   const aboutProduct = about ? getProduct(about) : undefined;
   const [messages, setMessages] = useState<ChatTurn[]>([]);
   const [draft, setDraft] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [searchDraft, setSearchDraft] = useState(q ?? "");
   const bottomRef = useRef<HTMLDivElement>(null);
+
+  const activeQuery = q?.trim() ?? "";
+  const catalogHits = useMemo(
+    () => (activeQuery ? matchCatalog(activeQuery) : []),
+    [activeQuery],
+  );
+
+  useEffect(() => {
+    setSearchDraft(q ?? "");
+  }, [q]);
 
   useEffect(() => {
     if (aboutProduct) {
-      setDraft(`Is ${aboutProduct.name} worth loading into the bay, or should I use the affiliate link?`);
+      setDraft(
+        `Is ${aboutProduct.name} worth loading into the bay, or should I use the affiliate link?`,
+      );
     }
   }, [aboutProduct]);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, pending]);
+
+  function runSearch(next: string) {
+    const query = next.trim();
+    setSearchDraft(query);
+    void navigate({
+      search: (prev) => ({
+        ...prev,
+        q: query || undefined,
+      }),
+    });
+  }
 
   async function send(text: string) {
     const content = text.trim();
@@ -84,16 +106,122 @@ function AskAlPage() {
 
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 py-10 sm:px-6 sm:py-14">
-      <div className="grid flex-1 gap-10 lg:grid-cols-12">
+      <p className="text-xs font-medium tracking-widest text-clay uppercase">Radio</p>
+      <h1 className="mt-3 font-display text-4xl font-medium tracking-tight sm:text-5xl">
+        Hail Al
+      </h1>
+      <p className="mt-3 max-w-2xl text-stone">
+        Search all of Amazon UK tech from the hangar — tagged so Al earns if you
+        buy. The drone still flies the nine-SKU bay underneath, and will open a
+        search when cargo is the wrong tool.
+      </p>
+
+      <section
+        aria-labelledby="tech-search-heading"
+        className="mt-8 rounded-2xl bg-cream p-2 shadow-[var(--shadow-border)]"
+      >
+        <div className="rounded-xl bg-paper px-4 py-5 sm:px-6 sm:py-6">
+          <h2 id="tech-search-heading" className="font-display text-xl font-medium tracking-tight">
+            Scan Amazon UK tech
+          </h2>
+          <p className="mt-1 text-sm text-stone">
+            No live Amazon prices or scraped listings — just a tagged search and
+            anything already in the bay.
+          </p>
+
+          <form
+            className="mt-5"
+            role="search"
+            onSubmit={(e) => {
+              e.preventDefault();
+              runSearch(searchDraft);
+            }}
+          >
+            <label htmlFor="tech-search" className="sr-only">
+              Search Amazon UK tech
+            </label>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Input
+                id="tech-search"
+                type="search"
+                value={searchDraft}
+                onChange={(e) => setSearchDraft(e.target.value)}
+                placeholder="Webcam, 65W GaN charger, mechanical keyboard…"
+                autoComplete="off"
+                enterKeyHint="search"
+                className="h-12 flex-1 rounded-xl text-base md:text-base"
+              />
+              <Button type="submit" size="lg" className="h-12 shrink-0 sm:min-w-36">
+                <Search aria-hidden />
+                Search
+              </Button>
+            </div>
+          </form>
+
+          <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Quick tech searches">
+            {TECH_SEARCH_CHIPS.map((chip) => {
+              const active = activeQuery.toLowerCase() === chip.toLowerCase();
+              return (
+                <button
+                  key={chip}
+                  type="button"
+                  aria-pressed={active}
+                  className={cn(
+                    "h-11 rounded-full px-4 text-sm font-medium transition-colors duration-150",
+                    active
+                      ? "bg-clay text-paper"
+                      : "bg-cream text-stone shadow-[var(--shadow-border)] hover:text-ink",
+                  )}
+                  onClick={() => runSearch(chip)}
+                >
+                  {chip}
+                </button>
+              );
+            })}
+          </div>
+
+          <p className="mt-5 text-sm leading-relaxed text-dust">{AFFILIATE_DISCLOSURE}</p>
+
+          {activeQuery ? (
+            <div className="mt-6 border-t border-line pt-6">
+              <AmazonSearchLink query={activeQuery} />
+
+              {catalogHits.length > 0 ? (
+                <div className="mt-6">
+                  <h3 className="text-xs font-medium tracking-widest text-dust uppercase">
+                    In the bay
+                  </h3>
+                  <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+                    {catalogHits.map((product) => (
+                      <li key={product.slug}>
+                        <CatalogHit product={product} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <p className="mt-4 text-sm text-stone">
+                  Nothing in the nine-SKU bay for “{activeQuery}”. Amazon UK is
+                  the aisle.
+                </p>
+              )}
+            </div>
+          ) : null}
+        </div>
+      </section>
+
+      <div className="mt-10 grid flex-1 gap-10 lg:grid-cols-12">
         <aside className="lg:col-span-4">
           <p className="text-xs font-medium tracking-widest text-clay uppercase">
-            Radio
+            Channel
           </p>
-          <h1 className="mt-3 font-display text-4xl font-medium tracking-tight">Hail Al</h1>
+          <h2 className="mt-3 font-display text-2xl font-medium tracking-tight">
+            Ask the drone
+          </h2>
           <p className="mt-3 text-stone">
-            The drone is online. Name a job — quiet desk, travel kit, fastest
-            ship. Al only flies cargo in the bay, and will flag affiliate links
-            when that is the better buy.
+            Name a job — quiet desk, travel kit, fastest ship. Al matches cargo
+            in the bay and can hand you a tagged Amazon UK search when the
+            catalog runs out.
           </p>
           <div className="mt-8 hidden overflow-hidden rounded-2xl bg-cream p-2 shadow-[var(--shadow-border)] lg:block">
             <img
@@ -104,14 +232,21 @@ function AskAlPage() {
           </div>
         </aside>
 
-        <section className="flex min-h-[32rem] flex-col rounded-2xl bg-cream p-2 shadow-[var(--shadow-border)] lg:col-span-8">
+        <section
+          aria-labelledby="hail-al-chat-heading"
+          className="flex min-h-[32rem] flex-col rounded-2xl bg-cream p-2 shadow-[var(--shadow-border)] lg:col-span-8"
+        >
+          <h2 id="hail-al-chat-heading" className="sr-only">
+            Hail Al chat
+          </h2>
           <div className="flex min-h-0 flex-1 flex-col rounded-xl bg-paper">
             <div className="min-h-0 flex-1 space-y-5 overflow-y-auto px-4 py-5 sm:px-6">
               {messages.length === 0 && !pending ? (
                 <div className="flex h-full flex-col justify-end gap-6 py-4">
                   <p className="max-w-md text-stone">
-                    Channel open. Nine SKUs in the bay, affiliate armed. Start
-                    with a job, not a brand.
+                    Channel open. Nine SKUs in the bay, plus a tagged search
+                    across Amazon UK tech. Start with a job, not a brand — or
+                    search the aisle above.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {SUGGESTIONS.map((item) => (
@@ -180,9 +315,30 @@ function AskAlPage() {
   );
 }
 
+function CatalogHit({ product }: { product: Product }) {
+  return (
+    <Link
+      to="/shop/$slug"
+      params={{ slug: product.slug }}
+      className="flex gap-3 rounded-xl bg-cream p-2 shadow-[var(--shadow-border)] transition-[box-shadow] duration-150 hover:shadow-[var(--shadow-border-hover)]"
+    >
+      <img
+        src={product.image}
+        alt=""
+        className="size-16 rounded-lg object-cover outline outline-1 -outline-offset-1 outline-ink/10"
+      />
+      <span className="min-w-0 py-1">
+        <span className="block truncate font-display text-sm font-medium">{product.name}</span>
+        <span className="mt-0.5 block truncate text-xs text-stone">{product.tagline}</span>
+        <span className="mt-1 block text-xs tabular-nums text-dust">{formatPrice(product.price)}</span>
+      </span>
+    </Link>
+  );
+}
+
 function Bubble({ turn }: { turn: ChatTurn }) {
   const parsed = useMemo(
-    () => (turn.role === "assistant" ? parseReply(turn.content) : null),
+    () => (turn.role === "assistant" ? parseAskAlReply(turn.content) : null),
     [turn],
   );
 
@@ -208,31 +364,18 @@ function Bubble({ turn }: { turn: ChatTurn }) {
             if (!product) return null;
             return (
               <li key={slug}>
-                <Link
-                  to="/shop/$slug"
-                  params={{ slug }}
-                  className={cn(
-                    "flex gap-3 rounded-xl bg-cream p-2 shadow-[var(--shadow-border)] hover:shadow-[var(--shadow-border-hover)]",
-                  )}
-                >
-                  <img
-                    src={product.image}
-                    alt=""
-                    className="size-16 rounded-lg object-cover outline outline-1 -outline-offset-1 outline-ink/10"
-                  />
-                  <span className="min-w-0 py-1">
-                    <span className="block truncate font-display text-sm font-medium">
-                      {product.name}
-                    </span>
-                    <span className="block text-xs tabular-nums text-stone">
-                      {formatPrice(product.price)}
-                    </span>
-                  </span>
-                </Link>
+                <CatalogHit product={product} />
               </li>
             );
           })}
         </ul>
+      ) : null}
+      {parsed?.searches.length ? (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {parsed.searches.map((query) => (
+            <AmazonSearchLink key={query} query={query} variant="chip" />
+          ))}
+        </div>
       ) : null}
     </div>
   );
