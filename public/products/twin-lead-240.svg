@@ -1,13 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Twin Lead 240  right-angle USB-C cable pair">
-  <rect width="1600" height="1200" fill="#04060a"/>
-  <path d="M360 420 C520 300 780 360 900 520 C1020 680 1180 700 1280 620" fill="none" stroke="#1c2a38" stroke-width="28" stroke-linecap="round"/>
-  <path d="M360 420 C520 300 780 360 900 520 C1020 680 1180 700 1280 620" fill="none" stroke="#9db0be" stroke-width="10" stroke-linecap="round"/>
-  <path d="M400 780 C560 900 820 840 940 700 C1060 560 1200 540 1300 620" fill="none" stroke="#1c2a38" stroke-width="28" stroke-linecap="round"/>
-  <path d="M400 780 C560 900 820 840 940 700 C1060 560 1200 540 1300 620" fill="none" stroke="#7a8c9c" stroke-width="10" stroke-linecap="round"/>
-  <rect x="300" y="392" width="86" height="44" rx="8" fill="#141c28"/>
-  <rect x="286" y="400" width="28" height="28" rx="4" fill="#00ffc2"/>
-  <rect x="340" y="752" width="86" height="44" rx="8" fill="#141c28"/>
-  <rect x="326" y="760" width="28" height="28" rx="4" fill="#00ffc2"/>
-  <rect x="1270" y="598" width="86" height="44" rx="8" fill="#141c28"/>
-  <rect x="1342" y="606" width="28" height="28" rx="4" fill="#00ffc2"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Twin Lead 240 — right-angle USB-C cable pair">
+  <rect width="1600" height="1200" fill="#0c121c"/>
+  <rect x="220" y="220" width="1160" height="760" rx="40" fill="#141c28"/>
+  <path d="M380 400 C560 260 860 340 980 520 C1100 700 1260 720 1360 620" fill="none" stroke="#2a3544" stroke-width="40" stroke-linecap="round"/>
+  <path d="M380 400 C560 260 860 340 980 520 C1100 700 1260 720 1360 620" fill="none" stroke="#c5d2dc" stroke-width="14" stroke-linecap="round"/>
+  <path d="M420 800 C600 940 880 860 1000 700 C1120 540 1280 520 1380 620" fill="none" stroke="#2a3544" stroke-width="40" stroke-linecap="round"/>
+  <path d="M420 800 C600 940 880 860 1000 700 C1120 540 1280 520 1380 620" fill="none" stroke="#00ffc2" stroke-width="14" stroke-linecap="round"/>
+  <rect x="300" y="368" width="110" height="56" rx="10" fill="#1a222c"/>
+  <rect x="280" y="378" width="36" height="36" rx="5" fill="#00ffc2"/>
+  <rect x="340" y="768" width="110" height="56" rx="10" fill="#1a222c"/>
+  <rect x="320" y="778" width="36" height="36" rx="5" fill="#00ffc2"/>
+  <rect x="1350" y="592" width="110" height="56" rx="10" fill="#1a222c"/>
+  <rect x="1444" y="602" width="36" height="36" rx="5" fill="#00ffc2"/>
 </svg>
