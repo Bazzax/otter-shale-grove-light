@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Runway Riser  fold-flat aluminium laptop stand">
+  <rect width="1600" height="1200" fill="#04060a"/>
+  <polygon points="380,760 1220,760 1120,820 480,820" fill="#141c28"/>
+  <rect x="420" y="430" width="760" height="28" rx="6" transform="rotate(-8 800 444)" fill="#9db0be"/>
+  <rect x="430" y="458" width="740" height="14" rx="4" transform="rotate(-8 800 465)" fill="#00ffc2"/>
+  <rect x="500" y="500" width="22" height="260" rx="6" transform="rotate(18 511 630)" fill="#7a8c9c"/>
+  <rect x="1078" y="500" width="22" height="260" rx="6" transform="rotate(-18 1089 630)" fill="#7a8c9c"/>
+  <rect x="620" y="720" width="360" height="16" rx="8" fill="#1c2a38"/>
+  <rect x="520" y="360" width="560" height="12" rx="4" transform="rotate(-8 800 366)" fill="#f3fff9" opacity="0.35"/>
+</svg>

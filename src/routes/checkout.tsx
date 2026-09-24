@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent, type ReactNode } from "react";
 import { useHydrated } from "@/hooks/use-hydrated";
-import { getProduct } from "@/lib/catalog";
+import { getProduct, isAmazonPick } from "@/lib/catalog";
 import { cartCount, cartTotal, useCart } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
@@ -160,7 +160,7 @@ function CheckoutPage() {
           <ul className="mt-5 space-y-4">
             {lines.map((line) => {
               const product = getProduct(line.slug);
-              if (!product) return null;
+              if (!product || isAmazonPick(product)) return null;
               return (
                 <li key={line.slug} className="flex gap-3">
                   <img

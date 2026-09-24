@@ -55,6 +55,23 @@ export const guides: Guide[] = [
     relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub"],
     affiliateSlug: "arc-gan",
   },
+  {
+    slug: "travel-desk-september",
+    title: "What I'd pack for a desk away from home",
+    heading: "What I'd actually pack for a desk away from home",
+    kicker: "Desk",
+    description:
+      "Honest Amazon UK travel-desk kit — 100W GaN, a fold-flat stand, a quiet mouse, high-watt leads, and a backpack second screen. Tagged links. No gimmicks.",
+    published: "2026-09-24",
+    relatedSlugs: [
+      "flightbrick-100",
+      "runway-riser",
+      "cabin-cursor",
+      "twin-lead-240",
+      "second-window-16",
+    ],
+    affiliateSlug: "flightbrick-100",
+  },
 ];
 
 export function getGuide(slug: string) {

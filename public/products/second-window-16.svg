@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Second Window 16  slim portable monitor">
+  <rect width="1600" height="1200" fill="#04060a"/>
+  <rect x="340" y="280" width="920" height="560" rx="28" fill="#141c28"/>
+  <rect x="368" y="308" width="864" height="480" rx="10" fill="#0c121c"/>
+  <rect x="400" y="340" width="800" height="416" rx="4" fill="#04060a"/>
+  <rect x="400" y="340" width="800" height="8" fill="#00ffc2" opacity="0.8"/>
+  <rect x="430" y="390" width="220" height="12" rx="6" fill="#1c2a38"/>
+  <rect x="430" y="420" width="340" height="12" rx="6" fill="#1c2a38"/>
+  <rect x="430" y="450" width="280" height="12" rx="6" fill="#1c2a38"/>
+  <rect x="820" y="390" width="340" height="220" rx="8" fill="#141c28"/>
+  <polygon points="980,860 1120,1040 840,1040" fill="#1c2a38"/>
+  <polygon points="980,870 1090,1020 870,1020" fill="#00ffc2" opacity="0.35"/>
+  <circle cx="800" cy="812" r="6" fill="#00ffc2"/>
+</svg>

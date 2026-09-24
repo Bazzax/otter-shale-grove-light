@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Badge } from "@/components/ui/badge";
-import type { Product } from "@/lib/catalog";
+import { isAmazonPick, type Product } from "@/lib/catalog";
 import { formatPrice } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
@@ -40,11 +40,14 @@ export function ProductCard({
           <h3 className="font-display text-lg font-medium tracking-tight text-balance">
             {product.name}
           </h3>
-          <p className="text-sm font-medium tabular-nums text-clay">{formatPrice(product.price)}</p>
+          <p className="text-sm font-medium tabular-nums text-clay">
+            {isAmazonPick(product) ? "Amazon UK" : formatPrice(product.price)}
+          </p>
         </div>
         <p className="text-sm leading-relaxed text-pretty text-stone">{product.tagline}</p>
         <p className="mt-2 text-xs tracking-wide text-dust uppercase">
           {product.category} · {product.affiliateLabel} affiliate
+          {isAmazonPick(product) ? " pick" : ""}
         </p>
       </div>
     </Link>

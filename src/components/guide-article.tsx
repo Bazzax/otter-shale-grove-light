@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { AffiliateLink } from "@/components/affiliate-link";
-import { affiliateProduct } from "@/lib/catalog";
+import { AMAZON_PICK_ASINS, affiliateProduct } from "@/lib/catalog";
 import type { Guide } from "@/lib/guides";
 
 function ShopLink({ slug, children }: { slug: string; children: ReactNode }) {
@@ -222,11 +222,100 @@ function PackingPowerBody() {
   );
 }
 
+function TravelDeskBody() {
+  return (
+    <>
+      <p>
+        As an Amazon Associate, Al's AI Drop Ship earns from qualifying purchases on amazon.co.uk
+        when you buy via the tagged links below. We recommend comparable retail products — buy what
+        fits your bag and budget, and always check the live UK listing for price and stock.
+      </p>
+      <p>
+        There is a difference between packing tech and packing useful tech. Gimmicks eat weight.
+        The gear that survives a month of desks that are not yours is boring in the best way: power
+        that actually feeds a laptop, a screen height that does not wreck your neck, a mouse that
+        earns its grams, a cable that matches the brick, and enough display to finish the work you
+        flew for.
+      </p>
+      <p>
+        Five Amazon UK picks. They sit next to — not on top of — the headphones, hubs, and 65W
+        bricks already in the bay. Al does not dropship these. The cards are affiliate.
+      </p>
+      <h2>FlightBrick 100 — one plug, three devices</h2>
+      <p>
+        Hotel desks have one free socket and zero patience. If you still travel with a single-port
+        laptop charger plus a phone brick, you are negotiating with the wall.{" "}
+        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
+        a smart display: two USB-C, one USB-A, foldable UK pins, and a live readout of what each
+        port is pulling. That is how you know the MacBook is getting real wattage while the phone
+        tops up beside it. Then the pins fold flat for the bag.
+      </p>
+      <p>
+        This is the practical step up from{" "}
+        <ShopLink slug="arc-gan">Arc 65W GaN</ShopLink> if one socket has to do a laptop and a
+        phone. Pair it with a proper high-watt cable — the brick cannot outrun a weak lead.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
+      <h2>Runway Riser — raise the screen</h2>
+      <p>
+        Working flat on a café table looks romantic until hour three.{" "}
+        <ShopLink slug="runway-riser">Runway Riser</ShopLink> is UGREEN’s fold-flat aluminium stand:
+        five height options, a carry pouch, roughly 8–17.3 inch machines, scratch-padded. It is not
+        a standing desk. It is a riser that makes hotel and co-working tables usable — especially
+        if you already carry <ShopLink slug="drift-75">Drift 75</ShopLink>.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.runwayRiser} />
+      <h2>Cabin Cursor — trackpad is fine until the spreadsheet isn't</h2>
+      <p>
+        Trackpads survive short flights. Long edit sessions need MagSpeed scrolling, quiet clicks
+        for hotel calls, and Easy-Switch between laptop and tablet.{" "}
+        <ShopLink slug="cabin-cursor">Cabin Cursor</ShopLink> is the MX Master 3S in graphite. I do
+        not dropship Logitech. If the mouse earns bag space, this is the one.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.cabinCursor} />
+      <h2>Twin Lead 240 — the brick is only as fast as the cable</h2>
+      <p>
+        A 100W wall brick with a tired 60W cable is cosplay.{" "}
+        <ShopLink slug="twin-lead-240">Twin Lead 240</ShopLink> is Anker’s 240W-rated right-angle
+        USB-C 2-pack — braided, six feet, 90-degree ends for tight laptop ports, cars, and hotel
+        nightstands. Pack a pair. Leave one at the desk.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.twinLead240} />
+      <h2>Second Window 16 — dual-screen without a second bag</h2>
+      <p>
+        One laptop panel means Slack eating half the spreadsheet.{" "}
+        <ShopLink slug="second-window-16">Second Window 16</ShopLink> is the ARZOPA Z1FC: 16.1 inch
+        FHD 144Hz, USB-C plug-and-play or Mini HDMI, kickstand, slim enough to sit beside the
+        laptop. Mid-range, not OLED luxury. Your machine needs a full-featured USB-C port for
+        single-cable video. Sleeve the panel so it does not share scratches with the bricks.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.secondWindow16} />
+      <h2>How I would pack the kit</h2>
+      <ul>
+        <li>Bottom of the bag: FlightBrick 100 and Twin Lead 240.</li>
+        <li>Middle: Runway Riser in its pouch. Cabin Cursor in a pocket.</li>
+        <li>Against the laptop: Second Window 16 in a soft sleeve.</li>
+      </ul>
+      <p>
+        That is a travel desk — not a gadget haul. If one of these earns a permanent slot, it will
+        be because it removed friction, not because it looked clever in a reel.
+      </p>
+      <h2>The affiliate bit, once</h2>
+      <p>
+        Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
+        listing, not the title. I do not scrape prices and I do not invent stock.
+      </p>
+      <p>Fly light. Charge full. Keep your neck.</p>
+    </>
+  );
+}
+
 const bodies: Record<string, () => ReactNode> = {
   "65w-gan-charger-travel": GanBody,
   "anc-headphones-vs-earbuds-commute": AncBody,
   "dropship-lead-times": LeadTimeBody,
   "packing-power-september": PackingPowerBody,
+  "travel-desk-september": TravelDeskBody,
 };
 
 export function GuideArticle({ guide }: { guide: Guide }) {

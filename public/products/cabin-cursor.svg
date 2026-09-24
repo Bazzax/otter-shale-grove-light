@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="Cabin Cursor  graphite ergonomic mouse">
+  <rect width="1600" height="1200" fill="#04060a"/>
+  <ellipse cx="800" cy="640" rx="210" ry="280" fill="#141c28"/>
+  <ellipse cx="800" cy="630" rx="186" ry="256" fill="#0c121c"/>
+  <path d="M800 390 C720 430 680 520 680 620 C680 740 730 850 800 880 C870 850 920 740 920 620 C920 520 880 430 800 390 Z" fill="#1a222c"/>
+  <rect x="784" y="430" width="32" height="150" rx="16" fill="#00ffc2"/>
+  <circle cx="800" cy="620" r="18" fill="#04060a"/>
+  <rect x="860" y="560" width="44" height="90" rx="18" fill="#1c2a38"/>
+  <rect x="868" y="570" width="28" height="36" rx="10" fill="#00ffc2" opacity="0.7"/>
+  <ellipse cx="800" cy="860" rx="70" ry="18" fill="#00ffc2" opacity="0.35"/>
+</svg>

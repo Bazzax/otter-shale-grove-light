@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUp } from "lucide-react";
 import { askAl, type ChatTurn } from "@/lib/ask-al";
-import { getProduct } from "@/lib/catalog";
+import { catalog, getProduct, isAmazonPick } from "@/lib/catalog";
 import { formatPrice } from "@/lib/format";
 import { APP_NAME, pageHead } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
@@ -110,7 +110,7 @@ function AskAlPage() {
               {messages.length === 0 && !pending ? (
                 <div className="flex h-full flex-col justify-end gap-6 py-4">
                   <p className="max-w-md text-stone">
-                    Channel open. Nine SKUs in the bay, affiliate armed. Start
+                    Channel open. {catalog.length} SKUs in the bay, affiliate armed. Start
                     with a job, not a brand.
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -225,7 +225,7 @@ function Bubble({ turn }: { turn: ChatTurn }) {
                       {product.name}
                     </span>
                     <span className="block text-xs tabular-nums text-stone">
-                      {formatPrice(product.price)}
+                      {isAmazonPick(product) ? "Amazon UK pick" : formatPrice(product.price)}
                     </span>
                   </span>
                 </Link>

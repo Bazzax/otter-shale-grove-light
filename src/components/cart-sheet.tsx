@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ShoppingBag } from "lucide-react";
 import { useHydrated } from "@/hooks/use-hydrated";
-import { getProduct } from "@/lib/catalog";
+import { getProduct, isAmazonPick } from "@/lib/catalog";
 import { cartCount, cartTotal, useCart } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
@@ -85,7 +85,9 @@ export function CartSheet({
                               {product.name}
                             </Link>
                             <p className="text-sm tabular-nums text-stone">
-                              {formatPrice(product.price)}
+                              {isAmazonPick(product)
+                                ? "Amazon UK"
+                                : formatPrice(product.price)}
                             </p>
                           </div>
                           <button

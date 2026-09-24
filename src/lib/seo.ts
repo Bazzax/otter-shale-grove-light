@@ -52,25 +52,41 @@ export function productJsonLd(product: {
   slug: string;
   tagline: string;
   description: string;
-  price: number;
+  price?: number;
   image: string;
   category: string;
+  amazonPick?: boolean;
+  affiliateUrl?: string;
 }) {
+  const image = product.image.startsWith("http")
+    ? product.image
+    : `${SITE_ORIGIN}${product.image}`;
+  const pageUrl = `${SITE_ORIGIN}/shop/${product.slug}`;
+  const offers =
+    product.amazonPick || product.price == null
+      ? {
+          "@type": "Offer",
+          url: product.affiliateUrl ?? pageUrl,
+          availability: "https://schema.org/InStock",
+          seller: { "@type": "Organization", name: "Amazon.co.uk" },
+        }
+      : {
+          "@type": "Offer",
+          priceCurrency: "USD",
+          price: product.price.toFixed(2),
+          availability: "https://schema.org/InStock",
+          url: pageUrl,
+        };
+
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
     description: product.description,
-    image: product.image.startsWith("http") ? product.image : `${SITE_ORIGIN}${product.image}`,
+    image,
     category: product.category,
     brand: { "@type": "Brand", name: APP_NAME },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "USD",
-      price: product.price.toFixed(2),
-      availability: "https://schema.org/InStock",
-      url: `${SITE_ORIGIN}/shop/${product.slug}`,
-    },
+    offers,
   };
 }
 
