@@ -110,7 +110,7 @@ function AskAlPage() {
       <h1 className="mt-3 font-display text-4xl font-medium tracking-tight sm:text-5xl">
         Hail Al
       </h1>
-      <p className="mt-3 max-w-2xl text-stone">
+      <p className="mt-3 max-w-2xl text-pretty text-stone">
         Search all of Amazon UK tech from the hangar — tagged so Al earns if you
         buy. The drone still flies the nine-SKU bay underneath, and will open a
         search when cargo is the wrong tool.
@@ -120,7 +120,7 @@ function AskAlPage() {
         aria-labelledby="tech-search-heading"
         className="mt-8 rounded-2xl bg-cream p-2 shadow-[var(--shadow-border)]"
       >
-        <div className="rounded-xl bg-paper px-4 py-5 sm:px-6 sm:py-6">
+        <div className="rounded-xl bg-paper px-4 py-4 sm:px-6 sm:py-6">
           <h2 id="tech-search-heading" className="font-display text-xl font-medium tracking-tight">
             Scan Amazon UK tech
           </h2>
@@ -130,7 +130,7 @@ function AskAlPage() {
           </p>
 
           <form
-            className="mt-5"
+            className="mt-4"
             role="search"
             onSubmit={(e) => {
               e.preventDefault();
@@ -158,6 +158,12 @@ function AskAlPage() {
             </div>
           </form>
 
+          {activeQuery ? (
+            <div className="mt-4">
+              <AmazonSearchLink query={activeQuery} />
+            </div>
+          ) : null}
+
           <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Quick tech searches">
             {TECH_SEARCH_CHIPS.map((chip) => {
               const active = activeQuery.toLowerCase() === chip.toLowerCase();
@@ -180,32 +186,28 @@ function AskAlPage() {
             })}
           </div>
 
-          <p className="mt-5 text-sm leading-relaxed text-dust">{AFFILIATE_DISCLOSURE}</p>
+          <p className="mt-4 text-sm leading-relaxed text-dust">{AFFILIATE_DISCLOSURE}</p>
 
           {activeQuery ? (
-            <div className="mt-6 border-t border-line pt-6">
-              <AmazonSearchLink query={activeQuery} />
-
-              {catalogHits.length > 0 ? (
-                <div className="mt-6">
-                  <h3 className="text-xs font-medium tracking-widest text-dust uppercase">
-                    In the bay
-                  </h3>
-                  <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-                    {catalogHits.map((product) => (
-                      <li key={product.slug}>
-                        <CatalogHit product={product} />
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : (
-                <p className="mt-4 text-sm text-stone">
-                  Nothing in the nine-SKU bay for “{activeQuery}”. Amazon UK is
-                  the aisle.
-                </p>
-              )}
-            </div>
+            catalogHits.length > 0 ? (
+              <div className="mt-5 border-t border-line pt-5">
+                <h3 className="text-xs font-medium tracking-widest text-dust uppercase">
+                  In the bay
+                </h3>
+                <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+                  {catalogHits.map((product) => (
+                    <li key={product.slug}>
+                      <CatalogHit product={product} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <p className="mt-3 text-sm text-stone">
+                Nothing in the nine-SKU bay for “{activeQuery}”. Amazon UK is
+                the aisle.
+              </p>
+            )
           ) : null}
         </div>
       </section>
