@@ -26,6 +26,8 @@ export const AMAZON_PICK_ASINS = {
   cabinCursor: "B07W5JKHFZ",
   twinLead240: "B0CFZPSPBY",
   secondWindow16: "B0CJCBQYDY",
+  ableweHub: "B0DN9F245H",
+  ankerZolo20k: "B0CZ9LH53B",
 } as const;
 
 type ProductBase = {

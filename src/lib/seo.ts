@@ -7,16 +7,32 @@ export const SITE_ORIGIN = "https://alsaidropship.com";
 export const FORMSUBMIT_ACTION = `https://formsubmit.co/${CONTACT_EMAIL}`;
 export const FORMSUBMIT_AJAX = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
-export function pageHead(title: string, description: string, path?: string) {
+export function pageHead(
+  title: string,
+  description: string,
+  path?: string,
+  options?: { type?: "website" | "article" },
+) {
+  const url = path ? `${SITE_ORIGIN}${path}` : SITE_ORIGIN;
+  const image = `${SITE_ORIGIN}/og.jpg`;
+  const type = options?.type ?? "website";
   return {
     meta: [
       { title },
       { name: "description", content: description },
       { name: "robots", content: "index, follow" },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: type },
+      { property: "og:url", content: url },
+      { property: "og:image", content: image },
+      { property: "og:site_name", content: APP_NAME },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: image },
     ],
-    ...(path
-      ? { links: [{ rel: "canonical", href: `${SITE_ORIGIN}${path}` }] }
-      : {}),
+    ...(path ? { links: [{ rel: "canonical", href: url }] } : {}),
   };
 }
 
@@ -114,6 +130,7 @@ export function articleJsonLd(article: {
     "@type": "Article",
     headline: article.title,
     description: article.description,
+    image: `${SITE_ORIGIN}/og.jpg`,
     datePublished: article.published,
     dateModified: article.published,
     author: { "@type": "Organization", name: APP_NAME, url: SITE_ORIGIN },

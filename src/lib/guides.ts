@@ -72,6 +72,22 @@ export const guides: Guide[] = [
     ],
     affiliateSlug: "flightbrick-100",
   },
+  {
+    slug: "after-summer-desk-reset",
+    title: "Summer's unpacked. Here's what stays on the desk.",
+    kicker: "Desk",
+    description:
+      "Five bits of travel kit that earn their place once you're home: hub, laptop stand, mouse, portable monitor, 100W charger and cables, plus the power bank for the commute.",
+    published: "2026-09-24",
+    relatedSlugs: [
+      "runway-riser",
+      "cabin-cursor",
+      "second-window-16",
+      "flightbrick-100",
+      "twin-lead-240",
+    ],
+    affiliateSlug: "runway-riser",
+  },
 ];
 
 export function getGuide(slug: string) {

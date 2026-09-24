@@ -24,6 +24,19 @@ function AmazonPick({ asin }: { asin: string }) {
   );
 }
 
+function AmazonText({ asin, children }: { asin: string; children: ReactNode }) {
+  return (
+    <a
+      href={affiliateProduct(asin)}
+      target="_blank"
+      rel="noopener noreferrer nofollow sponsored"
+      className="text-clay hover:text-clay-dark"
+    >
+      {children}
+    </a>
+  );
+}
+
 function GanBody() {
   return (
     <>
@@ -310,12 +323,100 @@ function TravelDeskBody() {
   );
 }
 
+function AfterSummerBody() {
+  return (
+    <>
+      <p>
+        The suitcase is back in the loft, the sunburn has faded, and the laptop is on the kitchen
+        table again. Most of the tech you took away for the summer can do a second job at home, and
+        a few cheap additions make the switch painless. Here's what I'd keep out of the drawer this
+        autumn.
+      </p>
+      <h2>1. Turn the travel laptop into a proper desk setup</h2>
+      <p>
+        One cable, everything connected. The{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.ableweHub}>ABLEWE 8-in-1 USB-C hub</AmazonText> plugs
+        your monitor, keyboard, mouse and card reader into the laptop all at once, so "going to
+        work" means plugging in one lead rather than five.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.ableweHub} />
+      <h2>2. Lift the screen and save your neck</h2>
+      <p>
+        Hunching over a laptop on a sofa was fine on holiday. It isn't fine for eight hours a day.
+        The{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.runwayRiser}>
+          UGREEN fold-flat aluminium laptop stand
+        </AmazonText>{" "}
+        (
+        <ShopLink slug="runway-riser">Runway Riser</ShopLink>
+        ) raises the screen to a sensible height and still folds into its pouch for the next trip.
+        Pair it with the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.cabinCursor}>Logitech MX Master 3S</AmazonText> (
+        <ShopLink slug="cabin-cursor">Cabin Cursor</ShopLink>
+        ), which has quiet clicks for calls and can switch between three devices, so the trackpad
+        can retire for the season.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.runwayRiser} />
+      <AmazonPick asin={AMAZON_PICK_ASINS.cabinCursor} />
+      <h2>3. Add a second screen without buying a monitor arm</h2>
+      <p>
+        The{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.secondWindow16}>
+          ARZOPA 16.1-inch portable monitor
+        </AmazonText>{" "}
+        (
+        <ShopLink slug="second-window-16">Second Window 16</ShopLink>
+        ) sits next to the laptop on its kickstand and connects over USB-C. When you're done, it
+        slides into a bag, which suits a spare room that's also a guest room.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.secondWindow16} />
+      <h2>4. Swap three chargers for one</h2>
+      <p>
+        If summer left you with a tangle of bricks, the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.flightbrick100}>
+          Anker 100W 3-port GaN charger
+        </AmazonText>{" "}
+        (
+        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink>
+        ) charges your laptop, phone and earbuds from one socket, and its little display shows what
+        each device is drawing. Your charger is only as fast as its cable, so the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.twinLead240}>
+          Anker 240W right-angle USB-C 2-pack
+        </AmazonText>{" "}
+        (
+        <ShopLink slug="twin-lead-240">Twin Lead 240</ShopLink>
+        ) is worth adding: keep one lead at the desk and one in the bag.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
+      <AmazonPick asin={AMAZON_PICK_ASINS.twinLead240} />
+      <h2>5. Keep the power bank for the commute</h2>
+      <p>
+        The holiday power bank doesn't have to go back in a drawer. The{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.ankerZolo20k}>Anker Zolo 20K</AmazonText> is just as
+        useful on a delayed train in November as it was at the airport gate in July.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.ankerZolo20k} />
+      <p>
+        That's the whole list. None of it is flashy, and all of it removes a small daily annoyance.
+      </p>
+      <p>Fly light, charge full.</p>
+      <p>Al</p>
+      <h2>The affiliate bit, once</h2>
+      <p>
+        As an Amazon Associate, Al's AI Drop Ship earns from qualifying purchases. Prices and stock
+        change, so check the linked Amazon UK listing before you buy.
+      </p>
+    </>
+  );
+}
+
 const bodies: Record<string, () => ReactNode> = {
   "65w-gan-charger-travel": GanBody,
   "anc-headphones-vs-earbuds-commute": AncBody,
   "dropship-lead-times": LeadTimeBody,
   "packing-power-september": PackingPowerBody,
   "travel-desk-september": TravelDeskBody,
+  "after-summer-desk-reset": AfterSummerBody,
 };
 
 export function GuideArticle({ guide }: { guide: Guide }) {
