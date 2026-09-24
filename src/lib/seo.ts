@@ -39,7 +39,7 @@ export function websiteJsonLd() {
         description: APP_DESCRIPTION,
         potentialAction: {
           "@type": "SearchAction",
-          target: `${SITE_ORIGIN}/shop?q={search_term_string}`,
+          target: `${SITE_ORIGIN}/ask-al?q={search_term_string}`,
           "query-input": "required name=search_term_string",
         },
       },
