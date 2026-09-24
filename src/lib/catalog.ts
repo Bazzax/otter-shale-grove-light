@@ -31,23 +31,49 @@ export const TECH_SEARCH_CHIPS = [
 export const CATEGORIES = ["Audio", "Power", "Desk", "Storage", "Carry"] as const;
 export type Category = (typeof CATEGORIES)[number];
 
-export type Product = {
+/** Verified Amazon UK ASINs for affiliate-only bay picks. */
+export const AMAZON_PICK_ASINS = {
+  flightbrick100: "B0FL2DR4TH",
+  runwayRiser: "B08TLVKBMJ",
+  cabinCursor: "B07W5JKHFZ",
+  twinLead240: "B0CFZPSPBY",
+  secondWindow16: "B0CJCBQYDY",
+  ableweHub: "B0DN9F245H",
+  ankerZolo20k: "B0CZ9LH53B",
+} as const;
+
+type ProductBase = {
   slug: string;
   name: string;
-  price: number;
   category: Category;
   tagline: string;
   description: string;
   details: string[];
   alNote: string;
-  shipsFrom: string;
-  etaDays: [number, number];
   image: string;
   asin: string;
   affiliateUrl: string;
   affiliateLabel: string;
   featured?: boolean;
 };
+
+export type DropshipProduct = ProductBase & {
+  amazonPick?: false;
+  price: number;
+  shipsFrom: string;
+  etaDays: [number, number];
+};
+
+/** Amazon UK affiliate pick — not sold as dropship cargo, no on-site price. */
+export type AmazonPickProduct = ProductBase & {
+  amazonPick: true;
+};
+
+export type Product = DropshipProduct | AmazonPickProduct;
+
+export function isAmazonPick(product: Product): product is AmazonPickProduct {
+  return product.amazonPick === true;
+}
 
 export const catalog: Product[] = [
   {
@@ -260,6 +286,111 @@ export const catalog: Product[] = [
     affiliateUrl: affiliateProduct("B0B4VG6XBP"),
     affiliateLabel: "Amazon UK",
   },
+  {
+    slug: "flightbrick-100",
+    name: "FlightBrick 100",
+    amazonPick: true,
+    category: "Power",
+    tagline: "100W GaN, three ports, a live wattage display, folding UK pins.",
+    description:
+      "Anker’s 100W 3-port GaN brick with a smart display. Two USB-C, one USB-A, foldable Type-G pins, and a readout of what each port is actually pulling. USB-C cable in the box. This is an Amazon UK affiliate pick — Al does not dropship it.",
+    details: [
+      "100W GaN, 3 ports (2× USB-C + USB-A)",
+      "Smart display / live wattage readout",
+      "Foldable UK Type-G pins, 100–240V",
+      "USB-C cable included · dark grey · B121B/A121B",
+    ],
+    alNote:
+      "Hotel desks have one free socket. If you still travel with a 65W brick plus a phone cube, this is the step up. I do not invent the live price — tap the listing.",
+    image: "/products/flightbrick-100.svg",
+    asin: AMAZON_PICK_ASINS.flightbrick100,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.flightbrick100),
+    affiliateLabel: "Amazon UK",
+  },
+  {
+    slug: "runway-riser",
+    name: "Runway Riser",
+    amazonPick: true,
+    category: "Desk",
+    tagline: "Fold-flat aluminium stand. Raises the screen. Packs in a pouch.",
+    description:
+      "UGREEN’s adjustable aluminium laptop riser for café and hotel tables. Five height options, folds into a carry pouch, covers roughly 8–17.3 inch machines. Scratch-padded. Amazon UK affiliate — not dropship cargo.",
+    details: [
+      "Adjustable aluminium riser, five heights",
+      "Folds flat into a carry pouch",
+      "Fits 8–17.3 in laptops and tablets",
+      "Scratch-padded · silver · model 40289",
+    ],
+    alNote:
+      "Working flat on a table for eight hours is how trips get expensive in physio. Pair it with Drift if you already carry a separate board. Price lives on Amazon.",
+    image: "/products/runway-riser.svg",
+    asin: AMAZON_PICK_ASINS.runwayRiser,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.runwayRiser),
+    affiliateLabel: "Amazon UK",
+  },
+  {
+    slug: "cabin-cursor",
+    name: "Cabin Cursor",
+    amazonPick: true,
+    category: "Desk",
+    tagline: "MX Master 3S in graphite. Quiet clicks. Switches machines.",
+    description:
+      "Logitech MX Master 3S — the mouse that earns bag space on a long edit day. MagSpeed scrolling, quiet clicks for hotel calls, glass tracking, Easy-Switch across machines, USB-C and Bluetooth. Graphite. Affiliate listing only.",
+    details: [
+      "MX Master 3S · graphite · 910-006559",
+      "Quiet clicks, MagSpeed scroll, 8K DPI",
+      "Tracks on glass · Easy-Switch, up to 3 devices",
+      "USB-C + Bluetooth · Windows, Linux, Chrome",
+    ],
+    alNote:
+      "Trackpads survive short flights. Spreadsheets do not. I do not dropship Logitech. Shop the tagged UK listing and read the live stock.",
+    image: "/products/cabin-cursor.svg",
+    asin: AMAZON_PICK_ASINS.cabinCursor,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.cabinCursor),
+    affiliateLabel: "Amazon UK",
+  },
+  {
+    slug: "twin-lead-240",
+    name: "Twin Lead 240",
+    amazonPick: true,
+    category: "Power",
+    tagline: "240W-rated right-angle USB-C pair. Braided. Six feet each.",
+    description:
+      "Anker’s 240W USB-C to USB-C right-angle 2-pack. Braided 90-degree ends for tight laptop ports, cars, and hotel nightstands. Six feet each. A 100W brick with a tired 60W cable is cosplay. Amazon UK affiliate pick.",
+    details: [
+      "240W-rated USB-C to USB-C, 2-pack",
+      "Right-angle / 90° ends, braided jacket",
+      "6 ft each · model A81L6",
+      "For MacBook, iPhone 15/16/17, iPad, Galaxy",
+    ],
+    alNote:
+      "Pack a pair, leave one at the desk. Right-angle ends survive bag crush better than a straight lead yanked at the port. Check the live UK listing — I do not print a price.",
+    image: "/products/twin-lead-240.svg",
+    asin: AMAZON_PICK_ASINS.twinLead240,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.twinLead240),
+    affiliateLabel: "Amazon UK",
+  },
+  {
+    slug: "second-window-16",
+    name: "Second Window 16",
+    amazonPick: true,
+    category: "Desk",
+    tagline: "16.1 inch FHD 144Hz portable panel. USB-C. Kickstand. Backpackable.",
+    description:
+      "ARZOPA Z1FC — a 16.1 inch FHD 144Hz portable monitor for hotel desks and café dual-screen mode. 106% sRGB, HDR, USB-C plug-and-play or Mini HDMI, kickstand, slim enough to sit beside the laptop. Affiliate only. Al does not hold a panel.",
+    details: [
+      "16.1 in FHD 144Hz · Z1FC",
+      "106% sRGB, HDR, eye-protection mode",
+      "USB-C plug-and-play + Mini HDMI",
+      "Kickstand · backpack-slim · ~1.7 lb class",
+    ],
+    alNote:
+      "One laptop panel means Slack eating half the spreadsheet. Your machine needs a full-featured USB-C port for single-cable video. Sleeve the panel so it does not share scratches with the brick.",
+    image: "/products/second-window-16.svg",
+    asin: AMAZON_PICK_ASINS.secondWindow16,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.secondWindow16),
+    affiliateLabel: "Amazon UK",
+  },
 ];
 
 export function getProduct(slug: string) {
@@ -282,6 +413,11 @@ const PRODUCT_SEARCH_HINTS: Record<string, string> = {
   "trace-hub": "usb-c hub dongle dock",
   "pulse-one": "headphones headset cans",
   "ember-buds": "earbuds buds headphones",
+  "flightbrick-100": "charger chargers gan brick 100w",
+  "runway-riser": "laptop stand stands riser",
+  "cabin-cursor": "mouse mice cursor",
+  "twin-lead-240": "cable cables usb-c lead",
+  "second-window-16": "monitor monitors portable screen",
 };
 
 function queryTermGroups(query: string): string[][] {
@@ -328,8 +464,10 @@ export function matchCatalog(query: string): Product[] {
 }
 
 export const catalogDigest = catalog
-  .map(
-    (p) =>
-      `${p.slug} | ${p.name} | $${p.price} | ${p.category} | ${p.tagline} | dropship from ${p.shipsFrom} in ${p.etaDays[0]}-${p.etaDays[1]} days | affiliate ${p.affiliateLabel}: ${p.affiliateUrl}`,
-  )
+  .map((p) => {
+    const channel = isAmazonPick(p)
+      ? "Amazon UK affiliate pick — not dropshipped, no on-site price"
+      : `$${p.price} | dropship from ${p.shipsFrom} in ${p.etaDays[0]}-${p.etaDays[1]} days`;
+    return `${p.slug} | ${p.name} | ${p.category} | ${p.tagline} | ${channel} | affiliate ${p.affiliateLabel}: ${p.affiliateUrl}`;
+  })
   .join("\n");

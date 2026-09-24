@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { catalog, getProduct } from "./catalog";
+import { catalog, getProduct, isAmazonPick } from "./catalog";
 
 export type Line = { slug: string; qty: number };
 
@@ -46,7 +46,8 @@ export const useCart = create<CartState>()(
       lines: [],
       lastOrder: null,
       add: (slug, qty = 1) => {
-        if (!getProduct(slug)) return;
+        const product = getProduct(slug);
+        if (!product || isAmazonPick(product)) return;
         const lines = get().lines;
         const existing = lines.find((l) => l.slug === slug);
         if (existing) {
@@ -76,7 +77,7 @@ export const useCart = create<CartState>()(
         const lines: OrderLine[] = get()
           .lines.map((l) => {
             const product = getProduct(l.slug);
-            if (!product) return null;
+            if (!product || isAmazonPick(product)) return null;
             return {
               slug: l.slug,
               qty: l.qty,
@@ -110,6 +111,7 @@ export function cartCount(lines: Line[]) {
 export function cartTotal(lines: Line[]) {
   return lines.reduce((sum, l) => {
     const product = catalog.find((p) => p.slug === l.slug);
-    return sum + (product ? product.price * l.qty : 0);
+    if (!product || isAmazonPick(product)) return sum;
+    return sum + product.price * l.qty;
   }, 0);
 }

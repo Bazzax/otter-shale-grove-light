@@ -180,7 +180,7 @@ function Home() {
             <ArrowRight className="size-4" />
           </Link>
         </div>
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2">
           {guides.map((guide) => (
             <GuideCard key={guide.slug} guide={guide} />
           ))}

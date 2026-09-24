@@ -7,7 +7,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { askAl, type ChatTurn } from "@/lib/ask-al";
 import { parseAskAlReply } from "@/lib/ask-al-reply";
-import { getProduct, matchCatalog, TECH_SEARCH_CHIPS, type Product } from "@/lib/catalog";
+import {
+  catalog,
+  getProduct,
+  isAmazonPick,
+  matchCatalog,
+  TECH_SEARCH_CHIPS,
+  type Product,
+} from "@/lib/catalog";
 import { formatPrice } from "@/lib/format";
 import { APP_NAME, pageHead } from "@/lib/seo";
 import { cn } from "@/lib/utils";
@@ -112,8 +119,8 @@ function AskAlPage() {
       </h1>
       <p className="mt-3 max-w-2xl text-pretty text-stone">
         Search all of Amazon UK tech from the hangar — tagged so Al earns if you
-        buy. The drone still flies the nine-SKU bay underneath, and will open a
-        search when cargo is the wrong tool.
+        buy. The drone still flies the bay underneath, and will open a search
+        when cargo is the wrong tool.
       </p>
 
       <section
@@ -204,8 +211,7 @@ function AskAlPage() {
               </div>
             ) : (
               <p className="mt-3 text-sm text-stone">
-                Nothing in the nine-SKU bay for “{activeQuery}”. Amazon UK is
-                the aisle.
+                Nothing in the bay for “{activeQuery}”. Amazon UK is the aisle.
               </p>
             )
           ) : null}
@@ -246,9 +252,9 @@ function AskAlPage() {
               {messages.length === 0 && !pending ? (
                 <div className="flex h-full flex-col justify-end gap-6 py-4">
                   <p className="max-w-md text-stone">
-                    Channel open. Nine SKUs in the bay, plus a tagged search
-                    across Amazon UK tech. Start with a job, not a brand — or
-                    search the aisle above.
+                    Channel open. {catalog.length} SKUs in the bay, plus a tagged
+                    search across Amazon UK tech. Start with a job, not a brand —
+                    or search the aisle above.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {SUGGESTIONS.map((item) => (
@@ -332,7 +338,9 @@ function CatalogHit({ product }: { product: Product }) {
       <span className="min-w-0 py-1">
         <span className="block truncate font-display text-sm font-medium">{product.name}</span>
         <span className="mt-0.5 block truncate text-xs text-stone">{product.tagline}</span>
-        <span className="mt-1 block text-xs tabular-nums text-dust">{formatPrice(product.price)}</span>
+        <span className="mt-1 block text-xs tabular-nums text-dust">
+          {isAmazonPick(product) ? "Amazon UK pick" : formatPrice(product.price)}
+        </span>
       </span>
     </Link>
   );

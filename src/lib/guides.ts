@@ -4,6 +4,8 @@ import { APP_NAME } from "@/lib/seo";
 export type Guide = {
   slug: string;
   title: string;
+  /** Visible H1 when it should differ from the document title. */
+  heading?: string;
   kicker: string;
   description: string;
   published: string;
@@ -41,6 +43,50 @@ export const guides: Guide[] = [
     published: "2026-09-23",
     relatedSlugs: ["arc-gan", "orbit-bank", "ember-buds", "nimbus-ssd"],
     affiliateSlug: "nimbus-ssd",
+  },
+  {
+    slug: "packing-power-september",
+    title: "What I'd pack for power this month",
+    heading: "What I'd actually pack for power this month",
+    kicker: "Power",
+    description:
+      "Anker, UGREEN, Belkin, and a hotel-desk hub — tagged Amazon UK picks that match how people actually travel right now.",
+    published: "2026-09-23",
+    relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub"],
+    affiliateSlug: "arc-gan",
+  },
+  {
+    slug: "travel-desk-september",
+    title: "What I'd pack for a desk away from home",
+    heading: "What I'd actually pack for a desk away from home",
+    kicker: "Desk",
+    description:
+      "Honest Amazon UK travel-desk kit — 100W GaN, a fold-flat stand, a quiet mouse, high-watt leads, and a backpack second screen. Tagged links. No gimmicks.",
+    published: "2026-09-24",
+    relatedSlugs: [
+      "flightbrick-100",
+      "runway-riser",
+      "cabin-cursor",
+      "twin-lead-240",
+      "second-window-16",
+    ],
+    affiliateSlug: "flightbrick-100",
+  },
+  {
+    slug: "after-summer-desk-reset",
+    title: "Summer's unpacked. Here's what stays on the desk.",
+    kicker: "Desk",
+    description:
+      "Five bits of travel kit that earn their place once you're home: hub, laptop stand, mouse, portable monitor, 100W charger and cables, plus the power bank for the commute.",
+    published: "2026-09-24",
+    relatedSlugs: [
+      "runway-riser",
+      "cabin-cursor",
+      "second-window-16",
+      "flightbrick-100",
+      "twin-lead-240",
+    ],
+    affiliateSlug: "runway-riser",
   },
 ];
 

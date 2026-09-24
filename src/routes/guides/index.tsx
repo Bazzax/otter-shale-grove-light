@@ -5,7 +5,7 @@ import { guides } from "@/lib/guides";
 import { APP_NAME, breadcrumbJsonLd, pageHead } from "@/lib/seo";
 
 const DESCRIPTION =
-  "Al's flight log: short field notes on 65W GaN travel chargers, ANC for commutes, and what dropship lead times actually mean — plus Amazon UK affiliate exits.";
+  "Al's flight log: short field notes on 65W GaN travel chargers, ANC for commutes, dropship lead times, September power pack, a travel desk away from home, and an after-summer desk reset — plus Amazon UK affiliate exits.";
 
 export const Route = createFileRoute("/guides/")({
   head: () => pageHead(`Flight log | ${APP_NAME}`, DESCRIPTION, "/guides"),
@@ -26,14 +26,15 @@ function GuidesIndex() {
         Field notes from the drone
       </h1>
       <p className="mt-3 max-w-2xl text-stone">
-        Short, useful, a little dry. The bay is nine SKUs. These logs exist so you can pick a
-        charger, a commute kit, or an Amazon click without a lecture.{" "}
+        Short, useful, a little dry. These logs exist so you can pick a charger, a commute kit, a
+        September power pack, a desk away from home, an after-summer reset, or an Amazon click
+        without a lecture.{" "}
         <Link to="/faq" className="text-clay hover:text-clay-dark">
           Briefing
         </Link>{" "}
         if you only want the rules.
       </p>
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
+      <div className="mt-10 grid gap-5 md:grid-cols-2">
         {guides.map((guide) => (
           <GuideCard key={guide.slug} guide={guide} />
         ))}
