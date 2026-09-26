@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="MagDeck 10  10K Qi2 MagSafe power bank">
+  <rect width="1600" height="1200" fill="#0c121c"/>
+  <rect x="360" y="200" width="880" height="800" rx="40" fill="#141c28"/>
+  <rect x="560" y="300" width="480" height="600" rx="48" fill="#1f2a38"/>
+  <circle cx="800" cy="560" r="150" fill="#2a3544"/>
+  <circle cx="800" cy="560" r="108" fill="none" stroke="#00ffc2" stroke-width="12"/>
+  <circle cx="800" cy="560" r="36" fill="#04060a"/>
+  <rect x="640" y="360" width="320" height="70" rx="14" fill="#04060a"/>
+  <text x="800" y="408" text-anchor="middle" fill="#00ffc2" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="36" font-weight="600" letter-spacing="4">10K</text>
+  <polygon points="680,900 800,820 920,900" fill="#2a3544"/>
+  <polygon points="710,892 800,836 890,892" fill="#00ffc2" opacity="0.45"/>
+  <rect x="770" y="860" width="60" height="14" rx="6" fill="#9db0be"/>
+</svg>

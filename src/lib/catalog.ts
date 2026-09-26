@@ -40,6 +40,13 @@ export const AMAZON_PICK_ASINS = {
   secondWindow16: "B0CJCBQYDY",
   ableweHub: "B0DN9F245H",
   ankerZolo20k: "B0CZ9LH53B",
+  callLatch: "B07MM4V7NR",
+  worldBrick70: "B0BHQNMDNC",
+  twinViewDock: "B0BY8QNV1C",
+  softDeckMini: "B07W6GGC8W",
+  spotCue: "B06WP4QCKT",
+  fieldMat: "B07W5JK3Z2",
+  magDeck10: "B0CFDQ9QH5",
 } as const;
 
 type ProductBase = {
@@ -391,6 +398,153 @@ export const catalog: Product[] = [
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.secondWindow16),
     affiliateLabel: "Amazon UK",
   },
+  {
+    slug: "call-latch",
+    name: "CallLatch",
+    amazonPick: true,
+    category: "Carry",
+    tagline: "1080p clip-on cam. Stereo mics. A shutter that actually closes.",
+    description:
+      "Logitech C920S HD Pro — a Full HD 1080p/30fps webcam with dual stereo mics, HD light correction, and a physical privacy shutter for hotel and café calls when the laptop cam is a joke. USB plug-and-play for Zoom, Skype, PC, Mac, and tablets. Amazon UK affiliate pick — Al does not dropship it.",
+    details: [
+      "Logitech C920S HD Pro · 1080p/30fps",
+      "Clear stereo audio · HD light correction",
+      "Physical privacy shutter",
+      "USB · Zoom / Skype / PC / Mac · model 960-001252",
+    ],
+    alNote:
+      "Laptop cams lie. Clip this on, close the shutter when you leave the desk. I do not invent the live UK price — tap the tagged listing.",
+    image: "/products/call-latch.svg",
+    asin: AMAZON_PICK_ASINS.callLatch,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.callLatch),
+    affiliateLabel: "Amazon UK",
+  },
+  {
+    slug: "worldbrick-70",
+    name: "WorldBrick 70",
+    amazonPick: true,
+    category: "Power",
+    tagline: "70W GaN world plug. UK, EU, AU, US pins. Five USB ports.",
+    description:
+      "MOMAX 70W GaN universal travel adapter — one brick with UK/EU/AU/US pins, three USB-C PD ports and two USB-A QC ports. Laptop and phones without a pouch of country plugs. It is an adapter, not a voltage converter. Amazon UK affiliate — not dropship cargo.",
+    details: [
+      "70W GaN · UK / EU / AU / US pins",
+      "3× USB-C PD + 2× USB-A QC",
+      "Laptop, tablet, phone, headset class loads",
+      "Not a voltage converter · black · 1-World",
+    ],
+    alNote:
+      "Arc and FlightBrick cover a UK socket. This one covers the socket in the other country. Pack it, leave the bag of plugs at home. Price lives on Amazon.",
+    image: "/products/worldbrick-70.svg",
+    asin: AMAZON_PICK_ASINS.worldBrick70,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.worldBrick70),
+    affiliateLabel: "Amazon UK",
+  },
+  {
+    slug: "twinview-dock",
+    name: "TwinView Dock",
+    amazonPick: true,
+    category: "Desk",
+    tagline: "One USB-C, two HDMI. Dual 4K60. 100W through the same cable.",
+    description:
+      "UGREEN Revodok 206 — a packable 6-in-1 dual-HDMI USB-C dock. Dual 4K@60Hz, single 8K, 100W Power Delivery, and three 5Gbps USB data ports. Trace Hub is a simple multiport stick; this is hotel dual-monitor mode. Windows can extend two desks; macOS typically mirrors both externals. Affiliate listing only.",
+    details: [
+      "UGREEN Revodok 206 · 6-in-1 USB-C dock",
+      "2× HDMI · dual 4K@60Hz · single 8K",
+      "100W Power Delivery passthrough",
+      "3× 5Gbps USB data ports",
+    ],
+    alNote:
+      "A basic hub is one screen. This is two. Confirm your laptop’s USB-C can drive dual display before you pack it as gospel. I do not print a price.",
+    image: "/products/twinview-dock.svg",
+    asin: AMAZON_PICK_ASINS.twinViewDock,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.twinViewDock),
+    affiliateLabel: "Amazon UK",
+  },
+  {
+    slug: "softdeck-mini",
+    name: "SoftDeck Mini",
+    amazonPick: true,
+    category: "Desk",
+    tagline: "MX Keys Mini, graphite, UK layout. Quiet. Fits a sleeve.",
+    description:
+      "Logitech MX Keys Mini — compact backlit Bluetooth keyboard in graphite with a QWERTY UK layout. USB-C, Easy-Switch across three devices, metal build. Drift 75 stays on the home desk; this one slides into a sleeve next to the laptop. Pairs cleanly with Cabin Cursor. Amazon UK affiliate — Al does not dropship Logitech.",
+    details: [
+      "MX Keys Mini · graphite · QWERTY UK",
+      "Backlit, Bluetooth, USB-C",
+      "Easy-Switch, up to 3 devices",
+      "macOS, iOS, Windows, Linux, Android",
+    ],
+    alNote:
+      "Hotel walls are thin. This board is quiet on purpose. I do not dropship it and I do not invent the live listing price.",
+    image: "/products/softdeck-mini.svg",
+    asin: AMAZON_PICK_ASINS.softDeckMini,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.softDeckMini),
+    affiliateLabel: "Amazon UK",
+  },
+  {
+    slug: "spotcue",
+    name: "SpotCue",
+    amazonPick: true,
+    category: "Desk",
+    tagline: "Digital highlight remote. 30-metre range. Timer that buzzes.",
+    description:
+      "Logitech Spotlight — a wireless presentation remote with digital highlight and magnify instead of a red laser that dies on LED walls. Dual connectivity (2.4 GHz USB receiver and Bluetooth), about 30-metre range, on-device timer with haptic cue. Grey. Client pitch kit. Affiliate only.",
+    details: [
+      "Logitech Spotlight · grey",
+      "Digital highlight and magnify",
+      "30-metre range · Bluetooth + USB receiver",
+      "On-device timer with haptic cue · PC / Mac / iOS / Android",
+    ],
+    alNote:
+      "A red laser is cosplay on a bright panel. This draws a circle the room can see. Shop the tagged UK listing and read the live stock.",
+    image: "/products/spotcue.svg",
+    asin: AMAZON_PICK_ASINS.spotCue,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.spotCue),
+    affiliateLabel: "Amazon UK",
+  },
+  {
+    slug: "fieldmat",
+    name: "FieldMat",
+    amazonPick: true,
+    category: "Desk",
+    tagline: "30×70 Studio mat. Spill-resistant. Quiet glide. Packs flat.",
+    description:
+      "Logitech Studio Series desk mat in grey — a multifunctional 30×70 cm pad with an anti-slip base and a spill-resistant surface. Grounds Cabin Cursor and SoftDeck Mini on a sticky hotel desk without a permanent setup. Amazon UK affiliate pick. Al does not hold mats.",
+    details: [
+      "Logitech Studio Series desk mat · grey",
+      "About 30 × 70 cm extended pad",
+      "Spill-resistant surface · anti-slip base",
+      "Quiet mouse glide · packs flat",
+    ],
+    alNote:
+      "Hotel laminate is loud and sticky. This is the cheap desk upgrade that folds into a sleeve. Check the live UK listing — I do not print a price.",
+    image: "/products/fieldmat.svg",
+    asin: AMAZON_PICK_ASINS.fieldMat,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.fieldMat),
+    affiliateLabel: "Amazon UK",
+  },
+  {
+    slug: "magdeck-10",
+    name: "MagDeck 10",
+    amazonPick: true,
+    category: "Power",
+    tagline: "10K Qi2 MagGo. Snap. Charge. Kickstand FaceTime.",
+    description:
+      "Anker MagGo 10,000 mAh Qi2-certified 15W MagSafe-compatible power bank with a smart display, foldable stand, and a USB-C cable in the box. Orbit Mag is the 5,000 mAh day puck; this is the bigger travel bank for iPhone 13 / 14 / 15 / 16. Amazon UK affiliate — not dropship cargo.",
+    details: [
+      "Anker MagGo · 10,000 mAh · Qi2 15W",
+      "MagSafe-compatible · smart display",
+      "Foldable stand · USB-C cable included",
+      "iPhone 13 / 14 / 15 / 16 MagSafe series",
+    ],
+    alNote:
+      "Orbit Mag covers a day. MagDeck 10 covers the day you miss the socket. Snap it, read the display, prop FaceTime. Price lives on the tagged listing.",
+    image: "/products/magdeck-10.svg",
+    asin: AMAZON_PICK_ASINS.magDeck10,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.magDeck10),
+    affiliateLabel: "Amazon UK",
+  },
 ];
 
 export function getProduct(slug: string) {
@@ -418,6 +572,13 @@ const PRODUCT_SEARCH_HINTS: Record<string, string> = {
   "cabin-cursor": "mouse mice cursor",
   "twin-lead-240": "cable cables usb-c lead",
   "second-window-16": "monitor monitors portable screen",
+  "call-latch": "webcam webcams camera video call zoom",
+  "worldbrick-70": "travel adapter adapters plug charger chargers gan international",
+  "twinview-dock": "dock docks hub usb-c hdmi dual monitor",
+  "softdeck-mini": "keyboard keyboards compact travel keys",
+  "spotcue": "remote remotes presentation pointer clicker",
+  "fieldmat": "desk mat mats mousepad pad",
+  "magdeck-10": "power bank magsafe qi2 magnetic charger",
 };
 
 function queryTermGroups(query: string): string[][] {
