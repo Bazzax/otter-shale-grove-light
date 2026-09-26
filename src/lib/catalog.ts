@@ -309,7 +309,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Hotel desks have one free socket. If you still travel with a 65W brick plus a phone cube, this is the step up. I do not invent the live price — tap the listing.",
-    image: "/products/flightbrick-100.svg",
+    image: "/products/flightbrick-100.jpg",
     asin: AMAZON_PICK_ASINS.flightbrick100,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.flightbrick100),
     affiliateLabel: "Amazon UK",
@@ -330,7 +330,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Working flat on a table for eight hours is how trips get expensive in physio. Pair it with Drift if you already carry a separate board. Price lives on Amazon.",
-    image: "/products/runway-riser.svg",
+    image: "/products/runway-riser.jpg",
     asin: AMAZON_PICK_ASINS.runwayRiser,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.runwayRiser),
     affiliateLabel: "Amazon UK",
@@ -351,7 +351,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Trackpads survive short flights. Spreadsheets do not. I do not dropship Logitech. Shop the tagged UK listing and read the live stock.",
-    image: "/products/cabin-cursor.svg",
+    image: "/products/cabin-cursor.jpg",
     asin: AMAZON_PICK_ASINS.cabinCursor,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.cabinCursor),
     affiliateLabel: "Amazon UK",
@@ -372,7 +372,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Pack a pair, leave one at the desk. Right-angle ends survive bag crush better than a straight lead yanked at the port. Check the live UK listing — I do not print a price.",
-    image: "/products/twin-lead-240.svg",
+    image: "/products/twin-lead-240.jpg",
     asin: AMAZON_PICK_ASINS.twinLead240,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.twinLead240),
     affiliateLabel: "Amazon UK",
@@ -393,7 +393,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "One laptop panel means Slack eating half the spreadsheet. Your machine needs a full-featured USB-C port for single-cable video. Sleeve the panel so it does not share scratches with the brick.",
-    image: "/products/second-window-16.svg",
+    image: "/products/second-window-16.jpg",
     asin: AMAZON_PICK_ASINS.secondWindow16,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.secondWindow16),
     affiliateLabel: "Amazon UK",
@@ -414,7 +414,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Laptop cams lie. Clip this on, close the shutter when you leave the desk. I do not invent the live UK price — tap the tagged listing.",
-    image: "/products/call-latch.svg",
+    image: "/products/call-latch.jpg",
     asin: AMAZON_PICK_ASINS.callLatch,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.callLatch),
     affiliateLabel: "Amazon UK",
@@ -435,7 +435,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Arc and FlightBrick cover a UK socket. This one covers the socket in the other country. Pack it, leave the bag of plugs at home. Price lives on Amazon.",
-    image: "/products/worldbrick-70.svg",
+    image: "/products/worldbrick-70.jpg",
     asin: AMAZON_PICK_ASINS.worldBrick70,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.worldBrick70),
     affiliateLabel: "Amazon UK",
@@ -456,7 +456,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "A basic hub is one screen. This is two. Confirm your laptop’s USB-C can drive dual display before you pack it as gospel. I do not print a price.",
-    image: "/products/twinview-dock.svg",
+    image: "/products/twinview-dock.jpg",
     asin: AMAZON_PICK_ASINS.twinViewDock,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.twinViewDock),
     affiliateLabel: "Amazon UK",
@@ -477,7 +477,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Hotel walls are thin. This board is quiet on purpose. I do not dropship it and I do not invent the live listing price.",
-    image: "/products/softdeck-mini.svg",
+    image: "/products/softdeck-mini.jpg",
     asin: AMAZON_PICK_ASINS.softDeckMini,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.softDeckMini),
     affiliateLabel: "Amazon UK",
@@ -498,7 +498,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "A red laser is cosplay on a bright panel. This draws a circle the room can see. Shop the tagged UK listing and read the live stock.",
-    image: "/products/spotcue.svg",
+    image: "/products/spotcue.jpg",
     asin: AMAZON_PICK_ASINS.spotCue,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.spotCue),
     affiliateLabel: "Amazon UK",
@@ -519,7 +519,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Hotel laminate is loud and sticky. This is the cheap desk upgrade that folds into a sleeve. Check the live UK listing — I do not print a price.",
-    image: "/products/fieldmat.svg",
+    image: "/products/fieldmat.jpg",
     asin: AMAZON_PICK_ASINS.fieldMat,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.fieldMat),
     affiliateLabel: "Amazon UK",
@@ -540,7 +540,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Orbit Mag covers a day. MagDeck 10 covers the day you miss the socket. Snap it, read the display, prop FaceTime. Price lives on the tagged listing.",
-    image: "/products/magdeck-10.svg",
+    image: "/products/magdeck-10.jpg",
     asin: AMAZON_PICK_ASINS.magDeck10,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.magDeck10),
     affiliateLabel: "Amazon UK",
