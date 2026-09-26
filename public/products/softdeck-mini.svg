@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" role="img" aria-label="SoftDeck Mini  compact graphite travel keyboard">
+  <rect width="1600" height="1200" fill="#0c121c"/>
+  <rect x="220" y="240" width="1160" height="720" rx="40" fill="#141c28"/>
+  <rect x="320" y="400" width="960" height="400" rx="32" fill="#1f2a38"/>
+  <g fill="#2a3544">
+    <rect x="360" y="440" width="72" height="52" rx="8"/>
+    <rect x="448" y="440" width="72" height="52" rx="8"/>
+    <rect x="536" y="440" width="72" height="52" rx="8"/>
+    <rect x="624" y="440" width="72" height="52" rx="8"/>
+    <rect x="712" y="440" width="72" height="52" rx="8"/>
+    <rect x="800" y="440" width="72" height="52" rx="8"/>
+    <rect x="888" y="440" width="72" height="52" rx="8"/>
+    <rect x="976" y="440" width="72" height="52" rx="8"/>
+    <rect x="1064" y="440" width="176" height="52" rx="8"/>
+    <rect x="360" y="512" width="100" height="52" rx="8"/>
+    <rect x="476" y="512" width="72" height="52" rx="8"/>
+    <rect x="564" y="512" width="72" height="52" rx="8"/>
+    <rect x="652" y="512" width="72" height="52" rx="8"/>
+    <rect x="740" y="512" width="72" height="52" rx="8"/>
+    <rect x="828" y="512" width="72" height="52" rx="8"/>
+    <rect x="916" y="512" width="72" height="52" rx="8"/>
+    <rect x="1004" y="512" width="72" height="52" rx="8"/>
+    <rect x="1092" y="512" width="148" height="52" rx="8"/>
+    <rect x="360" y="584" width="130" height="52" rx="8"/>
+    <rect x="508" y="584" width="72" height="52" rx="8"/>
+    <rect x="596" y="584" width="72" height="52" rx="8"/>
+    <rect x="684" y="584" width="72" height="52" rx="8"/>
+    <rect x="772" y="584" width="72" height="52" rx="8"/>
+    <rect x="860" y="584" width="72" height="52" rx="8"/>
+    <rect x="948" y="584" width="72" height="52" rx="8"/>
+    <rect x="1036" y="584" width="204" height="52" rx="8"/>
+    <rect x="360" y="656" width="160" height="52" rx="8"/>
+    <rect x="540" y="656" width="480" height="52" rx="8"/>
+    <rect x="1040" y="656" width="200" height="52" rx="8"/>
+  </g>
+  <rect x="684" y="584" width="72" height="52" rx="8" fill="#00ffc2"/>
+  <rect x="360" y="360" width="160" height="16" rx="8" fill="#00ffc2" opacity="0.55"/>
+</svg>
