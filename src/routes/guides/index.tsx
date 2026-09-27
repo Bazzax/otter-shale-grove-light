@@ -5,7 +5,7 @@ import { guides } from "@/lib/guides";
 import { APP_NAME, breadcrumbJsonLd, pageHead } from "@/lib/seo";
 
 const DESCRIPTION =
-  "Al's flight log: short field notes on 65W GaN travel chargers, ANC for commutes, dropship lead times, September power pack, a travel desk away from home, and an after-summer desk reset — plus Amazon UK affiliate exits.";
+  "Al's flight log: short field notes on 65W GaN travel chargers, ANC for commutes, dropship lead times, September power pack, a travel desk away from home, an after-summer desk reset, UK world adapters, dual-HDMI USB-C docks, and webcams for calls — plus Amazon UK affiliate exits.";
 
 export const Route = createFileRoute("/guides/")({
   head: () => pageHead(`Flight log | ${APP_NAME}`, DESCRIPTION, "/guides"),
@@ -27,8 +27,8 @@ function GuidesIndex() {
       </h1>
       <p className="mt-3 max-w-2xl text-stone">
         Short, useful, a little dry. These logs exist so you can pick a charger, a commute kit, a
-        September power pack, a desk away from home, an after-summer reset, or an Amazon click
-        without a lecture.{" "}
+        September power pack, a desk away from home, an after-summer reset, a world adapter, a
+        dual-HDMI dock, a webcam for calls, or an Amazon click without a lecture.{" "}
         <Link to="/faq" className="text-clay hover:text-clay-dark">
           Briefing
         </Link>{" "}
