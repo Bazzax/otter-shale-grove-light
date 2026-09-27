@@ -1,7 +1,10 @@
+export const PRICE_LOCALE = "en-GB";
+export const PRICE_CURRENCY = "GBP";
+
 export function formatPrice(amount: number) {
-  return new Intl.NumberFormat("en-US", {
+  return new Intl.NumberFormat(PRICE_LOCALE, {
     style: "currency",
-    currency: "USD",
+    currency: PRICE_CURRENCY,
     maximumFractionDigits: 0,
   }).format(amount);
 }

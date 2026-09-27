@@ -182,6 +182,9 @@ function CheckoutPage() {
             <span className="text-sm text-stone">Estimated total</span>
             <span className="font-display text-2xl tabular-nums">{formatPrice(total)}</span>
           </div>
+          <p className="mt-2 text-xs text-pretty text-dust">
+            Pounds in the tank — fuel for the drone. Demo only; nothing is billed.
+          </p>
         </div>
       </aside>
     </main>

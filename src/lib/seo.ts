@@ -1,3 +1,5 @@
+import { PRICE_CURRENCY } from "./format";
+
 export const APP_NAME = "Al's AI Drop Ship";
 export const APP_TAGLINE = "A sentient dropship drone, online, programmed to deliver.";
 export const APP_DESCRIPTION =
@@ -88,7 +90,7 @@ export function productJsonLd(product: {
         }
       : {
           "@type": "Offer",
-          priceCurrency: "USD",
+          priceCurrency: PRICE_CURRENCY,
           price: product.price.toFixed(2),
           availability: "https://schema.org/InStock",
           url: pageUrl,
@@ -175,8 +177,8 @@ export const FAQS = [
     a: "On this site, nothing packs. If you used a real dropshipper, the window on the card (often 6–16 days from Shenzhen, Taipei, Seoul) is supplier to door, not a courier promise. Weekends, batching, and a customs pause can stretch it. Amazon UK affiliate orders use Amazon's own UK delivery times — usually the move if you need it this week.",
   },
   {
-    q: "Why are bay prices in US dollars?",
-    a: "The catalog is listed in USD. Amazon UK checkout is in pounds. Compare the job, not the currency badge.",
+    q: "Why are bay prices in pounds?",
+    a: "The bay lists cargo in GBP — fuel for the drone, so Al stays airborne. Amazon UK checkout is pounds too. Compare the job, not the badge. Affiliate picks still have no on-site price.",
   },
   {
     q: "Is this an honest affiliate site?",

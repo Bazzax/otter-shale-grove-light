@@ -1,3 +1,5 @@
+import { formatPrice } from "./format";
+
 export const AMAZON_ASSOCIATE_TAG = "alsaidropship-21";
 const AMAZON_UK_DP = "https://www.amazon.co.uk/dp";
 const AMAZON_UK_SEARCH = "https://www.amazon.co.uk/s";
@@ -628,7 +630,7 @@ export const catalogDigest = catalog
   .map((p) => {
     const channel = isAmazonPick(p)
       ? "Amazon UK affiliate pick — not dropshipped, no on-site price"
-      : `$${p.price} | dropship from ${p.shipsFrom} in ${p.etaDays[0]}-${p.etaDays[1]} days`;
+      : `${formatPrice(p.price)} | dropship from ${p.shipsFrom} in ${p.etaDays[0]}-${p.etaDays[1]} days`;
     return `${p.slug} | ${p.name} | ${p.category} | ${p.tagline} | ${channel} | affiliate ${p.affiliateLabel}: ${p.affiliateUrl}`;
   })
   .join("\n");

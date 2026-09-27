@@ -35,7 +35,7 @@ export function CartSheet({
           <SheetTitle>Cargo bay</SheetTitle>
           <SheetDescription>
             {count === 0
-              ? "Empty. Load dropship cargo, or use an affiliate link on a product."
+              ? "Empty tank. Load dropship cargo, or use an affiliate link on a product."
               : `${count} ${count === 1 ? "item" : "items"} ready to dropship.`}
           </SheetDescription>
         </SheetHeader>
@@ -116,7 +116,8 @@ export function CartSheet({
                   </span>
                 </div>
                 <p className="mb-4 text-xs text-pretty text-dust">
-                  Demo bay. No payment. Dropship lead times are on each product.
+                  GBP is fuel for the drone. Demo bay — no payment. Lead times
+                  stay on each card.
                 </p>
                 <Button asChild className="w-full" size="lg">
                   <Link to="/checkout" onClick={() => onOpenChange(false)}>
