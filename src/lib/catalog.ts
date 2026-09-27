@@ -1,4 +1,4 @@
-import { formatProductPrice } from "./format";
+import { formatPrice, formatProductPrice } from "./format";
 
 export const AMAZON_ASSOCIATE_TAG = "alsaidropship-21";
 const AMAZON_UK_DP = "https://www.amazon.co.uk/dp";
@@ -54,7 +54,7 @@ export const AMAZON_PICK_ASINS = {
 type ProductBase = {
   slug: string;
   name: string;
-  /** Dropship: USD. Amazon pick: GBP snapshot from amazon.co.uk — live checkout may differ. */
+  /** GBP. Amazon picks are a listing snapshot — live Amazon checkout may differ. */
   price: number;
   category: Category;
   tagline: string;
@@ -643,7 +643,7 @@ export const catalogDigest = catalog
   .map((p) => {
     const channel = isAmazonPick(p)
       ? `${formatProductPrice(p)} approx. Amazon UK affiliate pick — not dropshipped, live Amazon checkout may differ`
-      : `$${p.price} | dropship from ${p.shipsFrom} in ${p.etaDays[0]}-${p.etaDays[1]} days`;
+      : `${formatPrice(p.price)} | dropship from ${p.shipsFrom} in ${p.etaDays[0]}-${p.etaDays[1]} days`;
     return `${p.slug} | ${p.name} | ${p.category} | ${p.tagline} | ${channel} | affiliate ${p.affiliateLabel}: ${p.affiliateUrl}`;
   })
   .join("\n");

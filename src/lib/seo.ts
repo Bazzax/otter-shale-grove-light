@@ -1,3 +1,5 @@
+import { PRICE_CURRENCY } from "./format";
+
 export const APP_NAME = "Al's AI Drop Ship";
 export const APP_TAGLINE = "A sentient dropship drone, online, programmed to deliver.";
 export const APP_DESCRIPTION =
@@ -86,22 +88,16 @@ export function productJsonLd(product: {
           availability: "https://schema.org/InStock",
           seller: { "@type": "Organization", name: "Amazon.co.uk" },
         }
-      : product.amazonPick
-        ? {
-            "@type": "Offer",
-            priceCurrency: "GBP",
-            price: product.price.toFixed(2),
-            availability: "https://schema.org/InStock",
-            url: product.affiliateUrl ?? pageUrl,
-            seller: { "@type": "Organization", name: "Amazon.co.uk" },
-          }
-        : {
-            "@type": "Offer",
-            priceCurrency: "USD",
-            price: product.price.toFixed(2),
-            availability: "https://schema.org/InStock",
-            url: pageUrl,
-          };
+      : {
+          "@type": "Offer",
+          priceCurrency: PRICE_CURRENCY,
+          price: product.price.toFixed(2),
+          availability: "https://schema.org/InStock",
+          url: product.amazonPick ? (product.affiliateUrl ?? pageUrl) : pageUrl,
+          ...(product.amazonPick
+            ? { seller: { "@type": "Organization", name: "Amazon.co.uk" } }
+            : {}),
+        };
 
   return {
     "@context": "https://schema.org",
@@ -184,8 +180,8 @@ export const FAQS = [
     a: "On this site, nothing packs. If you used a real dropshipper, the window on the card (often 6–16 days from Shenzhen, Taipei, Seoul) is supplier to door, not a courier promise. Weekends, batching, and a customs pause can stretch it. Amazon UK affiliate orders use Amazon's own UK delivery times — usually the move if you need it this week.",
   },
   {
-    q: "Why are bay prices in US dollars?",
-    a: "Dropship cargo is listed in USD. Amazon UK picks show an approx. pound price from the listing. Checkout on Amazon is in pounds and may differ from the card.",
+    q: "Why are bay prices in pounds?",
+    a: "The bay lists cargo in GBP — fuel for the drone, so Al stays airborne. Amazon UK picks show an approx. pound price from the listing; live checkout may differ. Compare the job, not the badge.",
   },
   {
     q: "Is this an honest affiliate site?",
