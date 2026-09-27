@@ -79,20 +79,29 @@ export function productJsonLd(product: {
     : `${SITE_ORIGIN}${product.image}`;
   const pageUrl = `${SITE_ORIGIN}/shop/${product.slug}`;
   const offers =
-    product.amazonPick || product.price == null
+    product.price == null
       ? {
           "@type": "Offer",
           url: product.affiliateUrl ?? pageUrl,
           availability: "https://schema.org/InStock",
           seller: { "@type": "Organization", name: "Amazon.co.uk" },
         }
-      : {
-          "@type": "Offer",
-          priceCurrency: "USD",
-          price: product.price.toFixed(2),
-          availability: "https://schema.org/InStock",
-          url: pageUrl,
-        };
+      : product.amazonPick
+        ? {
+            "@type": "Offer",
+            priceCurrency: "GBP",
+            price: product.price.toFixed(2),
+            availability: "https://schema.org/InStock",
+            url: product.affiliateUrl ?? pageUrl,
+            seller: { "@type": "Organization", name: "Amazon.co.uk" },
+          }
+        : {
+            "@type": "Offer",
+            priceCurrency: "USD",
+            price: product.price.toFixed(2),
+            availability: "https://schema.org/InStock",
+            url: pageUrl,
+          };
 
   return {
     "@context": "https://schema.org",
@@ -164,7 +173,7 @@ export const FAQS = [
   },
   {
     q: "What are the Amazon buttons?",
-    a: "Affiliate links to Amazon UK, tagged alsaidropship-21 and marked sponsored. If Al does not stock the brand you want, shop the wider market. Al may earn a commission. Al does not scrape Amazon or invent live prices.",
+    a: "Affiliate links to Amazon UK, tagged alsaidropship-21 and marked sponsored. If Al does not stock the brand you want, shop the wider market. Al may earn a commission. Amazon picks show an approx. UK price from the listing — Amazon’s live checkout may differ.",
   },
   {
     q: "Will I be charged?",
@@ -176,7 +185,7 @@ export const FAQS = [
   },
   {
     q: "Why are bay prices in US dollars?",
-    a: "The catalog is listed in USD. Amazon UK checkout is in pounds. Compare the job, not the currency badge.",
+    a: "Dropship cargo is listed in USD. Amazon UK picks show an approx. pound price from the listing. Checkout on Amazon is in pounds and may differ from the card.",
   },
   {
     q: "Is this an honest affiliate site?",
