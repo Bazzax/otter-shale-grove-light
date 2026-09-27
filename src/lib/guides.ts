@@ -88,6 +88,37 @@ export const guides: Guide[] = [
     ],
     affiliateSlug: "runway-riser",
   },
+  {
+    slug: "travel-power-adapter-uk",
+    title: "How to pick a travel power adapter that actually works from the UK",
+    heading: "How to pick a world travel adapter from a UK bag",
+    kicker: "Power",
+    description:
+      "UK pins, EU sockets, hotel desks: what a 70W world charger must do — and when WorldBrick 70 beats a pouch of plugs or a single-country GaN.",
+    published: "2026-09-27",
+    relatedSlugs: ["worldbrick-70", "flightbrick-100", "arc-gan", "twin-lead-240"],
+    affiliateSlug: "worldbrick-70",
+  },
+  {
+    slug: "usb-c-dock-dual-hdmi",
+    title: "USB-C dock with dual HDMI: what actually works on the road",
+    kicker: "Desk",
+    description:
+      "Two screens from one cable: what dual-HDMI USB-C docks get wrong, when TwinView Dock is the pack, and when a single-port hub or a portable panel is enough.",
+    published: "2026-09-27",
+    relatedSlugs: ["twinview-dock", "trace-hub", "second-window-16", "flightbrick-100"],
+    affiliateSlug: "twinview-dock",
+  },
+  {
+    slug: "webcam-for-video-calls",
+    title: "How to pick a webcam that doesn't ruin the call",
+    kicker: "Desk",
+    description:
+      "Laptop cams lie. Al's notes on 1080p clip-ons, shutters, light, and the compact desk kit around CallLatch for hotel and remote-work calls.",
+    published: "2026-09-27",
+    relatedSlugs: ["call-latch", "quietframe", "runway-riser", "softdeck-mini"],
+    affiliateSlug: "call-latch",
+  },
 ];
 
 export function getGuide(slug: string) {

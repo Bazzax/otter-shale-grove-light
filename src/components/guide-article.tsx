@@ -37,6 +37,14 @@ function AmazonText({ asin, children }: { asin: string; children: ReactNode }) {
   );
 }
 
+function AskAlLink({ q, children }: { q: string; children: ReactNode }) {
+  return (
+    <Link to="/ask-al" search={{ q }} className="text-clay hover:text-clay-dark">
+      {children}
+    </Link>
+  );
+}
+
 function GanBody() {
   return (
     <>
@@ -410,6 +418,252 @@ function AfterSummerBody() {
   );
 }
 
+function WorldAdapterBody() {
+  return (
+    <>
+      <p>
+        A UK three-pin brick is a home tool. The second you land somewhere that is not Britain, it
+        is a paperweight unless you packed the right adapter. Most "travel adapters" are a pouch of
+        dead sockets: no USB-C, no wattage worth a laptop, and a fuse that looks like a souvenir.
+        The job is one brick that speaks UK, EU, AU, and US pins and still feeds a notebook.
+      </p>
+      <h2>What actually matters in a world charger</h2>
+      <p>
+        Wattage first. A phone cube in a fancy shell is still a phone cube. Seventy watts is the
+        useful line for a modern USB-C laptop plus a phone on the same brick. Look for USB-C Power
+        Delivery on the adapter itself so you are not stacking a second GaN in the sleeve. Grounded
+        pins, a real fuse on the UK face, and a label that says 100–240V. If the listing hides
+        watts behind "fast charge", leave it.
+      </p>
+      <p>
+        It is an adapter, not a voltage converter. Hair dryers, cheap irons, and anything that
+        expects 230V through a dumb US plug will still fry. This guide is for laptops, phones, and
+        hubs. If you need to convert voltage, you are packing a different tool.
+      </p>
+      <ul>
+        <li>UK / EU / AU / US pins on one body. Not a bag of loose heads.</li>
+        <li>Enough USB-C PD to feed a laptop. Two leftover USB-A ports are a bonus, not the pitch.</li>
+        <li>GaN if you want it small enough to survive a weekend bag.</li>
+        <li>A cable that can carry the watts. The adapter cannot outrun a tired 60W lead.</li>
+      </ul>
+      <h2>WorldBrick 70 — one brick, four countries</h2>
+      <p>
+        <ShopLink slug="worldbrick-70">WorldBrick 70</ShopLink> is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.worldBrick70}>
+          MOMAX 70W GaN universal travel adapter
+        </AmazonText>
+        : UK, EU, AU, and US pins, three USB-C PD ports and two USB-A QC ports. Laptop and phones
+        without a pouch of country plugs. I do not dropship it. The card is affiliate. Read the
+        listing for live stock — I do not invent a price.
+      </p>
+      <p>
+        This is the one I would pack if the itinerary leaves the UK wall. Hotel desks have one free
+        socket. Five USB ports on the brick means the wall socket can stay empty for a kettle, or
+        stay unused.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.worldBrick70} />
+      <h2>When you are staying on UK pins</h2>
+      <p>
+        If the trip is Britain and a train, you do not need a world face.{" "}
+        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
+        folding UK pins and a live wattage readout. That is the honest desk brick for a UK socket.{" "}
+        <ShopLink slug="arc-gan">Arc 65W GaN</ShopLink> is the dropship version of the smaller job
+        — dual USB-C, folding US pins, 100–240V — and it still wants a travel adapter the moment
+        you leave a US or a hotel that already converted the wall. Wait the 6–11 days from Dongguan
+        if you want the one I put a name on and you already own a compact adapter.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
+      <h2>The brick is only as fast as the cable</h2>
+      <p>
+        Pack <ShopLink slug="twin-lead-240">Twin Lead 240</ShopLink> with either brick. A 70W or
+        100W wall face with a tired 60W cable is cosplay. Right-angle, braided, a pair: one at the
+        desk, one in the sleeve.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.twinLead240} />
+      <h2>How I would decide</h2>
+      <ul>
+        <li>Leaving the UK wall: WorldBrick 70. Leave the bag of plugs at home.</li>
+        <li>UK sockets only, laptop plus phone: FlightBrick 100.</li>
+        <li>Already own an adapter and can wait a dropship window: Arc 65W GaN.</li>
+        <li>Still unsure: <AskAlLink q="travel power adapter UK">hail Al about travel adapters</AskAlLink>.</li>
+      </ul>
+      <h2>The affiliate bit, once</h2>
+      <p>
+        Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
+        listing, not the title. I do not scrape prices and I do not invent stock.
+      </p>
+      <p>Fly light. Charge full. Pack one brick.</p>
+    </>
+  );
+}
+
+function DualHdmiDockBody() {
+  return (
+    <>
+      <p>
+        A USB-C hub that "does HDMI" is one screen. Dual HDMI is a different job: two external
+        panels from one laptop cable, plus enough Power Delivery that the same cable still charges
+        the machine. Most travel docks lie about one of those. Either the second HDMI drops to a
+        mirror, or the laptop starves because the dock sipped 30W and called it passthrough.
+      </p>
+      <h2>What to look for before you pack it</h2>
+      <p>
+        Dual 4K60 is the useful spec, not "4K" in the title. Confirm the dock is two HDMI outputs,
+        not HDMI plus a DisplayPort that you will not have in a hotel. 100W Power Delivery through
+        the same USB-C host cable so you are not hunting a second socket for the charger. Data
+        ports that are actually 5Gbps, not charging-only leftovers.
+      </p>
+      <p>
+        Then check the laptop. Windows can usually extend two external desks if the USB-C port
+        drives DisplayPort alt-mode and the GPU allows it. macOS typically mirrors both externals
+        on a lot of dual-HDMI docks — including this one. If you need two unique Mac screens, a
+        dock is not a magic trick. Read the listing, then test on your machine before a client
+        Monday.
+      </p>
+      <ul>
+        <li>Two HDMI. Dual 4K@60Hz if the laptop can drive it.</li>
+        <li>100W PD on the host cable. The dock should feed the notebook, not drain it.</li>
+        <li>Windows: extend. Mac: assume mirror unless you have already proved otherwise.</li>
+        <li>A hotel with no monitors: skip the dock and pack a portable panel instead.</li>
+      </ul>
+      <h2>TwinView Dock — hotel dual-monitor mode</h2>
+      <p>
+        <ShopLink slug="twinview-dock">TwinView Dock</ShopLink> is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.twinViewDock}>UGREEN Revodok 206</AmazonText>
+        : a packable 6-in-1 dual-HDMI USB-C dock. Dual 4K@60Hz, single 8K, 100W Power Delivery, and
+        three 5Gbps USB data ports. I do not dropship it. The card is affiliate. Confirm your
+        laptop’s USB-C can drive dual display before you pack it as gospel.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.twinViewDock} />
+      <h2>Trace Hub — one screen, less circus</h2>
+      <p>
+        If you only need one external and a card reader,{" "}
+        <ShopLink slug="trace-hub">Trace Hub</ShopLink> is the dropship stick: HDMI that actually
+        hits 4K60 on the two laptops I tested, SD, 100W passthrough, aluminum. TwinView is two
+        screens. Trace is the simple multiport. Affiliate clones are cheaper and drop to 30 Hz.
+        Wait the 8–13 days from Taipei if one panel is the whole job.
+      </p>
+      <h2>No hotel monitors? Pack a panel</h2>
+      <p>
+        Dual HDMI assumes two displays exist. A lot of rooms have a TV on HDMI 1.4 and a desk with
+        no stand. <ShopLink slug="second-window-16">Second Window 16</ShopLink> is the ARZOPA Z1FC
+        portable 16.1 inch FHD panel — USB-C plug-and-play or Mini HDMI, kickstand, slim enough to
+        sit beside the laptop. That is dual-screen without begging the concierge for a second
+        monitor.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.secondWindow16} />
+      <h2>Power the dock like you mean it</h2>
+      <p>
+        A 100W dock still wants a 100W wall brick.{" "}
+        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is the Anker 100W 3-port GaN
+        with folding UK pins. One socket, the dock, the phone, and a live readout so you know the
+        MacBook is getting real wattage. Pair it with a high-watt cable. The dock cannot invent
+        amps the brick did not send.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
+      <h2>How I would decide</h2>
+      <ul>
+        <li>Two hotel or client monitors, Windows laptop: TwinView Dock.</li>
+        <li>One screen and a card slot: Trace Hub.</li>
+        <li>No monitors in the room: Second Window 16.</li>
+        <li>
+          Still matching a machine:{" "}
+          <AskAlLink q="USB-C dock dual HDMI">hail Al about dual-HDMI docks</AskAlLink>.
+        </li>
+      </ul>
+      <h2>The affiliate bit, once</h2>
+      <p>
+        Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
+        listing, not the title. I do not scrape prices and I do not invent stock.
+      </p>
+      <p>One cable. Two screens. Or admit you only needed one.</p>
+    </>
+  );
+}
+
+function WebcamCallsBody() {
+  return (
+    <>
+      <p>
+        Laptop webcams are a compromise the manufacturer made so the lid could stay thin. Soft
+        focus, a ceiling light that turns you into a ghost, and a microphone that loves the kettle.
+        A clip-on 1080p cam will not make you a studio. It will make you look like a person who
+        intended to be on the call.
+      </p>
+      <h2>What actually matters for video calls</h2>
+      <p>
+        1080p at 30fps is enough. 4K webcams eat USB bandwidth and light; most conferencing tools
+        downsample you anyway. You want autofocus that does not hunt, a field of view that includes
+        your face and not the hotel bed, and a physical shutter you can close when you leave the
+        desk. Dual mics help. They will not beat a headset in a café.
+      </p>
+      <p>
+        Light beats megapixels. A window behind you is a silhouette. A cheap overhead is yellow
+        crime lighting. Fix the light, then buy the cam. Then raise the laptop so the lens is not
+        staring up your nose.
+      </p>
+      <ul>
+        <li>1080p, plug-and-play USB. Works in Zoom, Meet, Teams without a driver hunt.</li>
+        <li>A shutter that actually closes. Software "privacy" is a setting you forget.</li>
+        <li>Stereo mics for a quiet room. Ember or a headset for a train.</li>
+        <li>Light in front of you. Height at eye line. The cam cannot invent either.</li>
+      </ul>
+      <h2>CallLatch — the clip-on that earns the gram</h2>
+      <p>
+        <ShopLink slug="call-latch">CallLatch</ShopLink> is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.callLatch}>Logitech C920S HD Pro</AmazonText>
+        : Full HD 1080p/30fps, dual stereo mics, HD light correction, and a physical privacy
+        shutter. USB plug-and-play for Zoom, Skype, PC, Mac, and tablets. I do not dropship
+        Logitech. The card is affiliate. Laptop cams lie — clip this on, close the shutter when you
+        leave.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.callLatch} />
+      <h2>Light the face, not the screen</h2>
+      <p>
+        <ShopLink slug="quietframe">QuietFrame</ShopLink> is a monitor light bar: asymmetric LEDs
+        that wash the desk and spare the panel. Stepless dim, 3000–5000K, USB-C from the display or
+        a hub. It will not replace a key light in a dark Airbnb, but it stops the overhead from
+        being the only source. If your room already has a window in front of you, you may not need
+        it. If your room has one ceiling lamp, this is the cheap upgrade.
+      </p>
+      <h2>Raise the lens</h2>
+      <p>
+        A cam clipped to a laptop on a café table looks up.{" "}
+        <ShopLink slug="runway-riser">Runway Riser</ShopLink> is UGREEN’s fold-flat aluminium stand
+        — five heights, a carry pouch, roughly 8–17.3 inch machines. Eye line for you is eye line
+        for them. It also saves your neck after hour three, which is the real reason it stays in
+        the bag.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.runwayRiser} />
+      <h2>The rest of the call kit</h2>
+      <p>
+        If you type on camera, hotel walls hear a mechanical board.{" "}
+        <ShopLink slug="softdeck-mini">SoftDeck Mini</ShopLink> is the MX Keys Mini in graphite, UK
+        layout, quiet on purpose, Easy-Switch across three devices. It slides into a sleeve next to
+        the laptop. I do not dropship it. Pair it with the cam if the call includes a shared doc
+        and you still have to type.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.softDeckMini} />
+      <h2>How I would decide</h2>
+      <ul>
+        <li>Hotel or kitchen-table calls, laptop cam is a joke: CallLatch.</li>
+        <li>One overhead light, dark faces: add QuietFrame.</li>
+        <li>Laptop flat on the table: Runway Riser first, then the cam.</li>
+        <li>
+          Matching a kit:{" "}
+          <AskAlLink q="webcam for video calls">hail Al about webcams</AskAlLink>.
+        </li>
+      </ul>
+      <h2>The affiliate bit, once</h2>
+      <p>
+        Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
+        listing, not the title. I do not scrape prices and I do not invent stock.
+      </p>
+      <p>Look like you meant to show up. Close the shutter when you leave.</p>
+    </>
+  );
+}
+
 const bodies: Record<string, () => ReactNode> = {
   "65w-gan-charger-travel": GanBody,
   "anc-headphones-vs-earbuds-commute": AncBody,
@@ -417,6 +671,9 @@ const bodies: Record<string, () => ReactNode> = {
   "packing-power-september": PackingPowerBody,
   "travel-desk-september": TravelDeskBody,
   "after-summer-desk-reset": AfterSummerBody,
+  "travel-power-adapter-uk": WorldAdapterBody,
+  "usb-c-dock-dual-hdmi": DualHdmiDockBody,
+  "webcam-for-video-calls": WebcamCallsBody,
 };
 
 export function GuideArticle({ guide }: { guide: Guide }) {
