@@ -15,7 +15,7 @@ export const Route = createFileRoute("/shop/")({
   head: () =>
     pageHead(
       `Cargo bay — dropship tech & Amazon UK | ${APP_NAME}`,
-      "Tech SKUs Al dropships plus Amazon UK affiliate picks: ANC audio, GaN chargers, desk kit, SSDs, carry. Lead times on dropship cards. Tagged Shop on Amazon links — no invented prices.",
+      "Tech SKUs Al dropships plus Amazon UK affiliate picks: ANC audio, GaN chargers, desk kit, SSDs, carry. Lead times on dropship cards. Amazon picks show an approx. UK price; live checkout may differ.",
       "/shop",
     ),
   component: ShopPage,

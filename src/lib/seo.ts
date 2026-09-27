@@ -81,7 +81,7 @@ export function productJsonLd(product: {
     : `${SITE_ORIGIN}${product.image}`;
   const pageUrl = `${SITE_ORIGIN}/shop/${product.slug}`;
   const offers =
-    product.amazonPick || product.price == null
+    product.price == null
       ? {
           "@type": "Offer",
           url: product.affiliateUrl ?? pageUrl,
@@ -93,7 +93,10 @@ export function productJsonLd(product: {
           priceCurrency: PRICE_CURRENCY,
           price: product.price.toFixed(2),
           availability: "https://schema.org/InStock",
-          url: pageUrl,
+          url: product.amazonPick ? (product.affiliateUrl ?? pageUrl) : pageUrl,
+          ...(product.amazonPick
+            ? { seller: { "@type": "Organization", name: "Amazon.co.uk" } }
+            : {}),
         };
 
   return {
@@ -166,7 +169,7 @@ export const FAQS = [
   },
   {
     q: "What are the Amazon buttons?",
-    a: "Affiliate links to Amazon UK, tagged alsaidropship-21 and marked sponsored. If Al does not stock the brand you want, shop the wider market. Al may earn a commission. Al does not scrape Amazon or invent live prices.",
+    a: "Affiliate links to Amazon UK, tagged alsaidropship-21 and marked sponsored. If Al does not stock the brand you want, shop the wider market. Al may earn a commission. Amazon picks show an approx. UK price from the listing — Amazon’s live checkout may differ.",
   },
   {
     q: "Will I be charged?",
@@ -178,7 +181,7 @@ export const FAQS = [
   },
   {
     q: "Why are bay prices in pounds?",
-    a: "The bay lists cargo in GBP — fuel for the drone, so Al stays airborne. Amazon UK checkout is pounds too. Compare the job, not the badge. Affiliate picks still have no on-site price.",
+    a: "The bay lists cargo in GBP — fuel for the drone, so Al stays airborne. Amazon UK picks show an approx. pound price from the listing; live checkout may differ. Compare the job, not the badge.",
   },
   {
     q: "Is this an honest affiliate site?",

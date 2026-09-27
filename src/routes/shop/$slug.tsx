@@ -9,7 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { catalog, getProduct, isAmazonPick } from "@/lib/catalog";
 import { useCart } from "@/lib/cart-store";
-import { formatEta, formatPrice } from "@/lib/format";
+import { formatEta, formatProductPrice } from "@/lib/format";
 import { APP_NAME, pageHead, productJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/shop/$slug")({
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/shop/$slug")({
     if (isAmazonPick(product)) {
       return pageHead(
         `${product.name} — Amazon UK pick | ${APP_NAME}`,
-        `${product.tagline} Amazon UK affiliate pick. Shop the tagged listing — Al does not dropship this SKU or print a price.`,
+        `${product.tagline} Amazon UK affiliate pick, about ${formatProductPrice(product)}. Shop the tagged listing — Al does not dropship this SKU. Amazon’s live price may differ.`,
         `/shop/${product.slug}`,
       );
     }
@@ -83,13 +83,14 @@ function ProductPage() {
           <h1 className="mt-4 font-display text-4xl font-medium tracking-tight">
             {product.name}
           </h1>
+          <p className="mt-2 font-display text-2xl tabular-nums text-clay">
+            {formatProductPrice(product)}
+          </p>
           {isAmazonPick(product) ? (
-            <p className="mt-2 font-display text-2xl text-clay">Amazon UK pick</p>
-          ) : (
-            <p className="mt-2 font-display text-2xl tabular-nums text-clay">
-              {formatPrice(product.price)}
+            <p className="mt-1 text-sm text-dust">
+              Approx. Amazon UK price. Check the live listing — checkout is on Amazon.
             </p>
-          )}
+          ) : null}
           <p className="mt-4 leading-relaxed text-stone">{product.tagline}</p>
           <p className="mt-4 leading-relaxed text-stone">{product.description}</p>
 
@@ -101,7 +102,9 @@ function ProductPage() {
               </div>
               <div>
                 <dt className="text-dust">Price</dt>
-                <dd className="mt-1 font-medium">Live on the listing</dd>
+                <dd className="mt-1 font-medium tabular-nums">
+                  {formatProductPrice(product)} approx.
+                </dd>
               </div>
             </dl>
           ) : (
@@ -132,7 +135,9 @@ function ProductPage() {
           />
           <p className="mt-2 text-xs text-dust">
             Affiliate link. Al may earn a commission if you buy on {product.affiliateLabel}.
-            {isAmazonPick(product) ? " Not sold from the bay." : ""}
+            {isAmazonPick(product)
+              ? " Not sold from the bay. Live Amazon price may differ."
+              : ""}
           </p>
 
           <Link

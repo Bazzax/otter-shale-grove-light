@@ -1,4 +1,4 @@
-import { formatPrice } from "./format";
+import { formatPrice, formatProductPrice } from "./format";
 
 export const AMAZON_ASSOCIATE_TAG = "alsaidropship-21";
 const AMAZON_UK_DP = "https://www.amazon.co.uk/dp";
@@ -54,6 +54,8 @@ export const AMAZON_PICK_ASINS = {
 type ProductBase = {
   slug: string;
   name: string;
+  /** GBP. Amazon picks are a listing snapshot — live Amazon checkout may differ. */
+  price: number;
   category: Category;
   tagline: string;
   description: string;
@@ -68,12 +70,11 @@ type ProductBase = {
 
 export type DropshipProduct = ProductBase & {
   amazonPick?: false;
-  price: number;
   shipsFrom: string;
   etaDays: [number, number];
 };
 
-/** Amazon UK affiliate pick — not sold as dropship cargo, no on-site price. */
+/** Amazon UK affiliate pick — not sold as dropship cargo. `price` is a GBP listing snapshot. */
 export type AmazonPickProduct = ProductBase & {
   amazonPick: true;
 };
@@ -299,6 +300,7 @@ export const catalog: Product[] = [
     slug: "flightbrick-100",
     name: "FlightBrick 100",
     amazonPick: true,
+    price: 59.89,
     category: "Power",
     tagline: "100W GaN, three ports, a live wattage display, folding UK pins.",
     description:
@@ -310,7 +312,7 @@ export const catalog: Product[] = [
       "USB-C cable included · dark grey · B121B/A121B",
     ],
     alNote:
-      "Hotel desks have one free socket. If you still travel with a 65W brick plus a phone cube, this is the step up. I do not invent the live price — tap the listing.",
+      "Hotel desks have one free socket. If you still travel with a 65W brick plus a phone cube, this is the step up. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: "/products/flightbrick-100.jpg",
     asin: AMAZON_PICK_ASINS.flightbrick100,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.flightbrick100),
@@ -320,6 +322,7 @@ export const catalog: Product[] = [
     slug: "runway-riser",
     name: "Runway Riser",
     amazonPick: true,
+    price: 17.99,
     category: "Desk",
     tagline: "Fold-flat aluminium stand. Raises the screen. Packs in a pouch.",
     description:
@@ -331,7 +334,7 @@ export const catalog: Product[] = [
       "Scratch-padded · silver · model 40289",
     ],
     alNote:
-      "Working flat on a table for eight hours is how trips get expensive in physio. Pair it with Drift if you already carry a separate board. Price lives on Amazon.",
+      "Working flat on a table for eight hours is how trips get expensive in physio. Pair it with Drift if you already carry a separate board. Approx. UK price is on the card — confirm on Amazon.",
     image: "/products/runway-riser.jpg",
     asin: AMAZON_PICK_ASINS.runwayRiser,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.runwayRiser),
@@ -341,6 +344,7 @@ export const catalog: Product[] = [
     slug: "cabin-cursor",
     name: "Cabin Cursor",
     amazonPick: true,
+    price: 65.46,
     category: "Desk",
     tagline: "MX Master 3S in graphite. Quiet clicks. Switches machines.",
     description:
@@ -352,7 +356,7 @@ export const catalog: Product[] = [
       "USB-C + Bluetooth · Windows, Linux, Chrome",
     ],
     alNote:
-      "Trackpads survive short flights. Spreadsheets do not. I do not dropship Logitech. Shop the tagged UK listing and read the live stock.",
+      "Trackpads survive short flights. Spreadsheets do not. I do not dropship Logitech. Shop the tagged UK listing — the card price is approx.; live stock and checkout sit on Amazon.",
     image: "/products/cabin-cursor.jpg",
     asin: AMAZON_PICK_ASINS.cabinCursor,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.cabinCursor),
@@ -362,6 +366,7 @@ export const catalog: Product[] = [
     slug: "twin-lead-240",
     name: "Twin Lead 240",
     amazonPick: true,
+    price: 18.99,
     category: "Power",
     tagline: "240W-rated right-angle USB-C pair. Braided. Six feet each.",
     description:
@@ -373,7 +378,7 @@ export const catalog: Product[] = [
       "For MacBook, iPhone 15/16/17, iPad, Galaxy",
     ],
     alNote:
-      "Pack a pair, leave one at the desk. Right-angle ends survive bag crush better than a straight lead yanked at the port. Check the live UK listing — I do not print a price.",
+      "Pack a pair, leave one at the desk. Right-angle ends survive bag crush better than a straight lead yanked at the port. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: "/products/twin-lead-240.jpg",
     asin: AMAZON_PICK_ASINS.twinLead240,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.twinLead240),
@@ -383,6 +388,7 @@ export const catalog: Product[] = [
     slug: "second-window-16",
     name: "Second Window 16",
     amazonPick: true,
+    price: 119.99,
     category: "Desk",
     tagline: "16.1 inch FHD 144Hz portable panel. USB-C. Kickstand. Backpackable.",
     description:
@@ -394,7 +400,7 @@ export const catalog: Product[] = [
       "Kickstand · backpack-slim · ~1.7 lb class",
     ],
     alNote:
-      "One laptop panel means Slack eating half the spreadsheet. Your machine needs a full-featured USB-C port for single-cable video. Sleeve the panel so it does not share scratches with the brick.",
+      "One laptop panel means Slack eating half the spreadsheet. Your machine needs a full-featured USB-C port for single-cable video. Sleeve the panel so it does not share scratches with the brick. Approx. UK price is on the card — confirm on Amazon.",
     image: "/products/second-window-16.jpg",
     asin: AMAZON_PICK_ASINS.secondWindow16,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.secondWindow16),
@@ -404,6 +410,7 @@ export const catalog: Product[] = [
     slug: "call-latch",
     name: "CallLatch",
     amazonPick: true,
+    price: 42.49,
     category: "Carry",
     tagline: "1080p clip-on cam. Stereo mics. A shutter that actually closes.",
     description:
@@ -415,7 +422,7 @@ export const catalog: Product[] = [
       "USB · Zoom / Skype / PC / Mac · model 960-001252",
     ],
     alNote:
-      "Laptop cams lie. Clip this on, close the shutter when you leave the desk. I do not invent the live UK price — tap the tagged listing.",
+      "Laptop cams lie. Clip this on, close the shutter when you leave the desk. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: "/products/call-latch.jpg",
     asin: AMAZON_PICK_ASINS.callLatch,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.callLatch),
@@ -425,6 +432,7 @@ export const catalog: Product[] = [
     slug: "worldbrick-70",
     name: "WorldBrick 70",
     amazonPick: true,
+    price: 29.98,
     category: "Power",
     tagline: "70W GaN world plug. UK, EU, AU, US pins. Five USB ports.",
     description:
@@ -436,7 +444,7 @@ export const catalog: Product[] = [
       "Not a voltage converter · black · 1-World",
     ],
     alNote:
-      "Arc and FlightBrick cover a UK socket. This one covers the socket in the other country. Pack it, leave the bag of plugs at home. Price lives on Amazon.",
+      "Arc and FlightBrick cover a UK socket. This one covers the socket in the other country. Pack it, leave the bag of plugs at home. Approx. UK price is on the card — confirm on Amazon.",
     image: "/products/worldbrick-70.jpg",
     asin: AMAZON_PICK_ASINS.worldBrick70,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.worldBrick70),
@@ -446,6 +454,7 @@ export const catalog: Product[] = [
     slug: "twinview-dock",
     name: "TwinView Dock",
     amazonPick: true,
+    price: 29.99,
     category: "Desk",
     tagline: "One USB-C, two HDMI. Dual 4K60. 100W through the same cable.",
     description:
@@ -457,7 +466,7 @@ export const catalog: Product[] = [
       "3× 5Gbps USB data ports",
     ],
     alNote:
-      "A basic hub is one screen. This is two. Confirm your laptop’s USB-C can drive dual display before you pack it as gospel. I do not print a price.",
+      "A basic hub is one screen. This is two. Confirm your laptop’s USB-C can drive dual display before you pack it as gospel. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: "/products/twinview-dock.jpg",
     asin: AMAZON_PICK_ASINS.twinViewDock,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.twinViewDock),
@@ -467,6 +476,7 @@ export const catalog: Product[] = [
     slug: "softdeck-mini",
     name: "SoftDeck Mini",
     amazonPick: true,
+    price: 55.24,
     category: "Desk",
     tagline: "MX Keys Mini, graphite, UK layout. Quiet. Fits a sleeve.",
     description:
@@ -478,7 +488,7 @@ export const catalog: Product[] = [
       "macOS, iOS, Windows, Linux, Android",
     ],
     alNote:
-      "Hotel walls are thin. This board is quiet on purpose. I do not dropship it and I do not invent the live listing price.",
+      "Hotel walls are thin. This board is quiet on purpose. I do not dropship it. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: "/products/softdeck-mini.jpg",
     asin: AMAZON_PICK_ASINS.softDeckMini,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.softDeckMini),
@@ -488,6 +498,7 @@ export const catalog: Product[] = [
     slug: "spotcue",
     name: "SpotCue",
     amazonPick: true,
+    price: 65,
     category: "Desk",
     tagline: "Digital highlight remote. 30-metre range. Timer that buzzes.",
     description:
@@ -499,7 +510,7 @@ export const catalog: Product[] = [
       "On-device timer with haptic cue · PC / Mac / iOS / Android",
     ],
     alNote:
-      "A red laser is cosplay on a bright panel. This draws a circle the room can see. Shop the tagged UK listing and read the live stock.",
+      "A red laser is cosplay on a bright panel. This draws a circle the room can see. Shop the tagged UK listing — the card price is approx.; live stock and checkout sit on Amazon.",
     image: "/products/spotcue.jpg",
     asin: AMAZON_PICK_ASINS.spotCue,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.spotCue),
@@ -509,6 +520,7 @@ export const catalog: Product[] = [
     slug: "fieldmat",
     name: "FieldMat",
     amazonPick: true,
+    price: 13.99,
     category: "Desk",
     tagline: "30×70 Studio mat. Spill-resistant. Quiet glide. Packs flat.",
     description:
@@ -520,7 +532,7 @@ export const catalog: Product[] = [
       "Quiet mouse glide · packs flat",
     ],
     alNote:
-      "Hotel laminate is loud and sticky. This is the cheap desk upgrade that folds into a sleeve. Check the live UK listing — I do not print a price.",
+      "Hotel laminate is loud and sticky. This is the cheap desk upgrade that folds into a sleeve. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: "/products/fieldmat.jpg",
     asin: AMAZON_PICK_ASINS.fieldMat,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.fieldMat),
@@ -530,6 +542,7 @@ export const catalog: Product[] = [
     slug: "magdeck-10",
     name: "MagDeck 10",
     amazonPick: true,
+    price: 73.22,
     category: "Power",
     tagline: "10K Qi2 MagGo. Snap. Charge. Kickstand FaceTime.",
     description:
@@ -541,7 +554,7 @@ export const catalog: Product[] = [
       "iPhone 13 / 14 / 15 / 16 MagSafe series",
     ],
     alNote:
-      "Orbit Mag covers a day. MagDeck 10 covers the day you miss the socket. Snap it, read the display, prop FaceTime. Price lives on the tagged listing.",
+      "Orbit Mag covers a day. MagDeck 10 covers the day you miss the socket. Snap it, read the display, prop FaceTime. Approx. UK price is on the card — confirm on Amazon.",
     image: "/products/magdeck-10.jpg",
     asin: AMAZON_PICK_ASINS.magDeck10,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.magDeck10),
@@ -629,7 +642,7 @@ export function matchCatalog(query: string): Product[] {
 export const catalogDigest = catalog
   .map((p) => {
     const channel = isAmazonPick(p)
-      ? "Amazon UK affiliate pick — not dropshipped, no on-site price"
+      ? `${formatProductPrice(p)} approx. Amazon UK affiliate pick — not dropshipped, live Amazon checkout may differ`
       : `${formatPrice(p.price)} | dropship from ${p.shipsFrom} in ${p.etaDays[0]}-${p.etaDays[1]} days`;
     return `${p.slug} | ${p.name} | ${p.category} | ${p.tagline} | ${channel} | affiliate ${p.affiliateLabel}: ${p.affiliateUrl}`;
   })

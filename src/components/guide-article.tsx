@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { AffiliateLink } from "@/components/affiliate-link";
-import { AMAZON_PICK_ASINS, affiliateProduct } from "@/lib/catalog";
+import { AMAZON_PICK_ASINS, affiliateProduct, catalog, isAmazonPick } from "@/lib/catalog";
+import { formatProductPrice } from "@/lib/format";
 import type { Guide } from "@/lib/guides";
 
 function ShopLink({ slug, children }: { slug: string; children: ReactNode }) {
@@ -13,12 +14,19 @@ function ShopLink({ slug, children }: { slug: string; children: ReactNode }) {
 }
 
 function AmazonPick({ asin }: { asin: string }) {
+  const product = catalog.find((item) => item.asin === asin && isAmazonPick(item));
   return (
-    <p>
+    <p className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+      {product ? (
+        <span className="text-sm tabular-nums text-clay">
+          {formatProductPrice(product)}{" "}
+          <span className="font-normal text-dust">approx. · check Amazon</span>
+        </span>
+      ) : null}
       <AffiliateLink
         href={affiliateProduct(asin)}
         label="Amazon UK"
-        className="mt-1 w-full sm:w-auto"
+        className="mt-1 w-full sm:mt-0 sm:w-auto"
       />
     </p>
   );
@@ -88,7 +96,7 @@ function GanBody() {
       <p>
         A named UK three-pin GaN with a high review count is the correct answer if you do not want
         to think about adapters, or if the dropship window on Arc (6–11 days) lands after your
-        train. I do not scrape Amazon. The button below is a tagged search. Read the wattage on the
+        train. The button below is a tagged search. Read the wattage on the
         listing, not the title.
       </p>
     </>
@@ -231,7 +239,7 @@ function PackingPowerBody() {
       <h2>The affiliate bit, once</h2>
       <p>
         Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
-        listing, not the title. I do not scrape prices and I do not invent stock.
+        listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may differ. I do not invent stock.
       </p>
       <p>
         If you want the versions I put a name on, the bay has{" "}
@@ -324,7 +332,7 @@ function TravelDeskBody() {
       <h2>The affiliate bit, once</h2>
       <p>
         Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
-        listing, not the title. I do not scrape prices and I do not invent stock.
+        listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may differ. I do not invent stock.
       </p>
       <p>Fly light. Charge full. Keep your neck.</p>
     </>
@@ -454,7 +462,7 @@ function WorldAdapterBody() {
         </AmazonText>
         : UK, EU, AU, and US pins, three USB-C PD ports and two USB-A QC ports. Laptop and phones
         without a pouch of country plugs. I do not dropship it. The card is affiliate. Read the
-        listing for live stock — I do not invent a price.
+        listing for live stock. Approx. UK price is on the card — Amazon’s live checkout may differ.
       </p>
       <p>
         This is the one I would pack if the itinerary leaves the UK wall. Hotel desks have one free
@@ -490,7 +498,7 @@ function WorldAdapterBody() {
       <h2>The affiliate bit, once</h2>
       <p>
         Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
-        listing, not the title. I do not scrape prices and I do not invent stock.
+        listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may differ. I do not invent stock.
       </p>
       <p>Fly light. Charge full. Pack one brick.</p>
     </>
@@ -574,7 +582,7 @@ function DualHdmiDockBody() {
       <h2>The affiliate bit, once</h2>
       <p>
         Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
-        listing, not the title. I do not scrape prices and I do not invent stock.
+        listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may differ. I do not invent stock.
       </p>
       <p>One cable. Two screens. Or admit you only needed one.</p>
     </>
@@ -657,7 +665,7 @@ function WebcamCallsBody() {
       <h2>The affiliate bit, once</h2>
       <p>
         Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
-        listing, not the title. I do not scrape prices and I do not invent stock.
+        listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may differ. I do not invent stock.
       </p>
       <p>Look like you meant to show up. Close the shutter when you leave.</p>
     </>

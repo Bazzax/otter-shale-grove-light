@@ -15,7 +15,7 @@ import {
   TECH_SEARCH_CHIPS,
   type Product,
 } from "@/lib/catalog";
-import { formatPrice } from "@/lib/format";
+import { formatProductPrice } from "@/lib/format";
 import { APP_NAME, pageHead } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
@@ -29,7 +29,7 @@ export const Route = createFileRoute("/ask-al")({
   head: () =>
     pageHead(
       `Hail Al | ${APP_NAME}`,
-      "Search Amazon UK tech with a tagged affiliate link, or radio the drone. Al matches the bay and will not invent products, prices, or ratings.",
+      "Search Amazon UK tech with a tagged affiliate link, or radio the drone. Al matches the bay and will not invent products or ratings. Amazon pick prices are approx. snapshots.",
       "/ask-al",
     ),
   component: AskAlPage,
@@ -339,7 +339,8 @@ function CatalogHit({ product }: { product: Product }) {
         <span className="block truncate font-display text-sm font-medium">{product.name}</span>
         <span className="mt-0.5 block truncate text-xs text-stone">{product.tagline}</span>
         <span className="mt-1 block text-xs tabular-nums text-dust">
-          {isAmazonPick(product) ? "Amazon UK pick" : formatPrice(product.price)}
+          {formatProductPrice(product)}
+          {isAmazonPick(product) ? " · Amazon UK pick" : ""}
         </span>
       </span>
     </Link>
