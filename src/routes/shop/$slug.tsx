@@ -68,7 +68,7 @@ function ProductPage() {
             <img
               src={product.image}
               alt={`${product.name} — ${product.tagline}`}
-              className="aspect-[4/3] w-full rounded-xl object-cover outline outline-1 -outline-offset-1 outline-ink/10"
+              className="aspect-[4/3] w-full rounded-xl bg-raised object-cover outline outline-1 -outline-offset-1 outline-ink/10"
             />
           </div>
         </div>

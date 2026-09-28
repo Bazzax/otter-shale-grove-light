@@ -65,7 +65,7 @@ export function CartSheet({
                         to="/shop/$slug"
                         params={{ slug: product.slug }}
                         onClick={() => onOpenChange(false)}
-                        className="size-20 shrink-0 overflow-hidden rounded-lg bg-cream"
+                        className="size-20 shrink-0 overflow-hidden rounded-lg bg-raised"
                       >
                         <img
                           src={product.image}
