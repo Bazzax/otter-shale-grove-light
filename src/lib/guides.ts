@@ -119,6 +119,33 @@ export const guides: Guide[] = [
     relatedSlugs: ["call-latch", "quietframe", "runway-riser", "softdeck-mini"],
     affiliateSlug: "call-latch",
   },
+  {
+    slug: "power-bank-hand-luggage-uk",
+    title: "Can you take a power bank on a plane from the UK?",
+    heading: "Power banks in UK hand luggage: what flies, what stays home",
+    kicker: "Power",
+    description:
+      "Cabin bag, not the hold. How watt-hours work, the mAh maths, Orbit Mag and MagDeck 10, and why you still check the airline and the CAA before you fly.",
+    published: "2026-09-30",
+    relatedSlugs: ["orbit-bank", "magdeck-10", "flightbrick-100"],
+    affiliateSlug: "magdeck-10",
+  },
+  {
+    slug: "portable-monitor-laptop-second-screen",
+    title: "Portable monitors: a second screen for trains, hotels and the kitchen table",
+    heading: "A second screen that fits a bag, not a desk",
+    kicker: "Desk",
+    description:
+      "13–16 inch tradeoffs, USB-C video that actually works, HDMI fallback, and the kit around Second Window 16 for remote days that are not at a desk.",
+    published: "2026-09-30",
+    relatedSlugs: [
+      "second-window-16",
+      "runway-riser",
+      "twin-lead-240",
+      "cabin-cursor",
+    ],
+    affiliateSlug: "second-window-16",
+  },
 ];
 
 export function getGuide(slug: string) {

@@ -13,6 +13,14 @@ function ShopLink({ slug, children }: { slug: string; children: ReactNode }) {
   );
 }
 
+function GuideLink({ slug, children }: { slug: string; children: ReactNode }) {
+  return (
+    <Link to="/guides/$slug" params={{ slug }} className="text-clay hover:text-clay-dark">
+      {children}
+    </Link>
+  );
+}
+
 function AmazonPick({ asin }: { asin: string }) {
   const product = catalog.find((item) => item.asin === asin && isAmazonPick(item));
   return (
@@ -672,6 +680,267 @@ function WebcamCallsBody() {
   );
 }
 
+function PowerBankLuggageBody() {
+  return (
+    <>
+      <p>
+        A power bank is a lithium battery with a USB socket. From a UK airport it belongs in hand
+        luggage, not the hold. That is the whole first rule. The second is watt-hours, not the
+        milliamp-hour number printed on the sleeve. The third is that this log is not your airline,
+        and it is not the CAA. Read the current{" "}
+        <a
+          href="https://www.gov.uk/hand-luggage-restrictions/electronic-devices-and-electrical-items"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          UK government hand-luggage pages
+        </a>{" "}
+        and the{" "}
+        <a
+          href="https://www.caa.co.uk/passengers/before-you-fly/baggage/items-that-are-allowed-in-baggage/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA baggage guidance
+        </a>
+        , then the carrier you actually booked. Those pages also cover how many banks you can carry
+        and whether you can charge them in flight. Rules move. I do not invent airline policy.
+      </p>
+      <h2>Cabin bag. Not the hold.</h2>
+      <p>
+        Spare lithium batteries — and a power bank is a spare battery — stay with you. Checked
+        bags go in a pressurised hold you cannot reach if something cooks. Security will ask you
+        to take the bank out of the sleeve. Do not bury it under a jumper and hope. If a listing
+        calls itself "airline approved", treat that as marketing until you have the watt-hour
+        figure and your carrier's page.
+      </p>
+      <h2>The common watt-hour lines</h2>
+      <p>
+        Airports talk watt-hours (Wh), not "20,000 mAh" on a box. The usual published bands look
+        like this. Confirm them before you fly; I am describing the common shape, not writing your
+        ticket.
+      </p>
+      <ul>
+        <li>Up to 100Wh: generally fine in hand luggage, no special permission on most carriers.</li>
+        <li>100–160Wh: often allowed in the cabin if the airline says yes in advance. Ask. Do not assume.</li>
+        <li>Over 160Wh: typically not allowed on a passenger flight. Leave it at home.</li>
+      </ul>
+      <p>
+        Phone and laptop banks sold for travel sit well under 100Wh. The problem bank is the giant
+        "camping" brick someone bought for a festival and then took to Stansted.
+      </p>
+      <h2>How to get Wh from mAh</h2>
+      <p>
+        Most banks print milliamp-hours and hide the voltage. The usual cell voltage is 3.7V. The
+        maths is boring on purpose:
+      </p>
+      <p>
+        watt-hours = milliamp-hours × volts ÷ 1000
+      </p>
+      <p>
+        A 5,000 mAh bank at 3.7V is about 18.5Wh. A 10,000 mAh bank is about 37Wh. A 20,000 mAh
+        bank is about 74Wh. All three sit under the common 100Wh line. If the label already prints
+        Wh, use that number. If it only prints mAh and you cannot find the voltage, assume 3.7V
+        and do the sum before you pack, not at the tray.
+      </p>
+      <p>
+        Protect the terminals. A loose bank that can short against keys or coins is a fire story.
+        Keep it in a sleeve, a pouch, or with the ports capped. Do not tape over vents. Do not
+        charge it in a bag you cannot smell.
+      </p>
+      <h2>Orbit Mag — the day puck</h2>
+      <p>
+        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> is the 5,000 mAh magnetic puck in the bay:
+        15W Mag-compatible charge, USB-C in and out, 10.5 mm thick. Run the 3.7V maths and you are
+        around 18.5Wh — cabin-trivial, which is why the card already says airline-safe capacity.
+        It is a phone top-up, not a laptop brick. If the phone is not magnetic, skip the snap and
+        use the USB-C port, or skip the puck. Dropship from Shenzhen in 6–12 days, or use the
+        tagged Amazon button on the card if Tuesday is the problem.
+      </p>
+      <h2>MagDeck 10 — the travel bank</h2>
+      <p>
+        <ShopLink slug="magdeck-10">MagDeck 10</ShopLink> is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.magDeck10}>Anker MagGo 10,000 mAh Qi2</AmazonText>
+        : 15W magnetic charge, smart display, foldable stand, USB-C cable in the box. Ten thousand
+        milliamp-hours at 3.7V is about 37Wh. Orbit covers a day. This covers the day you miss the
+        socket. I do not dropship it. The card is affiliate. Approx. UK price is on the card —
+        Amazon’s live checkout may differ.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />
+      <h2>Anker Zolo 20K — if the day is long</h2>
+      <p>
+        The{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.ankerZolo20k}>Anker Zolo 20K</AmazonText> is the 20,000
+        mAh, 30W USB-C bank already in the September power pack. Twenty thousand milliamp-hours at
+        3.7V is about 74Wh — still under the common 100Wh line, still a cabin item, still not a
+        hold item. Cable in the box. I do not dropship Anker. If you need a bank this week and the
+        phone will not last a delay, this is the tagged listing.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.ankerZolo20k} />
+      <h2>FlightBrick 100 is a wall charger, not a bank</h2>
+      <p>
+        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
+        folding UK pins and a live wattage display. It is not a power bank. It does not fly as a
+        spare battery because it is a mains brick. Pack it if the hotel or the lounge has a socket
+        you want to empty into the laptop and the bank at once. Do not confuse it with cabin
+        battery limits. The limit is for cells you carry charged, not for a plug.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
+      <h2>How I would decide</h2>
+      <ul>
+        <li>Phone only, magnetic, one day: Orbit Mag.</li>
+        <li>Phone, a missed socket, FaceTime on a stand: MagDeck 10.</li>
+        <li>A long delay and a 30W top-up: Anker Zolo 20K.</li>
+        <li>Need the wall as well: FlightBrick 100 next to the bank, not instead of it.</li>
+        <li>
+          Still matching pins abroad:{" "}
+          <GuideLink slug="travel-power-adapter-uk">
+            how to pick a world adapter from a UK bag
+          </GuideLink>
+          .
+        </li>
+        <li>
+          Still matching a 65W brick:{" "}
+          <GuideLink slug="65w-gan-charger-travel">
+            how to pick a 65W GaN that actually travels
+          </GuideLink>
+          .
+        </li>
+        <li>
+          Still unsure:{" "}
+          <AskAlLink q="power bank hand luggage UK">hail Al about cabin power banks</AskAlLink>.
+        </li>
+      </ul>
+      <h2>The affiliate bit, once</h2>
+      <p>
+        Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
+        listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may differ. I do not invent stock.
+      </p>
+      <p>Cabin bag. Printed Wh. Check the airline. Then fly.</p>
+    </>
+  );
+}
+
+function PortableMonitorBody() {
+  return (
+    <>
+      <p>
+        A laptop panel is one window. Slack eats half of it. The other half is the spreadsheet you
+        actually flew for. Remote workers, students, and anyone working a kitchen table already
+        know this. A portable monitor is the second window that goes back in the bag — trains,
+        hotels, a spare room that is also a guest room. It is not a desktop panel with the stand
+        sawn off. If you need two full hotel monitors, that is a{" "}
+        <GuideLink slug="usb-c-dock-dual-hdmi">dual-HDMI dock</GuideLink> job, and only when the
+        room already has the screens.
+      </p>
+      <h2>Size: 13 to 16 inches, honestly</h2>
+      <p>
+        Smaller than 13 inches and you are stacking two phone-sized pages. Larger than 16 and the
+        panel starts arguing with the laptop for backpack space. Thirteen to fourteen is the "I
+        already carry a 14-inch notebook" class: lighter, easier on a tray table, worse for a
+        full-width sheet. Fifteen to sixteen is the useful line for real work — enough width that
+        Slack can live on one side — and it still sits beside a 14-inch lid without needing a
+        second bag.
+      </p>
+      <p>
+        Weight and the sleeve matter more than the last half-inch. A kickstand that actually holds
+        is worth more than a Hz number you will not see on a hotel slide. Buy the size you will
+        carry twice, not the size that looked clever in a reel.
+      </p>
+      <h2>One cable, if the port can do video</h2>
+      <p>
+        The dream is one USB-C lead: picture and power on the same plug. That only works if the
+        laptop's USB-C port speaks DisplayPort Alt Mode or Thunderbolt. A charging-only USB-C
+        port — common on older Windows machines and some budget boards — will feed the battery
+        and show a black panel. That is not the monitor failing. That is the port.
+      </p>
+      <p>
+        How to check, without a lecture. Look at the laptop spec sheet for "DisplayPort over
+        USB-C", "DP Alt Mode", or Thunderbolt. On a Mac, USB-C that charges the machine usually
+        drives a display. On Windows, the USB-C next to the barrel charger is often the wrong one
+        — try the port the manufacturer marked for video, or the Thunderbolt bolt icon. If the
+        listing for your machine hides this, hail Al or test before a Monday client. I do not
+        invent port maps for laptops I have not seen.
+      </p>
+      <h2>HDMI fallback, and the extra cable</h2>
+      <p>
+        Mini HDMI (or full-size HDMI on some panels) is the backup when USB-C video is missing.
+        HDMI is picture only. The panel then wants its own power — a second USB-C into a brick or
+        a power bank — plus the HDMI lead. That is three items where one cable would have done.
+        Fine for a kitchen table. Annoying on a train tray. Pack the HDMI cable if you have ever
+        sat in front of a charging-only port and sworn.
+      </p>
+      <h2>Stand, height, wrists</h2>
+      <p>
+        A kickstand that holds at one or two angles is enough for a café. It is not a monitor arm.
+        Raise the laptop as well or you will look from a 16-inch panel down to a lid that is still
+        in your lap. A fold-flat riser for the notebook, a mouse that earns its grams, and a cable
+        that can carry the watts: that is the kit. The panel cannot fix a table that is six inches
+        too low.
+      </p>
+      <h2>Second Window 16 — the panel I would pack</h2>
+      <p>
+        <ShopLink slug="second-window-16">Second Window 16</ShopLink> is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.secondWindow16}>ARZOPA Z1FC</AmazonText>
+        : 16.1 inch FHD 144Hz, 106% sRGB, HDR, USB-C plug-and-play or Mini HDMI, kickstand, slim
+        enough to sit beside the laptop. Mid-range, not OLED luxury. Your machine needs a
+        full-featured USB-C port for single-cable video. Sleeve the panel so it does not share
+        scratches with the bricks. I do not hold a panel. The card is affiliate. Approx. UK price
+        is on the card — Amazon’s live checkout may differ.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.secondWindow16} />
+      <h2>The rest of the kit</h2>
+      <p>
+        <ShopLink slug="runway-riser">Runway Riser</ShopLink> is UGREEN’s fold-flat aluminium
+        stand: five heights, a carry pouch, roughly 8–17.3 inch machines. Raise the laptop to
+        match the portable panel. Working flat on a kitchen table is how trips get expensive in
+        physio.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.runwayRiser} />
+      <p>
+        <ShopLink slug="twin-lead-240">Twin Lead 240</ShopLink> is Anker’s 240W-rated right-angle
+        USB-C 2-pack — braided, six feet, 90-degree ends. One lead for the panel if the laptop can
+        do single-cable video. One leftover for the brick. A tired 60W cable is how a 16-inch
+        panel becomes a black rectangle.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.twinLead240} />
+      <p>
+        <ShopLink slug="cabin-cursor">Cabin Cursor</ShopLink> is the MX Master 3S in graphite.
+        Quiet clicks for a hotel call, MagSpeed for the sheet that now has room to exist, Easy-Switch
+        across machines. Trackpads survive short flights. Two screens and a spreadsheet do not.
+        I do not dropship Logitech.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.cabinCursor} />
+      <h2>How I would decide</h2>
+      <ul>
+        <li>One extra window that packs: Second Window 16.</li>
+        <li>Laptop still flat on the table: add Runway Riser first.</li>
+        <li>USB-C video works: Twin Lead 240, one cable, done.</li>
+        <li>USB-C is charge-only: HDMI plus a second power lead, or admit you needed a dock.</li>
+        <li>
+          Two hotel monitors already in the room:{" "}
+          <GuideLink slug="usb-c-dock-dual-hdmi">
+            USB-C dock with dual HDMI
+          </GuideLink>
+          , not a second panel.
+        </li>
+        <li>
+          Still matching a machine:{" "}
+          <AskAlLink q="portable monitor second screen">hail Al about portable monitors</AskAlLink>.
+        </li>
+      </ul>
+      <h2>The affiliate bit, once</h2>
+      <p>
+        Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
+        listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may differ. I do not invent stock.
+      </p>
+      <p>One extra window. Then put it back in the bag.</p>
+    </>
+  );
+}
+
 const bodies: Record<string, () => ReactNode> = {
   "65w-gan-charger-travel": GanBody,
   "anc-headphones-vs-earbuds-commute": AncBody,
@@ -682,6 +951,8 @@ const bodies: Record<string, () => ReactNode> = {
   "travel-power-adapter-uk": WorldAdapterBody,
   "usb-c-dock-dual-hdmi": DualHdmiDockBody,
   "webcam-for-video-calls": WebcamCallsBody,
+  "power-bank-hand-luggage-uk": PowerBankLuggageBody,
+  "portable-monitor-laptop-second-screen": PortableMonitorBody,
 };
 
 export function GuideArticle({ guide }: { guide: Guide }) {
