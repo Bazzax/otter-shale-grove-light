@@ -333,7 +333,7 @@ function CatalogHit({ product }: { product: Product }) {
       <img
         src={product.image}
         alt=""
-        className="size-16 rounded-lg object-cover outline outline-1 -outline-offset-1 outline-ink/10"
+        className="size-16 rounded-lg bg-raised object-cover outline outline-1 -outline-offset-1 outline-ink/10"
       />
       <span className="min-w-0 py-1">
         <span className="block truncate font-display text-sm font-medium">{product.name}</span>
