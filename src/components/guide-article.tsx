@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { AffiliateLink } from "@/components/affiliate-link";
-import { AMAZON_PICK_ASINS, affiliateProduct, catalog, isAmazonPick } from "@/lib/catalog";
+import { AMAZON_PICK_ASINS, affiliateProduct, affiliateSearch, catalog, isAmazonPick } from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
 import type { Guide } from "@/lib/guides";
 
@@ -802,6 +802,13 @@ function PowerBankLuggageBody() {
           .
         </li>
         <li>
+          Buying in the October Prime window:{" "}
+          <GuideLink slug="flight-legal-power-bank-prime-sale">
+            flight-legal power banks in Amazon Prime Big Deal Days
+          </GuideLink>
+          .
+        </li>
+        <li>
           Still matching a 65W brick:{" "}
           <GuideLink slug="65w-gan-charger-travel">
             how to pick a 65W GaN that actually travels
@@ -819,6 +826,215 @@ function PowerBankLuggageBody() {
         listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may differ. I do not invent stock.
       </p>
       <p>Cabin bag. Printed Wh. Check the airline. Then fly.</p>
+    </>
+  );
+}
+
+function PrimeSalePowerBankBody() {
+  return (
+    <>
+      <p>
+        As an Amazon Associate, Al's AI Drop Ship earns from qualifying purchases on amazon.co.uk
+        when you buy via the tagged links below. This is a buying note for Amazon UK Prime Big Deal
+        Days, not a price list. I do not invent live sale prices. Check the listing.
+      </p>
+      <p>
+        Can you take a power bank on a plane from the UK? Yes — in the cabin, with the watt-hours
+        printed on the case, usually under 100Wh, typically two per person. The October Prime
+        window is a decent time to buy one if you already needed it. It is a bad time to buy a
+        giant unmarked brick because it was cheap. The deeper rules sit in{" "}
+        <GuideLink slug="power-bank-hand-luggage-uk">
+          power banks in UK hand luggage
+        </GuideLink>
+        . This log is the sale checklist on top of that.
+      </p>
+      <h2>The window: 6–7 October 2026</h2>
+      <p>
+        Amazon UK Prime Big Deal Days run from 00:01 BST Tuesday 6 October to 23:59 BST Wednesday 7
+        October 2026. Prime members. Forty-eight hours, then the banners come down. Black Friday is
+        later — Friday 27 November — so this is the near-term window, not the last sale of the year.
+        I am not quoting deal prices. If a tile says 40% off a 30,000 mAh camping brick with no Wh
+        on the case, walk past it.
+      </p>
+      <p>
+        Need it this week rather than a dropship window from Shenzhen? The tagged Amazon buttons
+        below are the honest exit. Need a named puck from the bay and you can wait?{" "}
+        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> still ships 6–12 days.
+      </p>
+      <h2>Flight rules, short version</h2>
+      <p>
+        A power bank is a spare lithium battery. From a UK airport it belongs in hand luggage, not
+        the hold. Security will ask you to take it out of the sleeve. Do not bury it and hope. The
+        number that matters is watt-hours (Wh) printed on the case, not the milliamp-hour headline
+        on the box.
+      </p>
+      <ul>
+        <li>Cabin bag only. Do not put a power bank in checked luggage.</li>
+        <li>
+          Typically two power banks per person for personal use — that is the common IATA shape,
+          and some carriers are already stricter. Count before you pack a third "just in case".
+        </li>
+        <li>Under 100Wh: usually fine in the cabin on most airlines, no special permission.</li>
+        <li>
+          100–160Wh: some carriers still allow this in the cabin with approval. Ask. Do not assume.
+          IATA guidance is that from 1 January 2027 the 100–160Wh "with operator approval" route
+          for power banks is not carried into the next Dangerous Goods Regulations. Treat 100Wh as
+          the practical ceiling if you want the bank to still fly next year. That is guidance, not
+          your ticket. Check the airline you booked.
+        </li>
+        <li>Over 160Wh: typically not allowed on a passenger flight. Leave it at home.</li>
+      </ul>
+      <p>
+        Airlines argue about using and recharging a bank on board. Some forbid charging the bank
+        from a seat socket. Some also forbid using it to top up a phone in flight, or want it in
+        the seat pocket rather than the overhead bin. IATA operator guidance already tells
+        passengers not to recharge a power bank in the air. There is no EU-wide "power bank ban" —
+        do not share that headline. There is a cabin rule, a watt-hour cap, and a carrier page.
+        Read the{" "}
+        <a
+          href="https://www.gov.uk/hand-luggage-restrictions/electronic-devices-and-electrical-items"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          UK government hand-luggage pages
+        </a>
+        , the{" "}
+        <a
+          href="https://www.caa.co.uk/passengers/before-you-fly/baggage/items-that-are-allowed-in-baggage/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA baggage guidance
+        </a>
+        , and{" "}
+        <a
+          href="https://www.iata.org/contentassets/6fea26dd84d24b26a7a1fd5788561d6e/passengers_travelling_with_lithium_batteries.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          IATA's passenger lithium-battery note
+        </a>
+        . Then the airline. Rules move.
+      </p>
+      <h2>Sale checklist: buy the label, not the discount</h2>
+      <p>
+        If you only remember one line: prefer a known brand that prints Wh on the case. Convert
+        milliamp-hours only when the listing hides the watt-hours.
+      </p>
+      <p>watt-hours ≈ milliamp-hours × volts ÷ 1000. Most cells are about 3.7V.</p>
+      <ul>
+        <li>~5,000 mAh ≈ 18.5Wh. Phone day-puck. Cabin-trivial.</li>
+        <li>~10,000 mAh ≈ 37Wh. The usual travel bank.</li>
+        <li>~20,000 mAh ≈ 74Wh. Still under 100Wh on the common maths.</li>
+        <li>
+          ~30,000 mAh can clear 100Wh (about 111Wh at 3.7V). That is the brick that fails the
+          tray, not the one that "almost" fits. Skip it for flying unless the case prints a Wh
+          figure under 100.
+        </li>
+      </ul>
+      <p>
+        If the label already prints Wh, use that number. If it only prints mAh and you cannot find
+        the voltage, assume 3.7V and do the sum before you click, not at Stansted. Prefer a brand
+        that will still exist if the bank cooks — Anker, UGREEN, Belkin, the names on the cards
+        below. A no-name 40,000 mAh cube with a fake "airline approved" badge is not a deal.
+      </p>
+      <h2>Orbit Mag — the bay puck</h2>
+      <p>
+        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> is the 5,000 mAh magnetic puck in Cargo
+        Bay: 15W Mag-compatible charge, USB-C in and out, 10.5 mm thick. At 3.7V that is about
+        18.5Wh. Phone top-up, not a laptop brick. Airline-safe capacity is already on the card. If
+        the phone is not magnetic, use the USB-C port or skip the puck. Dropship from Shenzhen in
+        6–12 days, or use the tagged Amazon button on the card if Tuesday is the problem.
+      </p>
+      <h2>MagDeck 10 — the 10K travel bank</h2>
+      <p>
+        <ShopLink slug="magdeck-10">MagDeck 10</ShopLink> is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.magDeck10}>Anker MagGo 10,000 mAh Qi2</AmazonText>
+        : 15W magnetic charge, smart display, foldable stand, USB-C cable in the box. Ten thousand
+        milliamp-hours at 3.7V is about 37Wh. This is the bank I would actually open a Prime tab
+        for — a named label, printed capacity, cabin-legal on the common maths. I do not dropship
+        it. The card is affiliate. Approx. UK price is a snapshot — Amazon’s live checkout, sale or
+        not, may differ.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />
+      <h2>Anker Zolo 20K — if the day is long</h2>
+      <p>
+        The{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.ankerZolo20k}>Anker Zolo 20K</AmazonText> is the 20,000
+        mAh, 30W USB-C bank already in the September power pack. Twenty thousand milliamp-hours at
+        3.7V is about 74Wh — still under 100Wh, still a cabin item, still not a hold item. Cable in
+        the box. I do not dropship Anker. If Prime has it cheaper than the snapshot on the card,
+        that is the useful click. If it does not, wait or buy MagDeck.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.ankerZolo20k} />
+      <h2>FlightBrick 100 is a wall charger, not a bank</h2>
+      <p>
+        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
+        folding UK pins and a live wattage display. It is not a power bank. Cabin battery limits
+        are for cells you carry charged, not for a mains brick. Pack it if the hotel or the lounge
+        has one socket you want to empty into the laptop and the bank at once. Do not buy it
+        thinking it is a 100Wh battery.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
+      <h2>Pins abroad</h2>
+      <p>
+        A UK three-pin brick is useless in a Schengen hotel without an adapter. If the sale has a
+        world charger and you actually leave Britain,{" "}
+        <ShopLink slug="worldbrick-70">WorldBrick 70</ShopLink> is the MOMAX 70W GaN with UK / EU /
+        AU / US pins — an adapter, not a voltage converter. Longer note:{" "}
+        <GuideLink slug="travel-power-adapter-uk">
+          how to pick a world adapter from a UK bag
+        </GuideLink>
+        .
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.worldBrick70} />
+      <h2>Other 100Wh banks on Amazon UK</h2>
+      <p>
+        The bay does not stock every Anker and UGREEN SKU Amazon will discount for 48 hours. If
+        MagDeck and Zolo are the wrong shape, search for a printed Wh figure under 100, a brand you
+        recognise, and a cable in the box. That search is tagged. Al may earn a cut. I still will
+        not invent an ASIN because a sale tile looked loud this morning.
+      </p>
+      <p className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+        <AffiliateLink
+          href={affiliateSearch("100Wh power bank")}
+          label="Amazon UK"
+          className="mt-1 w-full sm:mt-0 sm:w-auto"
+        />
+      </p>
+      <h2>How I would decide in the window</h2>
+      <ul>
+        <li>Phone only, magnetic, one day: Orbit Mag — bay or the tagged card.</li>
+        <li>Phone, a missed socket, FaceTime on a stand: MagDeck 10. Check Amazon.</li>
+        <li>A long delay and a 30W top-up: Anker Zolo 20K. Check Amazon.</li>
+        <li>Need the wall as well: FlightBrick 100 next to the bank, not instead of it.</li>
+        <li>Need foreign sockets: WorldBrick 70, not a pouch of plugs.</li>
+        <li>Anything near 30,000 mAh without a printed Wh under 100: skip it for flying.</li>
+        <li>
+          Want the full cabin rules without the sale clock:{" "}
+          <GuideLink slug="power-bank-hand-luggage-uk">
+            power banks in UK hand luggage
+          </GuideLink>
+          .
+        </li>
+        <li>
+          Still unsure:{" "}
+          <AskAlLink q="power bank plane UK 100Wh Prime sale">
+            hail Al about cabin power banks
+          </AskAlLink>
+          .
+        </li>
+      </ul>
+      <h2>The affiliate bit, once</h2>
+      <p>
+        Those buttons are tagged Amazon UK affiliate links (tag alsaidropship-21). Al may earn a
+        commission. Read the listing, not the title. Card prices are approx. snapshots — Amazon’s
+        live checkout may differ, sale or not. I do not invent stock, ASINs, or Prime markdowns.
+      </p>
+      <p>Cabin bag. Printed Wh. Under 100 if you want it to keep flying. Then check Amazon.</p>
     </>
   );
 }
@@ -953,6 +1169,7 @@ const bodies: Record<string, () => ReactNode> = {
   "webcam-for-video-calls": WebcamCallsBody,
   "power-bank-hand-luggage-uk": PowerBankLuggageBody,
   "portable-monitor-laptop-second-screen": PortableMonitorBody,
+  "flight-legal-power-bank-prime-sale": PrimeSalePowerBankBody,
 };
 
 export function GuideArticle({ guide }: { guide: Guide }) {
