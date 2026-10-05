@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { AffiliateLink } from "@/components/affiliate-link";
-import { AmazonSearchLink } from "@/components/amazon-search-link";
-import { AMAZON_PICK_ASINS, affiliateProduct, catalog, isAmazonPick } from "@/lib/catalog";
+import { AMAZON_PICK_ASINS, affiliateProduct, affiliateSearch, catalog, isAmazonPick } from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
 import type { Guide } from "@/lib/guides";
 
@@ -999,7 +998,13 @@ function PrimeSalePowerBankBody() {
         recognise, and a cable in the box. That search is tagged. Al may earn a cut. I still will
         not invent an ASIN because a sale tile looked loud this morning.
       </p>
-      <AmazonSearchLink query="100Wh power bank" />
+      <p className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+        <AffiliateLink
+          href={affiliateSearch("100Wh power bank")}
+          label="Amazon UK"
+          className="mt-1 w-full sm:mt-0 sm:w-auto"
+        />
+      </p>
       <h2>How I would decide in the window</h2>
       <ul>
         <li>Phone only, magnetic, one day: Orbit Mag — bay or the tagged card.</li>
