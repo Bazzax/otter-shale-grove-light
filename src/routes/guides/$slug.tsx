@@ -1,13 +1,29 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { AffiliateLink } from "@/components/affiliate-link";
 import { GuideArticle } from "@/components/guide-article";
 import { JsonLd } from "@/components/json-ld";
 import { ProductCard } from "@/components/product-card";
 import { getProduct } from "@/lib/catalog";
-import { getGuide, guideMetaTitle, guides, relatedProducts } from "@/lib/guides";
+import {
+  getGuide,
+  GUIDE_SLUG_REDIRECTS,
+  guideMetaTitle,
+  guides,
+  relatedProducts,
+} from "@/lib/guides";
 import { APP_NAME, articleJsonLd, breadcrumbJsonLd, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/guides/$slug")({
+  beforeLoad: ({ params }) => {
+    const next = GUIDE_SLUG_REDIRECTS[params.slug];
+    if (next) {
+      throw redirect({
+        to: "/guides/$slug",
+        params: { slug: next },
+        statusCode: 308,
+      });
+    }
+  },
   loader: ({ params }) => {
     const guide = getGuide(params.slug);
     if (!guide) throw notFound();

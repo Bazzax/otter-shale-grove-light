@@ -13,7 +13,7 @@ export function pageHead(
   title: string,
   description: string,
   path?: string,
-  options?: { type?: "website" | "article" },
+  options?: { type?: "website" | "article"; robots?: string },
 ) {
   const url = path ? `${SITE_ORIGIN}${path}` : SITE_ORIGIN;
   const image = `${SITE_ORIGIN}/og.jpg`;
@@ -22,7 +22,7 @@ export function pageHead(
     meta: [
       { title },
       { name: "description", content: description },
-      { name: "robots", content: "index, follow" },
+      { name: "robots", content: options?.robots ?? "index, follow" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:type", content: type },
