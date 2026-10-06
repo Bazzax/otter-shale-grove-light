@@ -15,6 +15,8 @@ export const Route = createFileRoute("/checkout")({
     pageHead(
       `Bay | ${APP_NAME}`,
       "Demo dropship checkout for Al's AI Drop Ship. Nothing is billed. Affiliate Amazon buttons live on product cards.",
+      undefined,
+      { robots: "noindex, follow" },
     ),
   component: CheckoutPage,
 });

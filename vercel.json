@@ -13,6 +13,11 @@
       "source": "/guides/travel-desk-september",
       "destination": "/guides/travel-desk",
       "permanent": true
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon.svg",
+      "permanent": false
     }
   ]
 }
