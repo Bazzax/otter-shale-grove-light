@@ -203,7 +203,7 @@ function PackingPowerBody() {
     <>
       <p>
         Skip the loose batteries and the Fire sticks. What is actually moving in the UK accessory
-        charts this month is a power bank that ships with a cable, a foldable GaN that does not stab
+        charts is a power bank that ships with a cable, a foldable GaN that does not stab
         the sleeve, and a hub you can leave on a hotel desk. That is the pack. Everything else is
         a second bag.
       </p>
@@ -773,7 +773,8 @@ function PowerBankLuggageBody() {
       <p>
         The{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.ankerZolo20k}>Anker Zolo 20K</AmazonText> is the 20,000
-        mAh, 30W USB-C bank already in the September power pack. Twenty thousand milliamp-hours at
+        mAh, 30W USB-C bank already in the{" "}
+        <GuideLink slug="packing-power">travel power pack</GuideLink>. Twenty thousand milliamp-hours at
         3.7V is about 74Wh — still under the common 100Wh line, still a cabin item, still not a
         hold item. Cable in the box. I do not dropship Anker. If you need a bank this week and the
         phone will not last a delay, this is the tagged listing.
@@ -964,7 +965,8 @@ function PrimeSalePowerBankBody() {
       <p>
         The{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.ankerZolo20k}>Anker Zolo 20K</AmazonText> is the 20,000
-        mAh, 30W USB-C bank already in the September power pack. Twenty thousand milliamp-hours at
+        mAh, 30W USB-C bank already in the{" "}
+        <GuideLink slug="packing-power">travel power pack</GuideLink>. Twenty thousand milliamp-hours at
         3.7V is about 74Wh — still under 100Wh, still a cabin item, still not a hold item. Cable in
         the box. I do not dropship Anker. If Prime has it cheaper than the snapshot on the card,
         that is the useful click. If it does not, wait or buy MagDeck.
@@ -1161,8 +1163,8 @@ const bodies: Record<string, () => ReactNode> = {
   "65w-gan-charger-travel": GanBody,
   "anc-headphones-vs-earbuds-commute": AncBody,
   "dropship-lead-times": LeadTimeBody,
-  "packing-power-september": PackingPowerBody,
-  "travel-desk-september": TravelDeskBody,
+  "packing-power": PackingPowerBody,
+  "travel-desk": TravelDeskBody,
   "after-summer-desk-reset": AfterSummerBody,
   "travel-power-adapter-uk": WorldAdapterBody,
   "usb-c-dock-dual-hdmi": DualHdmiDockBody,

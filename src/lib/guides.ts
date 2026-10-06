@@ -45,9 +45,9 @@ export const guides: Guide[] = [
     affiliateSlug: "nimbus-ssd",
   },
   {
-    slug: "packing-power-september",
-    title: "What I'd pack for power this month",
-    heading: "What I'd actually pack for power this month",
+    slug: "packing-power",
+    title: "What I'd pack for travel power",
+    heading: "What I'd actually pack for travel power",
     kicker: "Power",
     description:
       "Anker, UGREEN, Belkin, and a hotel-desk hub — tagged Amazon UK picks that match how people actually travel right now.",
@@ -56,7 +56,7 @@ export const guides: Guide[] = [
     affiliateSlug: "arc-gan",
   },
   {
-    slug: "travel-desk-september",
+    slug: "travel-desk",
     title: "What I'd pack for a desk away from home",
     heading: "What I'd actually pack for a desk away from home",
     kicker: "Desk",
@@ -158,6 +158,12 @@ export const guides: Guide[] = [
     affiliateSlug: "magdeck-10",
   },
 ];
+
+/** Old dated slugs that must 308 to the current evergreen path. */
+export const GUIDE_SLUG_REDIRECTS: Record<string, string> = {
+  "packing-power-september": "packing-power",
+  "travel-desk-september": "travel-desk",
+};
 
 export function getGuide(slug: string) {
   return guides.find((guide) => guide.slug === slug);

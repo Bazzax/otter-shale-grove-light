@@ -2,5 +2,17 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "tanstack-start",
   "buildCommand": "npm run build",
-  "installCommand": "npm install"
+  "installCommand": "npm install",
+  "redirects": [
+    {
+      "source": "/guides/packing-power-september",
+      "destination": "/guides/packing-power",
+      "permanent": true
+    },
+    {
+      "source": "/guides/travel-desk-september",
+      "destination": "/guides/travel-desk",
+      "permanent": true
+    }
+  ]
 }
