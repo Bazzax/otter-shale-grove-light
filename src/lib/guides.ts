@@ -146,23 +146,13 @@ export const guides: Guide[] = [
     ],
     affiliateSlug: "second-window-16",
   },
-  {
-    slug: "flight-legal-power-bank-prime-sale",
-    title: "Flight-legal power banks in Amazon Prime Big Deal Days",
-    heading: "Buying a travel power bank in the Prime sale — UK flight rules",
-    kicker: "Power",
-    description:
-      "Prime Big Deal Days (6–7 Oct 2026): how to buy a cabin-legal 100Wh power bank for a UK flight. Printed Wh, the mAh maths, two-bank limit, Orbit Mag and MagDeck 10 — tagged Amazon UK picks, no invented sale prices.",
-    published: "2026-10-05",
-    relatedSlugs: ["orbit-bank", "magdeck-10", "flightbrick-100", "worldbrick-70"],
-    affiliateSlug: "magdeck-10",
-  },
 ];
 
 /** Old dated slugs that must 308 to the current evergreen path. */
 export const GUIDE_SLUG_REDIRECTS: Record<string, string> = {
   "packing-power-september": "packing-power",
   "travel-desk-september": "travel-desk",
+  "flight-legal-power-bank-prime-sale": "power-bank-hand-luggage-uk",
 };
 
 export function getGuide(slug: string) {
