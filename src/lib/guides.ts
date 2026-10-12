@@ -125,8 +125,8 @@ export const guides: Guide[] = [
     heading: "Power banks in UK hand luggage: what flies, what stays home",
     kicker: "Power",
     description:
-      "Cabin bag, not the hold. How watt-hours work, the mAh maths, Orbit Mag and MagDeck 10, and why you still check the airline and the CAA before you fly.",
-    published: "2026-09-30",
+      "Cabin bag, not the hold. CAA rules since 27 March 2026: two banks, no charging on board. How watt-hours work, Orbit Mag and MagDeck 10, and why you still check the airline.",
+    published: "2026-10-12",
     relatedSlugs: ["orbit-bank", "magdeck-10", "flightbrick-100"],
     affiliateSlug: "magdeck-10",
   },
