@@ -20,7 +20,7 @@ export function ProductCard({
         size === "lg" && "lg:row-span-2",
       )}
     >
-      <div className="relative overflow-hidden rounded-xl bg-paper">
+      <div className="relative overflow-hidden rounded-xl bg-raised">
         <img
           src={product.image}
           alt={`${product.name} — ${product.tagline}`}
