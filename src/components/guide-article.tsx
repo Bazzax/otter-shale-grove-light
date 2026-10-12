@@ -705,8 +705,46 @@ function PowerBankLuggageBody() {
         >
           CAA baggage guidance
         </a>
-        , then the carrier you actually booked. Those pages also cover how many banks you can carry
-        and whether you can charge them in flight. Rules move. I do not invent airline policy.
+        , then the carrier you actually booked. The CAA list in force since 27 March 2026 is
+        below. I do not invent airline policy.
+      </p>
+      <h2>Rules since March 2026</h2>
+      <p>
+        From 27 March 2026 the CAA sets passenger power-bank rules of its own. This is that list,
+        not airline colour. Read the{" "}
+        <a
+          href="https://www.caa.co.uk/commercial-industry/airlines/dangerous-goods/changes-to-rules-on-the-carriage-of-lithium-cellsbatteries-and-power-banks/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA changes page
+        </a>
+        .
+      </p>
+      <ul>
+        <li>Maximum of two power banks per person.</li>
+        <li>Must be carried in carry-on baggage.</li>
+        <li>Must be individually protected when not in use.</li>
+        <li>Must not be recharged on board the aircraft.</li>
+        <li>Should not be used to charge other portable electronic devices on board the aircraft.</li>
+        <li>
+          Power banks up to 100Wh (lithium ion) are allowed without operator approval. Greater
+          than 100Wh but not exceeding 160Wh requires approval from the operator.
+        </li>
+      </ul>
+      <p>
+        Some airlines ask passengers not to store power banks in overhead lockers. The{" "}
+        <a
+          href="https://www.caa.co.uk/air-passengers/about-your-trip/baggage/pack-right-safe-flight/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA packing advice
+        </a>{" "}
+        puts it as: you may be asked to put power banks in a seat-back pocket rather than an
+        overhead locker.
       </p>
       <h2>Cabin bag. Not the hold.</h2>
       <p>
@@ -819,7 +857,7 @@ function PowerBankLuggageBody() {
         Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
         listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may differ. I do not invent stock.
       </p>
-      <p>Cabin bag. Printed Wh. Check the airline. Then fly.</p>
+      <p>Two banks. Cabin bag. Printed Wh. Check the airline. Then fly.</p>
     </>
   );
 }
