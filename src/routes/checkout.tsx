@@ -168,7 +168,7 @@ function CheckoutPage() {
                   <img
                     src={product.image}
                     alt=""
-                    className="size-16 rounded-lg object-cover outline outline-1 -outline-offset-1 outline-ink/10"
+                    className="size-16 rounded-lg bg-raised object-cover outline outline-1 -outline-offset-1 outline-ink/10"
                   />
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium">{product.name}</p>
