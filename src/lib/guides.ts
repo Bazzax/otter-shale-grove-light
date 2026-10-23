@@ -37,6 +37,69 @@ export type Guide = {
 export const CAA_PACK_RIGHT =
   "https://www.caa.co.uk/air-passengers/about-your-trip/baggage/pack-right-safe-flight/";
 
+export const AIRLINE_POWER_BANK_SOURCES = {
+  ryanair: "https://help.ryanair.com/hc/en-gb/articles/12890774807569-What-items-are-permitted-on-board",
+  easyjetRestricted: "https://www.easyjet.com/en/help/baggage/restricted-and-unusual-items",
+  easyjetDangerous: "https://www.easyjet.com/en/terms-and-conditions/dangerous-goods",
+  easyjetCheckin: "https://www.easyjet.com/en/checkin/dangerousgoods",
+  ba: "https://www.britishairways.com/content/information/baggage-essentials/liquids-and-restrictions",
+  jet2: "https://www.jet2.com/en/dangerous-goods",
+} as const;
+
+export type AirlinePowerBankRow = {
+  airline: string;
+  maxBanks: string;
+  whLimit: string;
+  whereOnBoard: string;
+  rechargeBank: string;
+  chargePhone: string;
+  sources: { label: string; href: string }[];
+};
+
+/** Official-site rows. Unverified cells stay "Check with airline". */
+export const AIRLINE_POWER_BANK_ROWS: AirlinePowerBankRow[] = [
+  {
+    airline: "Ryanair",
+    maxBanks: "2 per passenger",
+    whLimit: "100Wh, with no exceptions (nothing over 100Wh in cabin or hold)",
+    whereOnBoard: "On you or in the under-seat bag. Not in overhead lockers",
+    rechargeBank: "No",
+    chargePhone: "Yes, except during taxi, take-off and landing, or when crew say no",
+    sources: [{ label: "Ryanair Help Centre", href: AIRLINE_POWER_BANK_SOURCES.ryanair }],
+  },
+  {
+    airline: "easyJet",
+    maxBanks: "2 per customer",
+    whLimit: "Up to 160Wh (easyJet gives automatic approval up to 160Wh)",
+    whereOnBoard: "Cabin bags only. Ideally somewhere you can monitor it",
+    rechargeBank: "No",
+    chargePhone: "No",
+    sources: [
+      { label: "easyJet restricted items", href: AIRLINE_POWER_BANK_SOURCES.easyjetRestricted },
+      { label: "easyJet dangerous goods", href: AIRLINE_POWER_BANK_SOURCES.easyjetDangerous },
+      { label: "easyJet check-in dangerous goods", href: AIRLINE_POWER_BANK_SOURCES.easyjetCheckin },
+    ],
+  },
+  {
+    airline: "British Airways",
+    maxBanks: "2 per person (within 4 spare batteries in total)",
+    whLimit: "100Wh. Must display a capacity rating",
+    whereOnBoard: "Seat pocket or a bag under the seat in front",
+    rechargeBank: "No. Seat power is for your devices, not power banks",
+    chargePhone: "Check with airline",
+    sources: [{ label: "BA restricted items", href: AIRLINE_POWER_BANK_SOURCES.ba }],
+  },
+  {
+    airline: "Jet2",
+    maxBanks: "2 per person",
+    whLimit: "Up to 160Wh (Jet2 gives automatic approval above 100Wh)",
+    whereOnBoard: "Hand luggage, placed under your seat",
+    rechargeBank: "No",
+    chargePhone: "No",
+    sources: [{ label: "Jet2 dangerous goods", href: AIRLINE_POWER_BANK_SOURCES.jet2 }],
+  },
+];
+
 export const PACKING_POWER_FAQS: GuideFaq[] = [
   {
     q: "Is a 20,000mAh power bank allowed on a plane?",
@@ -127,7 +190,7 @@ export const guides: Guide[] = [
     published: "2026-09-23",
     updated: "2026-10-23",
     faqs: PACKING_POWER_FAQS,
-    relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub"],
+    relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub", "magdeck-10"],
     affiliateSlug: "arc-gan",
   },
   {

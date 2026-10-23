@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { AffiliateLink } from "@/components/affiliate-link";
 import { AMAZON_PICK_ASINS, affiliateProduct, affiliateSearch, catalog, isAmazonPick } from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
-import { CAA_PACK_RIGHT, PACKING_POWER_FAQS, type Guide } from "@/lib/guides";
+import { AIRLINE_POWER_BANK_ROWS, CAA_PACK_RIGHT, PACKING_POWER_FAQS, type Guide } from "@/lib/guides";
 
 function ShopLink({ slug, children }: { slug: string; children: ReactNode }) {
   return (
@@ -258,6 +258,60 @@ function PackingPowerBody() {
         </GuideLink>
         .
       </p>
+      <h2>What do Ryanair, easyJet, BA and Jet2 allow?</h2>
+      <p>
+        Checked on 23 October 2026 on each airline's own site. Airlines change these rules, so
+        click through before you fly. I do not invent airline policy.
+      </p>
+      <div className="overflow-x-auto rounded-2xl bg-cream shadow-[var(--shadow-border)]">
+        <table className="w-full min-w-[52rem] text-left text-sm">
+          <thead>
+            <tr className="text-xs tracking-widest text-clay uppercase">
+              <th className="px-4 py-3 font-medium">Airline</th>
+              <th className="px-4 py-3 font-medium">Max banks</th>
+              <th className="px-4 py-3 font-medium">Wh limit</th>
+              <th className="px-4 py-3 font-medium">Where on board</th>
+              <th className="px-4 py-3 font-medium">Recharge the bank?</th>
+              <th className="px-4 py-3 font-medium">Charge a phone from it?</th>
+              <th className="px-4 py-3 font-medium">Source</th>
+            </tr>
+          </thead>
+          <tbody className="text-stone">
+            {AIRLINE_POWER_BANK_ROWS.map((row) => (
+              <tr key={row.airline} className="border-t border-line align-top">
+                <td className="px-4 py-3 font-medium text-ink">{row.airline}</td>
+                <td className="px-4 py-3">{row.maxBanks}</td>
+                <td className="px-4 py-3">{row.whLimit}</td>
+                <td className="px-4 py-3">{row.whereOnBoard}</td>
+                <td className="px-4 py-3">{row.rechargeBank}</td>
+                <td className="px-4 py-3">{row.chargePhone}</td>
+                <td className="px-4 py-3">
+                  <ul className="list-none space-y-1 pl-0">
+                    {row.sources.map((source) => (
+                      <li key={source.href}>
+                        <a
+                          href={source.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-clay hover:text-clay-dark"
+                        >
+                          {source.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The short version: Ryanair and BA cap you at 100Wh. easyJet and Jet2 go up to 160Wh. None
+        of the four let you recharge the bank on board. easyJet and Jet2 do not let you charge a
+        phone from one. BA still does not say, in official wording, whether you may charge a phone
+        from a bank in flight — that cell stays "Check with airline".
+      </p>
       <h2>Is a 20,000mAh power bank allowed on a plane?</h2>
       <p>
         Yes, as a cabin item, if it sits under 100Wh and you stay inside the two-bank limit. The{" "}
@@ -301,6 +355,64 @@ function PackingPowerBody() {
         aluminum, 100W passthrough, I actually tested 4K60. ABLEWE is the next-day stand-in.
       </p>
       <AmazonPick asin="B0DN9F245H" />
+      <h2>Which power banks are cabin-legal on those four airlines?</h2>
+      <p>
+        Cabin verdicts only. Watt-hours use the same 3.7V nominal sum already on this page, and
+        only where a milliamp-hour figure is already stated — except A1695, which uses the Wh
+        printed on the Amazon UK listing. Live UK prices below were checked 23 Oct 2026 on
+        Amazon.co.uk. Amazon’s live checkout may differ.
+      </p>
+      <h3>INIU 20,000mAh 45W</h3>
+      <p>
+        About 74Wh at 3.7V nominal (20,000 × 3.7 ÷ 1000). That sits under 100Wh, so it is
+        cabin-legal on Ryanair, easyJet, BA and Jet2 if you stay inside the two-bank limit.
+        Forty-five watt USB-C, cable built in. The tagged listing is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.iniu20k45w}>INIU P51L 20,000mAh 45W</AmazonText>{" "}
+        (ASIN B0DCZ82MGG). £27.53, price checked 23 Oct 2026 on Amazon.co.uk.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.iniu20k45w} />
+      <h3>Anker Laptop Power Bank 25,000mAh (A1695)</h3>
+      <p>
+        The one to look at if a laptop is the thing that dies. Still two banks at most, and
+        Ryanair and BA will not take anything over 100Wh. The{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.ankerA1695}>Amazon UK listing for A1695</AmazonText>{" "}
+        (ASIN B0DCBB2YTR) prints a nominal <strong className="font-medium text-ink">25,000mAh
+        (90Wh)</strong> capacity. That is under 100Wh, so it is cabin-legal on all four if you
+        stay inside two banks. A 3.7V sum from 25,000mAh is the wrong tool on this pack — use the
+        printed 90Wh. £69.98, price checked 23 Oct 2026 on Amazon.co.uk. Anker UK’s own store
+        listed the same model at £89.98 the same day.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.ankerA1695} />
+      <h3>INIU 10,000mAh 45W</h3>
+      <p>
+        About 37Wh at 3.7V nominal (10,000 × 3.7 ÷ 1000). Cabin-trivial: a phone-and-earbuds bank
+        that stays well under every Wh line in the table. The tagged listing is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.iniu10k45w}>INIU P50 10,000mAh 45W</AmazonText>{" "}
+        (ASIN B0DQD385HN). £27.99, price checked 23 Oct 2026 on Amazon.co.uk.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.iniu10k45w} />
+      <h3>Anker Zolo 20K</h3>
+      <p>
+        Already covered above: 20,000 mAh, about 74Wh, 30W USB-C, cable in the box. Cabin-legal on
+        all four if you stay inside two banks. The tagged listing is on that section.
+      </p>
+      <h3>MagDeck 10 (Anker MagGo 10,000mAh Qi2)</h3>
+      <p>
+        <ShopLink slug="magdeck-10">MagDeck 10</ShopLink> is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.magDeck10}>Anker MagGo 10,000 mAh Qi2</AmazonText>
+        : about 37Wh at 3.7V nominal (10,000 × 3.7 ÷ 1000). Fifteen-watt magnetic charge, a
+        display, a fold-out stand. Cabin-legal. Covers the day you miss the socket. I do not
+        dropship it. The card is affiliate. £55.98, price checked 23 Oct 2026 on Amazon.co.uk
+        (AnkerDirect UK featured offer). Amazon’s live checkout may differ.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />
+      <h3>Baseus magnetic power bank</h3>
+      <p>
+        Already covered above. This page has never printed a milliamp-hour figure for it, so there
+        is no Wh sum. Read the case.{" "}
+        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> is the bay version: 5,000 mAh, about
+        18.5Wh. The tagged Baseus listing sits on that section.
+      </p>
       <h2>Questions people type</h2>
       <dl className="space-y-6">
         {PACKING_POWER_FAQS.map((item) => (
