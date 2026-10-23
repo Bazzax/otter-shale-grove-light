@@ -1,6 +1,19 @@
 import { getProduct } from "@/lib/catalog";
 import { APP_NAME } from "@/lib/seo";
 
+export type GuideFaq = { q: string; a: string };
+
+export type GuideListItem = {
+  name: string;
+  description: string;
+  /** Site path, e.g. /shop/second-window-16 */
+  path?: string;
+  /** Absolute official or retailer URL when there is no shop page. */
+  url?: string;
+  image?: string;
+  brand?: string;
+};
+
 export type Guide = {
   slug: string;
   title: string;
@@ -9,9 +22,69 @@ export type Guide = {
   kicker: string;
   description: string;
   published: string;
+  /** Visible + JSON-LD dateModified when the log was revised after publish. */
+  updated?: string;
+  faqs?: GuideFaq[];
+  itemList?: {
+    name: string;
+    description?: string;
+    items: GuideListItem[];
+  };
   relatedSlugs: string[];
   affiliateSlug: string;
 };
+
+export const CAA_PACK_RIGHT =
+  "https://www.caa.co.uk/air-passengers/about-your-trip/baggage/pack-right-safe-flight/";
+
+export const PACKING_POWER_FAQS: GuideFaq[] = [
+  {
+    q: "Is a 20,000mAh power bank allowed on a plane?",
+    a: "Usually yes — in cabin / hand luggage only, never the hold. 20,000 mAh at 3.7V nominal is about 74Wh (Wh = mAh × V ÷ 1000), which sits under the CAA's 100Wh line. The CAA allows a maximum of two power banks per person. Always check the airline you booked.",
+  },
+  {
+    q: "Can I put a power bank in hold luggage?",
+    a: "No. The UK Civil Aviation Authority says always take power banks with you in the cabin. Never pack them in checked luggage.",
+  },
+  {
+    q: "How many power banks can I take on a UK flight?",
+    a: "The CAA says you can only take two power banks per person. They should never be recharged onboard the aircraft. Check your airline's own size and quantity limits as well.",
+  },
+  {
+    q: "What do the 100Wh and 160Wh cabin limits mean?",
+    a: "On the CAA pack-right page: under 100Wh is the common size for phones, laptops and cameras, and those should travel in the cabin. 100Wh to 160Wh needs airline approval. Over 160Wh is prohibited in passenger baggage.",
+  },
+  {
+    q: "How do I convert mAh to Wh for airport security?",
+    a: "The CAA formula is (V × mAh) ÷ 1000 = Wh. If the case does not print Wh, use the nominal cell voltage — typically 3.7V for lithium-ion — not the 5V USB output.",
+  },
+];
+
+/** Manufacturer-verified portable-monitor rows. No UK prices. */
+export const TRAVEL_DESK_MONITORS: GuideListItem[] = [
+  {
+    name: "Second Window 16 (ARZOPA Z1FC)",
+    description:
+      "16.1-inch FHD 1920×1080, 144Hz portable monitor. Official net weight 1.72 lb / 780g. USB-C can carry video and power on one cable when the laptop supports DisplayPort Alt Mode.",
+    path: "/shop/second-window-16",
+    image: "/products/second-window-16.jpg",
+    brand: "ARZOPA",
+  },
+  {
+    name: "ViewSonic TD1656-2K",
+    description:
+      "16-inch WQXGA 2560×1600 portable touch monitor. Official net weight 0.8 kg / 1.8 lb. Dual USB-C with up to 65W bidirectional power on a single cable when the source supports DP Alt Mode and USB-C PD.",
+    url: "https://www.viewsonic.com/global/products/lcd/TD1656-2K",
+    brand: "ViewSonic",
+  },
+  {
+    name: "SideTrak Solo Pro 13",
+    description:
+      "Official Luxor Solo Pro 13-inch touchscreen listing (STFRHDTC13BL): 1920×1080 Full HD, 1.6 lb, USB-C and mini-HDMI, built-in kickstand.",
+    url: "https://www.luxorworkspaces.com/solo-pro-fhd-touch-monitor-13-3-inch-black",
+    brand: "SideTrak",
+  },
+];
 
 export const guides: Guide[] = [
   {
@@ -50,8 +123,10 @@ export const guides: Guide[] = [
     heading: "What I'd actually pack for travel power",
     kicker: "Power",
     description:
-      "Anker, UGREEN, Belkin, and a hotel-desk hub — tagged Amazon UK picks that match how people actually travel right now.",
+      "Anker, UGREEN, Belkin, and a hotel-desk hub — plus the CAA cabin rule: power banks in hand luggage only, max two, under 100Wh. Tagged Amazon UK picks.",
     published: "2026-09-23",
+    updated: "2026-10-23",
+    faqs: PACKING_POWER_FAQS,
     relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub"],
     affiliateSlug: "arc-gan",
   },
@@ -61,8 +136,15 @@ export const guides: Guide[] = [
     heading: "What I'd actually pack for a desk away from home",
     kicker: "Desk",
     description:
-      "Honest Amazon UK travel-desk kit — 100W GaN, a fold-flat stand, a quiet mouse, high-watt leads, and a backpack second screen. Tagged links. No gimmicks.",
+      "Honest Amazon UK travel-desk kit — 100W GaN, a fold-flat stand, a quiet mouse, high-watt leads, and a 16-inch USB-C portable monitor. Tagged links. No gimmicks.",
     published: "2026-09-24",
+    updated: "2026-10-23",
+    itemList: {
+      name: "Portable monitors compared for a travel desk",
+      description:
+        "Second Window 16 (ARZOPA Z1FC) versus ViewSonic TD1656-2K and SideTrak Solo Pro 13. Specs from manufacturer pages. No UK prices.",
+      items: TRAVEL_DESK_MONITORS,
+    },
     relatedSlugs: [
       "flightbrick-100",
       "runway-riser",
