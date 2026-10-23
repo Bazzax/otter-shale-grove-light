@@ -307,9 +307,10 @@ function PackingPowerBody() {
         </table>
       </div>
       <p>
-        The short version: Ryanair and BA cap you at 100Wh. easyJet and Jet2 go up to 160Wh, but
-        Jet2 does not let you use a bank in the air, and easyJet does not let you charge a phone
-        from one. Two cells below stay as "Check with airline" until those pages say it plainly.
+        The short version: Ryanair and BA cap you at 100Wh. easyJet and Jet2 go up to 160Wh. None
+        of the four let you recharge the bank on board. easyJet and Jet2 do not let you charge a
+        phone from one. BA still does not say, in official wording, whether you may charge a phone
+        from a bank in flight — that cell stays "Check with airline".
       </p>
       <h2>Is a 20,000mAh power bank allowed on a plane?</h2>
       <p>
@@ -357,30 +358,39 @@ function PackingPowerBody() {
       <h2>Which power banks are cabin-legal on those four airlines?</h2>
       <p>
         Cabin verdicts only. Watt-hours use the same 3.7V nominal sum already on this page, and
-        only where a milliamp-hour figure is already stated. No guessed prices. No placeholder
-        shop links.
+        only where a milliamp-hour figure is already stated — except A1695, which uses the Wh
+        printed on the Amazon UK listing. Live UK prices below were checked 23 Oct 2026 on
+        Amazon.co.uk. Amazon’s live checkout may differ.
       </p>
       <h3>INIU 20,000mAh 45W</h3>
       <p>
         About 74Wh at 3.7V nominal (20,000 × 3.7 ÷ 1000). That sits under 100Wh, so it is
         cabin-legal on Ryanair, easyJet, BA and Jet2 if you stay inside the two-bank limit.
-        Forty-five watt USB-C, cable built in. There is no tagged Amazon ASIN for this INIU in
-        the bay, so there is no shop button here.
+        Forty-five watt USB-C, cable built in. The tagged listing is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.iniu20k45w}>INIU P51L 20,000mAh 45W</AmazonText>{" "}
+        (ASIN B0DCZ82MGG). £27.53, price checked 23 Oct 2026 on Amazon.co.uk.
       </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.iniu20k45w} />
       <h3>Anker Laptop Power Bank 25,000mAh (A1695)</h3>
       <p>
         The one to look at if a laptop is the thing that dies. Still two banks at most, and
-        Ryanair and BA will not take anything over 100Wh. This page does not print a watt-hour
-        figure for A1695 — a 3.7V sum from 25,000mAh is the wrong tool on a multi-cell pack, and
-        the live UK listing is not in the bay. Read the Wh on the case. No tagged ASIN here, so
-        no shop button.
+        Ryanair and BA will not take anything over 100Wh. The{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.ankerA1695}>Amazon UK listing for A1695</AmazonText>{" "}
+        (ASIN B0DCBB2YTR) prints a nominal <strong className="font-medium text-ink">25,000mAh
+        (90Wh)</strong> capacity. That is under 100Wh, so it is cabin-legal on all four if you
+        stay inside two banks. A 3.7V sum from 25,000mAh is the wrong tool on this pack — use the
+        printed 90Wh. £69.98, price checked 23 Oct 2026 on Amazon.co.uk. Anker UK’s own store
+        listed the same model at £89.98 the same day.
       </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.ankerA1695} />
       <h3>INIU 10,000mAh 45W</h3>
       <p>
         About 37Wh at 3.7V nominal (10,000 × 3.7 ÷ 1000). Cabin-trivial: a phone-and-earbuds bank
-        that stays well under every Wh line in the table. No tagged Amazon ASIN in the bay, so no
-        shop button.
+        that stays well under every Wh line in the table. The tagged listing is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.iniu10k45w}>INIU P50 10,000mAh 45W</AmazonText>{" "}
+        (ASIN B0DQD385HN). £27.99, price checked 23 Oct 2026 on Amazon.co.uk.
       </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.iniu10k45w} />
       <h3>Anker Zolo 20K</h3>
       <p>
         Already covered above: 20,000 mAh, about 74Wh, 30W USB-C, cable in the box. Cabin-legal on
@@ -392,8 +402,8 @@ function PackingPowerBody() {
         <AmazonText asin={AMAZON_PICK_ASINS.magDeck10}>Anker MagGo 10,000 mAh Qi2</AmazonText>
         : about 37Wh at 3.7V nominal (10,000 × 3.7 ÷ 1000). Fifteen-watt magnetic charge, a
         display, a fold-out stand. Cabin-legal. Covers the day you miss the socket. I do not
-        dropship it. The card is affiliate. Approx. UK price is on the card — Amazon’s live
-        checkout may differ.
+        dropship it. The card is affiliate. £55.98, price checked 23 Oct 2026 on Amazon.co.uk
+        (AnkerDirect UK featured offer). Amazon’s live checkout may differ.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />
       <h3>Baseus magnetic power bank</h3>

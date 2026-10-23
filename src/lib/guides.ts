@@ -41,6 +41,7 @@ export const AIRLINE_POWER_BANK_SOURCES = {
   ryanair: "https://help.ryanair.com/hc/en-gb/articles/12890774807569-What-items-are-permitted-on-board",
   easyjetRestricted: "https://www.easyjet.com/en/help/baggage/restricted-and-unusual-items",
   easyjetDangerous: "https://www.easyjet.com/en/terms-and-conditions/dangerous-goods",
+  easyjetCheckin: "https://www.easyjet.com/en/checkin/dangerousgoods",
   ba: "https://www.britishairways.com/content/information/baggage-essentials/liquids-and-restrictions",
   jet2: "https://www.jet2.com/en/dangerous-goods",
 } as const;
@@ -71,11 +72,12 @@ export const AIRLINE_POWER_BANK_ROWS: AirlinePowerBankRow[] = [
     maxBanks: "2 per customer",
     whLimit: "Up to 160Wh (easyJet gives automatic approval up to 160Wh)",
     whereOnBoard: "Cabin bags only. Ideally somewhere you can monitor it",
-    rechargeBank: "Check with airline",
+    rechargeBank: "No",
     chargePhone: "No",
     sources: [
       { label: "easyJet restricted items", href: AIRLINE_POWER_BANK_SOURCES.easyjetRestricted },
       { label: "easyJet dangerous goods", href: AIRLINE_POWER_BANK_SOURCES.easyjetDangerous },
+      { label: "easyJet check-in dangerous goods", href: AIRLINE_POWER_BANK_SOURCES.easyjetCheckin },
     ],
   },
   {

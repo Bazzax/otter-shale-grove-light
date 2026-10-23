@@ -49,6 +49,9 @@ export const AMAZON_PICK_ASINS = {
   spotCue: "B06WP4QCKT",
   fieldMat: "B07W5JK3Z2",
   magDeck10: "B0CFDQ9QH5",
+  iniu20k45w: "B0DCZ82MGG",
+  iniu10k45w: "B0DQD385HN",
+  ankerA1695: "B0DCBB2YTR",
 } as const;
 
 type ProductBase = {
@@ -542,7 +545,7 @@ export const catalog: Product[] = [
     slug: "magdeck-10",
     name: "MagDeck 10",
     amazonPick: true,
-    price: 73.22,
+    price: 55.98,
     category: "Power",
     tagline: "10K Qi2 MagGo. Snap. Charge. Kickstand FaceTime.",
     description:
