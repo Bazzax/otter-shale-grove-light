@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import { AffiliateLink } from "@/components/affiliate-link";
 import { AMAZON_PICK_ASINS, affiliateProduct, affiliateSearch, catalog, isAmazonPick } from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
-import type { Guide } from "@/lib/guides";
+import { CAA_PACK_RIGHT, PACKING_POWER_FAQS, type Guide } from "@/lib/guides";
 
 function ShopLink({ slug, children }: { slug: string; children: ReactNode }) {
   return (
@@ -207,14 +207,68 @@ function PackingPowerBody() {
         the sleeve, and a hub you can leave on a hotel desk. That is the pack. Everything else is
         a second bag.
       </p>
-      <h2>Anker Zolo 20K, 30W</h2>
+      <aside className="rounded-2xl bg-cream p-5 shadow-[var(--shadow-border)]">
+        <p className="text-xs font-medium tracking-widest text-clay uppercase">UK cabin answer</p>
+        <p className="mt-3 text-ink">
+          Power banks go in cabin / hand luggage only. Never the hold. The{" "}
+          <a
+            href={CAA_PACK_RIGHT}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-clay hover:text-clay-dark"
+          >
+            UK Civil Aviation Authority
+          </a>{" "}
+          says you can only take two per person, and they should never be recharged onboard.
+          Under 100Wh is fine for the cabin. 100Wh to 160Wh needs airline approval. Over 160Wh
+          is not allowed in passenger baggage.
+        </p>
+        <p className="mt-3 text-sm text-stone">
+          Full watt-hour maths, the March 2026 list, and the banks I would actually fly:{" "}
+          <GuideLink slug="power-bank-hand-luggage-uk">
+            power banks in UK hand luggage
+          </GuideLink>
+          .
+        </p>
+      </aside>
+      <h2>Can you take a power bank on a plane from the UK?</h2>
       <p>
-        Twenty thousand milliamp-hours and a 30W USB-C that will top a phone twice and still have
-        leftover for a laptop sip. The cable is in the box. That is the whole pitch. I do not
-        dropship Anker. If you need a bank this week, this is the tagged listing.
+        Yes — in the cabin bag, not checked luggage. The CAA pack-right page is blunt: always take
+        spare batteries and power banks with you in the cabin; you can only take two power banks
+        per person; they should never be re-charged onboard. Battery size is in watt-hours. Under
+        100Wh is the common phone, laptop, and camera class and should travel in the cabin. 100Wh
+        to 160Wh (large banks, some power tools) requires airline approval. Over 160Wh is
+        prohibited in passenger baggage. Read the{" "}
+        <a
+          href={CAA_PACK_RIGHT}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA pack-right page
+        </a>
+        , then the carrier you booked. I do not invent airline policy.
       </p>
-      <AmazonPick asin="B0CZ9LH53B" />
-      <h2>UGREEN Nexode 65W foldable</h2>
+      <p>
+        Wh = mAh × V ÷ 1000. If the case does not print Wh, use the nominal cell voltage —
+        typically 3.7V for lithium-ion, not the 5V USB output. That is the CAA formula. The longer
+        cabin log is{" "}
+        <GuideLink slug="power-bank-hand-luggage-uk">
+          Can you take a power bank on a plane from the UK?
+        </GuideLink>
+        .
+      </p>
+      <h2>Is a 20,000mAh power bank allowed on a plane?</h2>
+      <p>
+        Yes, as a cabin item, if it sits under 100Wh and you stay inside the two-bank limit. The{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.ankerZolo20k}>Anker Zolo 20K</AmazonText> is 20,000
+        mAh — about <strong className="font-medium text-ink">74Wh at 3.7V nominal</strong> (20,000
+        × 3.7 ÷ 1000). That is under the CAA 100Wh line, still a hand-luggage item, still not a
+        hold item. Thirty-watt USB-C. Cable in the box. I do not dropship Anker. If you need a
+        bank this week, this is the tagged listing.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.ankerZolo20k} />
+      <h2>What 65W foldable GaN should I pack?</h2>
       <p>
         A foldable 65W GaN is the brick I would actually pack if I were buying tonight and flying
         tomorrow. Pins fold. Two ports. It is the Amazon version of the job{" "}
@@ -222,28 +276,40 @@ function PackingPowerBody() {
         Dongguan if you want the one I put a name on. Need it before the train: tap the listing.
       </p>
       <AmazonPick asin="B0B7N4DX1Z" />
-      <h2>Belkin BoostCharge Pro 70W travel</h2>
+      <h2>Is a 70W named travel charger the honest brick?</h2>
       <p>
         Seventy watts, travel-sized, a name a hotel desk has seen before. If you want a UK return
         window and a brand that will still exist next year, this is the honest click. Do not buy it
         because the title says Pro. Buy it because the wattage and the fold match the bag.
       </p>
       <AmazonPick asin="B0FK587ZZ6" />
-      <h2>Baseus PicoGo AM52, Qi2.2</h2>
+      <h2>Can a magnetic power bank go in the cabin?</h2>
       <p>
         A magnetic puck for the phone that still pretends it does not need a cable. Qi2.2, small,
-        airline-safe if the listing capacity stays under the cabin limit.{" "}
-        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> is the bay version — 5,000 mAh, snaps,
-        leaves. This Baseus is the affiliate aisle if you need it on a Tuesday.
+        airline-safe if the listing capacity stays under the cabin limit. This page never printed
+        a milliamp-hour figure for the Baseus, so there is no Wh sum here — read the case.
+        {" "}
+        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> is the bay version — 5,000 mAh, about{" "}
+        <strong className="font-medium text-ink">18.5Wh at 3.7V nominal</strong> (5,000 × 3.7 ÷
+        1000). Snaps. Leaves. This Baseus is the affiliate aisle if you need it on a Tuesday.
       </p>
       <AmazonPick asin="B0G4CHTD53" />
-      <h2>ABLEWE 8-in-1 hub</h2>
+      <h2>What USB-C hub belongs on a hotel desk?</h2>
       <p>
         Hotel desk, one cable, HDMI that should hit 4K60 if the listing is not lying. Eight ports
         is enough. <ShopLink slug="trace-hub">Trace Hub</ShopLink> is the one I dropship —
         aluminum, 100W passthrough, I actually tested 4K60. ABLEWE is the next-day stand-in.
       </p>
       <AmazonPick asin="B0DN9F245H" />
+      <h2>Questions people type</h2>
+      <dl className="space-y-6">
+        {PACKING_POWER_FAQS.map((item) => (
+          <div key={item.q}>
+            <dt className="font-display text-xl font-medium tracking-tight text-ink">{item.q}</dt>
+            <dd className="mt-2 text-stone">{item.a}</dd>
+          </div>
+        ))}
+      </dl>
       <h2>The affiliate bit, once</h2>
       <p>
         Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
@@ -254,6 +320,11 @@ function PackingPowerBody() {
         <ShopLink slug="arc-gan">Arc</ShopLink>,{" "}
         <ShopLink slug="orbit-bank">Orbit Mag</ShopLink>, and{" "}
         <ShopLink slug="trace-hub">Trace</ShopLink>. Lead times printed. No surprise warehouse.
+        Cabin rules, two-bank limit, and the Wh sum live on{" "}
+        <GuideLink slug="power-bank-hand-luggage-uk">
+          power banks in UK hand luggage
+        </GuideLink>
+        .
       </p>
     </>
   );
@@ -318,15 +389,110 @@ function TravelDeskBody() {
         nightstands. Pack a pair. Leave one at the desk.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.twinLead240} />
-      <h2>Second Window 16 — dual-screen without a second bag</h2>
+      <h2>Best portable monitor for travel: 16-inch USB-C</h2>
       <p>
         One laptop panel means Slack eating half the spreadsheet.{" "}
-        <ShopLink slug="second-window-16">Second Window 16</ShopLink> is the ARZOPA Z1FC: 16.1 inch
-        FHD 144Hz, USB-C plug-and-play or Mini HDMI, kickstand, slim enough to sit beside the
-        laptop. Mid-range, not OLED luxury. Your machine needs a full-featured USB-C port for
-        single-cable video. Sleeve the panel so it does not share scratches with the bricks.
+        <ShopLink slug="second-window-16">Second Window 16</ShopLink> is the ARZOPA Z1FC — the
+        16-inch USB-C panel I would pack. Official manufacturer specs, not a guess: 16.1 inch FHD
+        1920×1080, 144Hz, 106% sRGB, net weight 1.72 lb / 780g. USB-C plug-and-play or Mini HDMI.
+        One USB-C cable can carry video and power when the laptop supports DisplayPort Alt Mode
+        and supplies enough wattage; HDMI devices still need a second power lead. Kickstand. Slim
+        enough to sit beside the laptop. Mid-range, not OLED luxury. Sleeve the panel so it does
+        not share scratches with the bricks. Size tradeoffs and the port test live in{" "}
+        <GuideLink slug="portable-monitor-laptop-second-screen">
+          portable monitors as a second screen
+        </GuideLink>
+        .
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.secondWindow16} />
+      <h3 className="font-display text-lg font-medium tracking-tight text-ink">
+        How it sits next to two other travel panels
+      </h3>
+      <p>
+        A short comparison against two panels people actually search — ViewSonic TD1656-2K and
+        SideTrak Solo Pro 13 — plus the ARZOPA Z1FC this card already is. Specs below are from
+        the manufacturer pages, not marketplace titles. UK prices are omitted; live Amazon
+        checkout is the only honest number, and I have not verified one for the two alternatives.
+      </p>
+      <div className="overflow-x-auto rounded-2xl bg-cream shadow-[var(--shadow-border)]">
+        <table className="w-full min-w-[36rem] text-left text-sm">
+          <thead>
+            <tr className="text-xs tracking-widest text-clay uppercase">
+              <th className="px-4 py-3 font-medium">Panel</th>
+              <th className="px-4 py-3 font-medium">Size / resolution</th>
+              <th className="px-4 py-3 font-medium">Weight</th>
+              <th className="px-4 py-3 font-medium">Single-cable USB-C</th>
+            </tr>
+          </thead>
+          <tbody className="text-stone">
+            <tr className="border-t border-line">
+              <td className="px-4 py-3 text-ink">
+                <ShopLink slug="second-window-16">Second Window 16</ShopLink>
+                <span className="block text-xs text-dust">ARZOPA Z1FC</span>
+              </td>
+              <td className="px-4 py-3">16.1 in · 1920×1080 · 144Hz</td>
+              <td className="px-4 py-3">1.72 lb / 780g</td>
+              <td className="px-4 py-3">
+                Yes, when the laptop does DP Alt Mode and can power the panel
+              </td>
+            </tr>
+            <tr className="border-t border-line">
+              <td className="px-4 py-3 text-ink">
+                ViewSonic TD1656-2K
+                <span className="block text-xs text-dust">official datasheet</span>
+              </td>
+              <td className="px-4 py-3">16 in · 2560×1600 · 60Hz</td>
+              <td className="px-4 py-3">1.8 lb / 0.8 kg</td>
+              <td className="px-4 py-3">
+                Yes — dual USB-C, up to 65W bidirectional PD, if the source supports DP 1.2 Alt
+                Mode and PD
+              </td>
+            </tr>
+            <tr className="border-t border-line">
+              <td className="px-4 py-3 text-ink">
+                SideTrak Solo Pro 13
+                <span className="block text-xs text-dust">Luxor STFRHDTC13BL touch listing</span>
+              </td>
+              <td className="px-4 py-3">13 in · 1920×1080 · 60Hz</td>
+              <td className="px-4 py-3">1.6 lb</td>
+              <td className="px-4 py-3">
+                USB-C plus mini-HDMI on the official listing. Sell sheet claims a single-cord
+                setup with pass-through; I have not independently tested it
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="text-sm text-dust">
+        Sources:{" "}
+        <a
+          href="https://www.arzopa.com/products/z1fc-16-1-fhd-144hz-portable-monitor"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          ARZOPA Z1FC
+        </a>
+        ,{" "}
+        <a
+          href="https://www.viewsonic.com/global/products/sheet/TD1656-2K"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          ViewSonic TD1656-2K datasheet
+        </a>
+        ,{" "}
+        <a
+          href="https://www.luxorworkspaces.com/solo-pro-fhd-touch-monitor-13-3-inch-black"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          Luxor SideTrak Solo Pro 13
+        </a>
+        . No UK prices on this table.
+      </p>
       <h2>How I would pack the kit</h2>
       <ul>
         <li>Bottom of the bag: FlightBrick 100 and Twin Lead 240.</li>
@@ -927,7 +1093,10 @@ function PortableMonitorBody() {
         enough to sit beside the laptop. Mid-range, not OLED luxury. Your machine needs a
         full-featured USB-C port for single-cable video. Sleeve the panel so it does not share
         scratches with the bricks. I do not hold a panel. The card is affiliate. Approx. UK price
-        is on the card — Amazon’s live checkout may differ.
+        is on the card — Amazon’s live checkout may differ. The charger, riser, mouse, and cable
+        that sit around this panel are on{" "}
+        <GuideLink slug="travel-desk">what I'd pack for a desk away from home</GuideLink>
+        .
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.secondWindow16} />
       <h2>The rest of the kit</h2>
@@ -954,7 +1123,10 @@ function PortableMonitorBody() {
       <AmazonPick asin={AMAZON_PICK_ASINS.cabinCursor} />
       <h2>How I would decide</h2>
       <ul>
-        <li>One extra window that packs: Second Window 16.</li>
+        <li>
+          One extra window that packs: Second Window 16. Full travel-desk kit:{" "}
+          <GuideLink slug="travel-desk">desk away from home</GuideLink>.
+        </li>
         <li>Laptop still flat on the table: add Runway Riser first.</li>
         <li>USB-C video works: Twin Lead 240, one cable, done.</li>
         <li>USB-C is charge-only: HDMI plus a second power lead, or admit you needed a dock.</li>
@@ -998,7 +1170,7 @@ export function GuideArticle({ guide }: { guide: Guide }) {
   const Body = bodies[guide.slug];
   if (!Body) return null;
   return (
-    <div className="guide-prose space-y-5 text-base leading-relaxed text-stone [&_h2]:mt-10 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-medium [&_h2]:tracking-tight [&_h2]:text-ink [&_p]:text-pretty [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
+    <div className="guide-prose space-y-5 text-base leading-relaxed text-stone [&_h2]:mt-10 [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-medium [&_h2]:tracking-tight [&_h2]:text-ink [&_h3]:mt-6 [&_h3]:font-display [&_h3]:text-lg [&_h3]:font-medium [&_h3]:tracking-tight [&_h3]:text-ink [&_p]:text-pretty [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-5">
       <Body />
     </div>
   );

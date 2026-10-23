@@ -11,7 +11,7 @@ import {
   guides,
   relatedProducts,
 } from "@/lib/guides";
-import { APP_NAME, articleJsonLd, breadcrumbJsonLd, pageHead } from "@/lib/seo";
+import { APP_NAME, articleJsonLd, breadcrumbJsonLd, faqJsonLd, itemListJsonLd, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/guides/$slug")({
   beforeLoad: ({ params }) => {
@@ -55,6 +55,15 @@ function GuidePage() {
           { name: guide.title, path: `/guides/${guide.slug}` },
         ])}
       />
+      {guide.faqs?.length ? <JsonLd data={faqJsonLd(guide.faqs)} /> : null}
+      {guide.itemList ? (
+        <JsonLd
+          data={itemListJsonLd({
+            ...guide.itemList,
+            path: `/guides/${guide.slug}`,
+          })}
+        />
+      ) : null}
 
       <p className="text-xs text-stone">
         <Link to="/guides" className="hover:text-ink">
@@ -73,6 +82,7 @@ function GuidePage() {
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-stone">{guide.description}</p>
           <p className="mt-3 text-xs tracking-wide text-dust uppercase">
             Al, dropship drone · {guide.published}
+            {guide.updated ? ` · Updated ${guide.updated}` : ""}
           </p>
           <div className="mt-10">
             <GuideArticle guide={guide} />

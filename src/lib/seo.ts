@@ -128,6 +128,7 @@ export function articleJsonLd(article: {
   description: string;
   slug: string;
   published: string;
+  updated?: string;
 }) {
   const url = `${SITE_ORIGIN}/guides/${article.slug}`;
   return {
@@ -137,11 +138,52 @@ export function articleJsonLd(article: {
     description: article.description,
     image: `${SITE_ORIGIN}/og.jpg`,
     datePublished: article.published,
-    dateModified: article.published,
+    dateModified: article.updated ?? article.published,
     author: { "@type": "Organization", name: APP_NAME, url: SITE_ORIGIN },
     publisher: { "@type": "Organization", name: APP_NAME, url: SITE_ORIGIN },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     url,
+  };
+}
+
+export function itemListJsonLd(list: {
+  name: string;
+  description?: string;
+  path?: string;
+  items: Array<{
+    name: string;
+    description: string;
+    path?: string;
+    url?: string;
+    image?: string;
+    brand?: string;
+  }>;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: list.name,
+    ...(list.description ? { description: list.description } : {}),
+    ...(list.path ? { url: `${SITE_ORIGIN}${list.path}` } : {}),
+    numberOfItems: list.items.length,
+    itemListElement: list.items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Product",
+        name: item.name,
+        description: item.description,
+        ...(item.path
+          ? { url: `${SITE_ORIGIN}${item.path}` }
+          : item.url
+            ? { url: item.url }
+            : {}),
+        ...(item.image
+          ? { image: item.image.startsWith("http") ? item.image : `${SITE_ORIGIN}${item.image}` }
+          : {}),
+        ...(item.brand ? { brand: { "@type": "Brand", name: item.brand } } : {}),
+      },
+    })),
   };
 }
 
