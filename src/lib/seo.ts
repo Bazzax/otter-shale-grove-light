@@ -207,7 +207,7 @@ export const FAQS = [
   },
   {
     q: "How does dropshipping work here?",
-    a: "Al recommends products and does not hold stock. Buy buttons go to Amazon UK, tagged alsaidropship-21 where they apply. Al does not take payment or ship.",
+    a: "Al recommends products and does not hold stock. Buy buttons go to Amazon UK and are affiliate links, so Al may earn a commission at no extra cost to you. Al does not take payment or ship.",
   },
   {
     q: "What are the Amazon buttons?",
