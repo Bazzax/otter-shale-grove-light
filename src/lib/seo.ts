@@ -207,7 +207,7 @@ export const FAQS = [
   },
   {
     q: "How does dropshipping work here?",
-    a: "Al does not hold stock. Add cargo to the bay and a supplier packs it. Lead times are printed on every product. This demo does not charge or ship.",
+    a: "Al recommends products and does not hold stock. Buy buttons go to Amazon UK, tagged alsaidropship-21 where they apply. Al does not take payment or ship.",
   },
   {
     q: "What are the Amazon buttons?",

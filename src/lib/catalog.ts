@@ -168,10 +168,9 @@ export const catalog: Product[] = [
     category: "Storage",
     tagline: "Pocket SSD. USB 3.2. No spinning, no drama.",
     description:
-      "A 2TB NVMe enclosure that fits in a jacket pocket. Sequential reads around 1,050 MB/s. The sleeve is fabric, not plastic theater.",
+      "A 2TB NVMe enclosure that fits in a jacket pocket. The sleeve is fabric, not plastic theater.",
     details: [
       "2TB NVMe, USB 3.2 Gen 2",
-      "Up to 1,050 MB/s read",
       "Hardware encryption toggle",
       "Fabric sleeve included",
     ],
