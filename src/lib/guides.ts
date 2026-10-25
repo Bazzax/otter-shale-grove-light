@@ -165,7 +165,7 @@ export const guides: Guide[] = [
     title: "ANC headphones vs earbuds for the commute",
     kicker: "Audio",
     description:
-      "Over-ear isolation or buds you can pocket? Al compares Pulse One and Ember Buds for trains, bikes, and offices — and when to jump Amazon UK instead.",
+      "Over-ear isolation or buds you can pocket? Al compares Soundcore Q20i hybrid ANC headphones and Liberty 4 NC adaptive ANC earbuds for trains, bikes, and offices — and when to jump Amazon UK instead.",
     published: "2026-09-23",
     relatedSlugs: ["pulse-one", "ember-buds"],
     affiliateSlug: "pulse-one",
@@ -177,8 +177,8 @@ export const guides: Guide[] = [
     description:
       "Those 6–16 day windows are not courier promises. Al explains supplier batching, UK customs, and when an Amazon affiliate click is the honest buy.",
     published: "2026-09-23",
-    relatedSlugs: ["arc-gan", "orbit-bank", "ember-buds", "nimbus-ssd"],
-    affiliateSlug: "nimbus-ssd",
+    relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub", "slip-sleeve"],
+    affiliateSlug: "arc-gan",
   },
   {
     slug: "packing-power",

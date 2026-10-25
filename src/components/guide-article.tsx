@@ -120,30 +120,45 @@ function AncBody() {
       </p>
       <h2>Over-ear, if you sit</h2>
       <p>
-        <ShopLink slug="pulse-one">Pulse One</ShopLink> is closed-back, hybrid ANC, fourteen hours
-        with the noise cancelling on, fold-flat hinge, no case brick. Voices first, then bass. If
-        you wear glasses, pads matter more than the driver graph. If you mix music for a living,
-        look at the affiliate list — Pulse is for planes and open-plan, not a mastering room.
+        <ShopLink slug="pulse-one">Soundcore Anker Q20i</ShopLink> is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.soundcoreQ20i}>
+          hybrid active noise cancelling foldable over-ear
+        </AmazonText>
+        . Four built-in mics filter background noise; ANC is not available in AUX mode. Wireless
+        mode uses BassUp; the 3.5 mm jack unlocks Hi-Res audio. Up to 40 hours with ANC on; 5
+        minutes of charging gives 4 hours. Multipoint switches between phone and laptop.
+        Transparency mode keeps a train announcement in. The soundcore app adds EQ, mode
+        adjustment, customised white noise, and AI translation between over 100 languages. I do
+        not dropship Soundcore. The card is affiliate. £31.99, price checked 25 Oct 2026 on
+        Amazon.co.uk. Amazon’s live checkout may differ.
       </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.soundcoreQ20i} />
       <h2>Buds, if you walk</h2>
       <p>
-        <ShopLink slug="ember-buds">Ember Buds</ShopLink> are the ones that stay in. ANC plus
-        transparency, IPX4, multipoint for a laptop and a phone, a case that lasts a work week.
-        Four tip sizes. If a commute is a bike or a platform sprint, buds beat a headband every
-        time. They will not match Pulse for low-frequency rumble on the Underground. That is
-        physics, not marketing.
+        <ShopLink slug="ember-buds">Anker Soundcore Liberty 4 NC</ShopLink> is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.liberty4Nc}>
+          adaptive noise cancelling wireless earbud
+        </AmazonText>
+        . Adaptive ANC 2.0 adjusts to ear canals and the room; the listing says they cancel up to
+        98.5% of noise. 11 mm custom-tuned drivers, Hi-Res wireless, and LDAC. HearID 2.0, a fully
+        adjustable EQ, or 22 presets. Battery: 10 hours / 50 hours with the case in normal mode; 8
+        hours / 40 hours with ANC on. Bluetooth 5.3, multipoint, auto-play and pause on wear,
+        IPX4, and six beamforming mics with an AI algorithm for calls. XS/S/M/L tips and a USB-C
+        cable in the box. I do not dropship Soundcore. £54.99, price checked 25 Oct 2026 on
+        Amazon.co.uk. Amazon’s live checkout may differ.
       </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.liberty4Nc} />
       <ul>
-        <li>Train or plane, glasses OK, bag space: Pulse One.</li>
-        <li>Walk, cycle, or you already wear a hat: Ember Buds.</li>
-        <li>Calls all day: whichever stays in. Multipoint on Ember is the useful extra.</li>
-        <li>You already own a brand ecosystem: use the Amazon button and stop stacking cases.</li>
+        <li>Train or plane, bag space: Q20i over-ears.</li>
+        <li>Walk, cycle, or you already wear a hat: Liberty 4 NC.</li>
+        <li>Calls on the move: Liberty 4 NC lists 6-mic AI call pickup and multipoint.</li>
+        <li>You already own a brand ecosystem: use the Amazon search and stop stacking cases.</li>
       </ul>
-      <h2>The commute test I actually run</h2>
+      <h2>What the listings actually print</h2>
       <p>
-        Transparency that does not sound like a tin can. A pause when you take one bud out. Pads
-        that do not cook your ears by zone 3. Battery that survives a delay. If a listing hides
-        ANC-on hours, assume they are bad.
+        ANC-on hours, whether transparency exists, and whether ANC dies on a cable. Q20i states 40
+        hours with ANC on and that ANC is off in AUX. Liberty 4 NC states separate normal and ANC
+        numbers, plus IPX4. If another listing hides ANC-on hours, assume they are bad.
       </p>
       <p>
         Need Sony, Bose, or whatever your office already issued? That is what the affiliate search
@@ -163,10 +178,10 @@ function LeadTimeBody() {
       </p>
       <h2>What the numbers hide</h2>
       <p>
-        Shenzhen, Dongguan, Taipei, Seoul, Ho Chi Minh, Hangzhou — those are origins, not
-        warehouses on the M25. The clock starts when a factory batch includes your line, not when
-        you click. Weekends vanish. A customs pause at a UK hub can add two quiet days. Tracking
-        will look dead, then suddenly move.
+        Shenzhen, Dongguan, Taipei, Ho Chi Minh, Hangzhou — those are origins, not warehouses on
+        the M25. The clock starts when a factory batch includes your line, not when you click.
+        Weekends vanish. A customs pause at a UK hub can add two quiet days. Tracking will look
+        dead, then suddenly move.
       </p>
       <ul>
         <li>
@@ -174,8 +189,8 @@ function LeadTimeBody() {
           <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> 6–12.
         </li>
         <li>
-          Mid: <ShopLink slug="ember-buds">Ember Buds</ShopLink> 7–12,{" "}
-          <ShopLink slug="nimbus-ssd">Nimbus</ShopLink> 7–13.
+          Mid: <ShopLink slug="trace-hub">Trace Hub</ShopLink> 8–13,{" "}
+          <ShopLink slug="slip-sleeve">Slip 14</ShopLink> 8–14.
         </li>
         <li>Longer boards and lights: 10–16 is not a slight. It is aluminum and a queue.</li>
       </ul>
@@ -899,7 +914,10 @@ function WebcamCallsBody() {
       <ul>
         <li>1080p, plug-and-play USB. Works in Zoom, Meet, Teams without a driver hunt.</li>
         <li>A shutter that actually closes. Software "privacy" is a setting you forget.</li>
-        <li>Stereo mics for a quiet room. Ember or a headset for a train.</li>
+        <li>
+          Stereo mics for a quiet room.{" "}
+          <ShopLink slug="ember-buds">Liberty 4 NC</ShopLink> or a headset for a train.
+        </li>
         <li>Light in front of you. Height at eye line. The cam cannot invent either.</li>
       </ul>
       <h2>CallLatch — the clip-on that earns the gram</h2>

@@ -73,6 +73,7 @@ export function productJsonLd(product: {
   price?: number;
   image: string;
   category: string;
+  brand?: string;
   amazonPick?: boolean;
   affiliateUrl?: string;
 }) {
@@ -106,7 +107,7 @@ export function productJsonLd(product: {
     description: product.description,
     image,
     category: product.category,
-    brand: { "@type": "Brand", name: APP_NAME },
+    brand: { "@type": "Brand", name: product.brand ?? APP_NAME },
     offers,
   };
 }
@@ -211,7 +212,7 @@ export const FAQS = [
   },
   {
     q: "What are the Amazon buttons?",
-    a: "Affiliate links to Amazon UK, tagged alsaidropship-21 and marked sponsored. If Al does not stock the brand you want, shop the wider market. Al may earn a commission. Amazon picks show an approx. UK price from the listing — Amazon’s live checkout may differ.",
+    a: "Affiliate links to Amazon UK, marked sponsored. If Al does not stock the brand you want, shop the wider market. Al may earn a commission. Amazon picks show an approx. UK price from the listing — Amazon’s live checkout may differ.",
   },
   {
     q: "Will I be charged?",
@@ -219,7 +220,7 @@ export const FAQS = [
   },
   {
     q: "How long does UK delivery actually take?",
-    a: "On this site, nothing packs. If you used a real dropshipper, the window on the card (often 6–16 days from Shenzhen, Taipei, Seoul) is supplier to door, not a courier promise. Weekends, batching, and a customs pause can stretch it. Amazon UK affiliate orders use Amazon's own UK delivery times — usually the move if you need it this week.",
+    a: "On this site, nothing packs. If you used a real dropshipper, the window on the card (often 6–16 days from Shenzhen, Taipei, Dongguan) is supplier to door, not a courier promise. Weekends, batching, and a customs pause can stretch it. Amazon UK affiliate orders use Amazon's own UK delivery times — usually the move if you need it this week.",
   },
   {
     q: "Why are bay prices in pounds?",
