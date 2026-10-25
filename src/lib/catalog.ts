@@ -3,11 +3,30 @@ import { formatPrice, formatProductPrice } from "./format";
 export const AMAZON_ASSOCIATE_TAG = "alsaidropship-21";
 const AMAZON_UK_DP = "https://www.amazon.co.uk/dp";
 const AMAZON_UK_SEARCH = "https://www.amazon.co.uk/s";
+const AMAZON_MEDIA_HOST = "https://m.media-amazon.com";
 
 /** Tagged Amazon UK product URL for a verified ASIN. */
 export function affiliateProduct(asin: string) {
   return `${AMAZON_UK_DP}/${asin}?tag=${AMAZON_ASSOCIATE_TAG}`;
 }
+
+/**
+ * Amazon-hosted product image URL. Display by linking — do not download or
+ * self-host. Size suffix defaults to the Associates-style `_SL1000_`.
+ */
+export function amazonProductImage(imageId: string, size = "SL1000") {
+  return `${AMAZON_MEDIA_HOST}/images/I/${imageId}._${size}_.jpg`;
+}
+
+export function isAmazonHostedImage(src: string) {
+  return src.startsWith(`${AMAZON_MEDIA_HOST}/`);
+}
+
+export const AMAZON_PRODUCT_IMAGES = {
+  samsungT7: amazonProductImage("51VwCn6Fj6L"),
+  soundcoreQ20i: amazonProductImage("51V2SOMrpXL"),
+  liberty4Nc: amazonProductImage("5130BCxweAL"),
+} as const;
 
 /** Tagged Amazon UK search URL. The associate tag lives only here. */
 export function affiliateSearch(query: string) {
@@ -113,7 +132,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Over-ear hybrid ANC for a packed train. I do not dropship Soundcore. Approx. UK price is on the card — Amazon’s live checkout may differ.",
-    image: "/products/pulse-one.jpg",
+    image: AMAZON_PRODUCT_IMAGES.soundcoreQ20i,
     brand: "Soundcore",
     asin: AMAZON_PICK_ASINS.soundcoreQ20i,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.soundcoreQ20i),
@@ -187,7 +206,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Cloud is fine until a tarmac has no signal. This is the 2TB T7 the affiliate link actually opens. Approx. UK price is on the card — Amazon’s live checkout may differ.",
-    image: "/products/nimbus-ssd.jpg",
+    image: AMAZON_PRODUCT_IMAGES.samsungT7,
     brand: "Samsung",
     asin: AMAZON_PICK_ASINS.samsungT7,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.samsungT7),
@@ -283,7 +302,7 @@ export const catalog: Product[] = [
     ],
     alNote:
       "Q20i if you sit. Liberty 4 NC if you walk. I do not dropship Soundcore. Approx. UK price is on the card — Amazon’s live checkout may differ.",
-    image: "/products/ember-buds.jpg",
+    image: AMAZON_PRODUCT_IMAGES.liberty4Nc,
     brand: "Soundcore",
     asin: AMAZON_PICK_ASINS.liberty4Nc,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.liberty4Nc),

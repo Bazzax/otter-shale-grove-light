@@ -4,10 +4,11 @@ import { toast } from "sonner";
 import { AffiliateLink } from "@/components/affiliate-link";
 import { JsonLd } from "@/components/json-ld";
 import { ProductCard } from "@/components/product-card";
+import { AmazonImageCredit, ProductImage } from "@/components/product-image";
 import { QtyStepper } from "@/components/qty-stepper";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { catalog, getProduct, isAmazonPick } from "@/lib/catalog";
+import { catalog, getProduct, isAmazonHostedImage, isAmazonPick } from "@/lib/catalog";
 import { useCart } from "@/lib/cart-store";
 import { formatEta, formatProductPrice } from "@/lib/format";
 import { APP_NAME, pageHead, productJsonLd } from "@/lib/seo";
@@ -26,12 +27,14 @@ export const Route = createFileRoute("/shop/$slug")({
         `${product.name} — Amazon UK pick | ${APP_NAME}`,
         `${product.tagline} Amazon UK affiliate pick, about ${formatProductPrice(product)}. Shop the tagged listing — Al does not dropship this SKU. Amazon’s live price may differ.`,
         `/shop/${product.slug}`,
+        { image: product.image },
       );
     }
     return pageHead(
       `${product.name} — dropship from Al | ${APP_NAME}`,
       `${product.tagline} Dropships from ${product.shipsFrom} in ${product.etaDays[0]}–${product.etaDays[1]} days. Marked ${product.affiliateLabel} affiliate link on this card.`,
       `/shop/${product.slug}`,
+      { image: product.image },
     );
   },
   component: ProductPage,
@@ -65,12 +68,15 @@ function ProductPage() {
       <div className="mt-6 grid gap-10 lg:grid-cols-12 lg:gap-14">
         <div className="lg:col-span-7">
           <div className="overflow-hidden rounded-2xl bg-cream p-2 shadow-[var(--shadow-border)]">
-            <img
-              src={product.image}
+            <ProductImage
+              product={product}
               alt={`${product.name} — ${product.tagline}`}
-              className="aspect-[4/3] w-full rounded-xl object-cover outline outline-1 -outline-offset-1 outline-ink/10"
+              className="aspect-[4/3] w-full rounded-xl outline outline-1 -outline-offset-1 outline-ink/10"
             />
           </div>
+          {isAmazonHostedImage(product.image) ? (
+            <AmazonImageCredit className="mt-2" />
+          ) : null}
         </div>
         <div className="lg:col-span-5">
           <div className="flex flex-wrap items-center gap-2">
