@@ -1,7 +1,15 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { AffiliateLink } from "@/components/affiliate-link";
-import { AMAZON_PICK_ASINS, affiliateProduct, affiliateSearch, catalog, isAmazonPick } from "@/lib/catalog";
+import { AmazonImageCredit, ProductImage } from "@/components/product-image";
+import {
+  AMAZON_PICK_ASINS,
+  affiliateProduct,
+  affiliateSearch,
+  catalog,
+  isAmazonHostedImage,
+  isAmazonPick,
+} from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
 import { AIRLINE_POWER_BANK_ROWS, CAA_PACK_RIGHT, PACKING_POWER_FAQS, type Guide } from "@/lib/guides";
 
@@ -23,20 +31,33 @@ function GuideLink({ slug, children }: { slug: string; children: ReactNode }) {
 
 function AmazonPick({ asin }: { asin: string }) {
   const product = catalog.find((item) => item.asin === asin && isAmazonPick(item));
+  const amazonImage = product ? isAmazonHostedImage(product.image) : false;
   return (
-    <p className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
-      {product ? (
-        <span className="text-sm tabular-nums text-clay">
-          {formatProductPrice(product)}{" "}
-          <span className="font-normal text-dust">approx. · check Amazon</span>
-        </span>
+    <div className="flex flex-col gap-3">
+      {product && amazonImage ? (
+        <div className="max-w-xs overflow-hidden rounded-xl bg-cream p-2 shadow-[var(--shadow-border)]">
+          <ProductImage
+            product={product}
+            alt={`${product.name} — ${product.tagline}`}
+            className="aspect-square w-full rounded-lg outline outline-1 -outline-offset-1 outline-ink/10"
+          />
+        </div>
       ) : null}
-      <AffiliateLink
-        href={affiliateProduct(asin)}
-        label="Amazon UK"
-        className="mt-1 w-full sm:mt-0 sm:w-auto"
-      />
-    </p>
+      <p className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+        {product ? (
+          <span className="text-sm tabular-nums text-clay">
+            {formatProductPrice(product)}{" "}
+            <span className="font-normal text-dust">approx. · check Amazon</span>
+          </span>
+        ) : null}
+        <AffiliateLink
+          href={affiliateProduct(asin)}
+          label="Amazon UK"
+          className="mt-1 w-full sm:mt-0 sm:w-auto"
+        />
+      </p>
+      {amazonImage ? <AmazonImageCredit /> : null}
+    </div>
   );
 }
 

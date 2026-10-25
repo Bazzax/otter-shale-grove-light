@@ -2,6 +2,7 @@ import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUp, Search } from "lucide-react";
 import { AmazonSearchLink } from "@/components/amazon-search-link";
+import { ProductImage } from "@/components/product-image";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -330,10 +331,11 @@ function CatalogHit({ product }: { product: Product }) {
       params={{ slug: product.slug }}
       className="flex gap-3 rounded-xl bg-cream p-2 shadow-[var(--shadow-border)] transition-[box-shadow] duration-150 hover:shadow-[var(--shadow-border-hover)]"
     >
-      <img
-        src={product.image}
+      <ProductImage
+        product={product}
         alt=""
-        className="size-16 rounded-lg object-cover outline outline-1 -outline-offset-1 outline-ink/10"
+        linked={false}
+        className="size-16 rounded-lg outline outline-1 -outline-offset-1 outline-ink/10"
       />
       <span className="min-w-0 py-1">
         <span className="block truncate font-display text-sm font-medium">{product.name}</span>

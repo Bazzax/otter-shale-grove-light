@@ -9,14 +9,20 @@ export const SITE_ORIGIN = "https://alsaidropship.com";
 export const FORMSUBMIT_ACTION = `https://formsubmit.co/${CONTACT_EMAIL}`;
 export const FORMSUBMIT_AJAX = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
 
+export function absoluteImageUrl(image?: string) {
+  if (!image) return `${SITE_ORIGIN}/og.jpg`;
+  if (image.startsWith("http://") || image.startsWith("https://")) return image;
+  return `${SITE_ORIGIN}${image}`;
+}
+
 export function pageHead(
   title: string,
   description: string,
   path?: string,
-  options?: { type?: "website" | "article"; robots?: string },
+  options?: { type?: "website" | "article"; robots?: string; image?: string },
 ) {
   const url = path ? `${SITE_ORIGIN}${path}` : SITE_ORIGIN;
-  const image = `${SITE_ORIGIN}/og.jpg`;
+  const image = absoluteImageUrl(options?.image);
   const type = options?.type ?? "website";
   return {
     meta: [
@@ -77,9 +83,7 @@ export function productJsonLd(product: {
   amazonPick?: boolean;
   affiliateUrl?: string;
 }) {
-  const image = product.image.startsWith("http")
-    ? product.image
-    : `${SITE_ORIGIN}${product.image}`;
+  const image = absoluteImageUrl(product.image);
   const pageUrl = `${SITE_ORIGIN}/shop/${product.slug}`;
   const offers =
     product.price == null
@@ -179,9 +183,7 @@ export function itemListJsonLd(list: {
           : item.url
             ? { url: item.url }
             : {}),
-        ...(item.image
-          ? { image: item.image.startsWith("http") ? item.image : `${SITE_ORIGIN}${item.image}` }
-          : {}),
+        ...(item.image ? { image: absoluteImageUrl(item.image) } : {}),
         ...(item.brand ? { brand: { "@type": "Brand", name: item.brand } } : {}),
       },
     })),

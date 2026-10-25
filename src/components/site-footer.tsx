@@ -48,7 +48,8 @@ export function SiteFooter() {
           <p className="text-xs font-medium tracking-widest text-dust uppercase">Disclosure</p>
           <p className="mt-3 text-sm leading-relaxed text-pretty text-stone">
             “Shop on Amazon” is an affiliate link. Al may earn a cut. Dropship
-            checkout here is theatre — nothing packs, nothing charges. Hail{" "}
+            checkout here is theatre — nothing packs, nothing charges. Product
+            images courtesy of Amazon.co.uk. Hail{" "}
             <a href={`mailto:${CONTACT_EMAIL}`} className="text-ink hover:text-clay">
               {CONTACT_EMAIL}
             </a>
