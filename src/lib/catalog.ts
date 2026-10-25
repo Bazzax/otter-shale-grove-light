@@ -52,6 +52,9 @@ export const AMAZON_PICK_ASINS = {
   iniu20k45w: "B0DCZ82MGG",
   iniu10k45w: "B0DQD385HN",
   ankerA1695: "B0DCBB2YTR",
+  samsungT7: "B087DDGWKL",
+  soundcoreQ20i: "B0C3HCD34R",
+  liberty4Nc: "B0BZV4QFP8",
 } as const;
 
 type ProductBase = {
@@ -65,6 +68,8 @@ type ProductBase = {
   details: string[];
   alNote: string;
   image: string;
+  /** Manufacturer brand when the Amazon listing names one. */
+  brand?: string;
   asin: string;
   affiliateUrl: string;
   affiliateLabel: string;
@@ -91,25 +96,27 @@ export function isAmazonPick(product: Product): product is AmazonPickProduct {
 export const catalog: Product[] = [
   {
     slug: "pulse-one",
-    name: "Pulse One",
-    price: 179,
+    name: "Soundcore Anker Q20i hybrid ANC foldable headphones",
+    amazonPick: true,
+    price: 31.99,
     category: "Audio",
-    tagline: "ANC headphones that stay quiet on a 14-hour charge.",
+    tagline: "Hybrid ANC over-ears. Foldable. Up to 40 hours with ANC on.",
     description:
-      "Closed-back wireless headphones with hybrid ANC and a fold-flat hinge. Tuned for voices first, then bass. The case is skipped on purpose — they hang, they travel, they do not need another brick in the bag.",
+      "Soundcore Anker Q20i hybrid active noise cancelling foldable headphones. Over-ear, black. Four built-in mics filter background noise in an office, on a train, or on a street — noise cancellation is not available in AUX mode. Wireless mode uses BassUp; the 3.5 mm jack unlocks Hi-Res audio. Up to 40 hours with ANC on; 5 minutes of charging gives 4 hours. Multipoint switches audio between phone and laptop. Transparency mode keeps announcements in. The free soundcore app adds AI translation between over 100 languages, EQ customisation, mode adjustment, and customised white noise. Listing overview: 16 Ohms, 20 kHz frequency response, 95 dB sensitivity, model Q20i. Approx. UK price is a snapshot from 25 Oct 2026 — Amazon’s live checkout may differ.",
     details: [
-      "Hybrid ANC, transparency mode",
-      "40 mm drivers, USB-C + Bluetooth 5.3",
-      "Up to 14 hours with ANC on",
-      "Fold-flat, replaceable ear pads",
+      "Hybrid ANC · transparency · four built-in mics (ANC off in AUX)",
+      "Over-ear, foldable, black · 3.5 mm jack · BassUp / AUX Hi-Res",
+      "Up to 40 hours with ANC on · 5 minutes charge → 4 hours listening",
+      "Multipoint · soundcore app (EQ, modes, white noise, AI translation)",
+      "16 Ohms · 20 kHz · 95 dB · model Q20i",
+      "Amazon UK: 4.6 out of 5 stars (77,829 ratings), checked 25 Oct 2026",
     ],
     alNote:
-      "I ran these against three louder pairs. Pulse One wins on a plane. If you mix music for a living, look at the affiliate list instead.",
-    shipsFrom: "Shenzhen",
-    etaDays: [8, 14],
+      "Over-ear hybrid ANC for a packed train. I do not dropship Soundcore. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: "/products/pulse-one.jpg",
-    asin: "B0C3HCD34R",
-    affiliateUrl: affiliateProduct("B0C3HCD34R"),
+    brand: "Soundcore",
+    asin: AMAZON_PICK_ASINS.soundcoreQ20i,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.soundcoreQ20i),
     affiliateLabel: "Amazon UK",
     featured: true,
   },
@@ -163,24 +170,27 @@ export const catalog: Product[] = [
   },
   {
     slug: "nimbus-ssd",
-    name: "Nimbus 2TB",
-    price: 189,
+    name: "Samsung T7 Portable SSD 2TB",
+    amazonPick: true,
+    price: 316.17,
     category: "Storage",
-    tagline: "Pocket SSD. USB 3.2. No spinning, no drama.",
+    tagline: "Portable 2TB SSD. USB 3.0. Indigo blue.",
     description:
-      "A 2TB NVMe enclosure that fits in a jacket pocket. The sleeve is fabric, not plastic theater.",
+      "Samsung T7 Portable SSD in indigo-blue, 2 TB. The Amazon UK listing calls it a portable solid-state drive with a 2.5-inch form factor, USB 3.0 interface, and USB connectivity. Compatible devices listed: laptop, desktop, smartphone, and television. In the box: the portable SSD, USB Type-C to C and Type-A to A cables, and a user manual. Samsung’s brand comparison table on that page states a transfer speed of up to 1,050 MB/s; the feature bullets do not. Approx. UK price is a snapshot from 25 Oct 2026 — Amazon’s live checkout may differ.",
     details: [
-      "2TB NVMe, USB 3.2 Gen 2",
-      "Hardware encryption toggle",
-      "Fabric sleeve included",
+      "2 TB portable SSD · indigo blue · 2.5-inch form factor",
+      "USB 3.0 interface (listing overview) · USB connectivity",
+      "Compatible: laptop, desktop, smartphone, television",
+      "In the box: SSD, USB-C to C and USB-A to A cables, user manual",
+      "Samsung-stated maximum: up to 1,050 MB/s (A+ comparison table only)",
+      "Amazon UK: 4.7 out of 5 stars (41,012 ratings), checked 25 Oct 2026",
     ],
     alNote:
-      "Cloud is fine until a tarmac has no signal. Nimbus is the backup I would actually pack. Shop the affiliate link if you need 4TB.",
-    shipsFrom: "Seoul",
-    etaDays: [7, 13],
+      "Cloud is fine until a tarmac has no signal. This is the 2TB T7 the affiliate link actually opens. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: "/products/nimbus-ssd.jpg",
-    asin: "B087DDGWKL",
-    affiliateUrl: affiliateProduct("B087DDGWKL"),
+    brand: "Samsung",
+    asin: AMAZON_PICK_ASINS.samsungT7,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.samsungT7),
     affiliateLabel: "Amazon UK",
   },
   {
@@ -254,25 +264,29 @@ export const catalog: Product[] = [
   },
   {
     slug: "ember-buds",
-    name: "Ember Buds",
-    price: 89,
+    name: "Anker Soundcore Liberty 4 NC adaptive ANC earbuds",
+    amazonPick: true,
+    price: 54.99,
     category: "Audio",
-    tagline: "ANC buds, 28-hour case, tips that stay in.",
+    tagline: "Adaptive ANC earbuds. Up to 98.5% noise reduction. IPX4.",
     description:
-      "True wireless buds with ANC, IPX4, and a case that lasts a work week. Four tip sizes. Multipoint for a laptop and a phone.",
+      "Anker Soundcore Liberty 4 NC adaptive noise cancelling wireless earbuds in velvet black. Adaptive ANC 2.0 adjusts to ear canals and the surroundings; the listing says the buds cancel up to 98.5% of noise. 11 mm custom-tuned drivers, Hi-Res wireless audio, and LDAC — the listing says that transfers 3× more data than regular Bluetooth. HearID 2.0 finds a sound profile; the EQ is fully adjustable, or pick from 22 presets. Battery: 10 hours per charge or 50 hours with the case in normal mode; 8 hours / 40 hours with ANC on. Bluetooth 5.3, multipoint, quick pairing with Android, and auto-play and pause on wear. IPX4 water-resistance for light rain or a spill. Six beamforming mics and an AI algorithm for calls. In the box: Liberty 4 NC, charging case (listing says it extends battery life up to 50 hours), pre-installed XS/S/M/L ear tips, and a USB-C charging cable. Listing overview: in-ear, 10 Ohms, 20 kHz, 102 dB, no jack, model A3947. Approx. UK price is a snapshot from 25 Oct 2026 — Amazon’s live checkout may differ.",
     details: [
-      "ANC + transparency",
-      "6 + 22 hours",
-      "IPX4, USB-C case",
-      "Multipoint Bluetooth 5.3",
+      "Adaptive ANC 2.0 · listing says up to 98.5% noise reduction",
+      "11 mm drivers · Hi-Res wireless · LDAC",
+      "HearID 2.0 · fully adjustable EQ or 22 presets",
+      "10 h / 50 h case (normal) · 8 h / 40 h with ANC",
+      "Bluetooth 5.3 · multipoint · auto play/pause · IPX4",
+      "6-mic AI calls · velvet black · in-ear · model A3947",
+      "In the box: buds, case, XS/S/M/L tips, USB-C cable",
+      "Amazon UK: 4.3 out of 5 stars (28,682 ratings), checked 25 Oct 2026",
     ],
     alNote:
-      "Pulse One if you sit. Ember if you walk. I would not stack both unless you lose things for sport.",
-    shipsFrom: "Shenzhen",
-    etaDays: [7, 12],
+      "Q20i if you sit. Liberty 4 NC if you walk. I do not dropship Soundcore. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: "/products/ember-buds.jpg",
-    asin: "B0BZV4QFP8",
-    affiliateUrl: affiliateProduct("B0BZV4QFP8"),
+    brand: "Soundcore",
+    asin: AMAZON_PICK_ASINS.liberty4Nc,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.liberty4Nc),
     affiliateLabel: "Amazon UK",
   },
   {
@@ -582,8 +596,9 @@ const PRODUCT_SEARCH_HINTS: Record<string, string> = {
   "orbit-bank": "power bank puck",
   "arc-gan": "charger chargers gan brick",
   "trace-hub": "usb-c hub dongle dock",
-  "pulse-one": "headphones headset cans",
-  "ember-buds": "earbuds buds headphones",
+  "nimbus-ssd": "ssd storage samsung t7 portable",
+  "pulse-one": "headphones headset cans soundcore anker q20i anc",
+  "ember-buds": "earbuds buds headphones soundcore anker liberty 4 nc",
   "flightbrick-100": "charger chargers gan brick 100w",
   "runway-riser": "laptop stand stands riser",
   "cabin-cursor": "mouse mice cursor",
