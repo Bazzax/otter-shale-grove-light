@@ -19,6 +19,8 @@ export type Guide = {
   title: string;
   /** Visible H1 when it should differ from the document title. */
   heading?: string;
+  /** Document title when it should differ from the card / index title. */
+  metaTitle?: string;
   kicker: string;
   description: string;
   published: string;
@@ -120,6 +122,148 @@ export const PACKING_POWER_FAQS: GuideFaq[] = [
   {
     q: "How do I convert mAh to Wh for airport security?",
     a: "The CAA formula is (V × mAh) ÷ 1000 = Wh. If the case does not print Wh, use the nominal cell voltage — typically 3.7V for lithium-ion — not the 5V USB output.",
+  },
+];
+
+export const CAA_LITHIUM_RULES =
+  "https://www.caa.co.uk/commercial-industry/airlines/dangerous-goods/changes-to-rules-on-the-carriage-of-lithium-cellsbatteries-and-power-banks/";
+
+export const CAA_BATTERY_CHECKLIST =
+  "https://www.caa.co.uk/newsroom/news/regulator-launches-lithium-battery-safety-checklist-ahead-of-busy-half-term-travel-period/";
+
+export const CAA_PACKRIGHT_SHORT = "https://www.caa.co.uk/packright";
+
+export const ONBOARD_POWER_BANK_SOURCES = {
+  easyjet: "https://www.easyjet.com/en/help-centre/baggage/dangerous-goods",
+  ryanair: "https://help.ryanair.com/hc/en-gb/sections/12503055461777-Permitted-Items-On-Board",
+  ba: "https://www.britishairways.com/content/information/baggage-essentials/liquids-and-restrictions",
+  virgin: "https://www.virginatlantic.com/policies/dangerous-or-restricted-items",
+  jet2: "https://www.jet2.com/restricted-items",
+  jet2News: "https://www.jet2.com/news/2026/08/Jet2_issues_important_reminder_to_customers_travelling_with_these_items_",
+  tuiGroupPdf:
+    "https://cdn.content.tuigroup.com/adamtui/2026_5/18_7/c369a17d-82a6-4868-b930-b44e007f21d5/ITEMS_ALLOWED_ON_BOARD_ED67_V2_MAY2026.pdf",
+} as const;
+
+export const ONBOARD_RULES_CHECKED = "Rules checked 26 Oct 2026";
+
+export type OnboardPowerBankRow = {
+  airline: string;
+  maxBanks: string;
+  whLimit: string;
+  chargeDevices: string;
+  rechargeBank: string;
+  stowage: string;
+  sources: { label: string; href: string }[];
+  checked: string;
+};
+
+/** On-board use, official pages, 26 Oct 2026. Separate from the packing-power carry table. */
+export const ONBOARD_POWER_BANK_ROWS: OnboardPowerBankRow[] = [
+  {
+    airline: "easyJet",
+    maxBanks: "Not stated on the cited page. CAA default: two per person",
+    whLimit:
+      "easyJet’s page uses a 160Wh figure, which differs from the CAA’s 100Wh-without-approval wording. Read easyJet’s own page",
+    chargeDevices: "No. “Power banks are prohibited from use on easyJet”",
+    rechargeBank: "No",
+    stowage: "Not stated on the cited page. CAA: keep it easily accessible",
+    sources: [{ label: "easyJet dangerous goods", href: ONBOARD_POWER_BANK_SOURCES.easyjet }],
+    checked: ONBOARD_RULES_CHECKED,
+  },
+  {
+    airline: "Ryanair",
+    maxBanks: "2 power banks",
+    whLimit: "Max 100Wh",
+    chargeDevices:
+      "Yes, “except during taxi, take-off, and landing, or when instructed otherwise by the crew”",
+    rechargeBank: "No, “at any time”",
+    stowage: "On you or in the under-seat bag. Never overhead",
+    sources: [{ label: "Ryanair permitted items", href: ONBOARD_POWER_BANK_SOURCES.ryanair }],
+    checked: ONBOARD_RULES_CHECKED,
+  },
+  {
+    airline: "British Airways",
+    maxBanks: "Up to 2 power banks per person",
+    whLimit: "Must not exceed 100Wh. Must display a capacity rating",
+    chargeDevices:
+      "Not stated by BA, so the CAA “should not” applies. Seat power is for devices, not power banks",
+    rechargeBank: "No. Seat power is for PEDs, not power banks",
+    stowage: "Seat pocket or a bag under the seat in front",
+    sources: [{ label: "BA liquids and restrictions", href: ONBOARD_POWER_BANK_SOURCES.ba }],
+    checked: ONBOARD_RULES_CHECKED,
+  },
+  {
+    airline: "Virgin Atlantic",
+    maxBanks: "Maximum of 2 power banks",
+    whLimit: "The same use ban is printed on the ≤100Wh row and the 100–160Wh (approval) row",
+    chargeDevices: "No. Cannot be used onboard to charge devices",
+    rechargeBank: "No. Cannot be plugged in to the onboard power supply",
+    stowage: "Accessible location. Not in the overhead lockers",
+    sources: [{ label: "Virgin restricted items", href: ONBOARD_POWER_BANK_SOURCES.virgin }],
+    checked: ONBOARD_RULES_CHECKED,
+  },
+  {
+    airline: "Jet2",
+    maxBanks: "Max 2 per person",
+    whLimit:
+      "Each ≤160Wh. Jet2 gives automatic operator approval above 100Wh, not exceeding 160Wh. No clear Wh rating: forbidden",
+    chargeDevices: "No. Not to charge or power any device when onboard",
+    rechargeBank: "No. Not to be charged whilst onboard",
+    stowage: "Under the seat. Not in the overhead locker",
+    sources: [
+      { label: "Jet2 restricted items", href: ONBOARD_POWER_BANK_SOURCES.jet2 },
+      { label: "Jet2 reminder (26 Aug 2026)", href: ONBOARD_POWER_BANK_SOURCES.jet2News },
+    ],
+    checked: ONBOARD_RULES_CHECKED,
+  },
+  {
+    airline: "TUI",
+    maxBanks: "No more than two per person",
+    whLimit: "Must not exceed 100Wh",
+    chargeDevices: "No. Cannot be used on board to charge other devices",
+    rechargeBank: "No. Cannot be charged on board",
+    stowage: "Under the seat in front, or the seat-back pocket, during any phase of flight",
+    sources: [{ label: "TUI Group PDF (ED67 V2, May 2026)", href: ONBOARD_POWER_BANK_SOURCES.tuiGroupPdf }],
+    checked: ONBOARD_RULES_CHECKED,
+  },
+];
+
+export const ONBOARD_POWER_BANK_FAQS: GuideFaq[] = [
+  {
+    q: "Can I use a power bank on a plane in the UK?",
+    a: "Usually not. You cannot recharge it on board, and the CAA says you should not use it to charge devices. A few airlines, such as Ryanair, allow device charging outside taxi, take-off and landing. Check yours first. The crew’s instruction is final.",
+  },
+  {
+    q: "Can I use a power bank on an easyJet flight?",
+    a: "No. You can carry one in the cabin, but easyJet’s page says power banks are prohibited from use. Never recharge the bank on board either.",
+  },
+  {
+    q: "Can I charge my phone with a power bank on Ryanair?",
+    a: "Yes, except during taxi, take-off and landing, or when the crew says otherwise. Never recharge the bank itself, at any time.",
+  },
+  {
+    q: "Can I charge a power bank from the plane’s USB socket?",
+    a: "No. UK rules say power banks must not be recharged on board. British Airways and Virgin Atlantic say this specifically about seat power.",
+  },
+  {
+    q: "How many power banks can I take?",
+    a: "Two per person under the CAA rules. Ryanair, BA, Virgin, Jet2 and TUI all state two as well. Always check the airline you booked.",
+  },
+  {
+    q: "Why can’t power banks go in the overhead locker?",
+    a: "So they stay accessible and a problem can be seen and dealt with quickly. Ryanair, BA, Virgin and Jet2 all require them to stay out of the overhead lockers.",
+  },
+  {
+    q: "What should I do if my power bank gets hot or starts smoking on a flight?",
+    a: "If it starts to get hot: switch it off, stop charging, and tell the cabin crew straight away. If it starts to smoke: tell the crew at once. They are trained to deal with the issue safely.",
+  },
+  {
+    q: "Can I keep my power bank in my checked bag to be safe?",
+    a: "No. Power banks must go in hand luggage. A CAA-commissioned survey found 31% of passengers still get this wrong. Cabin carriage is where any issue can be dealt with.",
+  },
+  {
+    q: "Does this apply to MagSafe or wireless power banks?",
+    a: "Yes. Any power bank counts. Magnetic or wireless does not change the CAA rules or the airline bans on use and recharge.",
   },
 ];
 
@@ -276,6 +420,19 @@ export const guides: Guide[] = [
     affiliateSlug: "magdeck-10",
   },
   {
+    slug: "power-bank-on-plane-rules-uk",
+    title: "Can you use a power bank on a plane? UK airline rules (2026)",
+    heading: "Can you use a power bank on a plane? The 2026 UK rules, airline by airline",
+    metaTitle: "Using a Power Bank on a Plane: 2026 UK Airline Rules",
+    kicker: "Power",
+    description:
+      "Since March 2026 you can't recharge a power bank on board, and most UK airlines ban using one. Who allows it, where to stow it and what to do if it overheats.",
+    published: "2026-10-26",
+    faqs: ONBOARD_POWER_BANK_FAQS,
+    relatedSlugs: ["magdeck-10", "flightbrick-100", "arc-gan"],
+    affiliateSlug: "magdeck-10",
+  },
+  {
     slug: "portable-monitor-laptop-second-screen",
     title: "Portable monitors: a second screen for trains, hotels and the kitchen table",
     heading: "A second screen that fits a bag, not a desk",
@@ -305,7 +462,7 @@ export function getGuide(slug: string) {
 }
 
 export function guideMetaTitle(guide: Guide) {
-  return `${guide.title} | ${APP_NAME}`;
+  return `${guide.metaTitle ?? guide.title} | ${APP_NAME}`;
 }
 
 export function relatedProducts(guide: Guide) {
