@@ -11,7 +11,18 @@ import {
   isAmazonPick,
 } from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
-import { AIRLINE_POWER_BANK_ROWS, CAA_PACK_RIGHT, PACKING_POWER_FAQS, type Guide } from "@/lib/guides";
+import {
+  AIRLINE_POWER_BANK_ROWS,
+  CAA_BATTERY_CHECKLIST,
+  CAA_LITHIUM_RULES,
+  CAA_PACK_RIGHT,
+  CAA_PACKRIGHT_SHORT,
+  ONBOARD_POWER_BANK_FAQS,
+  ONBOARD_POWER_BANK_ROWS,
+  ONBOARD_POWER_BANK_SOURCES,
+  PACKING_POWER_FAQS,
+  type Guide,
+} from "@/lib/guides";
 
 function ShopLink({ slug, children }: { slug: string; children: ReactNode }) {
   return (
@@ -297,7 +308,12 @@ function PackingPowerBody() {
       <h2>What do Ryanair, easyJet, BA and Jet2 allow?</h2>
       <p>
         Checked on 23 October 2026 on each airline's own site. Airlines change these rules, so
-        click through before you fly. I do not invent airline policy.
+        click through before you fly. I do not invent airline policy. Using the bank once you sit
+        down is{" "}
+        <GuideLink slug="power-bank-on-plane-rules-uk">
+          can you use a power bank on a plane
+        </GuideLink>
+        .
       </p>
       <div className="overflow-x-auto rounded-2xl bg-cream shadow-[var(--shadow-border)]">
         <table className="w-full min-w-[52rem] text-left text-sm">
@@ -471,6 +487,10 @@ function PackingPowerBody() {
         Cabin rules, two-bank limit, and the Wh sum live on{" "}
         <GuideLink slug="power-bank-hand-luggage-uk">
           power banks in UK hand luggage
+        </GuideLink>
+        . Using the bank once you sit down is a different question:{" "}
+        <GuideLink slug="power-bank-on-plane-rules-uk">
+          can you use a power bank on a plane
         </GuideLink>
         .
       </p>
@@ -1022,8 +1042,13 @@ function PowerBankLuggageBody() {
         >
           CAA baggage guidance
         </a>
-        , then the carrier you actually booked. The CAA list in force since 27 March 2026 is
-        below. I do not invent airline policy.
+        ,         then the carrier you actually booked. The CAA list in force since 27 March 2026 is
+        below. I do not invent airline policy. Using the bank once you sit down — charging a
+        phone from it, or plugging the bank into seat power — is a different log:{" "}
+        <GuideLink slug="power-bank-on-plane-rules-uk">
+          can you use a power bank on a plane
+        </GuideLink>
+        .
       </p>
       <h2>Rules since March 2026</h2>
       <p>
@@ -1179,6 +1204,331 @@ function PowerBankLuggageBody() {
   );
 }
 
+function PowerBankOnboardBody() {
+  return (
+    <>
+      <p>
+        This log is about using a power bank once you sit down. Taking one through security is a
+        different question — that is{" "}
+        <GuideLink slug="power-bank-hand-luggage-uk">
+          power banks in UK hand luggage
+        </GuideLink>
+        . The rest of the kit is{" "}
+        <GuideLink slug="packing-power">what I would pack for travel power</GuideLink>. I do not
+        invent airline policy. The crew’s instruction is final.
+      </p>
+      <h2>The short answer</h2>
+      <aside className="rounded-2xl bg-cream p-5 shadow-[var(--shadow-border)]">
+        <p className="text-ink">
+          Usually not. Since 27 March 2026, UK rules say power banks must go in hand luggage (two
+          per person, up to 100Wh without airline approval). They must never be recharged on board,
+          and the CAA says they should not be used to charge other devices. A few airlines, such as
+          Ryanair, still allow device charging outside taxi, take-off and landing. Check yours
+          first.
+        </p>
+      </aside>
+      <h2>What changed on 27 March 2026</h2>
+      <p>
+        From 27 March 2026 the{" "}
+        <a
+          href={CAA_LITHIUM_RULES}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA lithium and power-bank rules
+        </a>{" "}
+        set a UK default. The old habit — treat use as allowed, then check the airline — is the
+        wrong way round. Recharging a bank on board is banned outright. Using one to charge a phone
+        is advised against unless the airline you booked says yes.{" "}
+        <a
+          href={CAA_PACKRIGHT_SHORT}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA passenger guidance
+        </a>{" "}
+        is the short public version.
+      </p>
+      <h3>The rules in plain English</h3>
+      <ul>
+        <li>Carry-on only. Never the hold.</li>
+        <li>Individually protected when not in use.</li>
+        <li>Must not be recharged on board.</li>
+        <li>Should not be used to charge other portable electronic devices on board.</li>
+        <li>Maximum two per person.</li>
+        <li>
+          Up to 100Wh without airline approval. Greater than 100Wh but not exceeding 160Wh needs
+          the airline’s approval.
+        </li>
+      </ul>
+      <p>
+        The{" "}
+        <a
+          href={CAA_BATTERY_CHECKLIST}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA lithium-battery checklist
+        </a>{" "}
+        (22 Oct 2026) says the same thing in one line: check that your airline allows it. A
+        CAA-commissioned survey in that same release found 54% of air passengers now carry a power
+        bank when they fly (up from 49%), 31% still wrongly believe items with lithium batteries
+        should go in checked luggage, and awareness of the rules is at 86% among recent flyers.
+      </p>
+      <h3>“Must not” vs “should not”: why airlines still differ</h3>
+      <p>
+        “Must not be recharged on board” is a ban. No UK carrier in the table below lets you plug
+        the bank into seat power. “Should not be used to charge other portable electronic devices
+        on board” is the CAA’s default advice. An airline can still allow device charging. Ryanair
+        does, outside taxi, take-off and landing. easyJet, Virgin Atlantic, Jet2 and TUI say no.
+        British Airways does not say, so the CAA “should not” applies. The crew’s instruction is
+        final.
+      </p>
+      <h2>Airline-by-airline table</h2>
+      <p>
+        Official pages, checked 26 Oct 2026. Airlines change these rules. Click through before you
+        fly. If the crew tell you to put it away, put it away.
+      </p>
+      <div className="overflow-x-auto rounded-2xl bg-cream shadow-[var(--shadow-border)]">
+        <table className="w-full min-w-[64rem] text-left text-sm">
+          <thead>
+            <tr className="text-xs tracking-widest text-clay uppercase">
+              <th className="px-4 py-3 font-medium">Airline</th>
+              <th className="px-4 py-3 font-medium">Number allowed</th>
+              <th className="px-4 py-3 font-medium">Wh limit</th>
+              <th className="px-4 py-3 font-medium">Charge devices from it?</th>
+              <th className="px-4 py-3 font-medium">Recharge the bank?</th>
+              <th className="px-4 py-3 font-medium">Where to stow it</th>
+              <th className="px-4 py-3 font-medium">Source</th>
+              <th className="px-4 py-3 font-medium">Checked</th>
+            </tr>
+          </thead>
+          <tbody className="text-stone">
+            {ONBOARD_POWER_BANK_ROWS.map((row) => (
+              <tr key={row.airline} className="border-t border-line align-top">
+                <td className="px-4 py-3 font-medium text-ink">{row.airline}</td>
+                <td className="px-4 py-3">{row.maxBanks}</td>
+                <td className="px-4 py-3">{row.whLimit}</td>
+                <td className="px-4 py-3">{row.chargeDevices}</td>
+                <td className="px-4 py-3">{row.rechargeBank}</td>
+                <td className="px-4 py-3">{row.stowage}</td>
+                <td className="px-4 py-3">
+                  <ul className="list-none space-y-1 pl-0">
+                    {row.sources.map((source) => (
+                      <li key={source.href}>
+                        <a
+                          href={source.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-clay hover:text-clay-dark"
+                        >
+                          {source.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </td>
+                <td className="px-4 py-3">{row.checked}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        TUI’s row cites the TUI Group “Items allowed on board TUI Airlines” PDF (ED67 V2, May
+        2026), not a tui.co.uk HTML page. I could not confirm a current tui.co.uk page that states
+        the use rule. Read the{" "}
+        <a
+          href={ONBOARD_POWER_BANK_SOURCES.tuiGroupPdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          TUI Group PDF
+        </a>
+        .
+      </p>
+      <p>
+        The short version: only Ryanair, of these six, explicitly allows charging a device from a
+        power bank — and not during taxi, take-off or landing. Nobody lets you recharge the bank.
+        BA is silent on device charging, so treat it as no unless the crew say otherwise.
+      </p>
+      <h3>easyJet</h3>
+      <p>
+        easyJet’s cited page is blunt: “Power banks are prohibited from use on easyJet.” That is
+        use, not carriage. You can still take a bank in the cabin. You cannot run a phone from it
+        once you sit down. Recharging the bank is also no. The same page uses a 160Wh figure, which
+        differs from the CAA’s 100Wh-without-approval wording — quote easyJet, not the CAA, for
+        that carrier’s size line. Stowage is not named on the cited page. Rules checked 26 Oct
+        2026.
+      </p>
+      <h3>Ryanair</h3>
+      <p>
+        Ryanair is the exception in this set. Device charging is allowed “except during taxi,
+        take-off, and landing, or when instructed otherwise by the crew.” Recharging the bank
+        itself is banned “at any time.” Two banks, max 100Wh, on you or in the under-seat bag,
+        never overhead. Rules checked 26 Oct 2026.
+      </p>
+      <h3>British Airways</h3>
+      <p>
+        BA’s page is silent on charging a device from a power bank. It does not allow it and it
+        does not ban it. The CAA “should not” therefore applies: do not use the bank to charge a
+        phone unless the crew tell you otherwise. What BA does say: “Up to 2 power banks per
+        person.” “Power banks must display capacity rating information.” “Power banks must not
+        exceed 100Wh.” “Aircraft seat power supplies are to be used exclusively for charging
+        personal electronic devices (PEDs), not power banks.” “Power banks must be stored either
+        in the seat pocket or in a bag placed under the seat in front.” Rules checked 26 Oct 2026.
+      </p>
+      <h3>Virgin Atlantic</h3>
+      <p>
+        Virgin’s ban covers every size they list. On the ≤100Wh row (no approval needed): “Each
+        person is limited to a maximum of 2 power banks … Spare Batteries/power banks must be
+        stowed in an accessible location onboard and not in the overhead lockers. Power banks
+        cannot be used onboard to charge devices and cannot be plugged in to our onboard power
+        supply.” The 100–160Wh row (needs approval) repeats that sentence. Rules checked 26 Oct
+        2026.
+      </p>
+      <h3>Jet2</h3>
+      <p>
+        Jet2’s restricted-items page: “power banks must: be carried in your hand luggage and when
+        onboard, your hand luggage be placed under your seat, not be charged whilst onboard the
+        aircraft, and not be used to charge or power any device when onboard.” Max two per person,
+        each ≤160Wh. “Jet2.com gives automatic operator approval for power banks with a battery
+        capacity exceeding 100Wh, but not exceeding 160Wh.” Banks without a clear Wh rating are
+        forbidden. A 26 Aug 2026 reminder repeats under the seat, not the overhead locker. Rules
+        checked 26 Oct 2026.
+      </p>
+      <h3>TUI</h3>
+      <p>
+        This row cites a TUI Group PDF, not a tui.co.uk HTML page: “Items allowed on board TUI
+        Airlines,” ED67 V2, May 2026. Section 20, Power Banks: “must not exceed 100 Wh … b)
+        Cannot be used on board to charge other devices c) Cannot be charged on board. d) No more
+        than two power banks per person; e) Be placed under the seat in front or in another
+        designated area such as the seat-back pocket during any phase of flight.” Rules checked 26
+        Oct 2026.
+      </p>
+      <h2>Where to put your power bank on board</h2>
+      <p>
+        On you, in the seat pocket, or under the seat. Never in the overhead locker. The CAA
+        checklist says keep it easily accessible. Ryanair wants it on you or in the under-seat bag.
+        BA wants the seat pocket or a bag under the seat. Virgin wants an accessible place, not the
+        lockers. Jet2 wants the bag under the seat. TUI wants under the seat or the seat-back
+        pocket during any phase of flight. easyJet’s cited page does not name a pocket; the CAA
+        line still applies.
+      </p>
+      <p>
+        Accessible means you can see it and the crew can reach it. A problem in a closed locker is
+        a problem you find late. Carry rules — two banks, printed Wh, cabin bag only — live on{" "}
+        <GuideLink slug="power-bank-hand-luggage-uk">
+          the hand-luggage log
+        </GuideLink>
+        .
+      </p>
+      <h2>What to do if your power bank gets hot or smokes on a flight</h2>
+      <p>
+        Use only these steps. Each one is from the{" "}
+        <a
+          href={CAA_BATTERY_CHECKLIST}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA’s six-point checklist
+        </a>{" "}
+        (22 Oct 2026). Do not add your own.
+      </p>
+      <ol className="list-decimal space-y-2 pl-5">
+        <li>
+          If it starts to get hot: switch it off, stop charging, and tell the cabin crew straight
+          away. That covers power banks, vapes, phones and tablets.
+        </li>
+        <li>
+          If it starts to smoke: tell the cabin crew straight away. “They are trained to deal with
+          the issue safely.”
+        </li>
+      </ol>
+      <p>
+        Prevention is the rest of the checklist: keep it in the cabin and never in checked luggage;
+        never charge it on the flight; keep it easily accessible if you use it. Glenn Bradley, CAA
+        Head of Flight Operations, puts cabin carriage as “where any issue can be dealt with”.
+      </p>
+      <h2>How to stay charged without breaking the rules</h2>
+      <p>
+        Charge everything before boarding. At the gate, plug the wall brick into a socket and empty
+        it into the phone and the bank — not the other way round once you sit down. On board, plug
+        the <em>phone</em> straight into seat power where there is any. Use low-power mode. Only
+        use a bank on an airline that allows it. Today that is Ryanair, and only outside taxi,
+        take-off and landing.
+      </p>
+      <p>
+        <ShopLink slug="magdeck-10">MagDeck 10</ShopLink> is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.magDeck10}>Anker MagGo 10,000 mAh Qi2</AmazonText> I
+        would charge before you fly and use at the gate, or on Ryanair if the crew have not said
+        otherwise. Ten thousand milliamp-hours at 3.7V is about 37Wh. I do not dropship it. The
+        card is affiliate.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />
+      <p>
+        The gate brick is a wall charger, not a bank.{" "}
+        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
+        folding UK pins. <ShopLink slug="arc-gan">Arc 65W GaN</ShopLink> is the dropship 65W dual
+        USB-C if you can wait the window. Neither flies as a spare battery. Pack one if a lounge
+        socket is the last honest charge of the day.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
+      <p>
+        What else goes in the sleeve is on{" "}
+        <GuideLink slug="packing-power">what I would pack for travel power</GuideLink>.
+      </p>
+      <h2>The label, the sum, and the terminals</h2>
+      <p>
+        The Wh or mAh rating must be clearly printed on the power bank, or security may take it off
+        you. That is on the{" "}
+        <a
+          href={ONBOARD_POWER_BANK_SOURCES.ba}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          BA baggage page
+        </a>
+        . Jet2 forbids banks without a clear Wh rating.
+      </p>
+      <p>
+        If the case only prints milliamp-hours, the sum is Wh = mAh × 3.7V ÷ 1000. A 10,000mAh
+        bank is about 37Wh. Use the nominal cell voltage — typically 3.7V — not the 5V USB output.
+        If the label already prints Wh, use that number.
+      </p>
+      <p>
+        Cover the terminals. A pouch or the original packaging stops a short against keys or coins.
+        The CAA’s 27 March rules also list taping over the terminals or a separate plastic bag.
+      </p>
+      <h2>Questions people type</h2>
+      <dl className="space-y-6">
+        {ONBOARD_POWER_BANK_FAQS.map((item) => (
+          <div key={item.q}>
+            <dt className="font-display text-xl font-medium tracking-tight text-ink">{item.q}</dt>
+            <dd className="mt-2 text-stone">{item.a}</dd>
+          </div>
+        ))}
+      </dl>
+      <h2>The affiliate bit, once</h2>
+      <p>
+        Those buttons are tagged Amazon UK affiliate links. Al may earn a commission. Read the
+        listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may
+        differ. I do not invent stock.
+      </p>
+      <p>
+        Two banks. Cabin bag. Printed Wh. Usually leave it in the pocket. Check the airline. The
+        crew’s instruction is final.
+      </p>
+    </>
+  );
+}
+
 function PortableMonitorBody() {
   return (
     <>
@@ -1314,6 +1664,7 @@ const bodies: Record<string, () => ReactNode> = {
   "usb-c-dock-dual-hdmi": DualHdmiDockBody,
   "webcam-for-video-calls": WebcamCallsBody,
   "power-bank-hand-luggage-uk": PowerBankLuggageBody,
+  "power-bank-on-plane-rules-uk": PowerBankOnboardBody,
   "portable-monitor-laptop-second-screen": PortableMonitorBody,
 };
 
