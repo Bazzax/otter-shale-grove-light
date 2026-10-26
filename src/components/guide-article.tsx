@@ -1467,8 +1467,8 @@ function PowerBankOnboardBody() {
         <ShopLink slug="magdeck-10">MagDeck 10</ShopLink> is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.magDeck10}>Anker MagGo 10,000 mAh Qi2</AmazonText> I
         would charge before you fly and use at the gate, or on Ryanair if the crew have not said
-        otherwise. Ten thousand milliamp-hours at 3.7V is about 37Wh. One mention. I do not
-        dropship it. The card is affiliate.
+        otherwise. Ten thousand milliamp-hours at 3.7V is about 37Wh. I do not dropship it. The
+        card is affiliate.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />
       <p>
