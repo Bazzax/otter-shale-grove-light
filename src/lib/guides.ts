@@ -123,6 +123,14 @@ export const PACKING_POWER_FAQS: GuideFaq[] = [
     q: "How do I convert mAh to Wh for airport security?",
     a: "The CAA formula is (V × mAh) ÷ 1000 = Wh. If the case does not print Wh, use the nominal cell voltage — typically 3.7V for lithium-ion — not the 5V USB output.",
   },
+  {
+    q: "What's the biggest power bank I can take in hand luggage in the UK?",
+    a: "Anything under 100Wh with no approval, up to two per person per the CAA. That is about 27,000mAh. The ALOGIC Ark at 97.2Wh is at the top.",
+  },
+  {
+    q: "Is a 25,000mAh power bank allowed on a plane?",
+    a: "Usually yes: about 92.5Wh at 3.7V, under 100Wh. Use the Wh printed on the case.",
+  },
 ];
 
 export const CAA_LITHIUM_RULES =
@@ -247,7 +255,7 @@ export const ONBOARD_POWER_BANK_FAQS: GuideFaq[] = [
   },
   {
     q: "How many power banks can I take?",
-    a: "Two per person under the CAA rules. Ryanair, BA, Virgin, Jet2 and TUI all state two as well. Always check the airline you booked.",
+    a: "Two per person under the CAA rules. The limit is two power banks per passenger, not per bag, and it applies in the cabin; airlines can be stricter. Ryanair, BA, Virgin, Jet2 and TUI all state two as well. Always check the airline you booked.",
   },
   {
     q: "Why can’t power banks go in the overhead locker?",
@@ -332,7 +340,7 @@ export const guides: Guide[] = [
     description:
       "Anker, UGREEN, Belkin, and a hotel-desk hub — plus the CAA cabin rule: power banks in hand luggage only, max two, under 100Wh. Tagged Amazon UK picks.",
     published: "2026-09-23",
-    updated: "2026-10-23",
+    updated: "2026-10-29",
     faqs: PACKING_POWER_FAQS,
     relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub", "magdeck-10"],
     affiliateSlug: "arc-gan",
@@ -428,6 +436,7 @@ export const guides: Guide[] = [
     description:
       "Since March 2026 you can't recharge a power bank on board, and most UK airlines ban using one. Who allows it, where to stow it and what to do if it overheats.",
     published: "2026-10-26",
+    updated: "2026-10-29",
     faqs: ONBOARD_POWER_BANK_FAQS,
     relatedSlugs: ["magdeck-10", "flightbrick-100", "arc-gan"],
     affiliateSlug: "magdeck-10",

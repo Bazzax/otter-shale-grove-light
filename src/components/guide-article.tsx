@@ -465,6 +465,140 @@ function PackingPowerBody() {
         <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> is the bay version: 5,000 mAh, about
         18.5Wh. The tagged Baseus listing sits on that section.
       </p>
+      <h2>What is the best cabin-legal power bank in the UK?</h2>
+      <p>
+        A bank just under 100Wh goes in the cabin bag on UK airlines without approval. Three come
+        up most: the Anker 737 PowerCore 24K, the INIU P63, and the ALOGIC Ark.
+      </p>
+      <p>
+        Short version: most capacity you can carry without asking is the ALOGIC Ark (97.2Wh, 140W).
+        Best value is the INIU P63 (25,000mAh, 100W, £66.99 on Amazon UK as checked 29 Oct 2026).
+        The well-known one is the Anker 737 (24,000mAh, 140W), but there was no new stock on Amazon
+        UK on 29 Oct 2026, so check before buying.
+      </p>
+      <p>
+        The{" "}
+        <a
+          href={CAA_PACK_RIGHT}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA pack-right page
+        </a>{" "}
+        (checked 29 Oct 2026) puts it like this: “Under 100Wh are common in phones, laptops, and
+        cameras – it is recommended that you take these devices with you in the cabin.” Then:
+        “100Wh to 160Wh ... you require airline approval to carry these”. “Over 160Wh are
+        prohibited in passenger baggage”. And: “you can only take two power banks per person. These
+        should never be re-charged onboard the aircraft.”
+      </p>
+      <p>
+        I am not repeating the airline table or the mAh-to-Wh sum here. See the airline table in
+        our{" "}
+        <GuideLink slug="power-bank-on-plane-rules-uk">power banks on planes guide</GuideLink>.
+        That table covers six airlines.
+      </p>
+      <div className="overflow-x-auto rounded-2xl bg-cream shadow-[var(--shadow-border)]">
+        <table className="w-full min-w-[52rem] text-left text-sm">
+          <thead>
+            <tr className="text-xs tracking-widest text-clay uppercase">
+              <th className="px-4 py-3 font-medium">Power bank</th>
+              <th className="px-4 py-3 font-medium">Capacity</th>
+              <th className="px-4 py-3 font-medium">Wh</th>
+              <th className="px-4 py-3 font-medium">Max output</th>
+              <th className="px-4 py-3 font-medium">
+                UK price
+                <span className="mt-1 block font-normal normal-case tracking-normal text-dust">
+                  as checked 29 Oct 2026
+                </span>
+              </th>
+              <th className="px-4 py-3 font-medium">Where to buy</th>
+            </tr>
+          </thead>
+          <tbody className="text-stone">
+            <tr className="border-t border-line align-top">
+              <td className="px-4 py-3 font-medium text-ink">
+                ALOGIC Ark
+                <span className="block text-xs font-normal text-dust">A27KPB140W</span>
+              </td>
+              <td className="px-4 py-3">27,000mAh</td>
+              <td className="px-4 py-3">97.2Wh</td>
+              <td className="px-4 py-3">140W USB-C</td>
+              <td className="px-4 py-3">£84.99 (regular £99.99)</td>
+              <td className="px-4 py-3">
+                <a
+                  href="https://alogic.co.uk/products/ark-27-000mah-power-bank-with-140w-usb-c-charging"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow sponsored"
+                  className="text-clay hover:text-clay-dark"
+                >
+                  ALOGIC UK
+                </a>
+              </td>
+            </tr>
+            <tr className="border-t border-line align-top">
+              <td className="px-4 py-3 font-medium text-ink">
+                INIU P63
+                <span className="block text-xs font-normal text-dust">P63-E1</span>
+              </td>
+              <td className="px-4 py-3">25,000mAh</td>
+              <td className="px-4 py-3">92.5Wh</td>
+              <td className="px-4 py-3">100W single USB-C</td>
+              <td className="px-4 py-3">£66.99</td>
+              <td className="px-4 py-3">
+                <AmazonText asin="B0DBHGZ5QH">Amazon UK</AmazonText>
+              </td>
+            </tr>
+            <tr className="border-t border-line align-top">
+              <td className="px-4 py-3 font-medium text-ink">
+                Anker 737 PowerCore 24K
+                <span className="block text-xs font-normal text-dust">A1289</span>
+              </td>
+              <td className="px-4 py-3">24,000mAh</td>
+              <td className="px-4 py-3">86.4Wh</td>
+              <td className="px-4 py-3">140W</td>
+              <td className="px-4 py-3">No new stock on Amazon UK on 29 Oct 2026</td>
+              <td className="px-4 py-3">Check before buying</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p className="text-sm text-dust">Prices change daily; checked 29 Oct 2026.</p>
+      <h3>ALOGIC Ark</h3>
+      <p>
+        The ALOGIC Ark is very close to the 100Wh line, so make sure the rating on the case is
+        visible at security. 27,000mAh, 97.2Wh, 140W USB-C, 635g. £84.99 at{" "}
+        <a
+          href="https://alogic.co.uk/products/ark-27-000mah-power-bank-with-140w-usb-c-charging"
+          target="_blank"
+          rel="noopener noreferrer nofollow sponsored"
+          className="text-clay hover:text-clay-dark"
+        >
+          ALOGIC UK
+        </a>{" "}
+        (regular £99.99). It is not confirmed on Amazon UK.
+      </p>
+      <h3>INIU P63</h3>
+      <p>
+        The{" "}
+        <AmazonText asin="B0DBHGZ5QH">INIU P63</AmazonText> is 100W, which is enough for most 13-14
+        inch laptops, and it is the cheapest of the three. 25,000mAh, 92.5Wh from INIU’s spec table
+        (25,000mAh × 3.7V), about 392g. £66.99, sold by Amazon, in stock on 29 Oct 2026. Read the
+        rating on the case before flying.
+      </p>
+      <h3>Anker 737 PowerCore 24K</h3>
+      <p>
+        The Anker 737 is a good bank with poor availability. 24,000mAh,{" "}
+        <a
+          href="https://www.anker.tw/ANKER/moreinfo_177693.htm"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          86.4Wh on Anker’s official page
+        </a>, 140W max. No new stock on Amazon UK on 29 Oct 2026, only used like-new at £89.99 and
+        a newer Anker Prime model. Do not overpay. The other two do the same job.
+      </p>
       <h2>Questions people type</h2>
       <dl className="space-y-6">
         {PACKING_POWER_FAQS.map((item) => (
@@ -1257,7 +1391,10 @@ function PowerBankOnboardBody() {
         <li>Individually protected when not in use.</li>
         <li>Must not be recharged on board.</li>
         <li>Should not be used to charge other portable electronic devices on board.</li>
-        <li>Maximum two per person.</li>
+        <li>
+          Maximum two per person. The limit is two power banks per passenger, not per bag, and it
+          applies in the cabin; airlines can be stricter.
+        </li>
         <li>
           Up to 100Wh without airline approval. Greater than 100Wh but not exceeding 160Wh needs
           the airline’s approval.
