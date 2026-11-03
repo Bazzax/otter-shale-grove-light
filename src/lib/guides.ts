@@ -307,8 +307,9 @@ export const guides: Guide[] = [
     title: "How to pick a 65W GaN charger that actually travels",
     kicker: "Power",
     description:
-      "Al's field notes on 65W GaN bricks for UK travel: dual USB-C, folding pins, heat, and when Amazon next-day beats a dropship from Dongguan.",
+      "Al's field notes on 65W GaN bricks for UK travel: dual USB-C, a UK 3-pin plug, heat, and the UGREEN Amazon UK pick versus a 100W folding brick.",
     published: "2026-09-23",
+    updated: "2026-11-03",
     relatedSlugs: ["arc-gan", "orbit-bank", "slip-sleeve"],
     affiliateSlug: "arc-gan",
   },
@@ -329,6 +330,7 @@ export const guides: Guide[] = [
     description:
       "Those 6–16 day windows are not courier promises. Al explains supplier batching, UK customs, and when an Amazon affiliate click is the honest buy.",
     published: "2026-09-23",
+    updated: "2026-11-03",
     relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub", "slip-sleeve"],
     affiliateSlug: "arc-gan",
   },
@@ -340,7 +342,7 @@ export const guides: Guide[] = [
     description:
       "Anker, UGREEN, Belkin, and a hotel-desk hub — plus the CAA cabin rule: power banks in hand luggage only, max two, under 100Wh. Tagged Amazon UK picks.",
     published: "2026-09-23",
-    updated: "2026-10-29",
+    updated: "2026-11-03",
     faqs: PACKING_POWER_FAQS,
     relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub", "magdeck-10"],
     affiliateSlug: "arc-gan",
@@ -393,6 +395,7 @@ export const guides: Guide[] = [
     description:
       "UK pins, EU sockets, hotel desks: what a 70W world charger must do — and when WorldBrick 70 beats a pouch of plugs or a single-country GaN.",
     published: "2026-09-27",
+    updated: "2026-11-03",
     relatedSlugs: ["worldbrick-70", "flightbrick-100", "arc-gan", "twin-lead-240"],
     affiliateSlug: "worldbrick-70",
   },
@@ -436,7 +439,7 @@ export const guides: Guide[] = [
     description:
       "Since March 2026 you can't recharge a power bank on board, and most UK airlines ban using one. Who allows it, where to stow it and what to do if it overheats.",
     published: "2026-10-26",
-    updated: "2026-10-29",
+    updated: "2026-11-03",
     faqs: ONBOARD_POWER_BANK_FAQS,
     relatedSlugs: ["magdeck-10", "flightbrick-100", "arc-gan"],
     affiliateSlug: "magdeck-10",

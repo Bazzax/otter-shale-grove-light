@@ -114,14 +114,16 @@ function GanBody() {
       </p>
       <h2>UK pins, honestly</h2>
       <p>
-        <ShopLink slug="arc-gan">Arc 65W GaN</ShopLink> ships folding US pins. That is useful on a
-        long-haul itinerary and useless in a UK wall without a travel adapter. If you only ever
-        charge at home in Britain, buy a UK three-pin brick on Amazon and stop reading. If you
-        already own a compact adapter, Arc is the one brick I would dropship — two USB-C, PD 3.1,
-        cable in the box, no logo louder than the job.
+        <ShopLink slug="arc-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
+        65W GaN with two USB-C ports and a UK 3-pin plug (BS 1363). The listing does not say the
+        pins fold. 65W max, and 65W total when both ports charge. In stock at £22.99 (RRP £29.99),
+        dispatched by Amazon, sold by UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick.
+        Al does not dropship it. Approx. UK price is a snapshot from 3 Nov 2026. Amazon's live
+        checkout may differ.
       </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.arcGan} />
       <ul>
-        <li>Need it this week: use the Amazon UK search. Next-day beats Dongguan.</li>
+        <li>Need it this week: this is the Amazon UK pick. Dispatched by Amazon.</li>
         <li>Need one brick for laptop + phone: 65W dual USB-C, not two 30W cubes.</li>
         <li>
           Phone-only top-up in a jacket: <ShopLink slug="orbit-bank">Orbit Mag</ShopLink>, airline-safe
@@ -134,10 +136,11 @@ function GanBody() {
       </ul>
       <h2>When the affiliate aisle is the better buy</h2>
       <p>
-        A named UK three-pin GaN with a high review count is the correct answer if you do not want
-        to think about adapters, or if the dropship window on Arc (6–11 days) lands after your
-        train. The button below is a tagged search. Read the wattage on the
-        listing, not the title.
+        The UGREEN card above is already the tagged listing. If you want folding UK pins or a
+        100W three-port brick, that is{" "}
+        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink>. If the trip leaves a UK wall,
+        read the world adapter guide. The button below is a tagged search for other wattages. Read
+        the wattage on the listing, not the title.
       </p>
     </>
   );
@@ -210,15 +213,14 @@ function LeadTimeBody() {
       </p>
       <h2>What the numbers hide</h2>
       <p>
-        Shenzhen, Dongguan, Taipei, Ho Chi Minh, Hangzhou — those are origins, not warehouses on
+        Shenzhen, Taipei, Ho Chi Minh, Hangzhou — those are origins, not warehouses on
         the M25. The clock starts when a factory batch includes your line, not when you click.
         Weekends vanish. A customs pause at a UK hub can add two quiet days. Tracking will look
         dead, then suddenly move.
       </p>
       <ul>
         <li>
-          Fastest in this bay: <ShopLink slug="arc-gan">Arc</ShopLink> 6–11 days,{" "}
-          <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> 6–12.
+          Fastest in this bay: <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> 6–12 days.
         </li>
         <li>
           Mid: <ShopLink slug="trace-hub">Trace Hub</ShopLink> 8–13,{" "}
@@ -377,9 +379,10 @@ function PackingPowerBody() {
       <h2>What 65W foldable GaN should I pack?</h2>
       <p>
         A foldable 65W GaN is the brick I would actually pack if I were buying tonight and flying
-        tomorrow. Pins fold. Two ports. It is the Amazon version of the job{" "}
-        <ShopLink slug="arc-gan">Arc 65W GaN</ShopLink> does in the bay — wait the 6–11 days from
-        Dongguan if you want the one I put a name on. Need it before the train: tap the listing.
+        tomorrow. Pins fold. Two ports. The bay's 65W pick is a different job:{" "}
+        <ShopLink slug="arc-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
+        dual USB-C brick with a UK 3-pin (not folding). Amazon UK affiliate pick. Al does not
+        dropship it. Need folding pins tonight: tap the listing below.
       </p>
       <AmazonPick asin="B0B7N4DX1Z" />
       <h2>Is a 70W named travel charger the honest brick?</h2>
@@ -615,9 +618,10 @@ function PackingPowerBody() {
       </p>
       <p>
         If you want the versions I put a name on, the bay has{" "}
-        <ShopLink slug="arc-gan">Arc</ShopLink>,{" "}
+        <ShopLink slug="arc-gan">the UGREEN 65W</ShopLink> (Amazon UK pick, not dropship),{" "}
         <ShopLink slug="orbit-bank">Orbit Mag</ShopLink>, and{" "}
-        <ShopLink slug="trace-hub">Trace</ShopLink>. Lead times printed. No surprise warehouse.
+        <ShopLink slug="trace-hub">Trace</ShopLink>. Lead times on the dropship cards. No surprise
+        warehouse.
         Cabin rules, two-bank limit, and the Wh sum live on{" "}
         <GuideLink slug="power-bank-hand-luggage-uk">
           power banks in UK hand luggage
@@ -662,8 +666,9 @@ function TravelDeskBody() {
       </p>
       <p>
         This is the practical step up from{" "}
-        <ShopLink slug="arc-gan">Arc 65W GaN</ShopLink> if one socket has to do a laptop and a
-        phone. Pair it with a proper high-watt cable — the brick cannot outrun a weak lead.
+        <ShopLink slug="arc-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> if one
+        socket has to do a laptop and a phone. Pair it with a proper high-watt cable. The brick
+        cannot outrun a weak lead.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
       <h2>Runway Riser — raise the screen</h2>
@@ -951,10 +956,9 @@ function WorldAdapterBody() {
         If the trip is Britain and a train, you do not need a world face.{" "}
         <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
         folding UK pins and a live wattage readout. That is the honest desk brick for a UK socket.{" "}
-        <ShopLink slug="arc-gan">Arc 65W GaN</ShopLink> is the dropship version of the smaller job
-        — dual USB-C, folding US pins, 100–240V — and it still wants a travel adapter the moment
-        you leave a US or a hotel that already converted the wall. Wait the 6–11 days from Dongguan
-        if you want the one I put a name on and you already own a compact adapter.
+        <ShopLink slug="arc-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is the
+        smaller Amazon UK pick: white, two USB-C, UK 3-pin (the listing does not say folding),
+        65W total when both ports charge. Al does not dropship it.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
       <h2>The brick is only as fast as the cable</h2>
@@ -968,7 +972,7 @@ function WorldAdapterBody() {
       <ul>
         <li>Leaving the UK wall: WorldBrick 70. Leave the bag of plugs at home.</li>
         <li>UK sockets only, laptop plus phone: FlightBrick 100.</li>
-        <li>Already own an adapter and can wait a dropship window: Arc 65W GaN.</li>
+        <li>UK sockets, smaller dual USB-C brick: UGREEN 65W GaN (Amazon pick).</li>
         <li>Still unsure: <AskAlLink q="travel power adapter UK">hail Al about travel adapters</AskAlLink>.</li>
       </ul>
       <h2>The affiliate bit, once</h2>
@@ -1611,9 +1615,9 @@ function PowerBankOnboardBody() {
       <p>
         The gate brick is a wall charger, not a bank.{" "}
         <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
-        folding UK pins. <ShopLink slug="arc-gan">Arc 65W GaN</ShopLink> is the dropship 65W dual
-        USB-C if you can wait the window. Neither flies as a spare battery. Pack one if a lounge
-        socket is the last honest charge of the day.
+        folding UK pins. <ShopLink slug="arc-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink>{" "}
+        is the smaller Amazon UK pick: dual USB-C, UK plug. Al does not dropship it. Neither flies
+        as a spare battery. Pack one if a lounge socket is the last honest charge of the day.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
       <p>
