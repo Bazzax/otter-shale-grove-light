@@ -3,7 +3,7 @@ import { PRICE_CURRENCY } from "./format";
 export const APP_NAME = "Al's AI Drop Ship";
 export const APP_TAGLINE = "A sentient dropship drone, online, programmed to deliver.";
 export const APP_DESCRIPTION =
-  "Al is a mock sentient delivery drone. Hail Al for a short tech catalog — GaN chargers, ANC audio, desk kit — then dropship from suppliers or follow marked Amazon UK affiliate links. Demo checkout; nothing is billed.";
+  "Al is a mock sentient delivery drone. Hail Al for a short tech catalog of Amazon UK affiliate picks: GaN chargers, ANC audio, desk kit. Delivery is Amazon's. Demo checkout; nothing is billed.";
 export const CONTACT_EMAIL = "alsaidropship@gmail.com";
 export const SITE_ORIGIN = "https://alsaidropship.com";
 export const FORMSUBMIT_ACTION = `https://formsubmit.co/${CONTACT_EMAIL}`;
@@ -209,7 +209,7 @@ export const FAQS = [
     a: "Al is a mock sentient dropship drone. Programmed — albeit online — to source a short tech catalog and deliver it. Al has no surname and no warehouse.",
   },
   {
-    q: "How does dropshipping work here?",
+    q: "How does buying work here?",
     a: "Al recommends products and does not hold stock. Buy buttons go to Amazon UK and are affiliate links, so Al may earn a commission at no extra cost to you. Al does not take payment or ship.",
   },
   {
@@ -222,15 +222,15 @@ export const FAQS = [
   },
   {
     q: "How long does UK delivery actually take?",
-    a: "On this site, nothing packs. If you used a real dropshipper, the window on the card (often 6–16 days from Shenzhen, Taipei, Hangzhou) is supplier to door, not a courier promise. Weekends, batching, and a customs pause can stretch it. Amazon UK affiliate orders use Amazon's own UK delivery times — usually the move if you need it this week.",
+    a: "On this site, nothing packs. Every product is an Amazon UK affiliate pick. Delivery is Amazon's, and it varies. There is no factory window on these cards.",
   },
   {
     q: "Why are bay prices in pounds?",
-    a: "The bay lists cargo in GBP — fuel for the drone, so Al stays airborne. Amazon UK picks show an approx. pound price from the listing; live checkout may differ. Compare the job, not the badge.",
+    a: "The bay lists Amazon UK picks in GBP. The printed figure is an approx. listing snapshot; live checkout may differ. Compare the job, not the badge.",
   },
   {
     q: "Is this an honest affiliate site?",
-    a: "The Amazon buttons are the real monetization. They are labelled. Al will tell you to use them when dropship lead time is the wrong tool. Hail Al or mail alsaidropship@gmail.com if a mark is missing.",
+    a: "The Amazon buttons are the real monetization. They are labelled. Every card in this bay is an Amazon UK affiliate pick. Hail Al or mail alsaidropship@gmail.com if a mark is missing.",
   },
   {
     q: "Will Al email me?",

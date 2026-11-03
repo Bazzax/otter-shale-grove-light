@@ -51,7 +51,7 @@ function OrderPage() {
       </h1>
       <p className="mt-4 text-stone">
         {lastOrder.name}, Al logged the demo flight. Nothing was charged and
-        nothing will ship. Dropship lead times stay on each cargo card.
+        nothing will ship. Delivery on real buys is Amazon's.
       </p>
 
       <div className="mt-10 rounded-2xl bg-cream p-5 shadow-[var(--shadow-border)] sm:p-6">

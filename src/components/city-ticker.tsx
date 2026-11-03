@@ -3,7 +3,7 @@ const items = [
   "PAYLOAD 9",
   "NO WAREHOUSE",
   "AFFILIATE ARMED",
-  "ETA ON EVERY CARD",
+  "AMAZON UK PICKS",
   "HAIL AL",
 ];
 const loop = [...items, ...items];

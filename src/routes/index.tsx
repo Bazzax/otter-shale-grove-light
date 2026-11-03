@@ -12,11 +12,11 @@ import { guides } from "@/lib/guides";
 import { APP_NAME, APP_TAGLINE, FAQS, pageHead, websiteJsonLd } from "@/lib/seo";
 
 const HOME_DESCRIPTION =
-  "Al is a mock sentient dropship drone with a short tech catalog — 65W GaN chargers, ANC headphones, SSDs. Demo checkout. Amazon UK affiliate links when you need it sooner than a Shenzhen window.";
+  "Al's Drop Ship: a short tech catalog of Amazon UK affiliate picks. GaN chargers, ANC headphones, SSDs. Delivery is Amazon's. Demo checkout. Nothing is billed.";
 
 export const Route = createFileRoute("/")({
   head: () =>
-    pageHead(`${APP_NAME} | Dropship tech catalog & Amazon UK picks`, HOME_DESCRIPTION, "/"),
+    pageHead(`Al's Drop Ship: Amazon UK tech picks`, HOME_DESCRIPTION, "/"),
   component: Home,
 });
 
@@ -41,9 +41,9 @@ function Home() {
               Al's AI <span className="text-clay">Drop Ship</span>
             </h1>
             <p className="rise-in-3 mt-5 max-w-xl text-lg leading-relaxed text-stone">
-              {APP_TAGLINE} Hail the drone for a short tech catalog. Cargo
-              dropships from suppliers. Affiliate links fire when the better buy
-              is already in the wild.
+              {APP_TAGLINE} Hail the drone for a short tech catalog. Every card
+              is an Amazon UK affiliate pick. Delivery is Amazon's. Demo
+              checkout bills nothing.
             </p>
             <div className="rise-in-3 mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
@@ -93,13 +93,13 @@ function Home() {
             />
             <Step
               n="02"
-              title="Dropship"
-              body="No hangar inventory. Add to the bay and a supplier packs it. Lead times sit on every card."
+              title="Pick"
+              body="No hangar inventory. Every SKU is an Amazon UK affiliate pick with a snapshot price. Delivery is Amazon's."
             />
             <Step
               n="03"
               title="Affiliate"
-              body="Need a brand Al does not stock? Jump the Amazon link. Those are affiliate. Al may earn a cut."
+              body="Tap the tagged Amazon UK listing. Those buttons are sponsored. Al may earn a cut. Live checkout may differ."
             />
           </div>
         </div>
