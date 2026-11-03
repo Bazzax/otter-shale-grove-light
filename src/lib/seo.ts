@@ -222,7 +222,7 @@ export const FAQS = [
   },
   {
     q: "How long does UK delivery actually take?",
-    a: "On this site, nothing packs. If you used a real dropshipper, the window on the card (often 6–16 days from Shenzhen, Taipei, Dongguan) is supplier to door, not a courier promise. Weekends, batching, and a customs pause can stretch it. Amazon UK affiliate orders use Amazon's own UK delivery times — usually the move if you need it this week.",
+    a: "On this site, nothing packs. If you used a real dropshipper, the window on the card (often 6–16 days from Shenzhen, Taipei, Hangzhou) is supplier to door, not a courier promise. Weekends, batching, and a customs pause can stretch it. Amazon UK affiliate orders use Amazon's own UK delivery times — usually the move if you need it this week.",
   },
   {
     q: "Why are bay prices in pounds?",

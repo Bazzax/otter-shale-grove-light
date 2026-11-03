@@ -26,6 +26,7 @@ export const AMAZON_PRODUCT_IMAGES = {
   samsungT7: amazonProductImage("51VwCn6Fj6L"),
   soundcoreQ20i: amazonProductImage("51V2SOMrpXL"),
   liberty4Nc: amazonProductImage("5130BCxweAL"),
+  ugreen65w: amazonProductImage("41ygrpBR13L"),
 } as const;
 
 /** Tagged Amazon UK search URL. The associate tag lives only here. */
@@ -74,6 +75,7 @@ export const AMAZON_PICK_ASINS = {
   samsungT7: "B087DDGWKL",
   soundcoreQ20i: "B0C3HCD34R",
   liberty4Nc: "B0BZV4QFP8",
+  arcGan: "B094JHYK55",
 } as const;
 
 type ProductBase = {
@@ -165,25 +167,26 @@ export const catalog: Product[] = [
   },
   {
     slug: "arc-gan",
-    name: "Arc 65W GaN",
-    price: 42,
+    name: "UGREEN 65W GaN Charger (2 USB-C, UK plug)",
+    amazonPick: true,
+    price: 22.99,
     category: "Power",
-    tagline: "One brick. Laptop, phone, buds. Folding pins.",
+    tagline: "White 65W GaN. Two USB-C ports. UK 3-pin plug.",
     description:
-      "A 65W GaN charger that is smaller than the cable it ships with. Two USB-C ports, PD 3.1, folding prongs. It does not get hot enough to be a story.",
+      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. In stock at £22.99 (RRP £29.99), dispatched by Amazon, sold by UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. Approx. UK price is a snapshot from 3 Nov 2026. Amazon's live checkout may differ.",
     details: [
-      "65W GaN, dual USB-C",
-      "PD 3.1 / PPS",
-      "Folding US pins, 100–240V",
-      "1.5 m USB-C cable in the box",
+      "65W GaN · 2× USB-C · no USB-A",
+      "65W max · 65W total when charging both",
+      "UK 3-pin plug (BS 1363). Listing does not say folding",
+      "White · sold by UGREEN GROUP LIMITED UK · dispatched by Amazon",
+      "£22.99 (RRP £29.99), in stock, checked 3 Nov 2026",
     ],
     alNote:
-      "Buy this if you still travel with two chargers. I checked the usual Amazon bricks — same silicon, louder logos. Arc is the one I dropship.",
-    shipsFrom: "Dongguan",
-    etaDays: [6, 11],
-    image: "/products/arc-gan.jpg",
-    asin: "B094JHYK55",
-    affiliateUrl: affiliateProduct("B094JHYK55"),
+      "Amazon UK affiliate pick. Al does not dropship it. Dual USB-C, UK plug, 65W total if both ports are in use. Approx. UK price is on the card. Amazon's live checkout may differ.",
+    image: AMAZON_PRODUCT_IMAGES.ugreen65w,
+    brand: "UGREEN",
+    asin: AMAZON_PICK_ASINS.arcGan,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.arcGan),
     affiliateLabel: "Amazon UK",
     featured: true,
   },
@@ -227,7 +230,7 @@ export const catalog: Product[] = [
       "10.5 mm thick",
     ],
     alNote:
-      "Airline-safe capacity. If your phone is not magnetic, skip this and take Arc instead.",
+      "Airline-safe capacity. If your phone is not magnetic, skip this and take the UGREEN 65W brick instead.",
     shipsFrom: "Shenzhen",
     etaDays: [6, 12],
     image: "/products/orbit-bank.jpg",
@@ -479,7 +482,7 @@ export const catalog: Product[] = [
       "Not a voltage converter · black · 1-World",
     ],
     alNote:
-      "Arc and FlightBrick cover a UK socket. This one covers the socket in the other country. Pack it, leave the bag of plugs at home. Approx. UK price is on the card — confirm on Amazon.",
+      "The UGREEN 65W and FlightBrick cover a UK socket. This one covers the socket in the other country. Pack it, leave the bag of plugs at home. Approx. UK price is on the card. Confirm on Amazon.",
     image: "/products/worldbrick-70.jpg",
     asin: AMAZON_PICK_ASINS.worldBrick70,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.worldBrick70),
@@ -613,7 +616,7 @@ const PRODUCT_SEARCH_HINTS: Record<string, string> = {
   "quietframe": "monitor monitors light bar",
   "slip-sleeve": "laptop sleeve case",
   "orbit-bank": "power bank puck",
-  "arc-gan": "charger chargers gan brick",
+  "arc-gan": "charger chargers gan brick ugreen 65w usb-c",
   "trace-hub": "usb-c hub dongle dock",
   "nimbus-ssd": "ssd storage samsung t7 portable",
   "pulse-one": "headphones headset cans soundcore anker q20i anc",
