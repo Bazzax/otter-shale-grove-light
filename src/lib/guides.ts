@@ -326,10 +326,10 @@ export const guides: Guide[] = [
   },
   {
     slug: "dropship-lead-times",
-    title: "What dropship lead times actually mean",
+    title: "How long does Amazon UK delivery take?",
     kicker: "Ops",
     description:
-      "This catalog is Amazon UK affiliate picks. Delivery is Amazon's, not a factory window. Al explains why the old 6-16 day supplier stories do not apply here.",
+      "Every card is an Amazon UK affiliate pick. Delivery is Amazon's, and it varies. Al does not pack or ship.",
     published: "2026-09-23",
     updated: "2026-11-03",
     relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "anker-7-in-1-usb-c-hub", "tomtoc-14-laptop-case"],

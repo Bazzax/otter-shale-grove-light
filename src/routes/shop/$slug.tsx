@@ -1,16 +1,11 @@
 import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
-import { useState } from "react";
-import { toast } from "sonner";
 import { AffiliateLink } from "@/components/affiliate-link";
 import { JsonLd } from "@/components/json-ld";
 import { ProductCard } from "@/components/product-card";
 import { AmazonImageCredit, ProductImage } from "@/components/product-image";
-import { QtyStepper } from "@/components/qty-stepper";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { catalog, getProduct, isAmazonHostedImage, isAmazonPick, PRODUCT_SLUG_REDIRECTS } from "@/lib/catalog";
-import { useCart } from "@/lib/cart-store";
-import { formatEta, formatProductPrice } from "@/lib/format";
+import { catalog, getProduct, isAmazonHostedImage, PRODUCT_SLUG_REDIRECTS } from "@/lib/catalog";
+import { formatProductPrice } from "@/lib/format";
 import { APP_NAME, pageHead, productJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/shop/$slug")({
@@ -32,17 +27,9 @@ export const Route = createFileRoute("/shop/$slug")({
   head: ({ loaderData }) => {
     const product = loaderData?.product;
     if (!product) return pageHead(`Cargo | ${APP_NAME}`, "Product not in the bay.");
-    if (isAmazonPick(product)) {
-      return pageHead(
-        `${product.name} — Amazon UK pick | ${APP_NAME}`,
-        `${product.tagline} Amazon UK affiliate pick, about ${formatProductPrice(product)}. Shop the tagged listing — Al does not dropship this SKU. Amazon’s live price may differ.`,
-        `/shop/${product.slug}`,
-        { image: product.image },
-      );
-    }
     return pageHead(
-      `${product.name} — dropship from Al | ${APP_NAME}`,
-      `${product.tagline} Dropships from ${product.shipsFrom} in ${product.etaDays[0]}–${product.etaDays[1]} days. Marked ${product.affiliateLabel} affiliate link on this card.`,
+      `${product.name} — Amazon UK pick | ${APP_NAME}`,
+      `${product.tagline} Amazon UK affiliate pick, about ${formatProductPrice(product)}. Shop the tagged listing. Amazon’s live price may differ.`,
       `/shop/${product.slug}`,
       { image: product.image },
     );
@@ -52,17 +39,10 @@ export const Route = createFileRoute("/shop/$slug")({
 
 function ProductPage() {
   const { product } = Route.useLoaderData();
-  const [qty, setQty] = useState(1);
-  const add = useCart((s) => s.add);
   const related = catalog
     .filter((p) => p.slug !== product.slug)
     .sort((a, b) => Number(b.category === product.category) - Number(a.category === product.category))
     .slice(0, 3);
-
-  function handleAdd() {
-    add(product.slug, qty);
-    toast(`Loaded ${product.name} into the bay.`);
-  }
 
   return (
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-10 sm:px-6 sm:py-14">
@@ -91,9 +71,7 @@ function ProductPage() {
         <div className="lg:col-span-5">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline">{product.category}</Badge>
-            {isAmazonPick(product) ? (
-              <Badge variant="clay">Amazon affiliate</Badge>
-            ) : null}
+            <Badge variant="clay">Amazon affiliate</Badge>
             {product.featured ? <Badge variant="clay">Priority cargo</Badge> : null}
           </div>
           <h1 className="mt-4 font-display text-4xl font-medium tracking-tight">
@@ -102,58 +80,29 @@ function ProductPage() {
           <p className="mt-2 font-display text-2xl tabular-nums text-clay">
             {formatProductPrice(product)}
           </p>
-          {isAmazonPick(product) ? (
-            <p className="mt-1 text-sm text-dust">
-              Approx. Amazon UK price. Check the live listing — checkout is on Amazon.
-            </p>
-          ) : null}
+          <p className="mt-1 text-sm text-dust">
+            Approx. Amazon UK price. Check the live listing — checkout is on Amazon.
+          </p>
           <p className="mt-4 leading-relaxed text-stone">{product.tagline}</p>
           <p className="mt-4 leading-relaxed text-stone">{product.description}</p>
 
-          {isAmazonPick(product) ? (
-            <dl className="mt-6 grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <dt className="text-dust">Source</dt>
-                <dd className="mt-1 font-medium">Amazon UK affiliate</dd>
-              </div>
-              <div>
-                <dt className="text-dust">Price</dt>
-                <dd className="mt-1 font-medium tabular-nums">
-                  {formatProductPrice(product)} approx.
-                </dd>
-              </div>
-            </dl>
-          ) : (
-            <dl className="mt-6 grid grid-cols-2 gap-4 text-sm">
-              <div>
-                <dt className="text-dust">Dropships from</dt>
-                <dd className="mt-1 font-medium">{product.shipsFrom}</dd>
-              </div>
-              <div>
-                <dt className="text-dust">Lead time</dt>
-                <dd className="mt-1 font-medium tabular-nums">{formatEta(product.etaDays)}</dd>
-              </div>
-            </dl>
-          )}
-
-          {isAmazonPick(product) ? null : (
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <QtyStepper value={qty} onChange={setQty} />
-              <Button size="lg" onClick={handleAdd} className="min-w-40 flex-1">
-                Load the bay
-              </Button>
+          <dl className="mt-6 grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <dt className="text-dust">Source</dt>
+              <dd className="mt-1 font-medium">Amazon UK affiliate</dd>
             </div>
-          )}
-          <AffiliateLink
-            href={product.affiliateUrl}
-            label={product.affiliateLabel}
-            className={isAmazonPick(product) ? "mt-8 w-full" : "mt-3 w-full"}
-          />
+            <div>
+              <dt className="text-dust">Price</dt>
+              <dd className="mt-1 font-medium tabular-nums">
+                {formatProductPrice(product)} approx.
+              </dd>
+            </div>
+          </dl>
+
+          <AffiliateLink href={product.affiliateUrl} label={product.affiliateLabel} className="mt-8 w-full" />
           <p className="mt-2 text-xs text-dust">
             Affiliate link. Al may earn a commission if you buy on {product.affiliateLabel}.
-            {isAmazonPick(product)
-              ? " Not sold from the bay. Live Amazon price may differ."
-              : ""}
+            Not sold from the bay. Live Amazon price may differ.
           </p>
 
           <Link

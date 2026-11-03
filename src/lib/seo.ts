@@ -209,7 +209,7 @@ export const FAQS = [
     a: "Al is a mock sentient dropship drone. Programmed — albeit online — to source a short tech catalog and deliver it. Al has no surname and no warehouse.",
   },
   {
-    q: "How does dropshipping work here?",
+    q: "How does buying work here?",
     a: "Al recommends products and does not hold stock. Buy buttons go to Amazon UK and are affiliate links, so Al may earn a commission at no extra cost to you. Al does not take payment or ship.",
   },
   {
@@ -222,7 +222,7 @@ export const FAQS = [
   },
   {
     q: "How long does UK delivery actually take?",
-    a: "On this site, nothing packs. Every product is an Amazon UK affiliate pick. Delivery is Amazon's, on Amazon's clock. There is no factory window on these cards. If you used a real dropshipper elsewhere, those 6-16 day supplier clocks are a different shop.",
+    a: "On this site, nothing packs. Every product is an Amazon UK affiliate pick. Delivery is Amazon's, and it varies. There is no factory window on these cards.",
   },
   {
     q: "Why are bay prices in pounds?",

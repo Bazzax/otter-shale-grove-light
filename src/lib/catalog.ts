@@ -144,20 +144,12 @@ type ProductBase = {
   featured?: boolean;
 };
 
-export type DropshipProduct = ProductBase & {
-  amazonPick?: false;
-  shipsFrom: string;
-  etaDays: [number, number];
-};
-
-/** Amazon UK affiliate pick — not sold as dropship cargo. `price` is a GBP listing snapshot. */
-export type AmazonPickProduct = ProductBase & {
+/** Amazon UK affiliate pick. `price` is a GBP listing snapshot. */
+export type Product = ProductBase & {
   amazonPick: true;
 };
 
-export type Product = DropshipProduct | AmazonPickProduct;
-
-export function isAmazonPick(product: Product): product is AmazonPickProduct {
+export function isAmazonPick(product: Product): boolean {
   return product.amazonPick === true;
 }
 
@@ -199,14 +191,14 @@ export const catalog: Product[] = [
     category: "Desk",
     tagline: "75% ISO-UK layout. Tri-mode wireless. QMK/VIA.",
     description:
-      "OMOTON Mechanical Keyboard Gaming 75% ISO-UK, tri-mode wireless, QMK/VIA. The listing says a true ISO-UK layout with UK legends. Tri-mode: 2.4G, Bluetooth, or USB-C. In stock at £69.99 when checked, 6 left, sold by OM-Treasure-EU, dispatched by Amazon. Amazon UK 4.4 out of 5 (472 ratings). This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "OMOTON Mechanical Keyboard Gaming 75% ISO-UK, tri-mode wireless, QMK/VIA. ISO-UK layout, UK legends, large Enter key. Hot-swappable, gasket mount, RGB backlit, 4000mAh battery, volume knob. In stock at £69.99 when checked, only 6 left, sold by OM-Treasure-EU, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
-      "75% ISO-UK layout · UK legends",
-      "Tri-mode wireless: 2.4G / Bluetooth / USB-C",
+      "ISO-UK layout · UK legends · large Enter key",
+      "Tri-mode wireless",
       "QMK/VIA",
-      "Sold by OM-Treasure-EU · dispatched by Amazon",
-      "£69.99 · 6 left when checked 3 Nov 2026 · 4.4 (472)",
+      "Hot-swappable · gasket mount · RGB backlit · 4000mAh battery · volume knob",
+      "£69.99 · only 6 left when checked 3 Nov 2026",
     ],
     alNote:
       "This is the UK ISO board on the card. US-layout 75% boards are a different listing. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -277,17 +269,17 @@ export const catalog: Product[] = [
     category: "Power",
     tagline: "5,000 mAh MagSafe-compatible puck. 7.5W wireless. Kickstand.",
     description:
-      "Belkin 5000mAh Magnetic Wireless Power Bank, MagSafe-compatible, black. 7.5W wireless output, 10W input, USB-C, fold-out kickstand, pass-through charging. 5,000 mAh is about 18.5Wh at 3.7V (5,000 × 3.7 ÷ 1000), under the 100Wh cabin line. No buy box when checked; listing showed £39.90 and other offers from £46.82. Check the live price. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Belkin 5000mAh Magnetic Wireless Power Bank, MagSafe-compatible, black. 7.5W wireless output, 10W input, USB-C, fold-out kickstand, pass-through charging. 5,000 mAh is about 18.5Wh at 3.7V (5,000 × 3.7 ÷ 1000), under the 100Wh cabin line. Listing had no buy box at check time; other offers from £46.82; check the live price. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "5,000 mAh · about 18.5Wh at 3.7V",
       "MagSafe-compatible wireless 7.5W · 10W input · USB-C",
       "Fold-out kickstand · pass-through charging · black",
-      "No buy box when checked · offers from £46.82 · check live price",
+      "Listing had no buy box at check time; other offers from £46.82; check the live price",
       "£39.90 listing snapshot, checked 3 Nov 2026",
     ],
     alNote:
-      "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. Amazon UK affiliate pick. Al does not dropship it. Check the live price. " +
+      "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. Listing had no buy box at check time; other offers from £46.82; check the live price. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     image: AMAZON_PRODUCT_IMAGES.belkin5000,
     brand: "Belkin",
@@ -562,12 +554,12 @@ export const catalog: Product[] = [
     category: "Power",
     tagline: "70W GaN world adapter. UK/EU/AU/US. Black.",
     description:
-      "MOMAX Universal Travel Adapter 70W GaN, UK/EU/AU/US. Also listed for JP/CN sockets. 150+ countries. 7.7×5.5×5.3 cm, black. It is an adapter, not a voltage converter. In stock at £29.98 (RRP £39.99), MOMAX GLOBAL. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "MOMAX Universal Travel Adapter 70W GaN, UK/EU/AU/US. Also listed for JP/CN sockets. 150+ countries. 7.7×5.5×5.3 cm, black. In stock at £29.98 (RRP £39.99), MOMAX GLOBAL. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "70W GaN · UK / EU / AU / US sockets (+JP/CN listed)",
       "150+ countries · 7.7×5.5×5.3 cm · black",
-      "Not a voltage converter · MOMAX GLOBAL",
+      "MOMAX GLOBAL",
       "£29.98 (RRP £39.99), in stock, checked 3 Nov 2026",
     ],
     alNote:
@@ -611,19 +603,19 @@ export const catalog: Product[] = [
     amazonPick: true,
     price: 51.99,
     category: "Desk",
-    tagline: "Compact backlit Bluetooth keyboard, graphite. Check the layout.",
+    tagline: "Compact backlit Bluetooth keyboard, graphite. Listing does not state the layout.",
     description:
-      "Logitech MX Keys Mini Minimalist Wireless Illuminated Keyboard, Graphite. Bluetooth, compact, smart backlit keys, Easy-Switch, 29.6×13.2×2.1 cm. It is a keyboard, not a desk mat. The layout of this ASIN was not checked. Check the layout option on Amazon before buying. In stock at £51.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Logitech MX Keys Mini Minimalist Wireless Illuminated Keyboard, Graphite. Bluetooth, compact, smart backlit keys, Easy-Switch, 29.6×13.2×2.1 cm. It is a keyboard, not a desk mat. The Amazon listing does not state the keyboard layout. Check the layout in the product photos and reviews before buying if you need UK keys. In stock at £51.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "MX Keys Mini · graphite · compact keyboard",
       "Bluetooth · smart backlit keys · Easy-Switch",
       "29.6×13.2×2.1 cm · sold by Amazon",
-      "Layout not verified on this ASIN. Check the layout option before buying",
+      "The Amazon listing does not state the keyboard layout. Check the layout in the product photos and reviews before buying if you need UK keys",
       "£51.99 (RRP £84.99), in stock, checked 3 Nov 2026",
     ],
     alNote:
-      "A compact keyboard. Check the layout option on Amazon before buying. I did not verify UK legends on this ASIN. Amazon UK affiliate pick. Al does not dropship Logitech. " +
+      "A compact keyboard. The Amazon listing does not state the keyboard layout. Check the layout in the product photos and reviews before buying if you need UK keys. Amazon UK affiliate pick. Al does not dropship Logitech. " +
       PRICE_CHECKED,
     image: AMAZON_PRODUCT_IMAGES.mxKeysMini,
     brand: "Logitech",

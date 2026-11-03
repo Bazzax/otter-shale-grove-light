@@ -15,7 +15,3 @@ export function formatPrice(amount: number) {
 export function formatProductPrice(product: { price: number }) {
   return formatPrice(product.price);
 }
-
-export function formatEta(days: [number, number]) {
-  return `${days[0]}–${days[1]} days`;
-}

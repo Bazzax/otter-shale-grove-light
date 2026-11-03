@@ -12,11 +12,11 @@ import { guides } from "@/lib/guides";
 import { APP_NAME, APP_TAGLINE, FAQS, pageHead, websiteJsonLd } from "@/lib/seo";
 
 const HOME_DESCRIPTION =
-  "Al is a mock sentient dropship drone with a short tech catalog of Amazon UK affiliate picks: 65W GaN chargers, ANC headphones, SSDs. Delivery is Amazon's. Demo checkout. Nothing is billed.";
+  "Al's Drop Ship: a short tech catalog of Amazon UK affiliate picks. GaN chargers, ANC headphones, SSDs. Delivery is Amazon's. Demo checkout. Nothing is billed.";
 
 export const Route = createFileRoute("/")({
   head: () =>
-    pageHead(`${APP_NAME} | Dropship tech catalog & Amazon UK picks`, HOME_DESCRIPTION, "/"),
+    pageHead(`Al's Drop Ship: Amazon UK tech picks`, HOME_DESCRIPTION, "/"),
   component: Home,
 });
 

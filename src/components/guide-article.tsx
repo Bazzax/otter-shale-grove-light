@@ -211,15 +211,13 @@ function LeadTimeBody() {
     <>
       <p>
         This catalog does not dropship. Every card is an Amazon UK affiliate pick. Delivery is
-        Amazon's, on Amazon's clock, with Amazon's returns. There is no 6-16 day factory window on
-        these SKUs, and no Shenzhen, Taipei, or Hangzhou origin printed on a card.
+        Amazon's. How long a parcel takes is Amazon's clock, and it varies. Al does not pack or
+        ship.
       </p>
-      <h2>What the old numbers used to hide</h2>
+      <h2>What this bay actually does</h2>
       <p>
-        If you used a real dropshipper elsewhere, a card that says 8-14 days is not a courier
-        promise. It is a supplier window: pick, pack, fly, clear, last mile. Weekends vanish. A
-        customs pause at a UK hub can add two quiet days. Tracking will look dead, then suddenly
-        move. That is why this bay stopped pretending to run that clock.
+        Every SKU is a tagged Amazon UK listing. Returns sit with Amazon. There is no factory
+        window printed on a card.
       </p>
       <ul>
         <li>
@@ -232,12 +230,12 @@ function LeadTimeBody() {
           Desk kit: <ShopLink slug="anker-7-in-1-usb-c-hub">Anker 7-in-1 USB-C Hub</ShopLink>,{" "}
           <ShopLink slug="tomtoc-14-laptop-case">tomtoc 14-inch case</ShopLink>. Same rule.
         </li>
-        <li>Need it this week: tap the tagged listing. That is the honest clock.</li>
+        <li>Need a live delivery estimate: tap the tagged listing. That is the honest clock.</li>
       </ul>
       <h2>When Amazon is the buy</h2>
       <p>
-        Always, on this site. You want UK returns. You want a brand Al does not invent. You need
-        it before a Monday. Those are Amazon jobs. The buttons are tagged and marked sponsored.
+        Always, on this site. You want UK returns. You want a brand Al does not invent. Those are
+        Amazon jobs. The buttons are tagged and marked sponsored.
       </p>
       <p>
         This checkout is theatre. Nothing packs, nothing bills. The useful part of the bay is the
@@ -380,15 +378,17 @@ function PackingPowerBody() {
         bank this week, this is the tagged listing.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.ankerZolo20k} />
-      <h2>What 65W foldable GaN should I pack?</h2>
+      <h2>What foldable GaN should I pack?</h2>
       <p>
-        A foldable 65W GaN is the brick I would actually pack if I were buying tonight and flying
-        tomorrow. Pins fold. Two ports. The bay's 65W pick is a different job:{" "}
-        <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
-        dual USB-C brick with a UK 3-pin (not folding). Amazon UK affiliate pick. Al does not
-        dropship it. Need folding pins tonight: tap the listing below.
+        The bay's 65W pick does not fold.{" "}
+        <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a
+        white dual USB-C brick with a UK 3-pin. The listing does not say folding. Amazon UK
+        affiliate pick. Al does not dropship it. If you need a foldable plug,{" "}
+        <ShopLink slug="anker-100w-gan-charger">Anker 100W USB-C GaN Charger</ShopLink> is the
+        verified foldable brick: 100W, 3-port GaN, foldable plug 69×55×34 mm, smart display,
+        USB-C cable in the box.
       </p>
-      <AmazonPick asin="B0B7N4DX1Z" />
+      <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
       <h2>Is a 70W named travel charger the honest brick?</h2>
       <p>
         Seventy watts, travel-sized, a name a hotel desk has seen before. If you want a UK return
@@ -942,9 +942,8 @@ function WorldAdapterBody() {
         watts behind "fast charge", leave it.
       </p>
       <p>
-        It is an adapter, not a voltage converter. Hair dryers, cheap irons, and anything that
-        expects 230V through a dumb US plug will still fry. This guide is for laptops, phones, and
-        hubs. If you need to convert voltage, you are packing a different tool.
+        This guide is for laptops, phones, and hubs. Hair dryers, cheap irons, and anything that
+        expects 230V through a dumb US plug are a different packing problem.
       </p>
       <ul>
         <li>UK / EU / AU / US pins on one body. Not a bag of loose heads.</li>
@@ -966,7 +965,7 @@ function WorldAdapterBody() {
       </p>
       <p>
         This is the one I would pack if the itinerary leaves the UK wall. Hotel desks have one free
-        socket. It is an adapter, not a voltage converter.
+        socket.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.worldBrick70} />
       <h2>When you are staying on UK pins</h2>
@@ -1152,9 +1151,10 @@ function WebcamCallsBody() {
       <p>
         If you type on camera, hotel walls hear a mechanical board.{" "}
         <ShopLink slug="logitech-mx-keys-mini">Logitech MX Keys Mini</ShopLink> is the compact
-        backlit Bluetooth keyboard in graphite. Easy-Switch, 29.6×13.2×2.1 cm. Check the layout
-        option on Amazon before buying. I did not verify UK legends on this ASIN. I do not dropship
-        it. Pair it with the cam if the call includes a shared doc and you still have to type.
+        backlit Bluetooth keyboard in graphite. Easy-Switch, 29.6×13.2×2.1 cm. The Amazon listing
+        does not state the keyboard layout. Check the layout in the product photos and reviews
+        before buying if you need UK keys. I do not dropship it. Pair it with the cam if the call
+        includes a shared doc and you still have to type.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.softDeckMini} />
       <h2>How I would decide</h2>
@@ -1299,7 +1299,8 @@ function PowerBankLuggageBody() {
         fold-out kickstand, pass-through charging. Run the 3.7V maths and you are around 18.5Wh
         (5,000 × 3.7 ÷ 1000), cabin-trivial. It is a phone top-up, not a laptop brick. If the phone
         is not magnetic, skip the snap and use USB-C, or skip the puck. Amazon UK affiliate pick.
-        Delivery is Amazon's. Check the live price; there was no buy box when checked.
+        Delivery is Amazon's. Listing had no buy box at check time; other offers from £46.82; check
+        the live price.
       </p>
       <h2>Anker MagGo 10,000mAh — the travel bank</h2>
       <p>
