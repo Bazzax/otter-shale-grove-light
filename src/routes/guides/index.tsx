@@ -5,7 +5,7 @@ import { guides } from "@/lib/guides";
 import { APP_NAME, breadcrumbJsonLd, pageHead } from "@/lib/seo";
 
 const DESCRIPTION =
-  "Al's flight log: short field notes on 65W GaN travel chargers, ANC for commutes, dropship lead times, a travel power pack, a travel desk away from home, an after-summer desk reset, UK world adapters, dual-HDMI USB-C docks, webcams for calls, power banks in UK hand luggage, using a power bank on a UK flight, and portable second screens — plus Amazon UK affiliate exits.";
+  "Al's flight log: short field notes on 65W GaN travel chargers, ANC for commutes, why this bay uses Amazon UK delivery, a travel power pack, a travel desk away from home, an after-summer desk reset, UK world adapters, dual-HDMI USB-C docks, webcams for calls, power banks in UK hand luggage, using a power bank on a UK flight, and portable second screens.";
 
 export const Route = createFileRoute("/guides/")({
   head: () => pageHead(`Flight log | ${APP_NAME}`, DESCRIPTION, "/guides"),

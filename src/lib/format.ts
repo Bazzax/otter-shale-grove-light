@@ -11,7 +11,7 @@ export function formatPrice(amount: number) {
   }).format(amount);
 }
 
-/** Whole-bay display helper — dropship and Amazon picks are both GBP. */
+/** Whole-bay display helper. Amazon picks are GBP listing snapshots. */
 export function formatProductPrice(product: { price: number }) {
   return formatPrice(product.price);
 }

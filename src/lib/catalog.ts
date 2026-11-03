@@ -1,4 +1,4 @@
-import { formatPrice, formatProductPrice } from "./format";
+import { formatProductPrice } from "./format";
 
 export const AMAZON_ASSOCIATE_TAG = "alsaidropship-21";
 const AMAZON_UK_DP = "https://www.amazon.co.uk/dp";
@@ -27,6 +27,23 @@ export const AMAZON_PRODUCT_IMAGES = {
   soundcoreQ20i: amazonProductImage("51V2SOMrpXL"),
   liberty4Nc: amazonProductImage("5130BCxweAL"),
   ugreen65w: amazonProductImage("41ygrpBR13L"),
+  omoton75: amazonProductImage("61kzGy95aoL"),
+  belkin5000: amazonProductImage("41Q0Pif-2CL"),
+  anker7in1: amazonProductImage("71Z9T0VgGyL"),
+  benqScreenbar: amazonProductImage("41nI6sm%2BOKS"),
+  tomtoc14: amazonProductImage("815e-oxdUVL"),
+  anker100w: amazonProductImage("71Oc5ZPHiaL"),
+  ugreenStand: amazonProductImage("61XXLkcBMyS"),
+  mxMaster3s: amazonProductImage("618IJzC-fFL"),
+  anker240wCable: amazonProductImage("41WNM8IFMzL"),
+  arzopaZ1fc: amazonProductImage("71DQbPASQqL"),
+  c920s: amazonProductImage("71y7HsMxOaL"),
+  momax70w: amazonProductImage("61N1ocLV0XL"),
+  ugreenDualDock: amazonProductImage("71ytW-063tL"),
+  mxKeysMini: amazonProductImage("71jgJ6SY3rL"),
+  spotlight: amazonProductImage("51-uRUtczhL"),
+  deskMatStudio: amazonProductImage("51O92he9okL"),
+  maggo10000: amazonProductImage("51tLiKYI4DL"),
 } as const;
 
 /** Tagged Amazon UK search URL. The associate tag lives only here. */
@@ -75,8 +92,38 @@ export const AMAZON_PICK_ASINS = {
   samsungT7: "B087DDGWKL",
   soundcoreQ20i: "B0C3HCD34R",
   liberty4Nc: "B0BZV4QFP8",
-  arcGan: "B094JHYK55",
+  ugreen65w: "B094JHYK55",
+  omoton75: "B0GK195YDY",
+  belkin5000: "B0B6DLWMJF",
+  anker7in1: "B0DXJQT19B",
+  benqScreenbar: "B0785D93KD",
+  tomtoc14: "B0B4VG6XBP",
 } as const;
+
+/** Old shop slugs that must 308 to the current product path. */
+export const PRODUCT_SLUG_REDIRECTS: Record<string, string> = {
+  "arc-gan": "ugreen-65w-gan",
+  "drift-75": "omoton-75-iso-uk-keyboard",
+  "orbit-bank": "belkin-5000-magnetic-power-bank",
+  "trace-hub": "anker-7-in-1-usb-c-hub",
+  quietframe: "benq-screenbar",
+  "slip-sleeve": "tomtoc-14-laptop-case",
+  "flightbrick-100": "anker-100w-gan-charger",
+  "runway-riser": "ugreen-laptop-stand",
+  "cabin-cursor": "logitech-mx-master-3s",
+  "twin-lead-240": "anker-240w-right-angle-cable",
+  "second-window-16": "arzopa-z1fc-portable-monitor",
+  "call-latch": "logitech-c920s-webcam",
+  "worldbrick-70": "momax-70w-travel-adapter",
+  "twinview-dock": "ugreen-6-in-1-dual-monitor-dock",
+  "softdeck-mini": "logitech-mx-keys-mini",
+  spotcue: "logitech-spotlight-remote",
+  fieldmat: "logitech-desk-mat-studio",
+  "magdeck-10": "anker-maggo-10000-power-bank",
+  "nimbus-ssd": "samsung-t7-ssd-2tb",
+  "pulse-one": "soundcore-q20i",
+  "ember-buds": "soundcore-liberty-4-nc",
+};
 
 type ProductBase = {
   slug: string;
@@ -114,9 +161,12 @@ export function isAmazonPick(product: Product): product is AmazonPickProduct {
   return product.amazonPick === true;
 }
 
+const PRICE_CHECKED =
+  "Approx. UK price, checked 3 Nov 2026. Amazon's live checkout may differ.";
+
 export const catalog: Product[] = [
   {
-    slug: "pulse-one",
+    slug: "soundcore-q20i",
     name: "Soundcore Anker Q20i hybrid ANC foldable headphones",
     amazonPick: true,
     price: 31.99,
@@ -142,38 +192,42 @@ export const catalog: Product[] = [
     featured: true,
   },
   {
-    slug: "drift-75",
-    name: "Drift 75",
-    price: 149,
+    slug: "omoton-75-iso-uk-keyboard",
+    name: "OMOTON 75% ISO-UK Mechanical Keyboard",
+    amazonPick: true,
+    price: 69.99,
     category: "Desk",
-    tagline: "A 75% board with a gasket mount and no RGB circus.",
+    tagline: "75% ISO-UK layout. Tri-mode wireless. QMK/VIA.",
     description:
-      "Aluminum case, gasket mount, hot-swap. The layout keeps arrows and a function row without the numpad tax. Switches are pre-lubed. Lights stay off unless you insist.",
+      "OMOTON Mechanical Keyboard Gaming 75% ISO-UK, tri-mode wireless, QMK/VIA. The listing says a true ISO-UK layout with UK legends. Tri-mode: 2.4G, Bluetooth, or USB-C. In stock at £69.99 when checked, 6 left, sold by OM-Treasure-EU, dispatched by Amazon. Amazon UK 4.4 out of 5 (472 ratings). This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "75% gasket-mount aluminum",
-      "Hot-swap sockets, south-facing",
-      "USB-C, QMK/VIA",
-      "Includes extra keycaps for Mac and Win",
+      "75% ISO-UK layout · UK legends",
+      "Tri-mode wireless: 2.4G / Bluetooth / USB-C",
+      "QMK/VIA",
+      "Sold by OM-Treasure-EU · dispatched by Amazon",
+      "£69.99 · 6 left when checked 3 Nov 2026 · 4.4 (472)",
     ],
     alNote:
-      "This is the board I would actually put on a desk. If you want clicky and loud, the affiliate aisle has those. Drift is for typing.",
-    shipsFrom: "Taipei",
-    etaDays: [10, 16],
-    image: "/products/drift-75.jpg",
-    asin: "B0CQ7XPLMQ",
-    affiliateUrl: affiliateProduct("B0CQ7XPLMQ"),
+      "This is the UK ISO board on the card. US-layout 75% boards are a different listing. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.omoton75,
+    brand: "OMOTON",
+    asin: AMAZON_PICK_ASINS.omoton75,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.omoton75),
     affiliateLabel: "Amazon UK",
     featured: true,
   },
   {
-    slug: "arc-gan",
+    slug: "ugreen-65w-gan",
     name: "UGREEN 65W GaN Charger (2 USB-C, UK plug)",
     amazonPick: true,
     price: 22.99,
     category: "Power",
     tagline: "White 65W GaN. Two USB-C ports. UK 3-pin plug.",
     description:
-      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. In stock at £22.99 (RRP £29.99), dispatched by Amazon, sold by UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. Approx. UK price is a snapshot from 3 Nov 2026. Amazon's live checkout may differ.",
+      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. In stock at £22.99 (RRP £29.99), dispatched by Amazon, sold by UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
       "65W GaN · 2× USB-C · no USB-A",
       "65W max · 65W total when charging both",
@@ -185,13 +239,13 @@ export const catalog: Product[] = [
       "Amazon UK affiliate pick. Al does not dropship it. Dual USB-C, UK plug, 65W total if both ports are in use. Approx. UK price is on the card. Amazon's live checkout may differ.",
     image: AMAZON_PRODUCT_IMAGES.ugreen65w,
     brand: "UGREEN",
-    asin: AMAZON_PICK_ASINS.arcGan,
-    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.arcGan),
+    asin: AMAZON_PICK_ASINS.ugreen65w,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.ugreen65w),
     affiliateLabel: "Amazon UK",
     featured: true,
   },
   {
-    slug: "nimbus-ssd",
+    slug: "samsung-t7-ssd-2tb",
     name: "Samsung T7 Portable SSD 2TB",
     amazonPick: true,
     price: 316.17,
@@ -216,76 +270,85 @@ export const catalog: Product[] = [
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "orbit-bank",
-    name: "Orbit Mag",
-    price: 58,
+    slug: "belkin-5000-magnetic-power-bank",
+    name: "Belkin 5000mAh Magnetic Wireless Power Bank",
+    amazonPick: true,
+    price: 39.9,
     category: "Power",
-    tagline: "Magnetic 5,000 mAh puck. Snaps. Charges. Leaves.",
+    tagline: "5,000 mAh MagSafe-compatible puck. 7.5W wireless. Kickstand.",
     description:
-      "A thin magnetic power bank for phones that still pretend they do not need cables. 5,000 mAh, 15W Mag-compatible, USB-C pass-through. It is a puck, not a brick.",
+      "Belkin 5000mAh Magnetic Wireless Power Bank, MagSafe-compatible, black. 7.5W wireless output, 10W input, USB-C, fold-out kickstand, pass-through charging. 5,000 mAh is about 18.5Wh at 3.7V (5,000 × 3.7 ÷ 1000), under the 100Wh cabin line. No buy box when checked; listing showed £39.90 and other offers from £46.82. Check the live price. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "5,000 mAh, 15W magnetic charge",
-      "USB-C in/out",
-      "Qi2-ready magnet array",
-      "10.5 mm thick",
+      "5,000 mAh · about 18.5Wh at 3.7V",
+      "MagSafe-compatible wireless 7.5W · 10W input · USB-C",
+      "Fold-out kickstand · pass-through charging · black",
+      "No buy box when checked · offers from £46.82 · check live price",
+      "£39.90 listing snapshot, checked 3 Nov 2026",
     ],
     alNote:
-      "Airline-safe capacity. If your phone is not magnetic, skip this and take the UGREEN 65W brick instead.",
-    shipsFrom: "Shenzhen",
-    etaDays: [6, 12],
-    image: "/products/orbit-bank.jpg",
-    asin: "B0B6DLWMJF",
-    affiliateUrl: affiliateProduct("B0B6DLWMJF"),
+      "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. Amazon UK affiliate pick. Al does not dropship it. Check the live price. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.belkin5000,
+    brand: "Belkin",
+    asin: AMAZON_PICK_ASINS.belkin5000,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.belkin5000),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "trace-hub",
-    name: "Trace Hub",
-    price: 64,
+    slug: "anker-7-in-1-usb-c-hub",
+    name: "Anker USB-C Hub, 7-in-1",
+    amazonPick: true,
+    price: 18.94,
     category: "Desk",
-    tagline: "Seven ports, one cable, HDMI that actually hits 4K60.",
+    tagline: "7-in-1 USB-C hub. 4K@60Hz HDMI. 85W max PD. Grey.",
     description:
-      "A USB-C hub that does HDMI 4K60, two USB-A, two USB-C, SD, and PD passthrough up to 100W. Aluminum, not a melting dongle.",
+      "Anker USB C Hub, 7-in-1. 4K@60Hz HDMI, 85W max PD, 2× USB 3.0 plus 1 USB-C data, SD/TF reader. Charger not included. Grey. 18-month warranty. In stock at £18.94 (RRP £24.99), AnkerDirect UK, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "HDMI 4K60, SD / microSD",
-      "2× USB-A, 2× USB-C",
-      "100W PD passthrough",
-      "1.2 m host cable",
+      "7-in-1 · 4K@60Hz HDMI · SD/TF reader",
+      "2× USB 3.0 + 1 USB-C data",
+      "85W max PD · charger not included",
+      "Grey · 18-month warranty · AnkerDirect UK · dispatched by Amazon",
+      "£18.94 (RRP £24.99), in stock, checked 3 Nov 2026",
     ],
     alNote:
-      "Most hubs lie about 4K60. This one does not, on the two laptops I tested. Affiliate clones are cheaper and drop to 30 Hz.",
-    shipsFrom: "Taipei",
-    etaDays: [8, 13],
-    image: "/products/trace-hub.jpg",
-    asin: "B0DXJQT19B",
-    affiliateUrl: affiliateProduct("B0DXJQT19B"),
+      "A 7-in-1 stick, not a dual-monitor dock. 85W max PD, charger not in the box. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.anker7in1,
+    brand: "Anker",
+    asin: AMAZON_PICK_ASINS.anker7in1,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.anker7in1),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "quietframe",
-    name: "QuietFrame",
-    price: 72,
+    slug: "benq-screenbar",
+    name: "BenQ ScreenBar Monitor Light Bar",
+    amazonPick: true,
+    price: 89,
     category: "Desk",
-    tagline: "A monitor light bar that does not bounce off the screen.",
+    tagline: "Monitor light bar. Auto-dimming. 2700K-6500K. USB-powered.",
     description:
-      "Asymmetric LEDs that wash the desk and spare the panel. Stepless dimming, 3000–5000K, USB-C powered from the display or a hub.",
+      "BenQ ScreenBar Monitor Light Bar. Auto dimming, glare-free, adjustable colour temperature, universal clamp, USB-powered. Clamp for 1-3 cm monitors. Touch control. 2700K-6500K, 230-955 lux. Aluminium, 800 g. In stock at £89.00, BenQ UK Webstore, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "Asymmetric optical design",
-      "3000–5000K, stepless dim",
-      "USB-C, 5V",
-      "Fits 0.4–1.2 in bezels",
+      "Auto-dimming sensor · touch control",
+      "2700K-6500K · 230-955 lux",
+      "Clamp for 1-3 cm monitors · USB-powered",
+      "Aluminium · 800 g · BenQ UK Webstore · dispatched by Amazon",
+      "£89.00, in stock, checked 3 Nov 2026",
     ],
     alNote:
-      "If your room has one overhead light, this is the upgrade. I would not pay flagship prices for the same diodes — check the affiliate pair if you want a name plate.",
-    shipsFrom: "Hangzhou",
-    etaDays: [9, 15],
-    image: "/products/quietframe.jpg",
-    asin: "B0785D93KD",
-    affiliateUrl: affiliateProduct("B0785D93KD"),
+      "A light bar that sits on the monitor, not a desk lamp. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.benqScreenbar,
+    brand: "BenQ",
+    asin: AMAZON_PICK_ASINS.benqScreenbar,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.benqScreenbar),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "ember-buds",
+    slug: "soundcore-liberty-4-nc",
     name: "Anker Soundcore Liberty 4 NC adaptive ANC earbuds",
     amazonPick: true,
     price: 54.99,
@@ -312,288 +375,334 @@ export const catalog: Product[] = [
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "slip-sleeve",
-    name: "Slip 14",
-    price: 36,
+    slug: "tomtoc-14-laptop-case",
+    name: "tomtoc 360 Protective 14-inch Laptop Case",
+    amazonPick: true,
+    price: 27.99,
     category: "Carry",
-    tagline: "A 14-inch sleeve with a padded spine and one pocket.",
+    tagline: "Structured 14-inch case. 360 CornerArmor. Navy. Not a sleeve.",
     description:
-      "Technical fabric, 4 mm padding, a spine that takes a knock. One flat pocket for a charger. No branding patch.",
+      "tomtoc 360 Protective Laptop Case for 14-inch MacBook Pro. Also fits Dell XPS 14 and 13.8-inch Surface Laptop. Water-resistant. 360 CornerArmor, drop-tested. GRS recycled water-resistant fabric, YKK zips, front pocket and strap. Navy blue. It is a structured protective case, not a plain sleeve. In stock at £27.99, tomtoc EU Official, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "Fits 13–14 in laptops",
-      "Water-resistant shell",
-      "Padded spine, YKK zip",
-      "Interior stash pocket",
+      "Structured 360 protective case for 14-inch MacBook Pro",
+      "Also listed for Dell XPS 14 and 13.8-inch Surface Laptop",
+      "360 CornerArmor, drop-tested · GRS recycled water-resistant fabric",
+      "YKK zips · front pocket and strap · navy blue",
+      "£27.99, in stock, tomtoc EU Official, dispatched by Amazon, checked 3 Nov 2026",
     ],
     alNote:
-      "A sleeve is a sleeve. This one is thin enough to go inside a backpack. Affiliate neoprene is cheaper and pills in a month.",
-    shipsFrom: "Ho Chi Minh City",
-    etaDays: [8, 14],
-    image: "/products/slip-sleeve.jpg",
-    asin: "B0B4VG6XBP",
-    affiliateUrl: affiliateProduct("B0B4VG6XBP"),
+      "A structured case with a pocket, not a thin sleeve. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.tomtoc14,
+    brand: "tomtoc",
+    asin: AMAZON_PICK_ASINS.tomtoc14,
+    affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.tomtoc14),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "flightbrick-100",
-    name: "FlightBrick 100",
+    slug: "anker-100w-gan-charger",
+    name: "Anker 100W USB-C GaN Charger",
     amazonPick: true,
     price: 59.89,
     category: "Power",
-    tagline: "100W GaN, three ports, a live wattage display, folding UK pins.",
+    tagline: "100W GaN, 3 ports, smart display, foldable plug.",
     description:
-      "Anker’s 100W 3-port GaN brick with a smart display. Two USB-C, one USB-A, foldable Type-G pins, and a readout of what each port is actually pulling. USB-C cable in the box. This is an Amazon UK affiliate pick — Al does not dropship it.",
+      "Anker 100W USB C Charger, 3-port GaN, smart display, touch control. USB-C cable included. 100W max, 2× USB-C + 1 USB-A, foldable plug 69×55×34 mm, 95W+5W mode, 18-month warranty, dark grey. List £59.89; Prime members £44.99 when checked. In stock, AnkerDirect UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "100W GaN, 3 ports (2× USB-C + USB-A)",
-      "Smart display / live wattage readout",
-      "Foldable UK Type-G pins, 100–240V",
-      "USB-C cable included · dark grey · B121B/A121B",
+      "100W max · 2× USB-C + 1 USB-A",
+      "Smart display · touch control · USB-C cable included",
+      "Foldable plug 69×55×34 mm · 95W+5W mode · dark grey",
+      "18-month warranty · AnkerDirect UK",
+      "£59.89 list · Prime £44.99 when checked 3 Nov 2026",
     ],
     alNote:
-      "Hotel desks have one free socket. If you still travel with a 65W brick plus a phone cube, this is the step up. Approx. UK price is on the card — Amazon’s live checkout may differ.",
-    image: "/products/flightbrick-100.jpg",
+      "One socket, three ports, a display. List price is on the card; Prime was lower when checked. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.anker100w,
+    brand: "Anker",
     asin: AMAZON_PICK_ASINS.flightbrick100,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.flightbrick100),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "runway-riser",
-    name: "Runway Riser",
+    slug: "ugreen-laptop-stand",
+    name: "UGREEN Laptop Stand",
     amazonPick: true,
-    price: 17.99,
+    price: 13.94,
     category: "Desk",
-    tagline: "Fold-flat aluminium stand. Raises the screen. Packs in a pouch.",
+    tagline: "Adjustable aluminium stand. Folds. Carry bag. 8-17.3 inch.",
     description:
-      "UGREEN’s adjustable aluminium laptop riser for café and hotel tables. Five height options, folds into a carry pouch, covers roughly 8–17.3 inch machines. Scratch-padded. Amazon UK affiliate — not dropship cargo.",
+      "UGREEN Laptop Stand for Desk, adjustable, portable aluminium, folding, with carry bag, for 8-17.3 inch laptops. Aluminium alloy, 5 height settings, scratch-resistant padding, silver. In stock at £13.94 (RRP £17.99), UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "Adjustable aluminium riser, five heights",
-      "Folds flat into a carry pouch",
-      "Fits 8–17.3 in laptops and tablets",
-      "Scratch-padded · silver · model 40289",
+      "Adjustable aluminium stand · 5 height settings",
+      "Folds · carry bag included",
+      "For 8-17.3 inch laptops · scratch-resistant padding · silver",
+      "UGREEN GROUP LIMITED UK",
+      "£13.94 (RRP £17.99), in stock, checked 3 Nov 2026",
     ],
     alNote:
-      "Working flat on a table for eight hours is how trips get expensive in physio. Pair it with Drift if you already carry a separate board. Approx. UK price is on the card — confirm on Amazon.",
-    image: "/products/runway-riser.jpg",
+      "A fold-flat riser, not a standing desk. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.ugreenStand,
+    brand: "UGREEN",
     asin: AMAZON_PICK_ASINS.runwayRiser,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.runwayRiser),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "cabin-cursor",
-    name: "Cabin Cursor",
+    slug: "logitech-mx-master-3s",
+    name: "Logitech MX Master 3S",
     amazonPick: true,
-    price: 65.46,
+    price: 81,
     category: "Desk",
-    tagline: "MX Master 3S in graphite. Quiet clicks. Switches machines.",
+    tagline: "MX Master 3S, graphite. 8000 DPI. Quiet clicks. MagSpeed.",
     description:
-      "Logitech MX Master 3S — the mouse that earns bag space on a long edit day. MagSpeed scrolling, quiet clicks for hotel calls, glass tracking, Easy-Switch across machines, USB-C and Bluetooth. Graphite. Affiliate listing only.",
+      "Logitech MX Master 3S wireless mouse, Graphite. 8000 DPI, quiet clicks, MagSpeed scrolling, ergonomic. Bluetooth + USB-C. Logi Options+ / FLOW. In stock at £81.00. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "MX Master 3S · graphite · 910-006559",
-      "Quiet clicks, MagSpeed scroll, 8K DPI",
-      "Tracks on glass · Easy-Switch, up to 3 devices",
-      "USB-C + Bluetooth · Windows, Linux, Chrome",
+      "MX Master 3S · graphite",
+      "8000 DPI · quiet clicks · MagSpeed scrolling · ergonomic",
+      "Bluetooth + USB-C · Logi Options+ / FLOW",
+      "£81.00, in stock, checked 3 Nov 2026",
     ],
     alNote:
-      "Trackpads survive short flights. Spreadsheets do not. I do not dropship Logitech. Shop the tagged UK listing — the card price is approx.; live stock and checkout sit on Amazon.",
-    image: "/products/cabin-cursor.jpg",
+      "A work mouse, not a toy. Amazon UK affiliate pick. Al does not dropship Logitech. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.mxMaster3s,
+    brand: "Logitech",
     asin: AMAZON_PICK_ASINS.cabinCursor,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.cabinCursor),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "twin-lead-240",
-    name: "Twin Lead 240",
+    slug: "anker-240w-right-angle-cable",
+    name: "Anker 240W Right-Angle USB-C Cable, 2-pack",
     amazonPick: true,
     price: 18.99,
     category: "Power",
-    tagline: "240W-rated right-angle USB-C pair. Braided. Six feet each.",
+    tagline: "240W right-angle USB-C, 2-pack, 6 ft, braided.",
     description:
-      "Anker’s 240W USB-C to USB-C right-angle 2-pack. Braided 90-degree ends for tight laptop ports, cars, and hotel nightstands. Six feet each. A 100W brick with a tired 60W cable is cosplay. Amazon UK affiliate pick.",
+      "Anker USB C Cable Right Angle, 240W, 2-pack, 6 ft, braided. 90-degree connectors, 10,000+ bends, 24-month warranty. In stock at £18.99 (Prime £12.99), AnkerDirect UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "240W-rated USB-C to USB-C, 2-pack",
-      "Right-angle / 90° ends, braided jacket",
-      "6 ft each · model A81L6",
-      "For MacBook, iPhone 15/16/17, iPad, Galaxy",
+      "240W USB-C to USB-C · 2-pack · 6 ft each",
+      "Right-angle / 90° connectors · braided",
+      "10,000+ bends · 24-month warranty",
+      "AnkerDirect UK",
+      "£18.99 · Prime £12.99 when checked 3 Nov 2026",
     ],
     alNote:
-      "Pack a pair, leave one at the desk. Right-angle ends survive bag crush better than a straight lead yanked at the port. Approx. UK price is on the card — Amazon’s live checkout may differ.",
-    image: "/products/twin-lead-240.jpg",
+      "A pair of right-angle leads. The brick cannot outrun a tired cable. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.anker240wCable,
+    brand: "Anker",
     asin: AMAZON_PICK_ASINS.twinLead240,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.twinLead240),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "second-window-16",
-    name: "Second Window 16",
+    slug: "arzopa-z1fc-portable-monitor",
+    name: "ARZOPA Z1FC 16.1-inch Portable Monitor",
     amazonPick: true,
     price: 119.99,
     category: "Desk",
-    tagline: "16.1 inch FHD 144Hz portable panel. USB-C. Kickstand. Backpackable.",
+    tagline: "16.1 inch FHD 144Hz. Matte. 2× USB-C + mini HDMI.",
     description:
-      "ARZOPA Z1FC — a 16.1 inch FHD 144Hz portable monitor for hotel desks and café dual-screen mode. 106% sRGB, HDR, USB-C plug-and-play or Mini HDMI, kickstand, slim enough to sit beside the laptop. Affiliate only. Al does not hold a panel.",
+      "ARZOPA 16.1-inch 144Hz Portable Gaming Monitor, FHD, 106% sRGB, HDR, ultra slim, Z1FC. 1920×1080, 144 Hz, matte, 2× USB-C + mini HDMI, dual speakers, black. In stock at £119.99 (Prime £99.99), ARZOPA Official Store. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "16.1 in FHD 144Hz · Z1FC",
-      "106% sRGB, HDR, eye-protection mode",
-      "USB-C plug-and-play + Mini HDMI",
-      "Kickstand · backpack-slim · ~1.7 lb class",
+      "16.1 in FHD 1920×1080 · 144 Hz · Z1FC",
+      "106% sRGB · HDR · matte · black",
+      "2× USB-C + mini HDMI · dual speakers",
+      "ARZOPA Official Store",
+      "£119.99 · Prime £99.99 when checked 3 Nov 2026",
     ],
     alNote:
-      "One laptop panel means Slack eating half the spreadsheet. Your machine needs a full-featured USB-C port for single-cable video. Sleeve the panel so it does not share scratches with the brick. Approx. UK price is on the card — confirm on Amazon.",
-    image: "/products/second-window-16.jpg",
+      "A backpack panel, not a desktop. Your USB-C port has to do video. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.arzopaZ1fc,
+    brand: "ARZOPA",
     asin: AMAZON_PICK_ASINS.secondWindow16,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.secondWindow16),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "call-latch",
-    name: "CallLatch",
+    slug: "logitech-c920s-webcam",
+    name: "Logitech C920S HD Pro Webcam",
     amazonPick: true,
-    price: 42.49,
-    category: "Carry",
-    tagline: "1080p clip-on cam. Stereo mics. A shutter that actually closes.",
+    price: 50.99,
+    category: "Desk",
+    tagline: "1080p/30fps webcam. Privacy shutter. Dual stereo mics.",
     description:
-      "Logitech C920S HD Pro — a Full HD 1080p/30fps webcam with dual stereo mics, HD light correction, and a physical privacy shutter for hotel and café calls when the laptop cam is a joke. USB plug-and-play for Zoom, Skype, PC, Mac, and tablets. Amazon UK affiliate pick — Al does not dropship it.",
+      "Logitech C920S HD Pro Webcam, Full HD 1080p/30fps. Built-in privacy shutter, dual stereo mics, autofocus, black. It is a webcam, not a cover or clip. In stock at £50.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "Logitech C920S HD Pro · 1080p/30fps",
-      "Clear stereo audio · HD light correction",
-      "Physical privacy shutter",
-      "USB · Zoom / Skype / PC / Mac · model 960-001252",
+      "Logitech C920S HD Pro · 1080p/30fps webcam",
+      "Built-in privacy shutter · dual stereo mics · autofocus",
+      "Black · sold by Amazon",
+      "£50.99 (RRP £84.99), in stock, checked 3 Nov 2026",
     ],
     alNote:
-      "Laptop cams lie. Clip this on, close the shutter when you leave the desk. Approx. UK price is on the card — Amazon’s live checkout may differ.",
-    image: "/products/call-latch.jpg",
+      "A webcam. Close the shutter when you leave. Amazon UK affiliate pick. Al does not dropship Logitech. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.c920s,
+    brand: "Logitech",
     asin: AMAZON_PICK_ASINS.callLatch,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.callLatch),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "worldbrick-70",
-    name: "WorldBrick 70",
+    slug: "momax-70w-travel-adapter",
+    name: "MOMAX 70W GaN Universal Travel Adapter",
     amazonPick: true,
     price: 29.98,
     category: "Power",
-    tagline: "70W GaN world plug. UK, EU, AU, US pins. Five USB ports.",
+    tagline: "70W GaN world adapter. UK/EU/AU/US. Black.",
     description:
-      "MOMAX 70W GaN universal travel adapter — one brick with UK/EU/AU/US pins, three USB-C PD ports and two USB-A QC ports. Laptop and phones without a pouch of country plugs. It is an adapter, not a voltage converter. Amazon UK affiliate — not dropship cargo.",
+      "MOMAX Universal Travel Adapter 70W GaN, UK/EU/AU/US. Also listed for JP/CN sockets. 150+ countries. 7.7×5.5×5.3 cm, black. It is an adapter, not a voltage converter. In stock at £29.98 (RRP £39.99), MOMAX GLOBAL. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "70W GaN · UK / EU / AU / US pins",
-      "3× USB-C PD + 2× USB-A QC",
-      "Laptop, tablet, phone, headset class loads",
-      "Not a voltage converter · black · 1-World",
+      "70W GaN · UK / EU / AU / US sockets (+JP/CN listed)",
+      "150+ countries · 7.7×5.5×5.3 cm · black",
+      "Not a voltage converter · MOMAX GLOBAL",
+      "£29.98 (RRP £39.99), in stock, checked 3 Nov 2026",
     ],
     alNote:
-      "The UGREEN 65W and FlightBrick cover a UK socket. This one covers the socket in the other country. Pack it, leave the bag of plugs at home. Approx. UK price is on the card. Confirm on Amazon.",
-    image: "/products/worldbrick-70.jpg",
+      "The UK-plug bricks cover a UK socket. This one covers the socket in the other country. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.momax70w,
+    brand: "MOMAX",
     asin: AMAZON_PICK_ASINS.worldBrick70,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.worldBrick70),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "twinview-dock",
-    name: "TwinView Dock",
+    slug: "ugreen-6-in-1-dual-monitor-dock",
+    name: "UGREEN 6-in-1 Dual Monitor USB-C Dock",
     amazonPick: true,
     price: 29.99,
     category: "Desk",
-    tagline: "One USB-C, two HDMI. Dual 4K60. 100W through the same cable.",
+    tagline: "Entry-level 6-in-1. Dual 4K@60Hz HDMI. 100W PD.",
     description:
-      "UGREEN Revodok 206 — a packable 6-in-1 dual-HDMI USB-C dock. Dual 4K@60Hz, single 8K, 100W Power Delivery, and three 5Gbps USB data ports. Trace Hub is a simple multiport stick; this is hotel dual-monitor mode. Windows can extend two desks; macOS typically mirrors both externals. Affiliate listing only.",
+      "UGREEN Laptop Docking Station Dual Monitor, 6-in-1 Dual 4K@60Hz USB C Hub. 2× HDMI (dual 4K@60Hz), 100W USB-C PD, 5Gbps USB-C data, 2× USB-A, space grey. Entry-level 6-in-1 hub. In stock at £29.99 (Prime £25.99), UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "UGREEN Revodok 206 · 6-in-1 USB-C dock",
-      "2× HDMI · dual 4K@60Hz · single 8K",
-      "100W Power Delivery passthrough",
-      "3× 5Gbps USB data ports",
+      "6-in-1 USB-C hub · space grey",
+      "2× HDMI · dual 4K@60Hz",
+      "100W USB-C PD · 5Gbps USB-C data · 2× USB-A",
+      "UGREEN GROUP LIMITED UK",
+      "£29.99 · Prime £25.99 when checked 3 Nov 2026",
     ],
     alNote:
-      "A basic hub is one screen. This is two. Confirm your laptop’s USB-C can drive dual display before you pack it as gospel. Approx. UK price is on the card — Amazon’s live checkout may differ.",
-    image: "/products/twinview-dock.jpg",
+      "An entry-level dual-HDMI hub, not a thunderbolt dock. Confirm your laptop can drive two screens. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.ugreenDualDock,
+    brand: "UGREEN",
     asin: AMAZON_PICK_ASINS.twinViewDock,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.twinViewDock),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "softdeck-mini",
-    name: "SoftDeck Mini",
+    slug: "logitech-mx-keys-mini",
+    name: "Logitech MX Keys Mini",
     amazonPick: true,
-    price: 55.24,
+    price: 51.99,
     category: "Desk",
-    tagline: "MX Keys Mini, graphite, UK layout. Quiet. Fits a sleeve.",
+    tagline: "Compact backlit Bluetooth keyboard, graphite. Check the layout.",
     description:
-      "Logitech MX Keys Mini — compact backlit Bluetooth keyboard in graphite with a QWERTY UK layout. USB-C, Easy-Switch across three devices, metal build. Drift 75 stays on the home desk; this one slides into a sleeve next to the laptop. Pairs cleanly with Cabin Cursor. Amazon UK affiliate — Al does not dropship Logitech.",
+      "Logitech MX Keys Mini Minimalist Wireless Illuminated Keyboard, Graphite. Bluetooth, compact, smart backlit keys, Easy-Switch, 29.6×13.2×2.1 cm. It is a keyboard, not a desk mat. The layout of this ASIN was not checked. Check the layout option on Amazon before buying. In stock at £51.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "MX Keys Mini · graphite · QWERTY UK",
-      "Backlit, Bluetooth, USB-C",
-      "Easy-Switch, up to 3 devices",
-      "macOS, iOS, Windows, Linux, Android",
+      "MX Keys Mini · graphite · compact keyboard",
+      "Bluetooth · smart backlit keys · Easy-Switch",
+      "29.6×13.2×2.1 cm · sold by Amazon",
+      "Layout not verified on this ASIN. Check the layout option before buying",
+      "£51.99 (RRP £84.99), in stock, checked 3 Nov 2026",
     ],
     alNote:
-      "Hotel walls are thin. This board is quiet on purpose. I do not dropship it. Approx. UK price is on the card — Amazon’s live checkout may differ.",
-    image: "/products/softdeck-mini.jpg",
+      "A compact keyboard. Check the layout option on Amazon before buying. I did not verify UK legends on this ASIN. Amazon UK affiliate pick. Al does not dropship Logitech. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.mxKeysMini,
+    brand: "Logitech",
     asin: AMAZON_PICK_ASINS.softDeckMini,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.softDeckMini),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "spotcue",
-    name: "SpotCue",
+    slug: "logitech-spotlight-remote",
+    name: "Logitech Spotlight Presentation Remote",
     amazonPick: true,
-    price: 65,
+    price: 55.93,
     category: "Desk",
-    tagline: "Digital highlight remote. 30-metre range. Timer that buzzes.",
+    tagline: "Wireless presentation remote. Highlight and magnify. Grey.",
     description:
-      "Logitech Spotlight — a wireless presentation remote with digital highlight and magnify instead of a red laser that dies on LED walls. Dual connectivity (2.4 GHz USB receiver and Bluetooth), about 30-metre range, on-device timer with haptic cue. Grey. Client pitch kit. Affiliate only.",
+      "Logitech Spotlight Wireless Presentation Remote. Wireless, gyroscope cursor control, highlight and magnify, grey. It is a presentation remote, not a desk light. £55.93 (was £59.08). 7 left when checked, Quality Exchange LTD, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "Logitech Spotlight · grey",
-      "Digital highlight and magnify",
-      "30-metre range · Bluetooth + USB receiver",
-      "On-device timer with haptic cue · PC / Mac / iOS / Android",
+      "Logitech Spotlight · presentation remote · grey",
+      "Wireless · gyroscope cursor control",
+      "Highlight and magnify",
+      "Quality Exchange LTD · dispatched by Amazon",
+      "£55.93 (was £59.08) · 7 left when checked 3 Nov 2026",
     ],
     alNote:
-      "A red laser is cosplay on a bright panel. This draws a circle the room can see. Shop the tagged UK listing — the card price is approx.; live stock and checkout sit on Amazon.",
-    image: "/products/spotcue.jpg",
+      "A clicker for a slide, not a lamp for a desk. Amazon UK affiliate pick. Al does not dropship Logitech. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.spotlight,
+    brand: "Logitech",
     asin: AMAZON_PICK_ASINS.spotCue,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.spotCue),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "fieldmat",
-    name: "FieldMat",
+    slug: "logitech-desk-mat-studio",
+    name: "Logitech Desk Mat, Studio Series",
     amazonPick: true,
-    price: 13.99,
+    price: 14.91,
     category: "Desk",
-    tagline: "30×70 Studio mat. Spill-resistant. Quiet glide. Packs flat.",
+    tagline: "30×70 cm Studio mat. Spill-repellent cloth. Grey.",
     description:
-      "Logitech Studio Series desk mat in grey — a multifunctional 30×70 cm pad with an anti-slip base and a spill-resistant surface. Grounds Cabin Cursor and SoftDeck Mini on a sticky hotel desk without a permanent setup. Amazon UK affiliate pick. Al does not hold mats.",
+      "Logitech Desk Mat, Studio Series. Rubber base, 30×70 cm, 286 g, spill-repellent cloth surface, grey. In stock at £14.91 (RRP £16.99). This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
       "Logitech Studio Series desk mat · grey",
-      "About 30 × 70 cm extended pad",
-      "Spill-resistant surface · anti-slip base",
-      "Quiet mouse glide · packs flat",
+      "30 × 70 cm · 286 g",
+      "Spill-repellent cloth surface · rubber base",
+      "£14.91 (RRP £16.99), in stock, checked 3 Nov 2026",
     ],
     alNote:
-      "Hotel laminate is loud and sticky. This is the cheap desk upgrade that folds into a sleeve. Approx. UK price is on the card — Amazon’s live checkout may differ.",
-    image: "/products/fieldmat.jpg",
+      "A mat. That is the whole job. Amazon UK affiliate pick. Al does not dropship Logitech. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.deskMatStudio,
+    brand: "Logitech",
     asin: AMAZON_PICK_ASINS.fieldMat,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.fieldMat),
     affiliateLabel: "Amazon UK",
   },
   {
-    slug: "magdeck-10",
-    name: "MagDeck 10",
+    slug: "anker-maggo-10000-power-bank",
+    name: "Anker MagGo 10,000mAh Qi2 Power Bank",
     amazonPick: true,
-    price: 55.98,
+    price: 67.99,
     category: "Power",
-    tagline: "10K Qi2 MagGo. Snap. Charge. Kickstand FaceTime.",
+    tagline: "10,000 mAh Qi2. 15W wireless. Smart display. White.",
     description:
-      "Anker MagGo 10,000 mAh Qi2-certified 15W MagSafe-compatible power bank with a smart display, foldable stand, and a USB-C cable in the box. Orbit Mag is the 5,000 mAh day puck; this is the bigger travel bank for iPhone 13 / 14 / 15 / 16. Amazon UK affiliate — not dropship cargo.",
+      "Anker MagGo Power Bank, 10,000mAh Qi2-certified, 15W max. USB-C, smart display, white. 10,000 mAh is about 37Wh at 3.7V (10,000 × 3.7 ÷ 1000). £67.99 (Prime £55.99; RRP £89.99). 2 left when checked. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
     details: [
-      "Anker MagGo · 10,000 mAh · Qi2 15W",
-      "MagSafe-compatible · smart display",
-      "Foldable stand · USB-C cable included",
-      "iPhone 13 / 14 / 15 / 16 MagSafe series",
+      "Anker MagGo · 10,000 mAh · about 37Wh at 3.7V",
+      "Qi2-certified · 15W max wireless · USB-C",
+      "Smart display · white",
+      "£67.99 · Prime £55.99 · RRP £89.99 · 2 left when checked 3 Nov 2026",
     ],
     alNote:
-      "Orbit Mag covers a day. MagDeck 10 covers the day you miss the socket. Snap it, read the display, prop FaceTime. Approx. UK price is on the card — confirm on Amazon.",
-    image: "/products/magdeck-10.jpg",
+      "Ten thousand milliamp-hours at 3.7V is about 37Wh. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED,
+    image: AMAZON_PRODUCT_IMAGES.maggo10000,
+    brand: "Anker",
     asin: AMAZON_PICK_ASINS.magDeck10,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.magDeck10),
     affiliateLabel: "Amazon UK",
@@ -601,7 +710,8 @@ export const catalog: Product[] = [
 ];
 
 export function getProduct(slug: string) {
-  return catalog.find((p) => p.slug === slug);
+  const resolved = PRODUCT_SLUG_REDIRECTS[slug] ?? slug;
+  return catalog.find((p) => p.slug === resolved);
 }
 
 export function featuredProducts() {
@@ -610,29 +720,29 @@ export function featuredProducts() {
 
 const STOP_TERMS = new Set(["the", "and", "for", "with", "from"]);
 
-/** Extra search terms so chips like "Keyboards" hit Drift without inventing SKUs. */
+/** Extra search terms so chips like "Keyboards" hit catalog items without inventing SKUs. */
 const PRODUCT_SEARCH_HINTS: Record<string, string> = {
-  "drift-75": "keyboard keyboards mechanical keys",
-  "quietframe": "monitor monitors light bar",
-  "slip-sleeve": "laptop sleeve case",
-  "orbit-bank": "power bank puck",
-  "arc-gan": "charger chargers gan brick ugreen 65w usb-c",
-  "trace-hub": "usb-c hub dongle dock",
-  "nimbus-ssd": "ssd storage samsung t7 portable",
-  "pulse-one": "headphones headset cans soundcore anker q20i anc",
-  "ember-buds": "earbuds buds headphones soundcore anker liberty 4 nc",
-  "flightbrick-100": "charger chargers gan brick 100w",
-  "runway-riser": "laptop stand stands riser",
-  "cabin-cursor": "mouse mice cursor",
-  "twin-lead-240": "cable cables usb-c lead",
-  "second-window-16": "monitor monitors portable screen",
-  "call-latch": "webcam webcams camera video call zoom",
-  "worldbrick-70": "travel adapter adapters plug charger chargers gan international",
-  "twinview-dock": "dock docks hub usb-c hdmi dual monitor",
-  "softdeck-mini": "keyboard keyboards compact travel keys",
-  "spotcue": "remote remotes presentation pointer clicker",
-  "fieldmat": "desk mat mats mousepad pad",
-  "magdeck-10": "power bank magsafe qi2 magnetic charger",
+  "omoton-75-iso-uk-keyboard": "keyboard keyboards mechanical keys iso uk qmk via omoton",
+  "benq-screenbar": "monitor monitors light bar benq screenbar",
+  "tomtoc-14-laptop-case": "laptop case sleeve bag tomtoc 14",
+  "belkin-5000-magnetic-power-bank": "power bank puck magsafe magnetic belkin 5000",
+  "ugreen-65w-gan": "charger chargers gan brick ugreen 65w usb-c",
+  "anker-7-in-1-usb-c-hub": "usb-c hub dongle dock anker 7-in-1",
+  "samsung-t7-ssd-2tb": "ssd storage samsung t7 portable",
+  "soundcore-q20i": "headphones headset cans soundcore anker q20i anc",
+  "soundcore-liberty-4-nc": "earbuds buds headphones soundcore anker liberty 4 nc",
+  "anker-100w-gan-charger": "charger chargers gan brick 100w anker",
+  "ugreen-laptop-stand": "laptop stand stands riser ugreen",
+  "logitech-mx-master-3s": "mouse mice cursor logitech mx master",
+  "anker-240w-right-angle-cable": "cable cables usb-c lead anker 240w",
+  "arzopa-z1fc-portable-monitor": "monitor monitors portable screen arzopa z1fc",
+  "logitech-c920s-webcam": "webcam webcams camera video call zoom logitech c920s",
+  "momax-70w-travel-adapter": "travel adapter adapters plug charger chargers gan international momax",
+  "ugreen-6-in-1-dual-monitor-dock": "dock docks hub usb-c hdmi dual monitor ugreen",
+  "logitech-mx-keys-mini": "keyboard keyboards compact travel keys logitech mx keys mini",
+  "logitech-spotlight-remote": "remote remotes presentation pointer clicker logitech spotlight",
+  "logitech-desk-mat-studio": "desk mat mats mousepad pad logitech studio",
+  "anker-maggo-10000-power-bank": "power bank magsafe qi2 magnetic charger anker maggo",
 };
 
 function queryTermGroups(query: string): string[][] {
@@ -680,9 +790,7 @@ export function matchCatalog(query: string): Product[] {
 
 export const catalogDigest = catalog
   .map((p) => {
-    const channel = isAmazonPick(p)
-      ? `${formatProductPrice(p)} approx. Amazon UK affiliate pick — not dropshipped, live Amazon checkout may differ`
-      : `${formatPrice(p.price)} | dropship from ${p.shipsFrom} in ${p.etaDays[0]}-${p.etaDays[1]} days`;
+    const channel = `${formatProductPrice(p)} approx. Amazon UK affiliate pick. Delivery is Amazon's. Live Amazon checkout may differ`;
     return `${p.slug} | ${p.name} | ${p.category} | ${p.tagline} | ${channel} | affiliate ${p.affiliateLabel}: ${p.affiliateUrl}`;
   })
   .join("\n");

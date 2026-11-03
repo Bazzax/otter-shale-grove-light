@@ -1,4 +1,4 @@
-import { getProduct } from "@/lib/catalog";
+import { AMAZON_PRODUCT_IMAGES, getProduct } from "@/lib/catalog";
 import { APP_NAME } from "@/lib/seo";
 
 export type GuideFaq = { q: string; a: string };
@@ -6,7 +6,7 @@ export type GuideFaq = { q: string; a: string };
 export type GuideListItem = {
   name: string;
   description: string;
-  /** Site path, e.g. /shop/second-window-16 */
+  /** Site path, e.g. /shop/arzopa-z1fc-portable-monitor */
   path?: string;
   /** Absolute official or retailer URL when there is no shop page. */
   url?: string;
@@ -278,11 +278,11 @@ export const ONBOARD_POWER_BANK_FAQS: GuideFaq[] = [
 /** Manufacturer-verified portable-monitor rows. No UK prices. */
 export const TRAVEL_DESK_MONITORS: GuideListItem[] = [
   {
-    name: "Second Window 16 (ARZOPA Z1FC)",
+    name: "ARZOPA Z1FC",
     description:
       "16.1-inch FHD 1920×1080, 144Hz portable monitor. Official net weight 1.72 lb / 780g. USB-C can carry video and power on one cable when the laptop supports DisplayPort Alt Mode.",
-    path: "/shop/second-window-16",
-    image: "/products/second-window-16.jpg",
+    path: "/shop/arzopa-z1fc-portable-monitor",
+    image: AMAZON_PRODUCT_IMAGES.arzopaZ1fc,
     brand: "ARZOPA",
   },
   {
@@ -310,29 +310,30 @@ export const guides: Guide[] = [
       "Al's field notes on 65W GaN bricks for UK travel: dual USB-C, a UK 3-pin plug, heat, and the UGREEN Amazon UK pick versus a 100W folding brick.",
     published: "2026-09-23",
     updated: "2026-11-03",
-    relatedSlugs: ["arc-gan", "orbit-bank", "slip-sleeve"],
-    affiliateSlug: "arc-gan",
+    relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "tomtoc-14-laptop-case"],
+    affiliateSlug: "ugreen-65w-gan",
   },
   {
     slug: "anc-headphones-vs-earbuds-commute",
     title: "ANC headphones vs earbuds for the commute",
     kicker: "Audio",
     description:
-      "Over-ear isolation or buds you can pocket? Al compares Soundcore Q20i hybrid ANC headphones and Liberty 4 NC adaptive ANC earbuds for trains, bikes, and offices — and when to jump Amazon UK instead.",
+      "Over-ear isolation or buds you can pocket? Al compares Soundcore Q20i hybrid ANC headphones and Liberty 4 NC adaptive ANC earbuds for trains, bikes, and offices, and when to jump Amazon UK instead.",
     published: "2026-09-23",
-    relatedSlugs: ["pulse-one", "ember-buds"],
-    affiliateSlug: "pulse-one",
+    updated: "2026-11-03",
+    relatedSlugs: ["soundcore-q20i", "soundcore-liberty-4-nc"],
+    affiliateSlug: "soundcore-q20i",
   },
   {
     slug: "dropship-lead-times",
     title: "What dropship lead times actually mean",
     kicker: "Ops",
     description:
-      "Those 6–16 day windows are not courier promises. Al explains supplier batching, UK customs, and when an Amazon affiliate click is the honest buy.",
+      "This catalog is Amazon UK affiliate picks. Delivery is Amazon's, not a factory window. Al explains why the old 6-16 day supplier stories do not apply here.",
     published: "2026-09-23",
     updated: "2026-11-03",
-    relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub", "slip-sleeve"],
-    affiliateSlug: "arc-gan",
+    relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "anker-7-in-1-usb-c-hub", "tomtoc-14-laptop-case"],
+    affiliateSlug: "ugreen-65w-gan",
   },
   {
     slug: "packing-power",
@@ -344,8 +345,8 @@ export const guides: Guide[] = [
     published: "2026-09-23",
     updated: "2026-11-03",
     faqs: PACKING_POWER_FAQS,
-    relatedSlugs: ["arc-gan", "orbit-bank", "trace-hub", "magdeck-10"],
-    affiliateSlug: "arc-gan",
+    relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "anker-7-in-1-usb-c-hub", "anker-maggo-10000-power-bank"],
+    affiliateSlug: "ugreen-65w-gan",
   },
   {
     slug: "travel-desk",
@@ -355,21 +356,21 @@ export const guides: Guide[] = [
     description:
       "Honest Amazon UK travel-desk kit — 100W GaN, a fold-flat stand, a quiet mouse, high-watt leads, and a 16-inch USB-C portable monitor. Tagged links. No gimmicks.",
     published: "2026-09-24",
-    updated: "2026-10-23",
+    updated: "2026-11-03",
     itemList: {
       name: "Portable monitors compared for a travel desk",
       description:
-        "Second Window 16 (ARZOPA Z1FC) versus ViewSonic TD1656-2K and SideTrak Solo Pro 13. Specs from manufacturer pages. No UK prices.",
+        "ARZOPA Z1FC versus ViewSonic TD1656-2K and SideTrak Solo Pro 13. Specs from manufacturer pages. No UK prices.",
       items: TRAVEL_DESK_MONITORS,
     },
     relatedSlugs: [
-      "flightbrick-100",
-      "runway-riser",
-      "cabin-cursor",
-      "twin-lead-240",
-      "second-window-16",
+      "anker-100w-gan-charger",
+      "ugreen-laptop-stand",
+      "logitech-mx-master-3s",
+      "anker-240w-right-angle-cable",
+      "arzopa-z1fc-portable-monitor",
     ],
-    affiliateSlug: "flightbrick-100",
+    affiliateSlug: "anker-100w-gan-charger",
   },
   {
     slug: "after-summer-desk-reset",
@@ -378,14 +379,15 @@ export const guides: Guide[] = [
     description:
       "Five bits of travel kit that earn their place once you're home: hub, laptop stand, mouse, portable monitor, 100W charger and cables, plus the power bank for the commute.",
     published: "2026-09-24",
+    updated: "2026-11-03",
     relatedSlugs: [
-      "runway-riser",
-      "cabin-cursor",
-      "second-window-16",
-      "flightbrick-100",
-      "twin-lead-240",
+      "ugreen-laptop-stand",
+      "logitech-mx-master-3s",
+      "arzopa-z1fc-portable-monitor",
+      "anker-100w-gan-charger",
+      "anker-240w-right-angle-cable",
     ],
-    affiliateSlug: "runway-riser",
+    affiliateSlug: "ugreen-laptop-stand",
   },
   {
     slug: "travel-power-adapter-uk",
@@ -393,31 +395,33 @@ export const guides: Guide[] = [
     heading: "How to pick a world travel adapter from a UK bag",
     kicker: "Power",
     description:
-      "UK pins, EU sockets, hotel desks: what a 70W world charger must do — and when WorldBrick 70 beats a pouch of plugs or a single-country GaN.",
+      "UK pins, EU sockets, hotel desks: what a 70W world charger must do, and when the MOMAX 70W adapter beats a pouch of plugs or a single-country GaN.",
     published: "2026-09-27",
     updated: "2026-11-03",
-    relatedSlugs: ["worldbrick-70", "flightbrick-100", "arc-gan", "twin-lead-240"],
-    affiliateSlug: "worldbrick-70",
+    relatedSlugs: ["momax-70w-travel-adapter", "anker-100w-gan-charger", "ugreen-65w-gan", "anker-240w-right-angle-cable"],
+    affiliateSlug: "momax-70w-travel-adapter",
   },
   {
     slug: "usb-c-dock-dual-hdmi",
     title: "USB-C dock with dual HDMI: what actually works on the road",
     kicker: "Desk",
     description:
-      "Two screens from one cable: what dual-HDMI USB-C docks get wrong, when TwinView Dock is the pack, and when a single-port hub or a portable panel is enough.",
+      "Two screens from one cable: what dual-HDMI USB-C docks get wrong, when the UGREEN 6-in-1 is the pack, and when a single-port hub or a portable panel is enough.",
     published: "2026-09-27",
-    relatedSlugs: ["twinview-dock", "trace-hub", "second-window-16", "flightbrick-100"],
-    affiliateSlug: "twinview-dock",
+    updated: "2026-11-03",
+    relatedSlugs: ["ugreen-6-in-1-dual-monitor-dock", "anker-7-in-1-usb-c-hub", "arzopa-z1fc-portable-monitor", "anker-100w-gan-charger"],
+    affiliateSlug: "ugreen-6-in-1-dual-monitor-dock",
   },
   {
     slug: "webcam-for-video-calls",
     title: "How to pick a webcam that doesn't ruin the call",
     kicker: "Desk",
     description:
-      "Laptop cams lie. Al's notes on 1080p clip-ons, shutters, light, and the compact desk kit around CallLatch for hotel and remote-work calls.",
+      "Laptop cams lie. Al's notes on 1080p webcams, shutters, light, and the compact desk kit around the Logitech C920S for hotel and remote-work calls.",
     published: "2026-09-27",
-    relatedSlugs: ["call-latch", "quietframe", "runway-riser", "softdeck-mini"],
-    affiliateSlug: "call-latch",
+    updated: "2026-11-03",
+    relatedSlugs: ["logitech-c920s-webcam", "benq-screenbar", "ugreen-laptop-stand", "logitech-mx-keys-mini"],
+    affiliateSlug: "logitech-c920s-webcam",
   },
   {
     slug: "power-bank-hand-luggage-uk",
@@ -425,10 +429,11 @@ export const guides: Guide[] = [
     heading: "Power banks in UK hand luggage: what flies, what stays home",
     kicker: "Power",
     description:
-      "Cabin bag, not the hold. CAA rules since 27 March 2026: two banks, no charging on board. How watt-hours work, Orbit Mag and MagDeck 10, and why you still check the airline.",
+      "Cabin bag, not the hold. CAA rules since 27 March 2026: two banks, no charging on board. How watt-hours work, the Belkin 5000mAh and Anker MagGo 10,000mAh, and why you still check the airline.",
     published: "2026-10-12",
-    relatedSlugs: ["orbit-bank", "magdeck-10", "flightbrick-100"],
-    affiliateSlug: "magdeck-10",
+    updated: "2026-11-03",
+    relatedSlugs: ["belkin-5000-magnetic-power-bank", "anker-maggo-10000-power-bank", "anker-100w-gan-charger"],
+    affiliateSlug: "anker-maggo-10000-power-bank",
   },
   {
     slug: "power-bank-on-plane-rules-uk",
@@ -441,8 +446,8 @@ export const guides: Guide[] = [
     published: "2026-10-26",
     updated: "2026-11-03",
     faqs: ONBOARD_POWER_BANK_FAQS,
-    relatedSlugs: ["magdeck-10", "flightbrick-100", "arc-gan"],
-    affiliateSlug: "magdeck-10",
+    relatedSlugs: ["anker-maggo-10000-power-bank", "anker-100w-gan-charger", "ugreen-65w-gan"],
+    affiliateSlug: "anker-maggo-10000-power-bank",
   },
   {
     slug: "portable-monitor-laptop-second-screen",
@@ -450,15 +455,16 @@ export const guides: Guide[] = [
     heading: "A second screen that fits a bag, not a desk",
     kicker: "Desk",
     description:
-      "13–16 inch tradeoffs, USB-C video that actually works, HDMI fallback, and the kit around Second Window 16 for remote days that are not at a desk.",
+      "13-16 inch tradeoffs, USB-C video that actually works, HDMI fallback, and the kit around the ARZOPA Z1FC for remote days that are not at a desk.",
     published: "2026-09-30",
+    updated: "2026-11-03",
     relatedSlugs: [
-      "second-window-16",
-      "runway-riser",
-      "twin-lead-240",
-      "cabin-cursor",
+      "arzopa-z1fc-portable-monitor",
+      "ugreen-laptop-stand",
+      "anker-240w-right-angle-cable",
+      "logitech-mx-master-3s",
     ],
-    affiliateSlug: "second-window-16",
+    affiliateSlug: "arzopa-z1fc-portable-monitor",
   },
 ];
 

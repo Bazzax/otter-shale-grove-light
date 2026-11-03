@@ -35,8 +35,8 @@ export function CartSheet({
           <SheetTitle>Cargo bay</SheetTitle>
           <SheetDescription>
             {count === 0
-              ? "Empty tank. Load dropship cargo, or use an affiliate link on a product."
-              : `${count} ${count === 1 ? "item" : "items"} ready to dropship.`}
+              ? "Empty tank. Shop the tagged Amazon UK listing on a product."
+              : `${count} ${count === 1 ? "item" : "items"} in the demo bay.`}
           </SheetDescription>
         </SheetHeader>
         <div className="flex min-h-0 flex-1 flex-col">
@@ -44,8 +44,8 @@ export function CartSheet({
             <div className="flex flex-1 flex-col items-center justify-center gap-4 px-6 pb-16 text-center">
               <ShoppingBag className="size-8 text-dust" />
               <p className="max-w-xs text-sm text-pretty text-stone">
-                Al stocks a short tech list. The bay is for dropship. Amazon
-                buttons are affiliate.
+                Al lists a short tech catalog. Every card is an Amazon UK
+                affiliate pick. Delivery is Amazon's.
               </p>
               <Button asChild variant="secondary">
                 <Link to="/shop" onClick={() => onOpenChange(false)}>
@@ -116,8 +116,8 @@ export function CartSheet({
                   </span>
                 </div>
                 <p className="mb-4 text-xs text-pretty text-dust">
-                  GBP is fuel for the drone. Demo bay — no payment. Lead times
-                  stay on each card.
+                  GBP is fuel for the drone. Demo bay, no payment. Delivery is
+                  Amazon's.
                 </p>
                 <Button asChild className="w-full" size="lg">
                   <Link to="/checkout" onClick={() => onOpenChange(false)}>

@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound, redirect } from "@tanstack/react-router";
 import { useState } from "react";
 import { toast } from "sonner";
 import { AffiliateLink } from "@/components/affiliate-link";
@@ -8,12 +8,22 @@ import { AmazonImageCredit, ProductImage } from "@/components/product-image";
 import { QtyStepper } from "@/components/qty-stepper";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { catalog, getProduct, isAmazonHostedImage, isAmazonPick } from "@/lib/catalog";
+import { catalog, getProduct, isAmazonHostedImage, isAmazonPick, PRODUCT_SLUG_REDIRECTS } from "@/lib/catalog";
 import { useCart } from "@/lib/cart-store";
 import { formatEta, formatProductPrice } from "@/lib/format";
 import { APP_NAME, pageHead, productJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/shop/$slug")({
+  beforeLoad: ({ params }) => {
+    const next = PRODUCT_SLUG_REDIRECTS[params.slug];
+    if (next) {
+      throw redirect({
+        to: "/shop/$slug",
+        params: { slug: next },
+        statusCode: 308,
+      });
+    }
+  },
   loader: ({ params }) => {
     const product = getProduct(params.slug);
     if (!product) throw notFound();

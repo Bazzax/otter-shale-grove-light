@@ -40,7 +40,7 @@ const SUGGESTIONS = [
   "A quiet desk setup.",
   "Best charger under fifty.",
   "Travel kit for a week.",
-  "What ships the fastest?",
+  "A cabin-legal power bank.",
 ];
 
 const AFFILIATE_DISCLOSURE =

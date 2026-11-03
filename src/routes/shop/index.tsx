@@ -14,8 +14,8 @@ export const Route = createFileRoute("/shop/")({
   }),
   head: () =>
     pageHead(
-      `Cargo bay — dropship tech & Amazon UK | ${APP_NAME}`,
-      "Tech SKUs Al dropships plus Amazon UK affiliate picks: ANC audio, GaN chargers, desk kit, SSDs, carry. Lead times on dropship cards. Amazon picks show an approx. UK price; live checkout may differ.",
+      `Cargo bay — Amazon UK affiliate picks | ${APP_NAME}`,
+      "Amazon UK affiliate picks: ANC audio, GaN chargers, desk kit, SSDs, carry. Snapshot prices on every card. Delivery is Amazon's. Live checkout may differ.",
       "/shop",
     ),
   component: ShopPage,
@@ -53,8 +53,8 @@ function ShopPage() {
         Cargo bay
       </h1>
       <p className="mt-3 max-w-xl text-stone">
-        Dropship from the bay, or jump to Amazon. Filter by desk, power, audio,
-        storage, carry.
+        Amazon UK affiliate picks. Filter by desk, power, audio, storage, carry.
+        Delivery is Amazon's.
       </p>
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

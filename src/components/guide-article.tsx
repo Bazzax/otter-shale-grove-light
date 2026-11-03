@@ -5,7 +5,6 @@ import { AmazonImageCredit, ProductImage } from "@/components/product-image";
 import {
   AMAZON_PICK_ASINS,
   affiliateProduct,
-  affiliateSearch,
   catalog,
   isAmazonHostedImage,
   isAmazonPick,
@@ -114,33 +113,37 @@ function GanBody() {
       </p>
       <h2>UK pins, honestly</h2>
       <p>
-        <ShopLink slug="arc-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
+        <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
         65W GaN with two USB-C ports and a UK 3-pin plug (BS 1363). The listing does not say the
         pins fold. 65W max, and 65W total when both ports charge. In stock at £22.99 (RRP £29.99),
         dispatched by Amazon, sold by UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick.
         Al does not dropship it. Approx. UK price is a snapshot from 3 Nov 2026. Amazon's live
         checkout may differ.
       </p>
-      <AmazonPick asin={AMAZON_PICK_ASINS.arcGan} />
+      <AmazonPick asin={AMAZON_PICK_ASINS.ugreen65w} />
       <ul>
         <li>Need it this week: this is the Amazon UK pick. Dispatched by Amazon.</li>
         <li>Need one brick for laptop + phone: 65W dual USB-C, not two 30W cubes.</li>
         <li>
-          Phone-only top-up in a jacket: <ShopLink slug="orbit-bank">Orbit Mag</ShopLink>, airline-safe
-          5,000 mAh.
+          Phone-only top-up in a jacket:{" "}
+          <ShopLink slug="belkin-5000-magnetic-power-bank">
+            Belkin 5000mAh Magnetic Wireless Power Bank
+          </ShopLink>
+          , 5,000 mAh, about 18.5Wh at 3.7V.
         </li>
         <li>
-          The charger still needs a pocket: <ShopLink slug="slip-sleeve">Slip 14</ShopLink> has one,
-          on purpose.
+          The charger still needs a pocket:{" "}
+          <ShopLink slug="tomtoc-14-laptop-case">tomtoc 360 Protective 14-inch Laptop Case</ShopLink>{" "}
+          has a front pocket. It is a structured case, not a plain sleeve.
         </li>
       </ul>
       <h2>When the affiliate aisle is the better buy</h2>
       <p>
-        The UGREEN card above is already the tagged listing. If you want folding UK pins or a
-        100W three-port brick, that is{" "}
-        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink>. If the trip leaves a UK wall,
-        read the world adapter guide. The button below is a tagged search for other wattages. Read
-        the wattage on the listing, not the title.
+        The UGREEN card above is already the tagged listing. If you want a 100W three-port brick
+        with a foldable plug, that is{" "}
+        <ShopLink slug="anker-100w-gan-charger">Anker 100W USB-C GaN Charger</ShopLink>. If the trip
+        leaves a UK wall, read the world adapter guide. The button below is a tagged search for
+        other wattages. Read the wattage on the listing, not the title.
       </p>
     </>
   );
@@ -155,7 +158,7 @@ function AncBody() {
       </p>
       <h2>Over-ear, if you sit</h2>
       <p>
-        <ShopLink slug="pulse-one">Soundcore Anker Q20i</ShopLink> is the{" "}
+        <ShopLink slug="soundcore-q20i">Soundcore Anker Q20i</ShopLink> is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.soundcoreQ20i}>
           hybrid active noise cancelling foldable over-ear
         </AmazonText>
@@ -170,7 +173,7 @@ function AncBody() {
       <AmazonPick asin={AMAZON_PICK_ASINS.soundcoreQ20i} />
       <h2>Buds, if you walk</h2>
       <p>
-        <ShopLink slug="ember-buds">Anker Soundcore Liberty 4 NC</ShopLink> is the{" "}
+        <ShopLink slug="soundcore-liberty-4-nc">Anker Soundcore Liberty 4 NC</ShopLink> is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.liberty4Nc}>
           adaptive noise cancelling wireless earbud
         </AmazonText>
@@ -207,37 +210,38 @@ function LeadTimeBody() {
   return (
     <>
       <p>
-        A card that says 8–14 days is not a courier promise. It is a supplier window: pick, pack,
-        fly, clear, last mile. I print it so you can decide whether dropship is the tool, or
-        whether you should tap Amazon UK and be done.
+        This catalog does not dropship. Every card is an Amazon UK affiliate pick. Delivery is
+        Amazon's, on Amazon's clock, with Amazon's returns. There is no 6-16 day factory window on
+        these SKUs, and no Shenzhen, Taipei, or Hangzhou origin printed on a card.
       </p>
-      <h2>What the numbers hide</h2>
+      <h2>What the old numbers used to hide</h2>
       <p>
-        Shenzhen, Taipei, Ho Chi Minh, Hangzhou — those are origins, not warehouses on
-        the M25. The clock starts when a factory batch includes your line, not when you click.
-        Weekends vanish. A customs pause at a UK hub can add two quiet days. Tracking will look
-        dead, then suddenly move.
+        If you used a real dropshipper elsewhere, a card that says 8-14 days is not a courier
+        promise. It is a supplier window: pick, pack, fly, clear, last mile. Weekends vanish. A
+        customs pause at a UK hub can add two quiet days. Tracking will look dead, then suddenly
+        move. That is why this bay stopped pretending to run that clock.
       </p>
       <ul>
         <li>
-          Fastest in this bay: <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> 6–12 days.
+          Chargers and banks in this bay:{" "}
+          <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN</ShopLink>,{" "}
+          <ShopLink slug="belkin-5000-magnetic-power-bank">Belkin 5000mAh</ShopLink>. Amazon UK
+          picks. Delivery is Amazon's.
         </li>
         <li>
-          Mid: <ShopLink slug="trace-hub">Trace Hub</ShopLink> 8–13,{" "}
-          <ShopLink slug="slip-sleeve">Slip 14</ShopLink> 8–14.
+          Desk kit: <ShopLink slug="anker-7-in-1-usb-c-hub">Anker 7-in-1 USB-C Hub</ShopLink>,{" "}
+          <ShopLink slug="tomtoc-14-laptop-case">tomtoc 14-inch case</ShopLink>. Same rule.
         </li>
-        <li>Longer boards and lights: 10–16 is not a slight. It is aluminum and a queue.</li>
+        <li>Need it this week: tap the tagged listing. That is the honest clock.</li>
       </ul>
-      <h2>When to buy affiliate instead</h2>
+      <h2>When Amazon is the buy</h2>
       <p>
-        You need it before a Monday. You want UK returns, not a supplier argument. You want a brand
-        Al does not stock. You are buying a second of something you already own. Those are Amazon
-        jobs. The buttons are tagged, marked sponsored, and they do not pretend to be dropship.
+        Always, on this site. You want UK returns. You want a brand Al does not invent. You need
+        it before a Monday. Those are Amazon jobs. The buttons are tagged and marked sponsored.
       </p>
       <p>
         This checkout is theatre. Nothing packs, nothing bills. The useful part of the bay is the
-        lead time printed next to the origin — and the exit ramp when that window is the wrong
-        tool. Read{" "}
+        tagged listing and the snapshot price. Read{" "}
         <Link to="/faq" className="text-clay hover:text-clay-dark">
           the briefing
         </Link>{" "}
@@ -380,7 +384,7 @@ function PackingPowerBody() {
       <p>
         A foldable 65W GaN is the brick I would actually pack if I were buying tonight and flying
         tomorrow. Pins fold. Two ports. The bay's 65W pick is a different job:{" "}
-        <ShopLink slug="arc-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
+        <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
         dual USB-C brick with a UK 3-pin (not folding). Amazon UK affiliate pick. Al does not
         dropship it. Need folding pins tonight: tap the listing below.
       </p>
@@ -398,16 +402,22 @@ function PackingPowerBody() {
         airline-safe if the listing capacity stays under the cabin limit. This page never printed
         a milliamp-hour figure for the Baseus, so there is no Wh sum here — read the case.
         {" "}
-        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> is the bay version — 5,000 mAh, about{" "}
+        <ShopLink slug="belkin-5000-magnetic-power-bank">
+          Belkin 5000mAh Magnetic Wireless Power Bank
+        </ShopLink>{" "}
+        is the catalog pick: 5,000 mAh, about{" "}
         <strong className="font-medium text-ink">18.5Wh at 3.7V nominal</strong> (5,000 × 3.7 ÷
-        1000). Snaps. Leaves. This Baseus is the affiliate aisle if you need it on a Tuesday.
+        1000). MagSafe-compatible, 7.5W wireless. This Baseus is the affiliate aisle if you need
+        it on a Tuesday.
       </p>
       <AmazonPick asin="B0G4CHTD53" />
       <h2>What USB-C hub belongs on a hotel desk?</h2>
       <p>
         Hotel desk, one cable, HDMI that should hit 4K60 if the listing is not lying. Eight ports
-        is enough. <ShopLink slug="trace-hub">Trace Hub</ShopLink> is the one I dropship —
-        aluminum, 100W passthrough, I actually tested 4K60. ABLEWE is the next-day stand-in.
+        is enough.{" "}
+        <ShopLink slug="anker-7-in-1-usb-c-hub">Anker USB-C Hub, 7-in-1</ShopLink> is the catalog
+        pick: 4K@60Hz HDMI, 85W max PD, SD/TF, charger not included. ABLEWE is the next-day
+        stand-in if you want eight ports.
       </p>
       <AmazonPick asin="B0DN9F245H" />
       <h2>Which power banks are cabin-legal on those four airlines?</h2>
@@ -451,22 +461,26 @@ function PackingPowerBody() {
         Already covered above: 20,000 mAh, about 74Wh, 30W USB-C, cable in the box. Cabin-legal on
         all four if you stay inside two banks. The tagged listing is on that section.
       </p>
-      <h3>MagDeck 10 (Anker MagGo 10,000mAh Qi2)</h3>
+      <h3>Anker MagGo 10,000mAh Qi2</h3>
       <p>
-        <ShopLink slug="magdeck-10">MagDeck 10</ShopLink> is the{" "}
+        <ShopLink slug="anker-maggo-10000-power-bank">Anker MagGo 10,000mAh Qi2 Power Bank</ShopLink>{" "}
+        is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.magDeck10}>Anker MagGo 10,000 mAh Qi2</AmazonText>
-        : about 37Wh at 3.7V nominal (10,000 × 3.7 ÷ 1000). Fifteen-watt magnetic charge, a
-        display, a fold-out stand. Cabin-legal. Covers the day you miss the socket. I do not
-        dropship it. The card is affiliate. £55.98, price checked 23 Oct 2026 on Amazon.co.uk
-        (AnkerDirect UK featured offer). Amazon’s live checkout may differ.
+        : about 37Wh at 3.7V nominal (10,000 × 3.7 ÷ 1000). Qi2 15W wireless, USB-C, smart
+        display, white. Cabin-legal. Covers the day you miss the socket. I do not dropship it. The
+        card is affiliate. £67.99 (Prime £55.99), price checked 3 Nov 2026 on Amazon.co.uk.
+        Amazon's live checkout may differ.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />
       <h3>Baseus magnetic power bank</h3>
       <p>
         Already covered above. This page has never printed a milliamp-hour figure for it, so there
         is no Wh sum. Read the case.{" "}
-        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> is the bay version: 5,000 mAh, about
-        18.5Wh. The tagged Baseus listing sits on that section.
+        <ShopLink slug="belkin-5000-magnetic-power-bank">
+          Belkin 5000mAh Magnetic Wireless Power Bank
+        </ShopLink>{" "}
+        is the catalog pick: 5,000 mAh, about 18.5Wh. The tagged Baseus listing sits on that
+        section.
       </p>
       <h2>What is the best cabin-legal power bank in the UK?</h2>
       <p>
@@ -618,10 +632,10 @@ function PackingPowerBody() {
       </p>
       <p>
         If you want the versions I put a name on, the bay has{" "}
-        <ShopLink slug="arc-gan">the UGREEN 65W</ShopLink> (Amazon UK pick, not dropship),{" "}
-        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink>, and{" "}
-        <ShopLink slug="trace-hub">Trace</ShopLink>. Lead times on the dropship cards. No surprise
-        warehouse.
+        <ShopLink slug="ugreen-65w-gan">the UGREEN 65W</ShopLink>,{" "}
+        <ShopLink slug="belkin-5000-magnetic-power-bank">the Belkin 5000mAh</ShopLink>, and{" "}
+        <ShopLink slug="anker-7-in-1-usb-c-hub">the Anker 7-in-1 hub</ShopLink>. All Amazon UK
+        picks. Delivery is Amazon's. No surprise warehouse.
         Cabin rules, two-bank limit, and the Wh sum live on{" "}
         <GuideLink slug="power-bank-hand-luggage-uk">
           power banks in UK hand luggage
@@ -652,54 +666,57 @@ function TravelDeskBody() {
         flew for.
       </p>
       <p>
-        Five Amazon UK picks. They sit next to — not on top of — the headphones, hubs, and 65W
+        Five Amazon UK picks. They sit next to, not on top of, the headphones, hubs, and 65W
         bricks already in the bay. Al does not dropship these. The cards are affiliate.
       </p>
-      <h2>FlightBrick 100 — one plug, three devices</h2>
+      <h2>Anker 100W GaN — one plug, three devices</h2>
       <p>
         Hotel desks have one free socket and zero patience. If you still travel with a single-port
         laptop charger plus a phone brick, you are negotiating with the wall.{" "}
-        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
-        a smart display: two USB-C, one USB-A, foldable UK pins, and a live readout of what each
-        port is pulling. That is how you know the MacBook is getting real wattage while the phone
-        tops up beside it. Then the pins fold flat for the bag.
+        <ShopLink slug="anker-100w-gan-charger">Anker 100W USB-C GaN Charger</ShopLink> is a 100W
+        3-port GaN with a smart display and touch control: two USB-C, one USB-A, foldable plug
+        69×55×34 mm, USB-C cable in the box. 95W+5W mode. Dark grey. 18-month warranty.
       </p>
       <p>
         This is the practical step up from{" "}
-        <ShopLink slug="arc-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> if one
+        <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> if one
         socket has to do a laptop and a phone. Pair it with a proper high-watt cable. The brick
         cannot outrun a weak lead.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
-      <h2>Runway Riser — raise the screen</h2>
+      <h2>UGREEN laptop stand — raise the screen</h2>
       <p>
         Working flat on a café table looks romantic until hour three.{" "}
-        <ShopLink slug="runway-riser">Runway Riser</ShopLink> is UGREEN’s fold-flat aluminium stand:
-        five height options, a carry pouch, roughly 8–17.3 inch machines, scratch-padded. It is not
-        a standing desk. It is a riser that makes hotel and co-working tables usable — especially
-        if you already carry <ShopLink slug="drift-75">Drift 75</ShopLink>.
+        <ShopLink slug="ugreen-laptop-stand">UGREEN Laptop Stand</ShopLink> is an adjustable
+        aluminium stand: five height settings, a carry bag, 8-17.3 inch machines, scratch-resistant
+        padding, silver. It is not a standing desk. It is a riser that makes hotel and co-working
+        tables usable, especially if you already carry{" "}
+        <ShopLink slug="omoton-75-iso-uk-keyboard">OMOTON 75% ISO-UK</ShopLink>.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.runwayRiser} />
-      <h2>Cabin Cursor — trackpad is fine until the spreadsheet isn't</h2>
+      <h2>MX Master 3S — trackpad is fine until the spreadsheet isn't</h2>
       <p>
-        Trackpads survive short flights. Long edit sessions need MagSpeed scrolling, quiet clicks
-        for hotel calls, and Easy-Switch between laptop and tablet.{" "}
-        <ShopLink slug="cabin-cursor">Cabin Cursor</ShopLink> is the MX Master 3S in graphite. I do
-        not dropship Logitech. If the mouse earns bag space, this is the one.
+        Trackpads survive short flights. Long edit sessions need MagSpeed scrolling and quiet
+        clicks for hotel calls.{" "}
+        <ShopLink slug="logitech-mx-master-3s">Logitech MX Master 3S</ShopLink> is the graphite
+        mouse: 8000 DPI, MagSpeed, Bluetooth + USB-C, Logi Options+ / FLOW. I do not dropship
+        Logitech. If the mouse earns bag space, this is the one.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.cabinCursor} />
-      <h2>Twin Lead 240 — the brick is only as fast as the cable</h2>
+      <h2>Anker 240W cable — the brick is only as fast as the cable</h2>
       <p>
         A 100W wall brick with a tired 60W cable is cosplay.{" "}
-        <ShopLink slug="twin-lead-240">Twin Lead 240</ShopLink> is Anker’s 240W-rated right-angle
-        USB-C 2-pack — braided, six feet, 90-degree ends for tight laptop ports, cars, and hotel
-        nightstands. Pack a pair. Leave one at the desk.
+        <ShopLink slug="anker-240w-right-angle-cable">
+          Anker 240W Right-Angle USB-C Cable, 2-pack
+        </ShopLink>{" "}
+        is braided, six feet each, 90-degree ends, 10,000+ bends, 24-month warranty. Pack a pair.
+        Leave one at the desk.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.twinLead240} />
       <h2>Best portable monitor for travel: 16-inch USB-C</h2>
       <p>
         One laptop panel means Slack eating half the spreadsheet.{" "}
-        <ShopLink slug="second-window-16">Second Window 16</ShopLink> is the ARZOPA Z1FC — the
+        <ShopLink slug="arzopa-z1fc-portable-monitor">ARZOPA Z1FC</ShopLink> is the
         16-inch USB-C panel I would pack. Official manufacturer specs, not a guess: 16.1 inch FHD
         1920×1080, 144Hz, 106% sRGB, net weight 1.72 lb / 780g. USB-C plug-and-play or Mini HDMI.
         One USB-C cable can carry video and power when the laptop supports DisplayPort Alt Mode
@@ -734,8 +751,8 @@ function TravelDeskBody() {
           <tbody className="text-stone">
             <tr className="border-t border-line">
               <td className="px-4 py-3 text-ink">
-                <ShopLink slug="second-window-16">Second Window 16</ShopLink>
-                <span className="block text-xs text-dust">ARZOPA Z1FC</span>
+                <ShopLink slug="arzopa-z1fc-portable-monitor">ARZOPA Z1FC</ShopLink>
+                <span className="block text-xs text-dust">16.1-inch portable monitor</span>
               </td>
               <td className="px-4 py-3">16.1 in · 1920×1080 · 144Hz</td>
               <td className="px-4 py-3">1.72 lb / 780g</td>
@@ -802,9 +819,9 @@ function TravelDeskBody() {
       </p>
       <h2>How I would pack the kit</h2>
       <ul>
-        <li>Bottom of the bag: FlightBrick 100 and Twin Lead 240.</li>
-        <li>Middle: Runway Riser in its pouch. Cabin Cursor in a pocket.</li>
-        <li>Against the laptop: Second Window 16 in a soft sleeve.</li>
+        <li>Bottom of the bag: Anker 100W GaN and the Anker 240W cable pair.</li>
+        <li>Middle: UGREEN stand in its bag. MX Master 3S in a pocket.</li>
+        <li>Against the laptop: ARZOPA Z1FC in a case, not loose against the bricks.</li>
       </ul>
       <p>
         That is a travel desk — not a gadget haul. If one of these earns a permanent slot, it will
@@ -845,13 +862,13 @@ function AfterSummerBody() {
           UGREEN fold-flat aluminium laptop stand
         </AmazonText>{" "}
         (
-        <ShopLink slug="runway-riser">Runway Riser</ShopLink>
-        ) raises the screen to a sensible height and still folds into its pouch for the next trip.
+        <ShopLink slug="ugreen-laptop-stand">UGREEN Laptop Stand</ShopLink>
+        ) raises the screen to a sensible height and still folds into its bag for the next trip.
         Pair it with the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.cabinCursor}>Logitech MX Master 3S</AmazonText> (
-        <ShopLink slug="cabin-cursor">Cabin Cursor</ShopLink>
-        ), which has quiet clicks for calls and can switch between three devices, so the trackpad
-        can retire for the season.
+        <ShopLink slug="logitech-mx-master-3s">MX Master 3S</ShopLink>
+        ), which has quiet clicks for calls and MagSpeed scrolling, so the trackpad can retire for
+        the season.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.runwayRiser} />
       <AmazonPick asin={AMAZON_PICK_ASINS.cabinCursor} />
@@ -862,8 +879,8 @@ function AfterSummerBody() {
           ARZOPA 16.1-inch portable monitor
         </AmazonText>{" "}
         (
-        <ShopLink slug="second-window-16">Second Window 16</ShopLink>
-        ) sits next to the laptop on its kickstand and connects over USB-C. When you're done, it
+        <ShopLink slug="arzopa-z1fc-portable-monitor">ARZOPA Z1FC</ShopLink>
+        ) sits next to the laptop and connects over USB-C or mini HDMI. When you're done, it
         slides into a bag, which suits a spare room that's also a guest room.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.secondWindow16} />
@@ -874,14 +891,14 @@ function AfterSummerBody() {
           Anker 100W 3-port GaN charger
         </AmazonText>{" "}
         (
-        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink>
-        ) charges your laptop, phone and earbuds from one socket, and its little display shows what
-        each device is drawing. Your charger is only as fast as its cable, so the{" "}
+        <ShopLink slug="anker-100w-gan-charger">Anker 100W USB-C GaN</ShopLink>
+        ) charges your laptop, phone and earbuds from one socket, and its smart display is on the
+        listing. Your charger is only as fast as its cable, so the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.twinLead240}>
           Anker 240W right-angle USB-C 2-pack
         </AmazonText>{" "}
         (
-        <ShopLink slug="twin-lead-240">Twin Lead 240</ShopLink>
+        <ShopLink slug="anker-240w-right-angle-cable">Anker 240W cable pair</ShopLink>
         ) is worth adding: keep one lead at the desk and one in the bag.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
@@ -935,43 +952,48 @@ function WorldAdapterBody() {
         <li>GaN if you want it small enough to survive a weekend bag.</li>
         <li>A cable that can carry the watts. The adapter cannot outrun a tired 60W lead.</li>
       </ul>
-      <h2>WorldBrick 70 — one brick, four countries</h2>
+      <h2>MOMAX 70W — one brick, four countries</h2>
       <p>
-        <ShopLink slug="worldbrick-70">WorldBrick 70</ShopLink> is the{" "}
+        <ShopLink slug="momax-70w-travel-adapter">MOMAX 70W GaN Universal Travel Adapter</ShopLink>{" "}
+        is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.worldBrick70}>
           MOMAX 70W GaN universal travel adapter
         </AmazonText>
-        : UK, EU, AU, and US pins, three USB-C PD ports and two USB-A QC ports. Laptop and phones
-        without a pouch of country plugs. I do not dropship it. The card is affiliate. Read the
-        listing for live stock. Approx. UK price is on the card — Amazon’s live checkout may differ.
+        : UK, EU, AU, and US pins (JP/CN also listed), 150+ countries, 7.7×5.5×5.3 cm, black.
+        Laptop and phones without a pouch of country plugs. I do not dropship it. The card is
+        affiliate. Read the listing for live stock. Approx. UK price, checked 3 Nov 2026. Amazon's
+        live checkout may differ.
       </p>
       <p>
         This is the one I would pack if the itinerary leaves the UK wall. Hotel desks have one free
-        socket. Five USB ports on the brick means the wall socket can stay empty for a kettle, or
-        stay unused.
+        socket. It is an adapter, not a voltage converter.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.worldBrick70} />
       <h2>When you are staying on UK pins</h2>
       <p>
         If the trip is Britain and a train, you do not need a world face.{" "}
-        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
-        folding UK pins and a live wattage readout. That is the honest desk brick for a UK socket.{" "}
-        <ShopLink slug="arc-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is the
+        <ShopLink slug="anker-100w-gan-charger">Anker 100W USB-C GaN Charger</ShopLink> is Anker’s
+        100W 3-port GaN with a foldable plug and a smart display. That is the honest desk brick for
+        a UK socket.{" "}
+        <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is the
         smaller Amazon UK pick: white, two USB-C, UK 3-pin (the listing does not say folding),
         65W total when both ports charge. Al does not dropship it.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
       <h2>The brick is only as fast as the cable</h2>
       <p>
-        Pack <ShopLink slug="twin-lead-240">Twin Lead 240</ShopLink> with either brick. A 70W or
-        100W wall face with a tired 60W cable is cosplay. Right-angle, braided, a pair: one at the
-        desk, one in the sleeve.
+        Pack{" "}
+        <ShopLink slug="anker-240w-right-angle-cable">
+          Anker 240W Right-Angle USB-C Cable, 2-pack
+        </ShopLink>{" "}
+        with either brick. A 70W or 100W wall face with a tired 60W cable is cosplay. Right-angle,
+        braided, a pair: one at the desk, one in the case.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.twinLead240} />
       <h2>How I would decide</h2>
       <ul>
-        <li>Leaving the UK wall: WorldBrick 70. Leave the bag of plugs at home.</li>
-        <li>UK sockets only, laptop plus phone: FlightBrick 100.</li>
+        <li>Leaving the UK wall: MOMAX 70W. Leave the bag of plugs at home.</li>
+        <li>UK sockets only, laptop plus phone: Anker 100W GaN.</li>
         <li>UK sockets, smaller dual USB-C brick: UGREEN 65W GaN (Amazon pick).</li>
         <li>Still unsure: <AskAlLink q="travel power adapter UK">hail Al about travel adapters</AskAlLink>.</li>
       </ul>
@@ -1014,46 +1036,47 @@ function DualHdmiDockBody() {
         <li>Windows: extend. Mac: assume mirror unless you have already proved otherwise.</li>
         <li>A hotel with no monitors: skip the dock and pack a portable panel instead.</li>
       </ul>
-      <h2>TwinView Dock — hotel dual-monitor mode</h2>
+      <h2>UGREEN 6-in-1 — hotel dual-monitor mode</h2>
       <p>
-        <ShopLink slug="twinview-dock">TwinView Dock</ShopLink> is the{" "}
-        <AmazonText asin={AMAZON_PICK_ASINS.twinViewDock}>UGREEN Revodok 206</AmazonText>
-        : a packable 6-in-1 dual-HDMI USB-C dock. Dual 4K@60Hz, single 8K, 100W Power Delivery, and
-        three 5Gbps USB data ports. I do not dropship it. The card is affiliate. Confirm your
-        laptop’s USB-C can drive dual display before you pack it as gospel.
+        <ShopLink slug="ugreen-6-in-1-dual-monitor-dock">
+          UGREEN 6-in-1 Dual Monitor USB-C Dock
+        </ShopLink>{" "}
+        is the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.twinViewDock}>UGREEN 6-in-1 dual 4K@60Hz hub</AmazonText>
+        : an entry-level 6-in-1. Dual 4K@60Hz HDMI, 100W USB-C PD, 5Gbps USB-C data, 2× USB-A,
+        space grey. I do not dropship it. The card is affiliate. Confirm your laptop’s USB-C can
+        drive dual display before you pack it as gospel.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.twinViewDock} />
-      <h2>Trace Hub — one screen, less circus</h2>
+      <h2>Anker 7-in-1 — one screen, less circus</h2>
       <p>
         If you only need one external and a card reader,{" "}
-        <ShopLink slug="trace-hub">Trace Hub</ShopLink> is the dropship stick: HDMI that actually
-        hits 4K60 on the two laptops I tested, SD, 100W passthrough, aluminum. TwinView is two
-        screens. Trace is the simple multiport. Affiliate clones are cheaper and drop to 30 Hz.
-        Wait the 8–13 days from Taipei if one panel is the whole job.
+        <ShopLink slug="anker-7-in-1-usb-c-hub">Anker USB-C Hub, 7-in-1</ShopLink> is the simpler
+        stick: 4K@60Hz HDMI, 85W max PD, 2× USB 3.0 plus 1 USB-C data, SD/TF. Charger not included.
+        The UGREEN 6-in-1 is two screens. This Anker is one panel and a card slot. Amazon UK
+        affiliate pick. Al does not dropship it.
       </p>
       <h2>No hotel monitors? Pack a panel</h2>
       <p>
         Dual HDMI assumes two displays exist. A lot of rooms have a TV on HDMI 1.4 and a desk with
-        no stand. <ShopLink slug="second-window-16">Second Window 16</ShopLink> is the ARZOPA Z1FC
-        portable 16.1 inch FHD panel — USB-C plug-and-play or Mini HDMI, kickstand, slim enough to
-        sit beside the laptop. That is dual-screen without begging the concierge for a second
-        monitor.
+        no stand. <ShopLink slug="arzopa-z1fc-portable-monitor">ARZOPA Z1FC</ShopLink> is the
+        portable 16.1 inch FHD panel: 1920×1080, 144 Hz, matte, 2× USB-C + mini HDMI, dual
+        speakers. That is dual-screen without begging the concierge for a second monitor.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.secondWindow16} />
       <h2>Power the dock like you mean it</h2>
       <p>
         A 100W dock still wants a 100W wall brick.{" "}
-        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is the Anker 100W 3-port GaN
-        with folding UK pins. One socket, the dock, the phone, and a live readout so you know the
-        MacBook is getting real wattage. Pair it with a high-watt cable. The dock cannot invent
-        amps the brick did not send.
+        <ShopLink slug="anker-100w-gan-charger">Anker 100W USB-C GaN Charger</ShopLink> is the 100W
+        3-port GaN with a foldable plug and a smart display. One socket, the dock, the phone.
+        Pair it with a high-watt cable. The dock cannot invent amps the brick did not send.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
       <h2>How I would decide</h2>
       <ul>
-        <li>Two hotel or client monitors, Windows laptop: TwinView Dock.</li>
-        <li>One screen and a card slot: Trace Hub.</li>
-        <li>No monitors in the room: Second Window 16.</li>
+        <li>Two hotel or client monitors, Windows laptop: UGREEN 6-in-1 dual-HDMI hub.</li>
+        <li>One screen and a card slot: Anker 7-in-1.</li>
+        <li>No monitors in the room: ARZOPA Z1FC.</li>
         <li>
           Still matching a machine:{" "}
           <AskAlLink q="USB-C dock dual HDMI">hail Al about dual-HDMI docks</AskAlLink>.
@@ -1075,7 +1098,7 @@ function WebcamCallsBody() {
       <p>
         Laptop webcams are a compromise the manufacturer made so the lid could stay thin. Soft
         focus, a ceiling light that turns you into a ghost, and a microphone that loves the kettle.
-        A clip-on 1080p cam will not make you a studio. It will make you look like a person who
+        A 1080p webcam will not make you a studio. It will make you look like a person who
         intended to be on the call.
       </p>
       <h2>What actually matters for video calls</h2>
@@ -1095,51 +1118,50 @@ function WebcamCallsBody() {
         <li>A shutter that actually closes. Software "privacy" is a setting you forget.</li>
         <li>
           Stereo mics for a quiet room.{" "}
-          <ShopLink slug="ember-buds">Liberty 4 NC</ShopLink> or a headset for a train.
+          <ShopLink slug="soundcore-liberty-4-nc">Liberty 4 NC</ShopLink> or a headset for a train.
         </li>
         <li>Light in front of you. Height at eye line. The cam cannot invent either.</li>
       </ul>
-      <h2>CallLatch — the clip-on that earns the gram</h2>
+      <h2>Logitech C920S — the webcam that earns the gram</h2>
       <p>
-        <ShopLink slug="call-latch">CallLatch</ShopLink> is the{" "}
+        <ShopLink slug="logitech-c920s-webcam">Logitech C920S HD Pro Webcam</ShopLink> is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.callLatch}>Logitech C920S HD Pro</AmazonText>
-        : Full HD 1080p/30fps, dual stereo mics, HD light correction, and a physical privacy
-        shutter. USB plug-and-play for Zoom, Skype, PC, Mac, and tablets. I do not dropship
-        Logitech. The card is affiliate. Laptop cams lie — clip this on, close the shutter when you
-        leave.
+        : Full HD 1080p/30fps webcam, built-in privacy shutter, dual stereo mics, autofocus, black.
+        It is a webcam, not a cover or clip. I do not dropship Logitech. The card is affiliate.
+        Laptop cams lie. Close the shutter when you leave.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.callLatch} />
       <h2>Light the face, not the screen</h2>
       <p>
-        <ShopLink slug="quietframe">QuietFrame</ShopLink> is a monitor light bar: asymmetric LEDs
-        that wash the desk and spare the panel. Stepless dim, 3000–5000K, USB-C from the display or
-        a hub. It will not replace a key light in a dark Airbnb, but it stops the overhead from
-        being the only source. If your room already has a window in front of you, you may not need
-        it. If your room has one ceiling lamp, this is the cheap upgrade.
+        <ShopLink slug="benq-screenbar">BenQ ScreenBar</ShopLink> is a monitor light bar:
+        auto-dimming, glare-free, 2700K-6500K, 230-955 lux, clamp for 1-3 cm monitors, USB-powered,
+        aluminium, 800 g. It will not replace a key light in a dark Airbnb, but it stops the
+        overhead from being the only source. If your room already has a window in front of you, you
+        may not need it. If your room has one ceiling lamp, this is the cheap upgrade.
       </p>
       <h2>Raise the lens</h2>
       <p>
         A cam clipped to a laptop on a café table looks up.{" "}
-        <ShopLink slug="runway-riser">Runway Riser</ShopLink> is UGREEN’s fold-flat aluminium stand
-        — five heights, a carry pouch, roughly 8–17.3 inch machines. Eye line for you is eye line
-        for them. It also saves your neck after hour three, which is the real reason it stays in
-        the bag.
+        <ShopLink slug="ugreen-laptop-stand">UGREEN Laptop Stand</ShopLink> is an adjustable
+        aluminium stand: five heights, a carry bag, 8-17.3 inch machines. Eye line for you is eye
+        line for them. It also saves your neck after hour three, which is the real reason it stays
+        in the bag.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.runwayRiser} />
       <h2>The rest of the call kit</h2>
       <p>
         If you type on camera, hotel walls hear a mechanical board.{" "}
-        <ShopLink slug="softdeck-mini">SoftDeck Mini</ShopLink> is the MX Keys Mini in graphite, UK
-        layout, quiet on purpose, Easy-Switch across three devices. It slides into a sleeve next to
-        the laptop. I do not dropship it. Pair it with the cam if the call includes a shared doc
-        and you still have to type.
+        <ShopLink slug="logitech-mx-keys-mini">Logitech MX Keys Mini</ShopLink> is the compact
+        backlit Bluetooth keyboard in graphite. Easy-Switch, 29.6×13.2×2.1 cm. Check the layout
+        option on Amazon before buying. I did not verify UK legends on this ASIN. I do not dropship
+        it. Pair it with the cam if the call includes a shared doc and you still have to type.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.softDeckMini} />
       <h2>How I would decide</h2>
       <ul>
-        <li>Hotel or kitchen-table calls, laptop cam is a joke: CallLatch.</li>
-        <li>One overhead light, dark faces: add QuietFrame.</li>
-        <li>Laptop flat on the table: Runway Riser first, then the cam.</li>
+        <li>Hotel or kitchen-table calls, laptop cam is a joke: Logitech C920S.</li>
+        <li>One overhead light, dark faces: add BenQ ScreenBar.</li>
+        <li>Laptop flat on the table: UGREEN stand first, then the cam.</li>
         <li>
           Matching a kit:{" "}
           <AskAlLink q="webcam for video calls">hail Al about webcams</AskAlLink>.
@@ -1268,23 +1290,26 @@ function PowerBankLuggageBody() {
         Keep it in a sleeve, a pouch, or with the ports capped. Do not tape over vents. Do not
         charge it in a bag you cannot smell.
       </p>
-      <h2>Orbit Mag — the day puck</h2>
+      <h2>Belkin 5000mAh — the day puck</h2>
       <p>
-        <ShopLink slug="orbit-bank">Orbit Mag</ShopLink> is the 5,000 mAh magnetic puck in the bay:
-        15W Mag-compatible charge, USB-C in and out, 10.5 mm thick. Run the 3.7V maths and you are
-        around 18.5Wh — cabin-trivial, which is why the card already says airline-safe capacity.
-        It is a phone top-up, not a laptop brick. If the phone is not magnetic, skip the snap and
-        use the USB-C port, or skip the puck. Dropship from Shenzhen in 6–12 days, or use the
-        tagged Amazon button on the card if Tuesday is the problem.
+        <ShopLink slug="belkin-5000-magnetic-power-bank">
+          Belkin 5000mAh Magnetic Wireless Power Bank
+        </ShopLink>{" "}
+        is the 5,000 mAh magnetic puck: MagSafe-compatible 7.5W wireless, 10W input, USB-C,
+        fold-out kickstand, pass-through charging. Run the 3.7V maths and you are around 18.5Wh
+        (5,000 × 3.7 ÷ 1000), cabin-trivial. It is a phone top-up, not a laptop brick. If the phone
+        is not magnetic, skip the snap and use USB-C, or skip the puck. Amazon UK affiliate pick.
+        Delivery is Amazon's. Check the live price; there was no buy box when checked.
       </p>
-      <h2>MagDeck 10 — the travel bank</h2>
+      <h2>Anker MagGo 10,000mAh — the travel bank</h2>
       <p>
-        <ShopLink slug="magdeck-10">MagDeck 10</ShopLink> is the{" "}
+        <ShopLink slug="anker-maggo-10000-power-bank">Anker MagGo 10,000mAh Qi2 Power Bank</ShopLink>{" "}
+        is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.magDeck10}>Anker MagGo 10,000 mAh Qi2</AmazonText>
-        : 15W magnetic charge, smart display, foldable stand, USB-C cable in the box. Ten thousand
-        milliamp-hours at 3.7V is about 37Wh. Orbit covers a day. This covers the day you miss the
-        socket. I do not dropship it. The card is affiliate. Approx. UK price is on the card —
-        Amazon’s live checkout may differ.
+        : Qi2 15W wireless, USB-C, smart display, white. Ten thousand milliamp-hours at 3.7V is
+        about 37Wh. The Belkin 5000mAh covers a day. This covers the day you miss the socket. I do
+        not dropship it. The card is affiliate. Approx. UK price is on the card. Amazon's live
+        checkout may differ.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />
       <h2>Anker Zolo 20K — if the day is long</h2>
@@ -1298,21 +1323,21 @@ function PowerBankLuggageBody() {
         phone will not last a delay, this is the tagged listing.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.ankerZolo20k} />
-      <h2>FlightBrick 100 is a wall charger, not a bank</h2>
+      <h2>Anker 100W GaN is a wall charger, not a bank</h2>
       <p>
-        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
-        folding UK pins and a live wattage display. It is not a power bank. It does not fly as a
-        spare battery because it is a mains brick. Pack it if the hotel or the lounge has a socket
-        you want to empty into the laptop and the bank at once. Do not confuse it with cabin
-        battery limits. The limit is for cells you carry charged, not for a plug.
+        <ShopLink slug="anker-100w-gan-charger">Anker 100W USB-C GaN Charger</ShopLink> is Anker’s
+        100W 3-port GaN with a foldable plug and a smart display. It is not a power bank. It does
+        not fly as a spare battery because it is a mains brick. Pack it if the hotel or the lounge
+        has a socket you want to empty into the laptop and the bank at once. Do not confuse it with
+        cabin battery limits. The limit is for cells you carry charged, not for a plug.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
       <h2>How I would decide</h2>
       <ul>
-        <li>Phone only, magnetic, one day: Orbit Mag.</li>
-        <li>Phone, a missed socket, FaceTime on a stand: MagDeck 10.</li>
+        <li>Phone only, magnetic, one day: Belkin 5000mAh.</li>
+        <li>Phone, a missed socket, a 10,000 mAh Qi2 bank: Anker MagGo 10,000mAh.</li>
         <li>A long delay and a 30W top-up: Anker Zolo 20K.</li>
-        <li>Need the wall as well: FlightBrick 100 next to the bank, not instead of it.</li>
+        <li>Need the wall as well: Anker 100W GaN next to the bank, not instead of it.</li>
         <li>
           Still matching pins abroad:{" "}
           <GuideLink slug="travel-power-adapter-uk">
@@ -1605,7 +1630,8 @@ function PowerBankOnboardBody() {
         take-off and landing.
       </p>
       <p>
-        <ShopLink slug="magdeck-10">MagDeck 10</ShopLink> is the{" "}
+        <ShopLink slug="anker-maggo-10000-power-bank">Anker MagGo 10,000mAh Qi2 Power Bank</ShopLink>{" "}
+        is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.magDeck10}>Anker MagGo 10,000 mAh Qi2</AmazonText> I
         would charge before you fly and use at the gate, or on Ryanair if the crew have not said
         otherwise. Ten thousand milliamp-hours at 3.7V is about 37Wh. I do not dropship it. The
@@ -1614,10 +1640,11 @@ function PowerBankOnboardBody() {
       <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />
       <p>
         The gate brick is a wall charger, not a bank.{" "}
-        <ShopLink slug="flightbrick-100">FlightBrick 100</ShopLink> is Anker’s 100W 3-port GaN with
-        folding UK pins. <ShopLink slug="arc-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink>{" "}
-        is the smaller Amazon UK pick: dual USB-C, UK plug. Al does not dropship it. Neither flies
-        as a spare battery. Pack one if a lounge socket is the last honest charge of the day.
+        <ShopLink slug="anker-100w-gan-charger">Anker 100W USB-C GaN Charger</ShopLink> is Anker’s
+        100W 3-port GaN with a foldable plug.{" "}
+        <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is the
+        smaller Amazon UK pick: dual USB-C, UK plug. Al does not dropship it. Neither flies as a
+        spare battery. Pack one if a lounge socket is the last honest charge of the day.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.flightbrick100} />
       <p>
@@ -1727,50 +1754,50 @@ function PortableMonitorBody() {
         that can carry the watts: that is the kit. The panel cannot fix a table that is six inches
         too low.
       </p>
-      <h2>Second Window 16 — the panel I would pack</h2>
+      <h2>ARZOPA Z1FC — the panel I would pack</h2>
       <p>
-        <ShopLink slug="second-window-16">Second Window 16</ShopLink> is the{" "}
+        <ShopLink slug="arzopa-z1fc-portable-monitor">ARZOPA Z1FC</ShopLink> is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.secondWindow16}>ARZOPA Z1FC</AmazonText>
-        : 16.1 inch FHD 144Hz, 106% sRGB, HDR, USB-C plug-and-play or Mini HDMI, kickstand, slim
-        enough to sit beside the laptop. Mid-range, not OLED luxury. Your machine needs a
-        full-featured USB-C port for single-cable video. Sleeve the panel so it does not share
-        scratches with the bricks. I do not hold a panel. The card is affiliate. Approx. UK price
-        is on the card — Amazon’s live checkout may differ. The charger, riser, mouse, and cable
-        that sit around this panel are on{" "}
+        : 16.1 inch FHD 144Hz, 106% sRGB, HDR, 1920×1080, matte, 2× USB-C + mini HDMI, dual
+        speakers, black. Mid-range, not OLED luxury. Your machine needs a full-featured USB-C port
+        for single-cable video. Case the panel so it does not share scratches with the bricks. I
+        do not hold a panel. The card is affiliate. Approx. UK price is on the card. Amazon's live
+        checkout may differ. The charger, riser, mouse, and cable that sit around this panel are on{" "}
         <GuideLink slug="travel-desk">what I'd pack for a desk away from home</GuideLink>
         .
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.secondWindow16} />
       <h2>The rest of the kit</h2>
       <p>
-        <ShopLink slug="runway-riser">Runway Riser</ShopLink> is UGREEN’s fold-flat aluminium
-        stand: five heights, a carry pouch, roughly 8–17.3 inch machines. Raise the laptop to
-        match the portable panel. Working flat on a kitchen table is how trips get expensive in
-        physio.
+        <ShopLink slug="ugreen-laptop-stand">UGREEN Laptop Stand</ShopLink> is an adjustable
+        aluminium stand: five heights, a carry bag, 8-17.3 inch machines. Raise the laptop to match
+        the portable panel. Working flat on a kitchen table is how trips get expensive in physio.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.runwayRiser} />
       <p>
-        <ShopLink slug="twin-lead-240">Twin Lead 240</ShopLink> is Anker’s 240W-rated right-angle
-        USB-C 2-pack — braided, six feet, 90-degree ends. One lead for the panel if the laptop can
-        do single-cable video. One leftover for the brick. A tired 60W cable is how a 16-inch
+        <ShopLink slug="anker-240w-right-angle-cable">
+          Anker 240W Right-Angle USB-C Cable, 2-pack
+        </ShopLink>{" "}
+        is braided, six feet, 90-degree ends, 10,000+ bends. One lead for the panel if the laptop
+        can do single-cable video. One leftover for the brick. A tired 60W cable is how a 16-inch
         panel becomes a black rectangle.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.twinLead240} />
       <p>
-        <ShopLink slug="cabin-cursor">Cabin Cursor</ShopLink> is the MX Master 3S in graphite.
-        Quiet clicks for a hotel call, MagSpeed for the sheet that now has room to exist, Easy-Switch
-        across machines. Trackpads survive short flights. Two screens and a spreadsheet do not.
-        I do not dropship Logitech.
+        <ShopLink slug="logitech-mx-master-3s">Logitech MX Master 3S</ShopLink> is the graphite
+        mouse. Quiet clicks for a hotel call, MagSpeed for the sheet that now has room to exist,
+        8000 DPI, Bluetooth + USB-C. Trackpads survive short flights. Two screens and a spreadsheet
+        do not. I do not dropship Logitech.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.cabinCursor} />
       <h2>How I would decide</h2>
       <ul>
         <li>
-          One extra window that packs: Second Window 16. Full travel-desk kit:{" "}
+          One extra window that packs: ARZOPA Z1FC. Full travel-desk kit:{" "}
           <GuideLink slug="travel-desk">desk away from home</GuideLink>.
         </li>
-        <li>Laptop still flat on the table: add Runway Riser first.</li>
-        <li>USB-C video works: Twin Lead 240, one cable, done.</li>
+        <li>Laptop still flat on the table: add the UGREEN stand first.</li>
+        <li>USB-C video works: Anker 240W cable, one lead, done.</li>
         <li>USB-C is charge-only: HDMI plus a second power lead, or admit you needed a dock.</li>
         <li>
           Two hotel monitors already in the room:{" "}

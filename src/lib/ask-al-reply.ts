@@ -18,7 +18,7 @@ export function parseAskAlReply(text: string): AskAlParsedReply {
     })
     .replace(/\[\[([a-z0-9-]+)\]\]/g, (_match, slug: string) => {
       const product = getProduct(slug);
-      if (product && !slugs.includes(slug)) slugs.push(slug);
+      if (product && !slugs.includes(product.slug)) slugs.push(product.slug);
       return product ? product.name : slug;
     });
   return { cleaned, slugs, searches };

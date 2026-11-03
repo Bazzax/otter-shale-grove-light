@@ -4,7 +4,7 @@ import { NewsletterForm } from "@/components/newsletter-form";
 import { APP_NAME, CONTACT_EMAIL, FAQS, breadcrumbJsonLd, faqJsonLd, pageHead } from "@/lib/seo";
 
 const DESCRIPTION =
-  "Al answers the usual hail: who the drone is, how demo dropship works, Amazon UK affiliate marks, UK lead times, and why nothing is billed.";
+  "Al answers the usual hail: who the drone is, how Amazon UK affiliate picks work, why delivery is Amazon's, and why nothing is billed.";
 
 export const Route = createFileRoute("/faq")({
   head: () => pageHead(`Briefing | ${APP_NAME}`, DESCRIPTION, "/faq"),

@@ -14,7 +14,7 @@ export const Route = createFileRoute("/checkout")({
   head: () =>
     pageHead(
       `Bay | ${APP_NAME}`,
-      "Demo dropship checkout for Al's AI Drop Ship. Nothing is billed. Affiliate Amazon buttons live on product cards.",
+      "Demo checkout for Al's AI Drop Ship. Nothing is billed. Affiliate Amazon buttons live on product cards.",
       undefined,
       { robots: "noindex, follow" },
     ),
@@ -68,7 +68,7 @@ function CheckoutPage() {
       <main className="mx-auto flex w-full max-w-xl flex-1 flex-col justify-center px-4 py-20 sm:px-6">
         <h1 className="font-display text-4xl font-medium tracking-tight">Bay is empty.</h1>
         <p className="mt-3 text-stone">
-          Load dropship cargo from the bay, or use an affiliate link on a product.
+          Shop a tagged Amazon UK listing on a product card. This demo bay does not ship.
         </p>
         <Button asChild className="mt-8 w-fit" size="lg">
           <Link to="/shop">Open the cargo bay</Link>
@@ -87,8 +87,8 @@ function CheckoutPage() {
           Checkout
         </h1>
         <p className="mt-3 max-w-lg text-stone">
-          Demo dropship only — no payment. Affiliate Amazon buttons on product
-          cards are separate and live.
+          Demo only, no payment. Affiliate Amazon buttons on product cards are
+          separate and live. Delivery is Amazon's.
         </p>
 
         <form className="mt-8 space-y-5" onSubmit={onSubmit}>
@@ -158,7 +158,7 @@ function CheckoutPage() {
 
       <aside className="lg:col-span-5">
         <div className="rounded-2xl bg-cream p-5 shadow-[var(--shadow-border)] sm:p-6">
-          <h2 className="font-display text-2xl font-medium tracking-tight">Dropship crate</h2>
+          <h2 className="font-display text-2xl font-medium tracking-tight">Demo crate</h2>
           <ul className="mt-5 space-y-4">
             {lines.map((line) => {
               const product = getProduct(line.slug);
