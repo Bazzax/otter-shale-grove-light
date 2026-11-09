@@ -26,6 +26,8 @@ import {
   ONBOARD_POWER_BANK_ROWS,
   ONBOARD_POWER_BANK_SOURCES,
   PACKING_POWER_FAQS,
+  PORTABLE_MONITOR_FAQS,
+  PORTABLE_MONITOR_SOURCES,
   type Guide,
 } from "@/lib/guides";
 
@@ -2141,6 +2143,224 @@ function PortableMonitorBody() {
         .
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.secondWindow16} />
+      <h2>Best portable monitor for travel</h2>
+      <p>
+        For most UK travellers, the best portable monitor is the Arzopa Z1FC. Wirecutter's review
+        recommends it as a top pick: a 1080p panel with two USB-C ports, a Mini HDMI port, and a
+        kickstand that works in landscape or portrait.
+      </p>
+      <h3>How it sits next to the panels people actually search</h3>
+      <p>Specs below are from manufacturer pages. Check live listings for current availability.</p>
+      <div className="overflow-x-auto rounded-2xl bg-cream shadow-[var(--shadow-border)]">
+        <table className="w-full min-w-[48rem] text-left text-sm">
+          <thead>
+            <tr className="text-xs tracking-widest text-clay uppercase">
+              <th className="px-4 py-3 font-medium">Panel</th>
+              <th className="px-4 py-3 font-medium">Size / resolution</th>
+              <th className="px-4 py-3 font-medium">Weight</th>
+              <th className="px-4 py-3 font-medium">Ports</th>
+              <th className="px-4 py-3 font-medium">Stand / cover</th>
+            </tr>
+          </thead>
+          <tbody className="text-stone">
+            <tr className="border-t border-line align-top">
+              <td className="px-4 py-3 font-medium text-ink">
+                <ShopLink slug="arzopa-z1fc-portable-monitor">ARZOPA Z1FC</ShopLink>
+              </td>
+              <td className="px-4 py-3">16.1 in · 1920×1080 · 144Hz</td>
+              <td className="px-4 py-3">1.72 lb / 780g</td>
+              <td className="px-4 py-3">2× USB-C (PD + DP Alt Mode) · 1× mini-HDMI 2.0</td>
+              <td className="px-4 py-3">Built-in stand (portrait + landscape)</td>
+            </tr>
+            <tr className="border-t border-line align-top">
+              <td className="px-4 py-3 font-medium text-ink">MSI PRO MP161 E2U</td>
+              <td className="px-4 py-3">15.6 in · 1920×1080 · 60Hz</td>
+              <td className="px-4 py-3">0.75 kg</td>
+              <td className="px-4 py-3">
+                2× USB-C (DP Alt Mode, 15W PD / power in) · 1× mini-HDMI 2.0b
+              </td>
+              <td className="px-4 py-3">
+                Fold-out kickstand 0 to 180 degrees · protective case in the box
+              </td>
+            </tr>
+            <tr className="border-t border-line align-top">
+              <td className="px-4 py-3 font-medium text-ink">ASUS ZenScreen MB16AHV</td>
+              <td className="px-4 py-3">15.6 in · 1920×1080 · 60Hz</td>
+              <td className="px-4 py-3">0.9 kg</td>
+              <td className="px-4 py-3">2× USB-C (DP Alt Mode, 15W PD) · 1× mini-HDMI</td>
+              <td className="px-4 py-3">
+                Kickstand (portrait or landscape) · ZenScreen sleeve in the box
+              </td>
+            </tr>
+            <tr className="border-t border-line align-top">
+              <td className="px-4 py-3 font-medium text-ink">Lenovo ThinkVision M14</td>
+              <td className="px-4 py-3">14 in · 1920×1080 · 60Hz</td>
+              <td className="px-4 py-3">0.598 kg</td>
+              <td className="px-4 py-3">
+                2× USB-C only (DP 1.2 Alt Mode; one upstream, one downstream) · no HDMI
+              </td>
+              <td className="px-4 py-3">Stand -5 to +90 degrees · sleeve in the box</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Who each one is for</h3>
+      <p>
+        <strong>ARZOPA Z1FC - for you if</strong> you want one 16-inch window that packs, 144Hz for
+        smoother scrolling and casual games, and USB-C plus mini-HDMI when the laptop port is
+        awkward. <strong>Not for you if</strong> you need sharper-than-1080p text all day; that is
+        the Z1RC job.
+      </p>
+      <p>
+        <strong>MSI PRO MP161 E2U - for you if</strong> weight comes first and 60Hz is enough.{" "}
+        <strong>Not for you if</strong> you care about colour gamut numbers (MSI lists 53% sRGB CIE
+        1976) or want 144Hz.
+      </p>
+      <p>
+        <strong>ASUS ZenScreen MB16AHV - for you if</strong> you want a known brand, a sleeve in the
+        box, and mini-HDMI as well as dual USB-C. <strong>Not for you if</strong> you are choosing
+        mainly on price.
+      </p>
+      <p>
+        <strong>Lenovo ThinkVision M14 - for you if</strong> you already carry a 14-inch notebook
+        and want the lightest business panel with dual USB-C (DP Alt Mode).{" "}
+        <strong>Not for you if</strong> you need HDMI, or a 15.6 to 16-inch workspace beside a
+        14-inch lid.
+      </p>
+      <h3>Z1FC vs Z1RC - the naming that gets mixed up</h3>
+      <p>
+        Some answers name an <strong>ARZOPA Z1RC</strong>, not the Z1FC. They are different panels
+        on Arzopa's own site:
+      </p>
+      <ul>
+        <li>
+          <strong>Z1FC:</strong> 16.1-inch 1920×1080, 16:9, 144Hz, 106% sRGB, net weight 1.72 lb -
+          the smoother travel and gaming pick.
+        </li>
+        <li>
+          <strong>Z1RC:</strong> 16.0-inch 2560×1600, 16:10, 60Hz, 123% sRGB, net weight 1.79 lb -
+          the sharper productivity pick.
+        </li>
+      </ul>
+      <p>
+        If an answer names "ARZOPA" without the letters, check which one is linked. This guide's
+        tagged card is the <strong>Z1FC</strong>.
+      </p>
+      <h2>Questions people type</h2>
+      <dl className="space-y-6">
+        {PORTABLE_MONITOR_FAQS.map((item) => (
+          <div key={item.q}>
+            <dt className="font-display text-xl font-medium tracking-tight text-ink">{item.q}</dt>
+            <dd className="mt-2 text-stone">{item.a}</dd>
+          </div>
+        ))}
+      </dl>
+      <h2>Sources</h2>
+      <h3>Specs and weights</h3>
+      <ul>
+        <li>
+          ARZOPA Z1FC official product page:{" "}
+          <a
+            href={PORTABLE_MONITOR_SOURCES.z1fc}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-clay hover:text-clay-dark"
+          >
+            arzopa.com/products/arzopa-z1fc-gray-144hz-portable-gaming-monitor-16-1-screen
+          </a>
+        </li>
+        <li>
+          Amazon UK listing (item weight 0.78 kg):{" "}
+          <a
+            href={PORTABLE_MONITOR_SOURCES.amazonUk}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-clay hover:text-clay-dark"
+          >
+            amazon.co.uk/dp/B0CJCBQYDY
+          </a>
+        </li>
+        <li>
+          MSI PRO MP161 E2U specification:{" "}
+          <a
+            href={PORTABLE_MONITOR_SOURCES.msiSpec}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-clay hover:text-clay-dark"
+          >
+            us.msi.com/Portable-Monitor/PRO-MP161-E2U/Specification
+          </a>
+        </li>
+        <li>
+          MSI UK overview (0.75 kg, kickstand 0 to 180 degrees, protective case):{" "}
+          <a
+            href={PORTABLE_MONITOR_SOURCES.msiUk}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-clay hover:text-clay-dark"
+          >
+            uk.msi.com/Portable-Monitor/PRO-MP161-E2U/Overview
+          </a>
+        </li>
+        <li>
+          ASUS ZenScreen MB16AHV UK techspec:{" "}
+          <a
+            href={PORTABLE_MONITOR_SOURCES.asus}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-clay hover:text-clay-dark"
+          >
+            asus.com/uk/displays-desktops/monitors/zenscreen/asus-zenscreen-mb16ahv/techspec
+          </a>
+        </li>
+        <li>
+          Lenovo ThinkVision M14 PSREF:{" "}
+          <a
+            href={PORTABLE_MONITOR_SOURCES.lenovo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-clay hover:text-clay-dark"
+          >
+            psref.lenovo.com ThinkVision M14 spec
+          </a>
+        </li>
+        <li>
+          ARZOPA Z1RC official product page:{" "}
+          <a
+            href={PORTABLE_MONITOR_SOURCES.z1rc}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-clay hover:text-clay-dark"
+          >
+            arzopa.com/products/z1rc-2k-portable-monitor
+          </a>
+        </li>
+        <li>
+          ARZOPA Z1FC vs Z1RC guide:{" "}
+          <a
+            href={PORTABLE_MONITOR_SOURCES.z1fcVsZ1rc}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-clay hover:text-clay-dark"
+          >
+            arzopa.com/blogs/guide/arzopa-z1fc-vs-z1rc
+          </a>
+        </li>
+      </ul>
+      <h3>Reviews</h3>
+      <ul>
+        <li>
+          Wirecutter's review:{" "}
+          <a
+            href={PORTABLE_MONITOR_SOURCES.wirecutter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-clay hover:text-clay-dark"
+          >
+            nytimes.com/wirecutter/reviews/best-portable-monitor
+          </a>
+        </li>
+      </ul>
       <h2>The rest of the kit</h2>
       <p>
         <ShopLink slug="ugreen-laptop-stand">UGREEN Laptop Stand</ShopLink> is an adjustable

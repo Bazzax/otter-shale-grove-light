@@ -499,22 +499,20 @@ export const catalog: Product[] = [
     slug: "arzopa-z1fc-portable-monitor",
     name: "ARZOPA Z1FC 16.1-inch Portable Monitor",
     amazonPick: true,
-    price: 119.99,
+    price: 89.96,
     category: "Desk",
     tagline: "16.1 inch FHD 144Hz. Matte. 2× USB-C + mini HDMI.",
     description:
-      "ARZOPA 16.1-inch 144Hz Portable Gaming Monitor, FHD, 106% sRGB, HDR, ultra slim, Z1FC. 1920×1080, 144 Hz, matte, 2× USB-C + mini HDMI, dual speakers, black. In stock at £119.99 (Prime £99.99), ARZOPA Official Store. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "ARZOPA 16.1-inch 144Hz Portable Gaming Monitor, FHD, 106% sRGB, HDR, ultra slim, Z1FC. 1920×1080, 144 Hz, matte, 2× USB-C + mini HDMI, dual speakers, black. In stock at £89.96, ARZOPA Official Store. This is an Amazon UK affiliate pick. Al does not dropship it. Approx. UK price, checked 9 Nov 2026. Amazon's live checkout may differ.",
     details: [
       "16.1 in FHD 1920×1080 · 144 Hz · Z1FC",
       "106% sRGB · HDR · matte · black",
       "2× USB-C + mini HDMI · dual speakers",
       "ARZOPA Official Store",
-      "£119.99 · Prime £99.99 when checked 3 Nov 2026",
+      "£89.96 when checked 9 Nov 2026",
     ],
     alNote:
-      "A backpack panel, not a desktop. Your USB-C port has to do video. Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "A backpack panel, not a desktop. Your USB-C port has to do video. Amazon UK affiliate pick. Al does not dropship it. Approx. UK price, checked 9 Nov 2026. Amazon's live checkout may differ.",
     image: AMAZON_PRODUCT_IMAGES.arzopaZ1fc,
     brand: "ARZOPA",
     asin: AMAZON_PICK_ASINS.secondWindow16,

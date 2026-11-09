@@ -324,6 +324,33 @@ export const CHRISTMAS_TECH_GIFT_FAQS: GuideFaq[] = [
   },
 ];
 
+export const PORTABLE_MONITOR_SOURCES = {
+  z1fc: "https://www.arzopa.com/products/arzopa-z1fc-gray-144hz-portable-gaming-monitor-16-1-screen",
+  amazonUk: "https://www.amazon.co.uk/dp/B0CJCBQYDY",
+  msiSpec: "https://us.msi.com/Portable-Monitor/PRO-MP161-E2U/Specification",
+  msiUk: "https://uk.msi.com/Portable-Monitor/PRO-MP161-E2U/Overview",
+  asus: "https://www.asus.com/uk/displays-desktops/monitors/zenscreen/asus-zenscreen-mb16ahv/techspec/",
+  lenovo: "https://psref.lenovo.com/syspool/Sys/PDF/ThinkVision/ThinkVision_M14/ThinkVision_M14_Spec.pdf",
+  z1rc: "https://www.arzopa.com/products/z1rc-2k-portable-monitor",
+  z1fcVsZ1rc: "https://www.arzopa.com/blogs/guide/arzopa-z1fc-vs-z1rc",
+  wirecutter: "https://www.nytimes.com/wirecutter/reviews/best-portable-monitor/",
+} as const;
+
+export const PORTABLE_MONITOR_FAQS: GuideFaq[] = [
+  {
+    q: "What is the best portable monitor for travel in the UK?",
+    a: "For most bags, the Arzopa Z1FC. Wirecutter's review recommends it; it is the panel I would pack on this site. If you need lighter than 600g and can live without HDMI, look at the Lenovo ThinkVision M14 instead.",
+  },
+  {
+    q: "Does a portable monitor need its own charger?",
+    a: "Often no. One full-featured USB-C cable can carry video and power when the laptop's USB-C port does DisplayPort Alt Mode and supplies enough watts. HDMI is picture only - then the panel wants a second USB-C into a brick or a power bank.",
+  },
+  {
+    q: "Z1FC or Z1RC for a second screen on trains and hotel desks?",
+    a: "Z1FC if you want 144Hz and the travel or gaming pick. Z1RC if the work is code, sheets, or long documents and you want the taller 16:10 2.5K panel. Same bag class either way.",
+  },
+];
+
 /** Manufacturer-verified portable-monitor rows. No UK prices. */
 export const TRAVEL_DESK_MONITORS: GuideListItem[] = [
   {
@@ -519,7 +546,8 @@ export const guides: Guide[] = [
     description:
       "13-16 inch tradeoffs, USB-C video that actually works, HDMI fallback, and the kit around the ARZOPA Z1FC for remote days that are not at a desk.",
     published: "2026-09-30",
-    updated: "2026-11-03",
+    updated: "2026-11-09",
+    faqs: PORTABLE_MONITOR_FAQS,
     relatedSlugs: [
       "arzopa-z1fc-portable-monitor",
       "ugreen-laptop-stand",
