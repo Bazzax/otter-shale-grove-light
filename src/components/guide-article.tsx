@@ -13,9 +13,15 @@ import { formatProductPrice } from "@/lib/format";
 import {
   AIRLINE_POWER_BANK_ROWS,
   CAA_BATTERY_CHECKLIST,
+  CAA_CHRISTMAS_PACKING,
+  CAA_FESTIVE_PACKING,
   CAA_LITHIUM_RULES,
   CAA_PACK_RIGHT,
   CAA_PACKRIGHT_SHORT,
+  CHRISTMAS_TECH_GIFT_FAQS,
+  GOV_UK_ELECTRONIC_DEVICES,
+  GOV_UK_HAND_LUGGAGE,
+  GOV_UK_PERSONAL_ITEMS,
   ONBOARD_POWER_BANK_FAQS,
   ONBOARD_POWER_BANK_ROWS,
   ONBOARD_POWER_BANK_SOURCES,
@@ -1698,6 +1704,373 @@ function PowerBankOnboardBody() {
   );
 }
 
+function ChristmasTechGiftsBody() {
+  return (
+    <>
+      <p>
+        Callsign AL-1. This log is for a UK departure at Christmas with gadgets in the bag —
+        wrapped or not, still lithium. It is not the CAA, and it is not your airline. Read the{" "}
+        <a
+          href={CAA_PACKRIGHT_SHORT}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA Pack right
+        </a>{" "}
+        page, the{" "}
+        <a
+          href={CAA_CHRISTMAS_PACKING}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA Christmas packing advice
+        </a>
+        , and{" "}
+        <a
+          href={GOV_UK_HAND_LUGGAGE}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          gov.uk hand luggage restrictions
+        </a>
+        , then the carrier you actually booked. I do not invent airline policy. The crew’s
+        instruction is final.
+      </p>
+      <h2>The short answer</h2>
+      <aside className="rounded-2xl bg-cream p-5 shadow-[var(--shadow-border)]">
+        <p className="text-ink">
+          Leave presents unwrapped so security can inspect them. Power banks, spare batteries and
+          e-cigarettes stay in the cabin — never the hold. Since 27 March 2026 you may take two
+          power banks per person; under 100Wh needs no approval, 100–160Wh needs the airline’s
+          approval, and you must not recharge a bank on board. If a gadget with a battery goes in
+          a checked bag, switch it fully off. Charge new devices before you reach the tray.
+        </p>
+      </aside>
+      <h2>Wrapped presents and security</h2>
+      <p>
+        The CAA’s{" "}
+        <a
+          href={CAA_CHRISTMAS_PACKING}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          Christmas travel advice
+        </a>{" "}
+        (16 December 2025) is blunt: leave presents unwrapped, as they may need to be inspected at
+        security. That is packing advice for a busy festive queue, not a claim that wrapping is
+        banned on{" "}
+        <a
+          href={GOV_UK_HAND_LUGGAGE}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          gov.uk
+        </a>
+        . If you wrap a gadget anyway, assume security may still need to see it. Paper does not
+        change what is inside.
+      </p>
+      <p>
+        An earlier{" "}
+        <a
+          href={CAA_FESTIVE_PACKING}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA festive packing briefing
+        </a>{" "}
+        still applies to the lithium: gifts might be wrapped, but phones, tablets, laptops, vapes
+        and power banks follow the same battery rules either way. Wrap after you land.
+      </p>
+      <h2>Lithium gadgets given as gifts</h2>
+      <p>
+        Lithium batteries power phones, tablets, cameras, vapes and power banks. If they fail they
+        can start a fire that is hard to put out in a cabin or a hold. The{" "}
+        <a
+          href={CAA_PACKRIGHT_SHORT}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA Pack right
+        </a>{" "}
+        page is the passenger version. Always check with your airline.
+      </p>
+      <p>
+        The{" "}
+        <a
+          href={CAA_CHRISTMAS_PACKING}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          Christmas advice
+        </a>{" "}
+        tells you to carry essential electronics — mobile phones, laptops and vapes — in hand
+        luggage, and to make sure any electrical device packed in checked luggage is completely
+        switched off.
+      </p>
+      <ul>
+        <li>
+          Spare batteries, vapes, e-cigarettes and power banks: cabin only. Never pack vapes or
+          power banks in checked luggage.
+        </li>
+        <li>
+          Phones, tablets and laptops: normally in the cabin. If they go in a checked bag they
+          must be completely turned off and protected from damage — not standby, not airplane
+          mode.
+        </li>
+        <li>
+          If your cabin bag is taken to the hold before boarding, take the batteries and lithium
+          devices out first.
+        </li>
+        <li>
+          A battery that is damaged, overheating or swelling should not be used and should never
+          fly.
+        </li>
+      </ul>
+      <p>
+        Those cabin and hold lines are on{" "}
+        <a
+          href={CAA_PACKRIGHT_SHORT}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          Pack right
+        </a>
+        . The fully-off wording — not airplane mode — is in the{" "}
+        <a
+          href={CAA_FESTIVE_PACKING}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          festive briefing
+        </a>
+        .
+      </p>
+      <h2>Power banks: two, cabin, never recharged on board</h2>
+      <p>
+        From 27 March 2026 the CAA sets passenger power-bank rules of its own. This is that list,
+        from the{" "}
+        <a
+          href={CAA_LITHIUM_RULES}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA lithium and power-bank changes
+        </a>
+        , not airline colour.
+      </p>
+      <ul>
+        <li>Must be carried in carry-on baggage. Never the hold.</li>
+        <li>Must be individually protected when not in use.</li>
+        <li>Must not be recharged on board the aircraft.</li>
+        <li>Should not be used to charge other portable electronic devices on board.</li>
+        <li>Maximum of two power banks per person.</li>
+        <li>
+          Up to 100Wh (lithium ion) without airline approval. Greater than 100Wh but not exceeding
+          160Wh needs the operator’s approval.
+        </li>
+      </ul>
+      <p>
+        Pack right says the same two-bank limit in public language, and that you may be asked to
+        put a bank in a seat-back pocket rather than an overhead locker. Using one once you sit
+        down is a different log:{" "}
+        <GuideLink slug="power-bank-on-plane-rules-uk">
+          can you use a power bank on a plane
+        </GuideLink>
+        . Carriage, watt-hours and the banks already in this bay:{" "}
+        <GuideLink slug="power-bank-hand-luggage-uk">
+          power banks in UK hand luggage
+        </GuideLink>
+        .
+      </p>
+      <h3>Watt-hours, not the number on the gift box</h3>
+      <p>
+        Airports talk watt-hours. Pack right:
+      </p>
+      <ul>
+        <li>
+          Under 100Wh is the common size for phones, laptops and cameras. Take those in the cabin.
+        </li>
+        <li>100Wh to 160Wh (large banks, some power tools) needs airline approval.</li>
+        <li>Over 160Wh is prohibited in passenger baggage.</li>
+      </ul>
+      <p>
+        If the case does not print Wh, the CAA formula is (V × mAh) ÷ 1000. Use the nominal cell
+        voltage — typically 3.7V for lithium-ion — not the 5V USB output. A 10,000 mAh bank is
+        about 37Wh. A 20,000 mAh bank is about 74Wh. Both sit under 100Wh. If the label already
+        prints Wh, use that number.
+      </p>
+      <h2>Spare batteries, e-cigarettes, vapes</h2>
+      <p>
+        Spare batteries are not a power bank, but they still stay with you. Pack right: always take
+        spare batteries, vapes, e-cigarettes and power banks in the cabin, and protect spare
+        batteries from damage. For power banks, the{" "}
+        <a
+          href={CAA_LITHIUM_RULES}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          27 March 2026 changes page
+        </a>{" "}
+        says they must be individually protected when not in use. That page’s protection examples
+        — original packaging, tape over the terminals, or a separate plastic bag — sit in the
+        operator section; they are the practical way to stop a short.
+      </p>
+      <p>
+        <a
+          href={GOV_UK_ELECTRONIC_DEVICES}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          gov.uk electronic devices
+        </a>{" "}
+        allows e-cigarettes in hand luggage and not in hold luggage. Pack right’s checklist: always
+        carry vapes in the cabin with you, and never vape onboard an aircraft. A vape gift is still
+        a vape.
+      </p>
+      <h2>Devices in checked bags: fully off</h2>
+      <p>
+        gov.uk allows a mobile phone, laptop or tablet in hand luggage or hold luggage. The CAA
+        still wants them in the cabin unless they are completely turned off and protected from
+        damage. The Christmas advice repeats: any electrical device in checked luggage must be
+        completely switched off. The festive briefing adds: not standby, not airplane mode.
+      </p>
+      <p>
+        Completely off means the power button, not standby or airplane mode. Check your airline.
+      </p>
+      <h2>Charge it before the tray</h2>
+      <p>
+        A new gadget in a box is often empty.{" "}
+        <a
+          href={GOV_UK_ELECTRONIC_DEVICES}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          gov.uk
+        </a>{" "}
+        says make sure electronic devices are charged before you travel. If a device does not
+        switch on when requested, you will not be allowed to take it onto the aircraft. That is a
+        security screen rule, not a reason to put the gift in the hold. Charge it at home. Keep it
+        in the cabin bag. Switch it off for the hold only if you have already decided it is going
+        below, and the airline allows that.
+      </p>
+      <h2>If a bank or gadget gets hot</h2>
+      <p>
+        Use only these steps, from the{" "}
+        <a
+          href={CAA_PACKRIGHT_SHORT}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          CAA checklist
+        </a>{" "}
+        also issued on{" "}
+        <a
+          href={CAA_BATTERY_CHECKLIST}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          22 October 2026
+        </a>
+        . Do not add your own.
+      </p>
+      <ol className="list-decimal space-y-2 pl-5">
+        <li>
+          If a power bank, vape, phone or tablet starts to get hot: switch it off, stop charging,
+          and tell the cabin crew immediately.
+        </li>
+        <li>
+          If it starts to smoke: tell the cabin crew immediately. They are trained to deal with
+          the issue safely.
+        </li>
+      </ol>
+      <h2>Crackers and party poppers, since they travel with the gifts</h2>
+      <p>
+        Not lithium, still Christmas. The CAA Christmas advice: check airline rules before packing
+        items such as Christmas crackers. Party poppers are not allowed on UK aircraft.{" "}
+        <a
+          href={GOV_UK_PERSONAL_ITEMS}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-clay hover:text-clay-dark"
+        >
+          gov.uk personal items
+        </a>{" "}
+        lists fireworks, flares and other pyrotechnics, including party poppers and toy caps, as
+        allowed in neither hand nor hold luggage.
+      </p>
+      <h2>A cabin-legal bank, if the gift is a bank</h2>
+      <p>
+        <ShopLink slug="anker-maggo-10000-power-bank">Anker MagGo 10,000mAh Qi2 Power Bank</ShopLink>{" "}
+        is already in this bay: 10,000 mAh, about 37Wh at 3.7V, Qi2 15W wireless, USB-C. That sits
+        under the CAA 100Wh line. It still counts as one of your two banks, still belongs in the
+        cabin, still must not be recharged on board. I do not dropship it. The card is affiliate.
+        Read the listing, not the title.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />
+      <p>
+        A wall charger is not a power bank.{" "}
+        <ShopLink slug="anker-100w-gan-charger">Anker 100W USB-C GaN Charger</ShopLink> does not fly
+        as a spare battery. Pack it if you need a socket at the gate to empty into the phone and
+        the bank before you sit down. The rest of the sleeve is on{" "}
+        <GuideLink slug="packing-power">what I would pack for travel power</GuideLink>.
+      </p>
+      <h2>How I would pack it</h2>
+      <ul>
+        <li>Gifts unwrapped. Security may need to inspect them.</li>
+        <li>Power banks and spare batteries in the cabin bag. Two banks, printed Wh.</li>
+        <li>E-cigarettes and vapes on you, never the hold, never used on board.</li>
+        <li>A laptop or tablet gift in the cabin if you can. If it goes below: fully off.</li>
+        <li>Charge every gadget before the tray so it switches on when asked.</li>
+        <li>
+          Still matching a bank:{" "}
+          <GuideLink slug="power-bank-hand-luggage-uk">cabin power banks</GuideLink>
+          . Still matching use on board:{" "}
+          <GuideLink slug="power-bank-on-plane-rules-uk">using a power bank on a plane</GuideLink>
+          . Still unsure:{" "}
+          <AskAlLink q="flying Christmas tech gifts UK">hail Al about Christmas tech gifts</AskAlLink>
+          .
+        </li>
+      </ul>
+      <h2>Questions people type</h2>
+      <dl className="space-y-6">
+        {CHRISTMAS_TECH_GIFT_FAQS.map((item) => (
+          <div key={item.q}>
+            <dt className="font-display text-xl font-medium tracking-tight text-ink">{item.q}</dt>
+            <dd className="mt-2 text-stone">{item.a}</dd>
+          </div>
+        ))}
+      </dl>
+      <h2>The affiliate bit, once</h2>
+      <p>
+        #ad As an Amazon Associate we earn from qualifying purchases. Those buttons are tagged
+        Amazon UK affiliate links (tag alsaidropship-21). Al may earn a commission. Read the
+        listing, not the title. Card prices are approx. snapshots — Amazon’s live checkout may
+        differ. I do not invent stock.
+      </p>
+      <p>
+        Unwrapped. Two banks. Cabin bag. Printed Wh. Fully off if it goes below. Check the airline.
+        Then fly.
+      </p>
+    </>
+  );
+}
+
 function PortableMonitorBody() {
   return (
     <>
@@ -1834,6 +2207,7 @@ const bodies: Record<string, () => ReactNode> = {
   "webcam-for-video-calls": WebcamCallsBody,
   "power-bank-hand-luggage-uk": PowerBankLuggageBody,
   "power-bank-on-plane-rules-uk": PowerBankOnboardBody,
+  "flying-christmas-tech-gifts-uk": ChristmasTechGiftsBody,
   "portable-monitor-laptop-second-screen": PortableMonitorBody,
 };
 

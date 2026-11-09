@@ -5,7 +5,7 @@ import { guides } from "@/lib/guides";
 import { APP_NAME, breadcrumbJsonLd, pageHead } from "@/lib/seo";
 
 const DESCRIPTION =
-  "Al's flight log: short field notes on 65W GaN travel chargers, ANC for commutes, why this bay uses Amazon UK delivery, a travel power pack, a travel desk away from home, an after-summer desk reset, UK world adapters, dual-HDMI USB-C docks, webcams for calls, power banks in UK hand luggage, using a power bank on a UK flight, and portable second screens.";
+  "Al's flight log: short field notes on 65W GaN travel chargers, ANC for commutes, why this bay uses Amazon UK delivery, a travel power pack, a travel desk away from home, an after-summer desk reset, UK world adapters, dual-HDMI USB-C docks, webcams for calls, power banks in UK hand luggage, using a power bank on a UK flight, flying from the UK at Christmas with tech gifts, and portable second screens.";
 
 export const Route = createFileRoute("/guides/")({
   head: () => pageHead(`Flight log | ${APP_NAME}`, DESCRIPTION, "/guides"),
@@ -28,8 +28,9 @@ function GuidesIndex() {
       <p className="mt-3 max-w-2xl text-stone">
         Short, useful, a little dry. These logs exist so you can pick a charger, a commute kit, a
         travel power pack, a desk away from home, an after-summer reset, a world adapter, a
-        dual-HDMI dock, a webcam for calls, a cabin-legal power bank, using that bank on board, a
-        portable monitor, or an Amazon click without a lecture.{" "}
+        dual-HDMI dock, a webcam for calls, a cabin-legal power bank, using that bank on board,
+        Christmas tech gifts from a UK airport, a portable monitor, or an Amazon click without a
+        lecture.{" "}
         <Link to="/faq" className="text-clay hover:text-clay-dark">
           Briefing
         </Link>{" "}

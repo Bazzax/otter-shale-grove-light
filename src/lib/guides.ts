@@ -141,6 +141,20 @@ export const CAA_BATTERY_CHECKLIST =
 
 export const CAA_PACKRIGHT_SHORT = "https://www.caa.co.uk/packright";
 
+export const CAA_CHRISTMAS_PACKING =
+  "https://www.caa.co.uk/newsroom/news/pack-safe-to-fly-safe-regulator-issues-christmas-travel-advice-as-record-numbers-take-to-the-skies/";
+
+export const CAA_FESTIVE_PACKING =
+  "https://www.caa.co.uk/newsroom/news/regulator-warns-consumers-not-to-fall-foul-of-packing-rules-this-festive-season/";
+
+export const GOV_UK_HAND_LUGGAGE = "https://www.gov.uk/hand-luggage-restrictions";
+
+export const GOV_UK_ELECTRONIC_DEVICES =
+  "https://www.gov.uk/hand-luggage-restrictions/electronic-devices-and-electrical-items";
+
+export const GOV_UK_PERSONAL_ITEMS =
+  "https://www.gov.uk/hand-luggage-restrictions/personal-items";
+
 export const ONBOARD_POWER_BANK_SOURCES = {
   easyjet: "https://www.easyjet.com/en/help-centre/baggage/dangerous-goods",
   ryanair: "https://help.ryanair.com/hc/en-gb/sections/12503055461777-Permitted-Items-On-Board",
@@ -272,6 +286,41 @@ export const ONBOARD_POWER_BANK_FAQS: GuideFaq[] = [
   {
     q: "Does this apply to MagSafe or wireless power banks?",
     a: "Yes. Any power bank counts. Magnetic or wireless does not change the CAA rules or the airline bans on use and recharge.",
+  },
+];
+
+export const CHRISTMAS_TECH_GIFT_FAQS: GuideFaq[] = [
+  {
+    q: "Can I take wrapped Christmas presents through UK airport security?",
+    a: "The CAA’s Christmas packing advice is to leave presents unwrapped, because they may need to be inspected at security. gov.uk hand-luggage pages do not set a wrapping rule. A wrapped gadget still has to follow lithium and hand-luggage rules. Check your airline.",
+  },
+  {
+    q: "Can I pack a gifted power bank in hold luggage?",
+    a: "No. The CAA says power banks must travel in the cabin, never checked luggage, and you can only take two per person. They must not be recharged on board. Check the airline you booked.",
+  },
+  {
+    q: "How many power banks can I take from a UK airport?",
+    a: "Two per person under the CAA rules in force since 27 March 2026. Under 100Wh needs no airline approval. 100Wh to 160Wh needs the airline’s approval. Over 160Wh is not allowed in passenger baggage.",
+  },
+  {
+    q: "Can a laptop or tablet Christmas gift go in checked luggage?",
+    a: "gov.uk allows phones, laptops and tablets in hand or hold luggage. The CAA says they should normally travel in the cabin; if they go in a checked bag they must be completely switched off — not standby or airplane mode — and protected from damage. Check your airline.",
+  },
+  {
+    q: "Can spare gadget batteries go in the hold?",
+    a: "No. The CAA packing advice is to take spare batteries, vapes, e-cigarettes and power banks in the cabin, and to protect spare batteries from damage. If your cabin bag is taken to the hold before boarding, take the batteries and lithium devices out first.",
+  },
+  {
+    q: "Can I take an e-cigarette or vape gift on a UK flight?",
+    a: "In the cabin only. gov.uk allows e-cigarettes in hand luggage and not in the hold. The CAA says always carry vapes with you in the cabin and never vape on board.",
+  },
+  {
+    q: "Do new gadgets need to be charged for airport security?",
+    a: "Yes. gov.uk says make sure electronic devices are charged before you travel. If a device does not switch on when requested, you will not be allowed to take it onto the aircraft.",
+  },
+  {
+    q: "Can I recharge a power bank on the flight home?",
+    a: "No. The CAA says power banks should never be recharged onboard. Using one to charge a phone is advised against unless your airline says yes. Check the airline, then the crew.",
   },
 ];
 
@@ -447,6 +496,19 @@ export const guides: Guide[] = [
     updated: "2026-11-03",
     faqs: ONBOARD_POWER_BANK_FAQS,
     relatedSlugs: ["anker-maggo-10000-power-bank", "anker-100w-gan-charger", "ugreen-65w-gan"],
+    affiliateSlug: "anker-maggo-10000-power-bank",
+  },
+  {
+    slug: "flying-christmas-tech-gifts-uk",
+    title: "Flying from the UK at Christmas with tech gifts",
+    heading: "Flying from the UK at Christmas with tech gifts: wrapping, security and lithium batteries",
+    metaTitle: "Flying from the UK at Christmas with Tech Gifts: Wrapping and Lithium Rules",
+    kicker: "Power",
+    description:
+      "Leave presents unwrapped for security. Power banks cabin only, max two per person since 27 March 2026. Devices in the hold fully off. Sourced from the CAA and gov.uk. Check your airline.",
+    published: "2026-11-09",
+    faqs: CHRISTMAS_TECH_GIFT_FAQS,
+    relatedSlugs: ["anker-maggo-10000-power-bank", "belkin-5000-magnetic-power-bank", "anker-100w-gan-charger"],
     affiliateSlug: "anker-maggo-10000-power-bank",
   },
   {
