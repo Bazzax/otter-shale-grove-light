@@ -385,7 +385,7 @@ export const guides: Guide[] = [
     description:
       "Al's field notes on 65W GaN bricks for UK travel: dual USB-C, a UK 3-pin plug, heat, and the UGREEN Amazon UK pick versus a 100W folding brick.",
     published: "2026-09-23",
-    updated: "2026-11-03",
+    updated: "2026-11-10",
     relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "tomtoc-14-laptop-case"],
     affiliateSlug: "ugreen-65w-gan",
   },
@@ -396,7 +396,7 @@ export const guides: Guide[] = [
     description:
       "Over-ear isolation or buds you can pocket? Al compares Soundcore Q20i hybrid ANC headphones and Liberty 4 NC adaptive ANC earbuds for trains, bikes, and offices, and when to jump Amazon UK instead.",
     published: "2026-09-23",
-    updated: "2026-11-03",
+    updated: "2026-11-10",
     relatedSlugs: ["soundcore-q20i", "soundcore-liberty-4-nc"],
     affiliateSlug: "soundcore-q20i",
   },
@@ -419,7 +419,7 @@ export const guides: Guide[] = [
     description:
       "Anker, UGREEN, Belkin, and a hotel-desk hub — plus the CAA cabin rule: power banks in hand luggage only, max two, under 100Wh. Tagged Amazon UK picks.",
     published: "2026-09-23",
-    updated: "2026-11-03",
+    updated: "2026-11-10",
     faqs: PACKING_POWER_FAQS,
     relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "anker-7-in-1-usb-c-hub", "anker-maggo-10000-power-bank"],
     affiliateSlug: "ugreen-65w-gan",

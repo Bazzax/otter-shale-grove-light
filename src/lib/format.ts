@@ -12,6 +12,7 @@ export function formatPrice(amount: number) {
 }
 
 /** Whole-bay display helper. Amazon picks are GBP listing snapshots. */
-export function formatProductPrice(product: { price: number }) {
+export function formatProductPrice(product: { price?: number }) {
+  if (product.price == null) return "Check on Amazon";
   return formatPrice(product.price);
 }

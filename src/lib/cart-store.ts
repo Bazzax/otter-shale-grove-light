@@ -77,7 +77,7 @@ export const useCart = create<CartState>()(
         const lines: OrderLine[] = get()
           .lines.map((l) => {
             const product = getProduct(l.slug);
-            if (!product || isAmazonPick(product)) return null;
+            if (!product || isAmazonPick(product) || product.price == null) return null;
             return {
               slug: l.slug,
               qty: l.qty,
@@ -111,7 +111,7 @@ export function cartCount(lines: Line[]) {
 export function cartTotal(lines: Line[]) {
   return lines.reduce((sum, l) => {
     const product = catalog.find((p) => p.slug === l.slug);
-    if (!product || isAmazonPick(product)) return sum;
+    if (!product || isAmazonPick(product) || product.price == null) return sum;
     return sum + product.price * l.qty;
   }, 0);
 }

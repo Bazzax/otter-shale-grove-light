@@ -29,7 +29,9 @@ export const Route = createFileRoute("/shop/$slug")({
     if (!product) return pageHead(`Cargo | ${APP_NAME}`, "Product not in the bay.");
     return pageHead(
       `${product.name} — Amazon UK pick | ${APP_NAME}`,
-      `${product.tagline} Amazon UK affiliate pick, about ${formatProductPrice(product)}. Shop the tagged listing. Amazon’s live price may differ.`,
+      product.price == null
+        ? `${product.tagline} Amazon UK affiliate pick. Check the live price on Amazon.`
+        : `${product.tagline} Amazon UK affiliate pick, about ${formatProductPrice(product)}. Shop the tagged listing. Amazon’s live price may differ.`,
       `/shop/${product.slug}`,
       { image: product.image },
     );
@@ -81,7 +83,9 @@ function ProductPage() {
             {formatProductPrice(product)}
           </p>
           <p className="mt-1 text-sm text-dust">
-            Approx. Amazon UK price. Check the live listing — checkout is on Amazon.
+            {product.price == null
+              ? "No new featured offer when last checked. Check the live listing on Amazon."
+              : "Approx. Amazon UK price. Check the live listing — checkout is on Amazon."}
           </p>
           <p className="mt-4 leading-relaxed text-stone">{product.tagline}</p>
           <p className="mt-4 leading-relaxed text-stone">{product.description}</p>
@@ -94,7 +98,9 @@ function ProductPage() {
             <div>
               <dt className="text-dust">Price</dt>
               <dd className="mt-1 font-medium tabular-nums">
-                {formatProductPrice(product)} approx.
+                {product.price == null
+                  ? formatProductPrice(product)
+                  : `${formatProductPrice(product)} approx.`}
               </dd>
             </div>
           </dl>
