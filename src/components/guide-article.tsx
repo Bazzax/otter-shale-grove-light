@@ -64,8 +64,13 @@ function AmazonPick({ asin }: { asin: string }) {
       <p className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
         {product ? (
           <span className="text-sm tabular-nums text-clay">
-            {formatProductPrice(product)}{" "}
-            <span className="font-normal text-dust">approx. · check Amazon</span>
+            {formatProductPrice(product)}
+            {product.price == null ? null : (
+              <>
+                {" "}
+                <span className="font-normal text-dust">approx. · check Amazon</span>
+              </>
+            )}
           </span>
         ) : null}
         <AffiliateLink
@@ -123,9 +128,9 @@ function GanBody() {
       <p>
         <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
         65W GaN with two USB-C ports and a UK 3-pin plug (BS 1363). The listing does not say the
-        pins fold. 65W max, and 65W total when both ports charge. In stock at £22.99 (RRP £29.99),
+        pins fold. 65W max, and 65W total when both ports charge. In stock at £20.99 (RRP £29.99),
         dispatched by Amazon, sold by UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick.
-        Al does not dropship it. Approx. UK price is a snapshot from 3 Nov 2026. Amazon's live
+        Al does not dropship it. Approx. UK price is a snapshot from 10 Nov 2026. Amazon's live
         checkout may differ.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.ugreen65w} />
@@ -175,7 +180,7 @@ function AncBody() {
         minutes of charging gives 4 hours. Multipoint switches between phone and laptop.
         Transparency mode keeps a train announcement in. The soundcore app adds EQ, mode
         adjustment, customised white noise, and AI translation between over 100 languages. I do
-        not dropship Soundcore. The card is affiliate. £31.99, price checked 25 Oct 2026 on
+        not dropship Soundcore. The card is affiliate. £29.99, price checked 10 Nov 2026 on
         Amazon.co.uk. Amazon’s live checkout may differ.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.soundcoreQ20i} />
@@ -476,7 +481,7 @@ function PackingPowerBody() {
         <AmazonText asin={AMAZON_PICK_ASINS.magDeck10}>Anker MagGo 10,000 mAh Qi2</AmazonText>
         : about 37Wh at 3.7V nominal (10,000 × 3.7 ÷ 1000). Qi2 15W wireless, USB-C, smart
         display, white. Cabin-legal. Covers the day you miss the socket. I do not dropship it. The
-        card is affiliate. £67.99 (Prime £55.99), price checked 3 Nov 2026 on Amazon.co.uk.
+        card is affiliate. £49.99, price checked 10 Nov 2026 on Amazon.co.uk.
         Amazon's live checkout may differ.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.magDeck10} />

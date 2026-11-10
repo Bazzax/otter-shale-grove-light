@@ -128,8 +128,8 @@ export const PRODUCT_SLUG_REDIRECTS: Record<string, string> = {
 type ProductBase = {
   slug: string;
   name: string;
-  /** GBP. Amazon picks are a listing snapshot — live Amazon checkout may differ. */
-  price: number;
+  /** GBP listing snapshot. Omit when there is no current new buy box. */
+  price?: number;
   category: Category;
   tagline: string;
   description: string;
@@ -154,18 +154,18 @@ export function isAmazonPick(product: Product): boolean {
 }
 
 const PRICE_CHECKED =
-  "Approx. UK price, checked 3 Nov 2026. Amazon's live checkout may differ.";
+  "Approx. UK price, checked 10 Nov 2026. Amazon's live checkout may differ.";
 
 export const catalog: Product[] = [
   {
     slug: "soundcore-q20i",
     name: "Soundcore Anker Q20i hybrid ANC foldable headphones",
     amazonPick: true,
-    price: 31.99,
+    price: 29.99,
     category: "Audio",
     tagline: "Hybrid ANC over-ears. Foldable. Up to 40 hours with ANC on.",
     description:
-      "Soundcore Anker Q20i hybrid active noise cancelling foldable headphones. Over-ear, black. Four built-in mics filter background noise in an office, on a train, or on a street — noise cancellation is not available in AUX mode. Wireless mode uses BassUp; the 3.5 mm jack unlocks Hi-Res audio. Up to 40 hours with ANC on; 5 minutes of charging gives 4 hours. Multipoint switches audio between phone and laptop. Transparency mode keeps announcements in. The free soundcore app adds AI translation between over 100 languages, EQ customisation, mode adjustment, and customised white noise. Listing overview: 16 Ohms, 20 kHz frequency response, 95 dB sensitivity, model Q20i. Approx. UK price is a snapshot from 25 Oct 2026 — Amazon’s live checkout may differ.",
+      "Soundcore Anker Q20i hybrid active noise cancelling foldable headphones. Over-ear, black. Four built-in mics filter background noise in an office, on a train, or on a street — noise cancellation is not available in AUX mode. Wireless mode uses BassUp; the 3.5 mm jack unlocks Hi-Res audio. Up to 40 hours with ANC on; 5 minutes of charging gives 4 hours. Multipoint switches audio between phone and laptop. Transparency mode keeps announcements in. The free soundcore app adds AI translation between over 100 languages, EQ customisation, mode adjustment, and customised white noise. Listing overview: 16 Ohms, 20 kHz frequency response, 95 dB sensitivity, model Q20i. Approx. UK price is a snapshot from 10 Nov 2026 — Amazon’s live checkout may differ.",
     details: [
       "Hybrid ANC · transparency · four built-in mics (ANC off in AUX)",
       "Over-ear, foldable, black · 3.5 mm jack · BassUp / AUX Hi-Res",
@@ -191,14 +191,14 @@ export const catalog: Product[] = [
     category: "Desk",
     tagline: "75% ISO-UK layout. Tri-mode wireless. QMK/VIA.",
     description:
-      "OMOTON Mechanical Keyboard Gaming 75% ISO-UK, tri-mode wireless, QMK/VIA. ISO-UK layout, UK legends, large Enter key. Hot-swappable, gasket mount, RGB backlit, 4000mAh battery, volume knob. In stock at £69.99 when checked, only 6 left, sold by OM-Treasure-EU, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "OMOTON Mechanical Keyboard Gaming 75% ISO-UK, tri-mode wireless, QMK/VIA. ISO-UK layout, UK legends, large Enter key. Hot-swappable, gasket mount, RGB backlit, 4000mAh battery, volume knob. In stock at £69.99 when checked, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "ISO-UK layout · UK legends · large Enter key",
       "Tri-mode wireless",
       "QMK/VIA",
       "Hot-swappable · gasket mount · RGB backlit · 4000mAh battery · volume knob",
-      "£69.99 · only 6 left when checked 3 Nov 2026",
+      "£69.99, checked 10 Nov 2026",
     ],
     alNote:
       "This is the UK ISO board on the card. US-layout 75% boards are a different listing. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -214,18 +214,18 @@ export const catalog: Product[] = [
     slug: "ugreen-65w-gan",
     name: "UGREEN 65W GaN Charger (2 USB-C, UK plug)",
     amazonPick: true,
-    price: 22.99,
+    price: 20.99,
     category: "Power",
     tagline: "White 65W GaN. Two USB-C ports. UK 3-pin plug.",
     description:
-      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. In stock at £22.99 (RRP £29.99), dispatched by Amazon, sold by UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. In stock at £20.99 (RRP £29.99), dispatched by Amazon, sold by UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "65W GaN · 2× USB-C · no USB-A",
       "65W max · 65W total when charging both",
       "UK 3-pin plug (BS 1363). Listing does not say folding",
       "White · sold by UGREEN GROUP LIMITED UK · dispatched by Amazon",
-      "£22.99 (RRP £29.99), in stock, checked 3 Nov 2026",
+      "£20.99 (RRP £29.99), in stock, checked 10 Nov 2026",
     ],
     alNote:
       "Amazon UK affiliate pick. Al does not dropship it. Dual USB-C, UK plug, 65W total if both ports are in use. Approx. UK price is on the card. Amazon's live checkout may differ.",
@@ -240,11 +240,11 @@ export const catalog: Product[] = [
     slug: "samsung-t7-ssd-2tb",
     name: "Samsung T7 Portable SSD 2TB",
     amazonPick: true,
-    price: 316.17,
+    price: 389.99,
     category: "Storage",
     tagline: "Portable 2TB SSD. USB 3.0. Indigo blue.",
     description:
-      "Samsung T7 Portable SSD in indigo-blue, 2 TB. The Amazon UK listing calls it a portable solid-state drive with a 2.5-inch form factor, USB 3.0 interface, and USB connectivity. Compatible devices listed: laptop, desktop, smartphone, and television. In the box: the portable SSD, USB Type-C to C and Type-A to A cables, and a user manual. Samsung’s brand comparison table on that page states a transfer speed of up to 1,050 MB/s; the feature bullets do not. Approx. UK price is a snapshot from 25 Oct 2026 — Amazon’s live checkout may differ.",
+      "Samsung T7 Portable SSD in indigo-blue, 2 TB. The Amazon UK listing calls it a portable solid-state drive with a 2.5-inch form factor, USB 3.0 interface, and USB connectivity. Compatible devices listed: laptop, desktop, smartphone, and television. In the box: the portable SSD, USB Type-C to C and Type-A to A cables, and a user manual. Samsung’s brand comparison table on that page states a transfer speed of up to 1,050 MB/s; the feature bullets do not. Approx. UK price is a snapshot from 10 Nov 2026 — Amazon’s live checkout may differ.",
     details: [
       "2 TB portable SSD · indigo blue · 2.5-inch form factor",
       "USB 3.0 interface (listing overview) · USB connectivity",
@@ -276,7 +276,7 @@ export const catalog: Product[] = [
       "MagSafe-compatible wireless 7.5W · 10W input · USB-C",
       "Fold-out kickstand · pass-through charging · black",
       "Listing had no buy box at check time; other offers from £46.82; check the live price",
-      "£39.90 listing snapshot, checked 3 Nov 2026",
+      "£39.90 listing snapshot, checked 10 Nov 2026",
     ],
     alNote:
       "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. Listing had no buy box at check time; other offers from £46.82; check the live price. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -291,18 +291,18 @@ export const catalog: Product[] = [
     slug: "anker-7-in-1-usb-c-hub",
     name: "Anker USB-C Hub, 7-in-1",
     amazonPick: true,
-    price: 18.94,
+    price: 15.99,
     category: "Desk",
     tagline: "7-in-1 USB-C hub. 4K@60Hz HDMI. 85W max PD. Grey.",
     description:
-      "Anker USB C Hub, 7-in-1. 4K@60Hz HDMI, 85W max PD, 2× USB 3.0 plus 1 USB-C data, SD/TF reader. Charger not included. Grey. 18-month warranty. In stock at £18.94 (RRP £24.99), AnkerDirect UK, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Anker USB C Hub, 7-in-1. 4K@60Hz HDMI, 85W max PD, 2× USB 3.0 plus 1 USB-C data, SD/TF reader. Charger not included. Grey. 18-month warranty. In stock at £15.99 (RRP £24.99), AnkerDirect UK, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "7-in-1 · 4K@60Hz HDMI · SD/TF reader",
       "2× USB 3.0 + 1 USB-C data",
       "85W max PD · charger not included",
       "Grey · 18-month warranty · AnkerDirect UK · dispatched by Amazon",
-      "£18.94 (RRP £24.99), in stock, checked 3 Nov 2026",
+      "£15.99 (RRP £24.99), in stock, checked 10 Nov 2026",
     ],
     alNote:
       "A 7-in-1 stick, not a dual-monitor dock. 85W max PD, charger not in the box. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -328,7 +328,7 @@ export const catalog: Product[] = [
       "2700K-6500K · 230-955 lux",
       "Clamp for 1-3 cm monitors · USB-powered",
       "Aluminium · 800 g · BenQ UK Webstore · dispatched by Amazon",
-      "£89.00, in stock, checked 3 Nov 2026",
+      "£89.00, in stock, checked 10 Nov 2026",
     ],
     alNote:
       "A light bar that sits on the monitor, not a desk lamp. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -381,7 +381,7 @@ export const catalog: Product[] = [
       "Also listed for Dell XPS 14 and 13.8-inch Surface Laptop",
       "360 CornerArmor, drop-tested · GRS recycled water-resistant fabric",
       "YKK zips · front pocket and strap · navy blue",
-      "£27.99, in stock, tomtoc EU Official, dispatched by Amazon, checked 3 Nov 2026",
+      "£27.99, in stock, tomtoc EU Official, dispatched by Amazon, checked 10 Nov 2026",
     ],
     alNote:
       "A structured case with a pocket, not a thin sleeve. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -396,21 +396,21 @@ export const catalog: Product[] = [
     slug: "anker-100w-gan-charger",
     name: "Anker 100W USB-C GaN Charger",
     amazonPick: true,
-    price: 59.89,
+    price: 37.99,
     category: "Power",
     tagline: "100W GaN, 3 ports, smart display, foldable plug.",
     description:
-      "Anker 100W USB C Charger, 3-port GaN, smart display, touch control. USB-C cable included. 100W max, 2× USB-C + 1 USB-A, foldable plug 69×55×34 mm, 95W+5W mode, 18-month warranty, dark grey. List £59.89; Prime members £44.99 when checked. In stock, AnkerDirect UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Anker 100W USB C Charger, 3-port GaN, smart display, touch control. USB-C cable included. 100W max, 2× USB-C + 1 USB-A, foldable plug 69×55×34 mm, 95W+5W mode, 18-month warranty, dark grey. £37.99 · list £59.89. In stock, AnkerDirect UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "100W max · 2× USB-C + 1 USB-A",
       "Smart display · touch control · USB-C cable included",
       "Foldable plug 69×55×34 mm · 95W+5W mode · dark grey",
       "18-month warranty · AnkerDirect UK",
-      "£59.89 list · Prime £44.99 when checked 3 Nov 2026",
+      "£37.99 · list £59.89, in stock, checked 10 Nov 2026",
     ],
     alNote:
-      "One socket, three ports, a display. List price is on the card; Prime was lower when checked. Amazon UK affiliate pick. Al does not dropship it. " +
+      "One socket, three ports, a display. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     image: AMAZON_PRODUCT_IMAGES.anker100w,
     brand: "Anker",
@@ -422,18 +422,18 @@ export const catalog: Product[] = [
     slug: "ugreen-laptop-stand",
     name: "UGREEN Laptop Stand",
     amazonPick: true,
-    price: 13.94,
+    price: 15.99,
     category: "Desk",
     tagline: "Adjustable aluminium stand. Folds. Carry bag. 8-17.3 inch.",
     description:
-      "UGREEN Laptop Stand for Desk, adjustable, portable aluminium, folding, with carry bag, for 8-17.3 inch laptops. Aluminium alloy, 5 height settings, scratch-resistant padding, silver. In stock at £13.94 (RRP £17.99), UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "UGREEN Laptop Stand for Desk, adjustable, portable aluminium, folding, with carry bag, for 8-17.3 inch laptops. Aluminium alloy, 5 height settings, scratch-resistant padding, silver. In stock at Prime £15.99 · non-Prime £17.99, UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "Adjustable aluminium stand · 5 height settings",
       "Folds · carry bag included",
       "For 8-17.3 inch laptops · scratch-resistant padding · silver",
       "UGREEN GROUP LIMITED UK",
-      "£13.94 (RRP £17.99), in stock, checked 3 Nov 2026",
+      "Prime £15.99 · non-Prime £17.99, in stock, checked 10 Nov 2026",
     ],
     alNote:
       "A fold-flat riser, not a standing desk. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -448,17 +448,16 @@ export const catalog: Product[] = [
     slug: "logitech-mx-master-3s",
     name: "Logitech MX Master 3S",
     amazonPick: true,
-    price: 81,
     category: "Desk",
     tagline: "MX Master 3S, graphite. 8000 DPI. Quiet clicks. MagSpeed.",
     description:
-      "Logitech MX Master 3S wireless mouse, Graphite. 8000 DPI, quiet clicks, MagSpeed scrolling, ergonomic. Bluetooth + USB-C. Logi Options+ / FLOW. In stock at £81.00. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Logitech MX Master 3S wireless mouse, Graphite. 8000 DPI, quiet clicks, MagSpeed scrolling, ergonomic. Bluetooth + USB-C. Logi Options+ / FLOW. No new featured offer when checked 10 Nov 2026; check the live price on Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "MX Master 3S · graphite",
       "8000 DPI · quiet clicks · MagSpeed scrolling · ergonomic",
       "Bluetooth + USB-C · Logi Options+ / FLOW",
-      "£81.00, in stock, checked 3 Nov 2026",
+      "No new featured offer, checked 10 Nov 2026 — check on Amazon",
     ],
     alNote:
       "A work mouse, not a toy. Amazon UK affiliate pick. Al does not dropship Logitech. " +
@@ -473,18 +472,18 @@ export const catalog: Product[] = [
     slug: "anker-240w-right-angle-cable",
     name: "Anker 240W Right-Angle USB-C Cable, 2-pack",
     amazonPick: true,
-    price: 18.99,
+    price: 11.99,
     category: "Power",
     tagline: "240W right-angle USB-C, 2-pack, 6 ft, braided.",
     description:
-      "Anker USB C Cable Right Angle, 240W, 2-pack, 6 ft, braided. 90-degree connectors, 10,000+ bends, 24-month warranty. In stock at £18.99 (Prime £12.99), AnkerDirect UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Anker USB C Cable Right Angle, 240W, 2-pack, 6 ft, braided. 90-degree connectors, 10,000+ bends, 24-month warranty. In stock at £11.99, AnkerDirect UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "240W USB-C to USB-C · 2-pack · 6 ft each",
       "Right-angle / 90° connectors · braided",
       "10,000+ bends · 24-month warranty",
       "AnkerDirect UK",
-      "£18.99 · Prime £12.99 when checked 3 Nov 2026",
+      "£11.99 · list £18.99, in stock, checked 10 Nov 2026",
     ],
     alNote:
       "A pair of right-angle leads. The brick cannot outrun a tired cable. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -523,17 +522,17 @@ export const catalog: Product[] = [
     slug: "logitech-c920s-webcam",
     name: "Logitech C920S HD Pro Webcam",
     amazonPick: true,
-    price: 50.99,
+    price: 39.99,
     category: "Desk",
     tagline: "1080p/30fps webcam. Privacy shutter. Dual stereo mics.",
     description:
-      "Logitech C920S HD Pro Webcam, Full HD 1080p/30fps. Built-in privacy shutter, dual stereo mics, autofocus, black. It is a webcam, not a cover or clip. In stock at £50.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Logitech C920S HD Pro Webcam, Full HD 1080p/30fps. Built-in privacy shutter, dual stereo mics, autofocus, black. It is a webcam, not a cover or clip. In stock at £39.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "Logitech C920S HD Pro · 1080p/30fps webcam",
       "Built-in privacy shutter · dual stereo mics · autofocus",
       "Black · sold by Amazon",
-      "£50.99 (RRP £84.99), in stock, checked 3 Nov 2026",
+      "£39.99 (RRP £84.99), in stock, checked 10 Nov 2026",
     ],
     alNote:
       "A webcam. Close the shutter when you leave. Amazon UK affiliate pick. Al does not dropship Logitech. " +
@@ -558,7 +557,7 @@ export const catalog: Product[] = [
       "70W GaN · UK / EU / AU / US sockets (+JP/CN listed)",
       "150+ countries · 7.7×5.5×5.3 cm · black",
       "MOMAX GLOBAL",
-      "£29.98 (RRP £39.99), in stock, checked 3 Nov 2026",
+      "£29.98 (RRP £39.99), in stock, checked 10 Nov 2026",
     ],
     alNote:
       "The UK-plug bricks cover a UK socket. This one covers the socket in the other country. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -573,18 +572,18 @@ export const catalog: Product[] = [
     slug: "ugreen-6-in-1-dual-monitor-dock",
     name: "UGREEN 6-in-1 Dual Monitor USB-C Dock",
     amazonPick: true,
-    price: 29.99,
+    price: 22.99,
     category: "Desk",
     tagline: "Entry-level 6-in-1. Dual 4K@60Hz HDMI. 100W PD.",
     description:
-      "UGREEN Laptop Docking Station Dual Monitor, 6-in-1 Dual 4K@60Hz USB C Hub. 2× HDMI (dual 4K@60Hz), 100W USB-C PD, 5Gbps USB-C data, 2× USB-A, space grey. Entry-level 6-in-1 hub. In stock at £29.99 (Prime £25.99), UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "UGREEN Laptop Docking Station Dual Monitor, 6-in-1 Dual 4K@60Hz USB C Hub. 2× HDMI (dual 4K@60Hz), 100W USB-C PD, 5Gbps USB-C data, 2× USB-A, space grey. Entry-level 6-in-1 hub. In stock at £22.99, UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "6-in-1 USB-C hub · space grey",
       "2× HDMI · dual 4K@60Hz",
       "100W USB-C PD · 5Gbps USB-C data · 2× USB-A",
       "UGREEN GROUP LIMITED UK",
-      "£29.99 · Prime £25.99 when checked 3 Nov 2026",
+      "£22.99 · list £29.99, in stock, checked 10 Nov 2026",
     ],
     alNote:
       "An entry-level dual-HDMI hub, not a thunderbolt dock. Confirm your laptop can drive two screens. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -599,18 +598,18 @@ export const catalog: Product[] = [
     slug: "logitech-mx-keys-mini",
     name: "Logitech MX Keys Mini",
     amazonPick: true,
-    price: 51.99,
+    price: 63.99,
     category: "Desk",
     tagline: "Compact backlit Bluetooth keyboard, graphite. Listing does not state the layout.",
     description:
-      "Logitech MX Keys Mini Minimalist Wireless Illuminated Keyboard, Graphite. Bluetooth, compact, smart backlit keys, Easy-Switch, 29.6×13.2×2.1 cm. It is a keyboard, not a desk mat. The Amazon listing does not state the keyboard layout. Check the layout in the product photos and reviews before buying if you need UK keys. In stock at £51.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Logitech MX Keys Mini Minimalist Wireless Illuminated Keyboard, Graphite. Bluetooth, compact, smart backlit keys, Easy-Switch, 29.6×13.2×2.1 cm. It is a keyboard, not a desk mat. The Amazon listing does not state the keyboard layout. Check the layout in the product photos and reviews before buying if you need UK keys. In stock at £63.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "MX Keys Mini · graphite · compact keyboard",
       "Bluetooth · smart backlit keys · Easy-Switch",
       "29.6×13.2×2.1 cm · sold by Amazon",
       "The Amazon listing does not state the keyboard layout. Check the layout in the product photos and reviews before buying if you need UK keys",
-      "£51.99 (RRP £84.99), in stock, checked 3 Nov 2026",
+      "£63.99 (RRP £84.99), in stock, checked 10 Nov 2026",
     ],
     alNote:
       "A compact keyboard. The Amazon listing does not state the keyboard layout. Check the layout in the product photos and reviews before buying if you need UK keys. Amazon UK affiliate pick. Al does not dropship Logitech. " +
@@ -625,18 +624,18 @@ export const catalog: Product[] = [
     slug: "logitech-spotlight-remote",
     name: "Logitech Spotlight Presentation Remote",
     amazonPick: true,
-    price: 55.93,
+    price: 52.99,
     category: "Desk",
     tagline: "Wireless presentation remote. Highlight and magnify. Grey.",
     description:
-      "Logitech Spotlight Wireless Presentation Remote. Wireless, gyroscope cursor control, highlight and magnify, grey. It is a presentation remote, not a desk light. £55.93 (was £59.08). 7 left when checked, Quality Exchange LTD, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Logitech Spotlight Wireless Presentation Remote. Wireless, gyroscope cursor control, highlight and magnify, grey. It is a presentation remote, not a desk light. £52.99 (was £59.08), Quality Exchange LTD, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "Logitech Spotlight · presentation remote · grey",
       "Wireless · gyroscope cursor control",
       "Highlight and magnify",
       "Quality Exchange LTD · dispatched by Amazon",
-      "£55.93 (was £59.08) · 7 left when checked 3 Nov 2026",
+      "£52.99 (was £59.08), checked 10 Nov 2026",
     ],
     alNote:
       "A clicker for a slide, not a lamp for a desk. Amazon UK affiliate pick. Al does not dropship Logitech. " +
@@ -651,17 +650,17 @@ export const catalog: Product[] = [
     slug: "logitech-desk-mat-studio",
     name: "Logitech Desk Mat, Studio Series",
     amazonPick: true,
-    price: 14.91,
+    price: 11.99,
     category: "Desk",
     tagline: "30×70 cm Studio mat. Spill-repellent cloth. Grey.",
     description:
-      "Logitech Desk Mat, Studio Series. Rubber base, 30×70 cm, 286 g, spill-repellent cloth surface, grey. In stock at £14.91 (RRP £16.99). This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Logitech Desk Mat, Studio Series. Rubber base, 30×70 cm, 286 g, spill-repellent cloth surface, grey. In stock at £11.99 (RRP £16.99). This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "Logitech Studio Series desk mat · grey",
       "30 × 70 cm · 286 g",
       "Spill-repellent cloth surface · rubber base",
-      "£14.91 (RRP £16.99), in stock, checked 3 Nov 2026",
+      "£11.99 (RRP £16.99), in stock, checked 10 Nov 2026",
     ],
     alNote:
       "A mat. That is the whole job. Amazon UK affiliate pick. Al does not dropship Logitech. " +
@@ -676,17 +675,17 @@ export const catalog: Product[] = [
     slug: "anker-maggo-10000-power-bank",
     name: "Anker MagGo 10,000mAh Qi2 Power Bank",
     amazonPick: true,
-    price: 67.99,
+    price: 49.99,
     category: "Power",
     tagline: "10,000 mAh Qi2. 15W wireless. Smart display. White.",
     description:
-      "Anker MagGo Power Bank, 10,000mAh Qi2-certified, 15W max. USB-C, smart display, white. 10,000 mAh is about 37Wh at 3.7V (10,000 × 3.7 ÷ 1000). £67.99 (Prime £55.99; RRP £89.99). 2 left when checked. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Anker MagGo Power Bank, 10,000mAh Qi2-certified, 15W max. USB-C, smart display, white. 10,000 mAh is about 37Wh at 3.7V (10,000 × 3.7 ÷ 1000). £49.99 (RRP £89.99). This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     details: [
       "Anker MagGo · 10,000 mAh · about 37Wh at 3.7V",
       "Qi2-certified · 15W max wireless · USB-C",
       "Smart display · white",
-      "£67.99 · Prime £55.99 · RRP £89.99 · 2 left when checked 3 Nov 2026",
+      "£49.99 · RRP £89.99, checked 10 Nov 2026",
     ],
     alNote:
       "Ten thousand milliamp-hours at 3.7V is about 37Wh. Amazon UK affiliate pick. Al does not dropship it. " +
@@ -780,7 +779,10 @@ export function matchCatalog(query: string): Product[] {
 
 export const catalogDigest = catalog
   .map((p) => {
-    const channel = `${formatProductPrice(p)} approx. Amazon UK affiliate pick. Delivery is Amazon's. Live Amazon checkout may differ`;
+    const channel =
+      p.price == null
+        ? "Check on Amazon. Amazon UK affiliate pick. Delivery is Amazon's. Live Amazon checkout may differ"
+        : `${formatProductPrice(p)} approx. Amazon UK affiliate pick. Delivery is Amazon's. Live Amazon checkout may differ`;
     return `${p.slug} | ${p.name} | ${p.category} | ${p.tagline} | ${channel} | affiliate ${p.affiliateLabel}: ${p.affiliateUrl}`;
   })
   .join("\n");

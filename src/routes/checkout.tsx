@@ -3,7 +3,7 @@ import { useState, type FormEvent, type ReactNode } from "react";
 import { useHydrated } from "@/hooks/use-hydrated";
 import { getProduct, isAmazonPick } from "@/lib/catalog";
 import { cartCount, cartTotal, useCart } from "@/lib/cart-store";
-import { formatPrice } from "@/lib/format";
+import { formatPrice, formatProductPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -173,7 +173,7 @@ function CheckoutPage() {
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium">{product.name}</p>
                     <p className="text-sm text-stone tabular-nums">
-                      {line.qty} × {formatPrice(product.price)}
+                      {line.qty} × {formatProductPrice(product)}
                     </p>
                   </div>
                 </li>

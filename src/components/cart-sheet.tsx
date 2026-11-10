@@ -3,7 +3,7 @@ import { ShoppingBag } from "lucide-react";
 import { useHydrated } from "@/hooks/use-hydrated";
 import { getProduct, isAmazonPick } from "@/lib/catalog";
 import { cartCount, cartTotal, useCart } from "@/lib/cart-store";
-import { formatPrice } from "@/lib/format";
+import { formatPrice, formatProductPrice } from "@/lib/format";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -87,7 +87,7 @@ export function CartSheet({
                             <p className="text-sm tabular-nums text-stone">
                               {isAmazonPick(product)
                                 ? "Amazon UK"
-                                : formatPrice(product.price)}
+                                : formatProductPrice(product)}
                             </p>
                           </div>
                           <button

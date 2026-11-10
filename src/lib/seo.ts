@@ -90,7 +90,7 @@ export function productJsonLd(product: {
       ? {
           "@type": "Offer",
           url: product.affiliateUrl ?? pageUrl,
-          availability: "https://schema.org/InStock",
+          availability: "https://schema.org/OutOfStock",
           seller: { "@type": "Organization", name: "Amazon.co.uk" },
         }
       : {
