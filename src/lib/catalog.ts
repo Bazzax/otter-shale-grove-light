@@ -87,6 +87,7 @@ export const AMAZON_PICK_ASINS = {
   fieldMat: "B07W5JK3Z2",
   magDeck10: "B0CFDQ9QH5",
   iniu20k45w: "B0DCZ82MGG",
+  iniuP62: "B0DB89DSHV",
   iniu10k45w: "B0DQD385HN",
   ankerA1695: "B0DCBB2YTR",
   samsungT7: "B087DDGWKL",

@@ -131,6 +131,14 @@ export const PACKING_POWER_FAQS: GuideFaq[] = [
     q: "Is a 25,000mAh power bank allowed on a plane?",
     a: "Usually yes: about 92.5Wh at 3.7V, under 100Wh. Use the Wh printed on the case.",
   },
+  {
+    q: "Is the INIU P62 cabin-legal on a UK flight?",
+    a: "Yes, in the cabin bag, not the hold. About 73-74Wh, under the CAA 100Wh line, so it needs no airline approval. Stay inside two banks per person, and read the Wh printed on the case.",
+  },
+  {
+    q: "P62 or P63 for a cabin bag?",
+    a: "P62 if you want the lighter, cheaper all-round 65W bank. P63 if you want 25,000mAh and 100W for a hungrier 13-14 inch laptop. Both are under 100Wh. The P62 is not the INIU 20,000mAh 45W (P51L) listed higher up this page.",
+  },
 ];
 
 export const CAA_LITHIUM_RULES =

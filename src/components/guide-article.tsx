@@ -497,14 +497,18 @@ function PackingPowerBody() {
       </p>
       <h2>What is the best cabin-legal power bank in the UK?</h2>
       <p>
-        A bank just under 100Wh goes in the cabin bag on UK airlines without approval. Three come
-        up most: the Anker 737 PowerCore 24K, the INIU P63, and the ALOGIC Ark.
+        For most UK travellers, the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.iniuP62}>
+          INIU P62 20,000mAh 65W (model P62-E1, Mini)
+        </AmazonText>{" "}
+        is the best all-round cabin-legal choice. It is about 73-74Wh, so it needs no airline
+        approval, and 65W USB-C covers phones, tablets and many lightweight laptops.
       </p>
       <p>
-        Short version: most capacity you can carry without asking is the ALOGIC Ark (97.2Wh, 140W).
-        Best value is the INIU P63 (25,000mAh, 100W, £66.99 on Amazon UK as checked 29 Oct 2026).
-        The well-known one is the Anker 737 (24,000mAh, 140W), but there was no new stock on Amazon
-        UK on 29 Oct 2026, so check before buying.
+        The three banks already on this page, the Anker 737, the INIU P63 and the ALOGIC Ark, are
+        still the ones to look at if you want as much capacity as you can carry under 100Wh, or
+        100W-140W for a hungrier laptop. The P62 sits beside them, not instead of them. It is not
+        the INIU 20,000mAh 45W (P51L) listed higher up this page.
       </p>
       <p>
         The{" "}
@@ -536,16 +540,21 @@ function PackingPowerBody() {
               <th className="px-4 py-3 font-medium">Capacity</th>
               <th className="px-4 py-3 font-medium">Wh</th>
               <th className="px-4 py-3 font-medium">Max output</th>
-              <th className="px-4 py-3 font-medium">
-                UK price
-                <span className="mt-1 block font-normal normal-case tracking-normal text-dust">
-                  as checked 29 Oct 2026
-                </span>
-              </th>
+              <th className="px-4 py-3 font-medium">UK price</th>
               <th className="px-4 py-3 font-medium">Where to buy</th>
             </tr>
           </thead>
           <tbody className="text-stone">
+            <tr className="border-t border-line align-top">
+              <td className="px-4 py-3 font-medium text-ink">INIU P62 (P62-E1, Mini)</td>
+              <td className="px-4 py-3">20,000mAh</td>
+              <td className="px-4 py-3">about 73-74Wh</td>
+              <td className="px-4 py-3">65W single USB-C</td>
+              <td className="px-4 py-3">£46.99, checked 10 Nov 2026</td>
+              <td className="px-4 py-3">
+                <AmazonText asin={AMAZON_PICK_ASINS.iniuP62}>Amazon UK</AmazonText>
+              </td>
+            </tr>
             <tr className="border-t border-line align-top">
               <td className="px-4 py-3 font-medium text-ink">
                 ALOGIC Ark
@@ -554,7 +563,7 @@ function PackingPowerBody() {
               <td className="px-4 py-3">27,000mAh</td>
               <td className="px-4 py-3">97.2Wh</td>
               <td className="px-4 py-3">140W USB-C</td>
-              <td className="px-4 py-3">£84.99 (regular £99.99)</td>
+              <td className="px-4 py-3">£84.99 (regular £99.99), as checked 29 Oct 2026</td>
               <td className="px-4 py-3">
                 <a
                   href="https://alogic.co.uk/products/ark-27-000mah-power-bank-with-140w-usb-c-charging"
@@ -574,7 +583,7 @@ function PackingPowerBody() {
               <td className="px-4 py-3">25,000mAh</td>
               <td className="px-4 py-3">92.5Wh</td>
               <td className="px-4 py-3">100W single USB-C</td>
-              <td className="px-4 py-3">£66.99</td>
+              <td className="px-4 py-3">£66.99, as checked 29 Oct 2026</td>
               <td className="px-4 py-3">
                 <AmazonText asin="B0DBHGZ5QH">Amazon UK</AmazonText>
               </td>
@@ -593,7 +602,40 @@ function PackingPowerBody() {
           </tbody>
         </table>
       </div>
-      <p className="text-sm text-dust">Prices change daily; checked 29 Oct 2026.</p>
+      <p className="text-sm text-dust">
+        Prices change daily; P62 checked 10 Nov 2026, the other three as checked 29 Oct 2026.
+      </p>
+      <h3>INIU P62</h3>
+      <p>
+        The P62 is the smaller, cheaper 65W bank. 20,000mAh, about 73-74Wh. INIU's Cougar series
+        table lists 74Wh, which matches the 3.7V sum already used on this page (20,000 × 3.7 ÷
+        1000). The same official product page also says "73Wh" in its TSA line. Both sit under the
+        CAA 100Wh line, so it is cabin-legal on a UK flight with no airline approval if you stay
+        inside the two-bank limit. Read the watt-hour rating printed on the case before you fly.
+        Max output is 65W on USB-C1, with a second USB-C at 36W and a USB-A at 18W. Weight is about
+        323g. It ships with a detachable 100W USB-C cable that can be used as a lanyard. It is not a
+        fixed built-in lead. £46.99, sold by Amazon, in stock on 10 Nov 2026. The tagged listing is
+        the{" "}
+        <AmazonText asin={AMAZON_PICK_ASINS.iniuP62}>INIU P62-E1 Mini</AmazonText> (ASIN B0DB89DSHV).
+        If Amazon shows a Classic size on the same page, pick Mini / P62-E1. This is an Amazon UK
+        affiliate pick. Amazon's live checkout may differ.
+      </p>
+      <p>
+        <strong className="font-medium text-ink">For you if</strong> you want one all-round cabin
+        bank for a phone, a tablet and the occasional lightweight USB-C laptop, at a lower price
+        and weight than the P63.{" "}
+        <strong className="font-medium text-ink">Not for you if</strong> your laptop wants 100W, or
+        you want the most watt-hours you can carry under 100Wh. That is still the P63 or the ALOGIC
+        Ark.
+      </p>
+      <p>
+        <strong className="font-medium text-ink">P62 vs P63:</strong> they are different models in
+        the same Cougar family. The P62 is 20,000mAh, about 73-74Wh, 65W and about 323g. The P63,
+        already on this page, is 25,000mAh, 92.5Wh, 100W and about 392g. Same maker, different job.
+        The P62 is also not the INIU 20,000mAh 45W (P51L) higher up this page: that one is 45W with
+        a built-in cable.
+      </p>
+      <AmazonPick asin={AMAZON_PICK_ASINS.iniuP62} />
       <h3>ALOGIC Ark</h3>
       <p>
         The ALOGIC Ark is very close to the 100Wh line, so make sure the rating on the case is
