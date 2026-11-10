@@ -446,7 +446,7 @@ function PackingPowerBody() {
         cabin-legal on Ryanair, easyJet, BA and Jet2 if you stay inside the two-bank limit.
         Forty-five watt USB-C, cable built in. The tagged listing is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.iniu20k45w}>INIU P51L 20,000mAh 45W</AmazonText>{" "}
-        (ASIN B0DCZ82MGG). £27.53, price checked 23 Oct 2026 on Amazon.co.uk.
+        (ASIN B0DCZ82MGG). £27.53, price checked 10 Nov 2026 on Amazon.co.uk.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.iniu20k45w} />
       <h3>Anker Laptop Power Bank 25,000mAh (A1695)</h3>
@@ -563,7 +563,7 @@ function PackingPowerBody() {
               <td className="px-4 py-3">27,000mAh</td>
               <td className="px-4 py-3">97.2Wh</td>
               <td className="px-4 py-3">140W USB-C</td>
-              <td className="px-4 py-3">£84.99 (regular £99.99), as checked 29 Oct 2026</td>
+              <td className="px-4 py-3">£84.99 (regular £99.99), sold out when checked 10 Nov 2026</td>
               <td className="px-4 py-3">
                 <a
                   href="https://alogic.co.uk/products/ark-27-000mah-power-bank-with-140w-usb-c-charging"
@@ -583,7 +583,7 @@ function PackingPowerBody() {
               <td className="px-4 py-3">25,000mAh</td>
               <td className="px-4 py-3">92.5Wh</td>
               <td className="px-4 py-3">100W single USB-C</td>
-              <td className="px-4 py-3">£66.99, as checked 29 Oct 2026</td>
+              <td className="px-4 py-3">£66.99, checked 10 Nov 2026</td>
               <td className="px-4 py-3">
                 <AmazonText asin="B0DBHGZ5QH">Amazon UK</AmazonText>
               </td>
@@ -596,15 +596,13 @@ function PackingPowerBody() {
               <td className="px-4 py-3">24,000mAh</td>
               <td className="px-4 py-3">86.4Wh</td>
               <td className="px-4 py-3">140W</td>
-              <td className="px-4 py-3">No new stock on Amazon UK on 29 Oct 2026</td>
+              <td className="px-4 py-3">No featured new buy box on Amazon UK on 10 Nov 2026; check on Amazon</td>
               <td className="px-4 py-3">Check before buying</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p className="text-sm text-dust">
-        Prices change daily; P62 checked 10 Nov 2026, the other three as checked 29 Oct 2026.
-      </p>
+      <p className="text-sm text-dust">Prices change daily; comparison table checked 10 Nov 2026.</p>
       <h3>INIU P62</h3>
       <p>
         The P62 is the smaller, cheaper 65W bank. 20,000mAh, about 73-74Wh. INIU's Cougar series
@@ -648,14 +646,14 @@ function PackingPowerBody() {
         >
           ALOGIC UK
         </a>{" "}
-        (regular £99.99). It is not confirmed on Amazon UK.
+        (regular £99.99). It was sold out on ALOGIC's UK store when checked 10 Nov 2026. It is not confirmed on Amazon UK.
       </p>
       <h3>INIU P63</h3>
       <p>
         The{" "}
         <AmazonText asin="B0DBHGZ5QH">INIU P63</AmazonText> is 100W, which is enough for most 13-14
         inch laptops, and it is the cheapest of the three. 25,000mAh, 92.5Wh from INIU’s spec table
-        (25,000mAh × 3.7V), about 392g. £66.99, sold by Amazon, in stock on 29 Oct 2026. Read the
+        (25,000mAh × 3.7V), about 392g. £66.99, in stock on 10 Nov 2026. Read the
         rating on the case before flying.
       </p>
       <h3>Anker 737 PowerCore 24K</h3>
@@ -668,8 +666,8 @@ function PackingPowerBody() {
           className="text-clay hover:text-clay-dark"
         >
           86.4Wh on Anker’s official page
-        </a>, 140W max. No new stock on Amazon UK on 29 Oct 2026, only used like-new at £89.99 and
-        a newer Anker Prime model. Do not overpay. The other two do the same job.
+        </a>, 140W max. No featured new buy box on Amazon UK on 10 Nov 2026; check on Amazon.
+        The other two do the same job.
       </p>
       <h2>Questions people type</h2>
       <dl className="space-y-6">
