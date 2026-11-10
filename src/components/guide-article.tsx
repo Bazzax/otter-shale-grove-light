@@ -1312,8 +1312,8 @@ function PowerBankLuggageBody() {
         fold-out kickstand, pass-through charging. Run the 3.7V maths and you are around 18.5Wh
         (5,000 × 3.7 ÷ 1000), cabin-trivial. It is a phone top-up, not a laptop brick. If the phone
         is not magnetic, skip the snap and use USB-C, or skip the puck. Amazon UK affiliate pick.
-        Delivery is Amazon's. Listing had no buy box at check time; other offers from £46.82; check
-        the live price.
+        Delivery is Amazon's. No featured buy box on Amazon UK as of 10 Nov 2026 — check on Amazon
+        for current offers.
       </p>
       <h2>Anker MagGo 10,000mAh — the travel bank</h2>
       <p>

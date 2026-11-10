@@ -269,18 +269,15 @@ export const catalog: Product[] = [
     category: "Power",
     tagline: "5,000 mAh MagSafe-compatible puck. 7.5W wireless. Kickstand.",
     description:
-      "Belkin 5000mAh Magnetic Wireless Power Bank, MagSafe-compatible, black. 7.5W wireless output, 10W input, USB-C, fold-out kickstand, pass-through charging. 5,000 mAh is about 18.5Wh at 3.7V (5,000 × 3.7 ÷ 1000), under the 100Wh cabin line. Listing had no buy box at check time; other offers from £46.82; check the live price. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "Belkin 5000mAh Magnetic Wireless Power Bank, MagSafe-compatible, black. 7.5W wireless output, 10W input, USB-C, fold-out kickstand, pass-through charging. 5,000 mAh is about 18.5Wh at 3.7V (5,000 × 3.7 ÷ 1000), under the 100Wh cabin line. No featured buy box on Amazon UK as of 10 Nov 2026 — check on Amazon for current offers. This is an Amazon UK affiliate pick. Al does not dropship it.",
     details: [
       "5,000 mAh · about 18.5Wh at 3.7V",
       "MagSafe-compatible wireless 7.5W · 10W input · USB-C",
       "Fold-out kickstand · pass-through charging · black",
-      "Listing had no buy box at check time; other offers from £46.82; check the live price",
-      "£39.90 listing snapshot, checked 10 Nov 2026",
+      "No featured buy box on Amazon UK as of 10 Nov 2026 — check on Amazon for current offers",
     ],
     alNote:
-      "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. Listing had no buy box at check time; other offers from £46.82; check the live price. Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. No featured buy box on Amazon UK as of 10 Nov 2026 — check on Amazon for current offers. Amazon UK affiliate pick. Al does not dropship it.",
     image: AMAZON_PRODUCT_IMAGES.belkin5000,
     brand: "Belkin",
     asin: AMAZON_PICK_ASINS.belkin5000,
