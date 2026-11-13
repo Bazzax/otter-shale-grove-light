@@ -332,6 +332,34 @@ export const CHRISTMAS_TECH_GIFT_FAQS: GuideFaq[] = [
   },
 ];
 
+
+export const CHRISTMAS_UNDER_50_FAQS: GuideFaq[] = [
+  {
+    q: "Which Christmas tech gifts under £50 are on this site today?",
+    a: "Only products I re-checked on the Amazon UK buy box on 13 Nov 2026 and found under £50: the Logitech Desk Mat, the Anker 240W USB-C cable 2-pack, the Anker 7-in-1 USB-C hub, the UGREEN laptop stand, the UGREEN 65W GaN charger, the UGREEN 6-in-1 dual-monitor dock, the tomtoc 14-inch laptop case, the Soundcore Anker Q20i headphones, the Anker 100W GaN charger, the Anker MagGo 10,000mAh Qi2 power bank, and the INIU P51L, P50 and P62 power banks. Amazon’s live checkout may differ.",
+  },
+  {
+    q: "Are these Amazon UK prices still right?",
+    a: "The prices on this page are snapshots from 13 Nov 2026. Amazon’s live checkout may differ. If I could not confirm a clean UK buy box under £50 that day, the product is not on this list — check on Amazon.",
+  },
+  {
+    q: "Can I fly with a gifted power bank from the UK?",
+    a: "Yes, in the cabin only, never the hold. The CAA allows a maximum of two power banks per person and says they must not be recharged on board. Under 100Wh needs no airline approval. The MagGo, INIU P50, P51L and P62 banks on this page all sit under 100Wh on the figures already used on this site. Check the watt-hours printed on the case, and check your airline.",
+  },
+  {
+    q: "Is the Anker MagGo 10,000mAh still under £50?",
+    a: "The Amazon UK buy box was £49.99 on 13 Nov 2026, in stock, sold by AnkerDirect UK and dispatched by Amazon. That is under £50 on that check. Amazon’s live checkout may differ.",
+  },
+  {
+    q: "Why is the OMOTON UK-layout keyboard not on this list?",
+    a: "This guide only includes site products I could re-verify under £50 on the Amazon UK buy box on 13 Nov 2026. I did not confirm the OMOTON 75% ISO-UK board under that line, so it stays off this list. If you need a UK layout, check the live shop page and then Amazon.",
+  },
+  {
+    q: "Why are the Belkin magnetic bank, the Logitech C920S and the MOMAX adapter missing?",
+    a: "I could not confirm a clean Amazon UK buy box under £50 for those three on 13 Nov 2026. The Belkin listing I reached was an Amazon Global Store / Amazon EU offer that would not ship to the checked location. The C920S featured offer I saw was from a third-party seller above £50; a cheaper Amazon Resale offer is not a new buy box. The MOMAX listing could not be retrieved when I checked. Check on Amazon.",
+  },
+];
+
 export const PORTABLE_MONITOR_SOURCES = {
   z1fc: "https://www.arzopa.com/products/arzopa-z1fc-gray-144hz-portable-gaming-monitor-16-1-screen",
   amazonUk: "https://www.amazon.co.uk/dp/B0CJCBQYDY",
@@ -356,6 +384,98 @@ export const PORTABLE_MONITOR_FAQS: GuideFaq[] = [
   {
     q: "Z1FC or Z1RC for a second screen on trains and hotel desks?",
     a: "Z1FC if you want 144Hz and the travel or gaming pick. Z1RC if the work is code, sheets, or long documents and you want the taller 16:10 2.5K panel. Same bag class either way.",
+  },
+];
+
+
+export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
+  {
+    name: "Logitech Desk Mat, Studio Series",
+    description: "30×70 cm Studio mat in grey. Spill-repellent cloth, anti-slip base. £11.99, as checked 13 Nov 2026.",
+    path: "/shop/logitech-desk-mat-studio",
+    image: AMAZON_PRODUCT_IMAGES.deskMatStudio,
+    brand: "Logitech",
+  },
+  {
+    name: "Anker 240W Right-Angle USB-C Cable, 2-pack",
+    description: "6 ft braided USB-C to USB-C, 90-degree plug, 240W, two cables in the pack. £11.99, as checked 13 Nov 2026.",
+    path: "/shop/anker-240w-right-angle-cable",
+    image: AMAZON_PRODUCT_IMAGES.anker240wCable,
+    brand: "Anker",
+  },
+  {
+    name: "Anker USB-C Hub, 7-in-1",
+    description: "4K@60Hz HDMI, 85W max PD, two USB-A 3.0 and one USB-C data port, SD/TF. Charger not included. £15.99, as checked 13 Nov 2026.",
+    path: "/shop/anker-7-in-1-usb-c-hub",
+    image: AMAZON_PRODUCT_IMAGES.anker7in1,
+    brand: "Anker",
+  },
+  {
+    name: "UGREEN Laptop Stand",
+    description: "Aluminium stand, folds flat, carry bag, five height settings, fits 8 to 17.3 inch laptops and tablets. £15.99 for Prime members, otherwise £17.99, as checked 13 Nov 2026.",
+    path: "/shop/ugreen-laptop-stand",
+    image: AMAZON_PRODUCT_IMAGES.ugreenStand,
+    brand: "UGREEN",
+  },
+  {
+    name: "UGREEN 65W GaN Charger (2 USB-C, UK plug)",
+    description: "White 65W GaN brick, two USB-C ports, no USB-A, UK 3-pin plug. The listing does not say the pins fold. £20.99, as checked 13 Nov 2026.",
+    path: "/shop/ugreen-65w-gan",
+    image: AMAZON_PRODUCT_IMAGES.ugreen65w,
+    brand: "UGREEN",
+  },
+  {
+    name: "UGREEN 6-in-1 Dual Monitor USB-C Dock",
+    description: "Two HDMI ports at 4K@60Hz, 100W PD, three 5Gbps USB data ports. On a MacBook the two external displays will be identical. £22.99, as checked 13 Nov 2026.",
+    path: "/shop/ugreen-6-in-1-dual-monitor-dock",
+    image: AMAZON_PRODUCT_IMAGES.ugreenDualDock,
+    brand: "UGREEN",
+  },
+  {
+    name: "INIU P51L 20,000mAh 45W",
+    description: "20,000mAh, about 74Wh at 3.7V, 45W USB-C, built-in cable. Cabin-legal under 100Wh. £27.53, as checked 13 Nov 2026. No shop card — tagged listing is on the packing-power guide.",
+    url: "https://www.amazon.co.uk/dp/B0DCZ82MGG?tag=alsaidropship-21",
+    brand: "INIU",
+  },
+  {
+    name: "tomtoc 360 Protective 14-inch Laptop Case",
+    description: "360° protective 14-inch sleeve with a carry pocket. £27.99, as checked 13 Nov 2026.",
+    path: "/shop/tomtoc-14-laptop-case",
+    image: AMAZON_PRODUCT_IMAGES.tomtoc14,
+    brand: "tomtoc",
+  },
+  {
+    name: "INIU P50 10,000mAh 45W",
+    description: "10,000mAh, about 37Wh at 3.7V, 45W, detachable USB-C cable. Cabin-legal under 100Wh. £27.99, as checked 13 Nov 2026. No shop card — tagged listing is on the packing-power guide.",
+    url: "https://www.amazon.co.uk/dp/B0DQD385HN?tag=alsaidropship-21",
+    brand: "INIU",
+  },
+  {
+    name: "Soundcore Anker Q20i hybrid ANC foldable headphones",
+    description: "Foldable hybrid ANC over-ears. Up to 40 hours with ANC on; 5 minutes of charging gives 4 hours; multipoint; 3.5 mm jack. £29.99, as checked 13 Nov 2026.",
+    path: "/shop/soundcore-q20i",
+    image: AMAZON_PRODUCT_IMAGES.soundcoreQ20i,
+    brand: "Soundcore",
+  },
+  {
+    name: "Anker 100W USB-C GaN Charger",
+    description: "3-port GaN charger with a smart display, touch control and a foldable plug. 69 × 55 × 34 mm. 100W max on USB-C1 and USB-C2. £37.99, as checked 13 Nov 2026.",
+    path: "/shop/anker-100w-gan-charger",
+    image: AMAZON_PRODUCT_IMAGES.anker100w,
+    brand: "Anker",
+  },
+  {
+    name: "INIU P62 20,000mAh 65W (P62-E1, Mini)",
+    description: "20,000mAh, about 73-74Wh, 65W USB-C, detachable 100W cable. Cabin-legal under 100Wh. £46.99, as checked 13 Nov 2026. If Amazon shows a Classic size, pick Mini / P62-E1.",
+    url: "https://www.amazon.co.uk/dp/B0DB89DSHV?tag=alsaidropship-21",
+    brand: "INIU",
+  },
+  {
+    name: "Anker MagGo 10,000mAh Qi2 Power Bank",
+    description: "10,000mAh, about 37Wh at 3.7V, Qi2 15W wireless, USB-C, smart display, white, foldable stand. Cabin-legal under 100Wh. £49.99, as checked 13 Nov 2026.",
+    path: "/shop/anker-maggo-10000-power-bank",
+    image: AMAZON_PRODUCT_IMAGES.maggo10000,
+    brand: "Anker",
   },
 ];
 
@@ -427,7 +547,7 @@ export const guides: Guide[] = [
     description:
       "Anker, UGREEN, Belkin, and a hotel-desk hub — plus the CAA cabin rule: power banks in hand luggage only, max two, under 100Wh. Tagged Amazon UK picks.",
     published: "2026-09-23",
-    updated: "2026-11-10",
+    updated: "2026-11-13",
     faqs: PACKING_POWER_FAQS,
     relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "anker-7-in-1-usb-c-hub", "anker-maggo-10000-power-bank"],
     affiliateSlug: "ugreen-65w-gan",
@@ -544,6 +664,31 @@ export const guides: Guide[] = [
     published: "2026-11-09",
     faqs: CHRISTMAS_TECH_GIFT_FAQS,
     relatedSlugs: ["anker-maggo-10000-power-bank", "belkin-5000-magnetic-power-bank", "anker-100w-gan-charger"],
+    affiliateSlug: "anker-maggo-10000-power-bank",
+  },
+  {
+    slug: "christmas-tech-gifts-under-50-uk",
+    title: "Christmas tech gifts under £50",
+    heading: "Christmas tech gifts under £50, checked on Amazon UK",
+    metaTitle: "Christmas Tech Gifts Under £50 (UK)",
+    kicker: "Desk",
+    description:
+      "UK tech gifts under £50 from this site, re-checked on the Amazon UK buy box on 13 Nov 2026. Chargers, hubs, a cabin-legal power bank, and the Q20i headphones. Prices are snapshots — check Amazon.",
+    published: "2026-11-13",
+    faqs: CHRISTMAS_UNDER_50_FAQS,
+    itemList: {
+      name: "Christmas tech gifts under £50, checked 13 Nov 2026",
+      description:
+        "Site products re-verified under £50 on the Amazon UK buy box on 13 Nov 2026. Prices are snapshots. Amazon’s live checkout may differ.",
+      items: CHRISTMAS_UNDER_50_ITEMS,
+    },
+    relatedSlugs: [
+      "ugreen-65w-gan",
+      "anker-maggo-10000-power-bank",
+      "soundcore-q20i",
+      "anker-7-in-1-usb-c-hub",
+      "ugreen-laptop-stand",
+    ],
     affiliateSlug: "anker-maggo-10000-power-bank",
   },
   {
