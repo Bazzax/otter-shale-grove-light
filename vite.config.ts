@@ -1,4 +1,4 @@
-import { readdirSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import type { Plugin } from "vite";
 import { defineConfig } from "vite";
@@ -11,6 +11,25 @@ import { grokPwaPlugin } from "./scripts/grok-pwa-plugin.mjs";
 // @ts-expect-error JS plugin alongside the TS vite config
 import { appEnvPlugin } from "./scripts/app-env-plugin.mjs";
 import { isMigrationFile } from "./scripts/migration-plan.mjs";
+
+/**
+ * VITE_STATIC_EXPORT=1 (npm run build:static) builds a fully prerendered static site (GitHub Pages).
+ * Without it the build is unchanged: Nitro's Vercel preset, server functions live.
+ */
+const STATIC_EXPORT = process.env.VITE_STATIC_EXPORT === "1";
+
+/** Seed prerender with every URL in public/sitemap.xml; crawling finds the rest. */
+function sitemapPages(): { path: string }[] {
+  try {
+    const xml = readFileSync(join(process.cwd(), "public", "sitemap.xml"), "utf8");
+    const paths = [...xml.matchAll(/<loc>\s*https?:\/\/[^/<]+(\/[^<\s]*)?\s*<\/loc>/g)].map(
+      (m) => m[1] || "/",
+    );
+    return [...new Set(["/", ...paths])].map((path) => ({ path }));
+  } catch {
+    return [{ path: "/" }];
+  }
+}
 
 /** The files `src/lib/db.ts` globs — same directory, same non-recursive scope. */
 function hasGlobbedMigrations(root: string): boolean {
@@ -166,11 +185,23 @@ export default defineConfig(({ command, isPreview }) => ({
     // PWA head + ?install=1 tutorial page; runs before Start/Nitro.
     grokPwaPlugin(),
     tailwindcss(),
-    tanstackStart(),
+    STATIC_EXPORT
+      ? tanstackStart({
+          pages: sitemapPages(),
+          prerender: {
+            enabled: true,
+            crawlLinks: true,
+            failOnError: true,
+            // Static hosts ignore the query string, so /ask-al?about=… would all
+            // overwrite /ask-al/index.html. Prerender the bare path only.
+            filter: (page) => !page.path.includes("?"),
+          },
+        })
+      : tanstackStart(),
     ...(command === "build" || isPreview
       ? [
           nitro({
-            preset: "vercel",
+            preset: STATIC_EXPORT ? "node-server" : "vercel",
             // Auto-registers server/middleware/* (the PWA install page +
             // manifest + head-tag middleware). Nitro v3 defaults serverDir to
             // false, so removing this silently unwires /?install=1 on deploys.

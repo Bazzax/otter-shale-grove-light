@@ -7,3 +7,7 @@ node_modules/
 .github_repo
 .env
 .env.*
+
+# Static export (GitHub Pages)
+.output/
+dist-static/
