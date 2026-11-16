@@ -59,7 +59,8 @@ function RootDocument() {
           />
         </AuthProvider>
         <Scripts />
-        <Analytics />
+        {/* Vercel Analytics only exists on Vercel; the GitHub Pages export skips it. */}
+        {import.meta.env.VITE_STATIC_EXPORT !== "1" && <Analytics />}
       </body>
     </html>
   );

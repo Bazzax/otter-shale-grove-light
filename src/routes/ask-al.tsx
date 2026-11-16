@@ -98,6 +98,14 @@ function AskAlPage() {
     setDraft("");
     setPending(true);
     setError(null);
+    if (import.meta.env.VITE_STATIC_EXPORT === "1") {
+      // Static hosting (GitHub Pages) has no server to run the chat.
+      setError(
+        "Al's radio is offline for now. Use the Amazon UK search on this page, or browse the cargo bay.",
+      );
+      setPending(false);
+      return;
+    }
     try {
       const result = await askAl({ data: { messages: next } });
       if (!result.ok) {
