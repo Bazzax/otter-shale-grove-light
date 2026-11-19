@@ -129,8 +129,8 @@ function GanBody() {
       <p>
         <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
         65W GaN with two USB-C ports and a UK 3-pin plug (BS 1363). The listing does not say the
-        pins fold. 65W max, and 65W total when both ports charge. Amazon UK showed no featured
-        offer when I checked on 19 Nov 2026, so there is no price here — check on Amazon. This is
+        pins fold. 65W max, and 65W total when both ports charge. The price was unclear on
+        Amazon UK when I checked on 19 Nov 2026, so there is no price here — check on Amazon. This is
         an Amazon UK affiliate pick. Al does not dropship it.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.ugreen65w} />
@@ -2247,7 +2247,7 @@ function ChristmasUnder50Body() {
       <p>
         20,000mAh, about 73-74Wh, 65W USB-C, with a detachable 100W USB-C cable. Under the CAA
         100Wh line, cabin only, max two banks. If Amazon shows a Classic size on the same page,
-        pick Mini / P62-E1. Brand: INIU. £46.99, as checked 13 Nov 2026, in stock. Tagged
+        pick Mini / P62-E1. Brand: INIU. Check on Amazon: no featured offer on 19 Nov 2026. Tagged
         listing:{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.iniuP62}>INIU P62-E1 Mini</AmazonText> (ASIN
         B0DB89DSHV). The longer cabin comparison is on{" "}
@@ -2700,12 +2700,7 @@ const BLACK_FRIDAY_CHARGERS: BlackFridayRow[] = [
 const BLACK_FRIDAY_POWER_BANKS: BlackFridayRow[] = [
   {
     name: "Anker 25,000mAh Power Bank, 165W total output, built-in retractable cables (A1695)",
-    price: (
-      <>
-        <strong className="font-medium text-ink">check on Amazon</strong> (Amazon showed “no
-        featured offers” and “currently unavailable” when checked)
-      </>
-    ),
+    price: "£65.55, was £89.98 (Amazon shows 27% saving)",
     asin: AMAZON_PICK_ASINS.ankerA1695,
   },
   {
