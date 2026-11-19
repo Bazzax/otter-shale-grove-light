@@ -157,6 +157,9 @@ export function isAmazonPick(product: Product): boolean {
 const PRICE_CHECKED =
   "Approx. UK price, checked 10 Nov 2026. Amazon's live checkout may differ.";
 
+const PRICE_CHECKED_19_NOV =
+  "Approx. UK price, checked 19 Nov 2026. Amazon's live checkout may differ.";
+
 export const catalog: Product[] = [
   {
     slug: "soundcore-q20i",
@@ -215,21 +218,19 @@ export const catalog: Product[] = [
     slug: "ugreen-65w-gan",
     name: "UGREEN 65W GaN Charger (2 USB-C, UK plug)",
     amazonPick: true,
-    price: 20.99,
     category: "Power",
     tagline: "White 65W GaN. Two USB-C ports. UK 3-pin plug.",
     description:
-      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. In stock at £20.99 (RRP £29.99), dispatched by Amazon, sold by UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. No featured buy box on Amazon UK as of 19 Nov 2026 — check on Amazon for current offers. This is an Amazon UK affiliate pick. Al does not dropship it.",
     details: [
       "65W GaN · 2× USB-C · no USB-A",
       "65W max · 65W total when charging both",
       "UK 3-pin plug (BS 1363). Listing does not say folding",
       "White · sold by UGREEN GROUP LIMITED UK · dispatched by Amazon",
-      "£20.99 (RRP £29.99), in stock, checked 10 Nov 2026",
+      "No featured buy box on Amazon UK as of 19 Nov 2026 — check on Amazon for current offers",
     ],
     alNote:
-      "Amazon UK affiliate pick. Al does not dropship it. Dual USB-C, UK plug, 65W total if both ports are in use. Approx. UK price is on the card. Amazon's live checkout may differ.",
+      "Amazon UK affiliate pick. Al does not dropship it. Dual USB-C, UK plug, 65W total if both ports are in use. No featured buy box on Amazon UK as of 19 Nov 2026 — check on Amazon.",
     image: AMAZON_PRODUCT_IMAGES.ugreen65w,
     brand: "UGREEN",
     asin: AMAZON_PICK_ASINS.ugreen65w,
@@ -266,19 +267,18 @@ export const catalog: Product[] = [
     slug: "belkin-5000-magnetic-power-bank",
     name: "Belkin 5000mAh Magnetic Wireless Power Bank",
     amazonPick: true,
-    price: 39.9,
     category: "Power",
     tagline: "5,000 mAh MagSafe-compatible puck. 7.5W wireless. Kickstand.",
     description:
-      "Belkin 5000mAh Magnetic Wireless Power Bank, MagSafe-compatible, black. 7.5W wireless output, 10W input, USB-C, fold-out kickstand, pass-through charging. 5,000 mAh is about 18.5Wh at 3.7V (5,000 × 3.7 ÷ 1000), under the 100Wh cabin line. No featured buy box on Amazon UK as of 10 Nov 2026 — check on Amazon for current offers. This is an Amazon UK affiliate pick. Al does not dropship it.",
+      "Belkin 5000mAh Magnetic Wireless Power Bank, MagSafe-compatible, black. 7.5W wireless output, 10W input, USB-C, fold-out kickstand, pass-through charging. 5,000 mAh is about 18.5Wh at 3.7V (5,000 × 3.7 ÷ 1000), under the 100Wh cabin line. Buy box unclear on Amazon UK as of 19 Nov 2026 (two sellers shown) — check on Amazon for current offers. This is an Amazon UK affiliate pick. Al does not dropship it.",
     details: [
       "5,000 mAh · about 18.5Wh at 3.7V",
       "MagSafe-compatible wireless 7.5W · 10W input · USB-C",
       "Fold-out kickstand · pass-through charging · black",
-      "No featured buy box on Amazon UK as of 10 Nov 2026 — check on Amazon for current offers",
+      "Buy box unclear on Amazon UK as of 19 Nov 2026 (two sellers shown) — check on Amazon for current offers",
     ],
     alNote:
-      "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. No featured buy box on Amazon UK as of 10 Nov 2026 — check on Amazon for current offers. Amazon UK affiliate pick. Al does not dropship it.",
+      "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. Buy box unclear on Amazon UK as of 19 Nov 2026 (two sellers shown) — check on Amazon for current offers. Amazon UK affiliate pick. Al does not dropship it.",
     image: AMAZON_PRODUCT_IMAGES.belkin5000,
     brand: "Belkin",
     asin: AMAZON_PICK_ASINS.belkin5000,
@@ -341,11 +341,11 @@ export const catalog: Product[] = [
     slug: "soundcore-liberty-4-nc",
     name: "Anker Soundcore Liberty 4 NC adaptive ANC earbuds",
     amazonPick: true,
-    price: 54.99,
+    price: 45.59,
     category: "Audio",
     tagline: "Adaptive ANC earbuds. Up to 98.5% noise reduction. IPX4.",
     description:
-      "Anker Soundcore Liberty 4 NC adaptive noise cancelling wireless earbuds in velvet black. Adaptive ANC 2.0 adjusts to ear canals and the surroundings; the listing says the buds cancel up to 98.5% of noise. 11 mm custom-tuned drivers, Hi-Res wireless audio, and LDAC — the listing says that transfers 3× more data than regular Bluetooth. HearID 2.0 finds a sound profile; the EQ is fully adjustable, or pick from 22 presets. Battery: 10 hours per charge or 50 hours with the case in normal mode; 8 hours / 40 hours with ANC on. Bluetooth 5.3, multipoint, quick pairing with Android, and auto-play and pause on wear. IPX4 water-resistance for light rain or a spill. Six beamforming mics and an AI algorithm for calls. In the box: Liberty 4 NC, charging case (listing says it extends battery life up to 50 hours), pre-installed XS/S/M/L ear tips, and a USB-C charging cable. Listing overview: in-ear, 10 Ohms, 20 kHz, 102 dB, no jack, model A3947. Approx. UK price is a snapshot from 25 Oct 2026 — Amazon’s live checkout may differ.",
+      "Anker Soundcore Liberty 4 NC adaptive noise cancelling wireless earbuds in velvet black. Adaptive ANC 2.0 adjusts to ear canals and the surroundings; the listing says the buds cancel up to 98.5% of noise. 11 mm custom-tuned drivers, Hi-Res wireless audio, and LDAC — the listing says that transfers 3× more data than regular Bluetooth. HearID 2.0 finds a sound profile; the EQ is fully adjustable, or pick from 22 presets. Battery: 10 hours per charge or 50 hours with the case in normal mode; 8 hours / 40 hours with ANC on. Bluetooth 5.3, multipoint, quick pairing with Android, and auto-play and pause on wear. IPX4 water-resistance for light rain or a spill. Six beamforming mics and an AI algorithm for calls. In the box: Liberty 4 NC, charging case (listing says it extends battery life up to 50 hours), pre-installed XS/S/M/L ear tips, and a USB-C charging cable. Listing overview: in-ear, 10 Ohms, 20 kHz, 102 dB, no jack, model A3947. Approx. UK price is a snapshot from 19 Nov 2026 — Amazon’s live checkout may differ.",
     details: [
       "Adaptive ANC 2.0 · listing says up to 98.5% noise reduction",
       "11 mm drivers · Hi-Res wireless · LDAC",
@@ -420,22 +420,22 @@ export const catalog: Product[] = [
     slug: "ugreen-laptop-stand",
     name: "UGREEN Laptop Stand",
     amazonPick: true,
-    price: 15.99,
+    price: 13.24,
     category: "Desk",
     tagline: "Adjustable aluminium stand. Folds. Carry bag. 8-17.3 inch.",
     description:
-      "UGREEN Laptop Stand for Desk, adjustable, portable aluminium, folding, with carry bag, for 8-17.3 inch laptops. Aluminium alloy, 5 height settings, scratch-resistant padding, silver. In stock at Prime £15.99 · non-Prime £17.99, UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "UGREEN Laptop Stand for Desk, adjustable, portable aluminium, folding, with carry bag, for 8-17.3 inch laptops. Aluminium alloy, 5 height settings, scratch-resistant padding, silver. In stock at £13.24 (list price £17.99), sold by UGREEN GROUP LIMITED UK, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_19_NOV,
     details: [
       "Adjustable aluminium stand · 5 height settings",
       "Folds · carry bag included",
       "For 8-17.3 inch laptops · scratch-resistant padding · silver",
       "UGREEN GROUP LIMITED UK",
-      "Prime £15.99 · non-Prime £17.99, in stock, checked 10 Nov 2026",
+      "£13.24 (list price £17.99), in stock, checked 19 Nov 2026",
     ],
     alNote:
       "A fold-flat riser, not a standing desk. Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      PRICE_CHECKED_19_NOV,
     image: AMAZON_PRODUCT_IMAGES.ugreenStand,
     brand: "UGREEN",
     asin: AMAZON_PICK_ASINS.runwayRiser,
