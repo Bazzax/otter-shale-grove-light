@@ -479,6 +479,89 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
   },
 ];
 
+export const BLACK_FRIDAY_2026_ITEMS: GuideListItem[] = [
+  {
+    name: "UGREEN 65W GaN Charger, 2 USB-C, UK plug (white)",
+    description: "Check on Amazon. Amazon UK showed no featured offers when checked 19 Nov 2026.",
+    path: "/shop/ugreen-65w-gan",
+    image: AMAZON_PRODUCT_IMAGES.ugreen65w,
+    brand: "UGREEN",
+  },
+  {
+    name: "Anker 100W USB-C GaN Charger",
+    description: "3 ports, smart display, foldable plug. £37.99, as checked 19 Nov 2026.",
+    path: "/shop/anker-100w-gan-charger",
+    image: AMAZON_PRODUCT_IMAGES.anker100w,
+    brand: "Anker",
+  },
+  {
+    name: "Anker 25,000mAh Power Bank, 165W (A1695)",
+    description: "Check on Amazon. Amazon UK showed no featured offers and currently unavailable when checked 19 Nov 2026.",
+    url: "https://www.amazon.co.uk/dp/B0DCBB2YTR?tag=alsaidropship-21",
+    brand: "Anker",
+  },
+  {
+    name: "Anker MagGo 10,000mAh Qi2 Power Bank",
+    description: "£49.99, was £55.99 as shown on the Amazon page, as checked 19 Nov 2026.",
+    path: "/shop/anker-maggo-10000-power-bank",
+    image: AMAZON_PRODUCT_IMAGES.maggo10000,
+    brand: "Anker",
+  },
+  {
+    name: "INIU P51L 20,000mAh 45W Power Bank",
+    description: "Built-in USB-C cable. £26.15, was £32.99, as checked 19 Nov 2026.",
+    url: "https://www.amazon.co.uk/dp/B0DCZ82MGG?tag=alsaidropship-21",
+    brand: "INIU",
+  },
+  {
+    name: "INIU P50 Ultra Mini 10,000mAh 45W Power Bank",
+    description: "£26.58, as checked 19 Nov 2026.",
+    url: "https://www.amazon.co.uk/dp/B0DQD385HN?tag=alsaidropship-21",
+    brand: "INIU",
+  },
+  {
+    name: "INIU P62-E1 Mini 20,000mAh 65W Laptop Power Bank",
+    description: "Check on Amazon. Amazon UK showed no featured offers when checked 19 Nov 2026.",
+    url: "https://www.amazon.co.uk/dp/B0DB89DSHV?tag=alsaidropship-21",
+    brand: "INIU",
+  },
+  {
+    name: "Belkin 5,000mAh Magnetic Wireless Power Bank",
+    description: "Check on Amazon. Two sellers shown on 19 Nov 2026: £39.99 Amazon, £35.99 third party.",
+    path: "/shop/belkin-5000-magnetic-power-bank",
+    image: AMAZON_PRODUCT_IMAGES.belkin5000,
+    brand: "Belkin",
+  },
+  {
+    name: "Anker USB-C Hub, 7-in-1",
+    description: "4K@60Hz HDMI, 85W max PD. £15.99, was £24.99, as checked 19 Nov 2026.",
+    path: "/shop/anker-7-in-1-usb-c-hub",
+    image: AMAZON_PRODUCT_IMAGES.anker7in1,
+    brand: "Anker",
+  },
+  {
+    name: "UGREEN 6-in-1 Dual Monitor USB-C Dock (Revodok 206)",
+    description: "£22.99, RRP £29.99 as shown, as checked 19 Nov 2026.",
+    path: "/shop/ugreen-6-in-1-dual-monitor-dock",
+    image: AMAZON_PRODUCT_IMAGES.ugreenDualDock,
+    brand: "UGREEN",
+  },
+  {
+    name: "UGREEN Laptop Stand",
+    description: "Adjustable aluminium, folds, carry bag. £13.24, was £17.99, as checked 19 Nov 2026.",
+    path: "/shop/ugreen-laptop-stand",
+    image: AMAZON_PRODUCT_IMAGES.ugreenStand,
+    brand: "UGREEN",
+  },
+  {
+    name: "Anker Soundcore Liberty 4 NC earbuds",
+    description: "£45.59, was £79.99 (Amazon shows 43% saving), as checked 19 Nov 2026.",
+    path: "/shop/soundcore-liberty-4-nc",
+    image: AMAZON_PRODUCT_IMAGES.liberty4Nc,
+    brand: "Soundcore",
+  },
+];
+
 /** Manufacturer-verified portable-monitor rows. No UK prices. */
 export const TRAVEL_DESK_MONITORS: GuideListItem[] = [
   {
@@ -513,7 +596,7 @@ export const guides: Guide[] = [
     description:
       "Al's field notes on 65W GaN bricks for UK travel: dual USB-C, a UK 3-pin plug, heat, and the UGREEN Amazon UK pick versus a 100W folding brick.",
     published: "2026-09-23",
-    updated: "2026-11-10",
+    updated: "2026-11-19",
     relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "tomtoc-14-laptop-case"],
     affiliateSlug: "ugreen-65w-gan",
   },
@@ -524,7 +607,7 @@ export const guides: Guide[] = [
     description:
       "Over-ear isolation or buds you can pocket? Al compares Soundcore Q20i hybrid ANC headphones and Liberty 4 NC adaptive ANC earbuds for trains, bikes, and offices, and when to jump Amazon UK instead.",
     published: "2026-09-23",
-    updated: "2026-11-10",
+    updated: "2026-11-19",
     relatedSlugs: ["soundcore-q20i", "soundcore-liberty-4-nc"],
     affiliateSlug: "soundcore-q20i",
   },
@@ -547,7 +630,7 @@ export const guides: Guide[] = [
     description:
       "Anker, UGREEN, Belkin, and a hotel-desk hub — plus the CAA cabin rule: power banks in hand luggage only, max two, under 100Wh. Tagged Amazon UK picks.",
     published: "2026-09-23",
-    updated: "2026-11-13",
+    updated: "2026-11-19",
     faqs: PACKING_POWER_FAQS,
     relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "anker-7-in-1-usb-c-hub", "anker-maggo-10000-power-bank"],
     affiliateSlug: "ugreen-65w-gan",
@@ -688,6 +771,30 @@ export const guides: Guide[] = [
       "soundcore-q20i",
       "anker-7-in-1-usb-c-hub",
       "ugreen-laptop-stand",
+    ],
+    affiliateSlug: "anker-maggo-10000-power-bank",
+  },
+  {
+    slug: "black-friday-tech-deals-uk-2026",
+    title: "Black Friday 2026 UK tech roundup",
+    heading: "Black Friday 2026 UK tech roundup (chargers and power banks first)",
+    metaTitle: "Black Friday 2026 UK Tech Deals: Chargers & Power Banks",
+    kicker: "Power",
+    description:
+      "Black Friday 2026 Amazon UK buy-box prices for chargers, power banks, hubs and a stand already on this site, as checked 19 Nov 2026. Was-prices only where Amazon showed one. Prices change — check on Amazon.",
+    published: "2026-11-19",
+    itemList: {
+      name: "Black Friday 2026 UK tech roundup, checked 19 Nov 2026",
+      description:
+        "Site products re-checked on the Amazon UK buy box on 19 Nov 2026. Prices and deals can change without notice.",
+      items: BLACK_FRIDAY_2026_ITEMS,
+    },
+    relatedSlugs: [
+      "anker-maggo-10000-power-bank",
+      "anker-100w-gan-charger",
+      "anker-7-in-1-usb-c-hub",
+      "ugreen-laptop-stand",
+      "soundcore-liberty-4-nc",
     ],
     affiliateSlug: "anker-maggo-10000-power-bank",
   },

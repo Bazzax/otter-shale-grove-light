@@ -129,10 +129,9 @@ function GanBody() {
       <p>
         <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
         65W GaN with two USB-C ports and a UK 3-pin plug (BS 1363). The listing does not say the
-        pins fold. 65W max, and 65W total when both ports charge. In stock at £20.99 (RRP £29.99),
-        dispatched by Amazon, sold by UGREEN GROUP LIMITED UK. This is an Amazon UK affiliate pick.
-        Al does not dropship it. Approx. UK price is a snapshot from 10 Nov 2026. Amazon's live
-        checkout may differ.
+        pins fold. 65W max, and 65W total when both ports charge. Amazon UK showed no featured
+        offer when I checked on 19 Nov 2026, so there is no price here — check on Amazon. This is
+        an Amazon UK affiliate pick. Al does not dropship it.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.ugreen65w} />
       <ul>
@@ -196,7 +195,7 @@ function AncBody() {
         adjustable EQ, or 22 presets. Battery: 10 hours / 50 hours with the case in normal mode; 8
         hours / 40 hours with ANC on. Bluetooth 5.3, multipoint, auto-play and pause on wear,
         IPX4, and six beamforming mics with an AI algorithm for calls. XS/S/M/L tips and a USB-C
-        cable in the box. I do not dropship Soundcore. £54.99, price checked 25 Oct 2026 on
+        cable in the box. I do not dropship Soundcore. £45.59, price checked 19 Nov 2026 on
         Amazon.co.uk. Amazon’s live checkout may differ.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.liberty4Nc} />
@@ -447,7 +446,7 @@ function PackingPowerBody() {
         cabin-legal on Ryanair, easyJet, BA and Jet2 if you stay inside the two-bank limit.
         Forty-five watt USB-C, cable built in. The tagged listing is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.iniu20k45w}>INIU P51L 20,000mAh 45W</AmazonText>{" "}
-        (ASIN B0DCZ82MGG). £27.53, price checked 10 Nov 2026 on Amazon.co.uk.
+        (ASIN B0DCZ82MGG). £26.15, price checked 19 Nov 2026 on Amazon.co.uk.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.iniu20k45w} />
       <h3>Anker Laptop Power Bank 25,000mAh (A1695)</h3>
@@ -468,7 +467,7 @@ function PackingPowerBody() {
         About 37Wh at 3.7V nominal (10,000 × 3.7 ÷ 1000). Cabin-trivial: a phone-and-earbuds bank
         that stays well under every Wh line in the table. The tagged listing is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.iniu10k45w}>INIU P50 10,000mAh 45W</AmazonText>{" "}
-        (ASIN B0DQD385HN). £27.99, price checked 13 Nov 2026 on Amazon.co.uk.
+        (ASIN B0DQD385HN). £26.58, price checked 19 Nov 2026 on Amazon.co.uk.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.iniu10k45w} />
       <h3>Anker Zolo 20K</h3>
@@ -2674,6 +2673,211 @@ function PortableMonitorBody() {
   );
 }
 
+type BlackFridayRow = { name: string; price: ReactNode; asin: string; shopSlug?: string };
+
+const BLACK_FRIDAY_CAA_SOURCE =
+  "https://www.caa.co.uk/commercial-industry/airlines/dangerous-goods/changes-to-rules-on-the-carriage-of-lithium-cellsbatteries-and-power-banks/";
+
+const BLACK_FRIDAY_CHARGERS: BlackFridayRow[] = [
+  {
+    name: "UGREEN 65W GaN Charger, 2 USB-C, UK plug (white)",
+    price: (
+      <>
+        <strong className="font-medium text-ink">check on Amazon</strong> (Amazon showed “no
+        featured offers” when checked, so the buy box is unclear)
+      </>
+    ),
+    asin: AMAZON_PICK_ASINS.ugreen65w,
+    shopSlug: "ugreen-65w-gan",
+  },
+  {
+    name: "Anker 100W USB-C GaN Charger, 3 ports, smart display, foldable plug",
+    price: "£37.99",
+    asin: AMAZON_PICK_ASINS.flightbrick100,
+    shopSlug: "anker-100w-gan-charger",
+  },
+];
+
+const BLACK_FRIDAY_POWER_BANKS: BlackFridayRow[] = [
+  {
+    name: "Anker 25,000mAh Power Bank, 165W total output, built-in retractable cables (A1695)",
+    price: (
+      <>
+        <strong className="font-medium text-ink">check on Amazon</strong> (Amazon showed “no
+        featured offers” and “currently unavailable” when checked)
+      </>
+    ),
+    asin: AMAZON_PICK_ASINS.ankerA1695,
+  },
+  {
+    name: "Anker MagGo 10,000mAh Qi2 Power Bank (white)",
+    price: "£49.99, was £55.99 (as shown on the Amazon page)",
+    asin: AMAZON_PICK_ASINS.magDeck10,
+    shopSlug: "anker-maggo-10000-power-bank",
+  },
+  {
+    name: "INIU 20,000mAh 45W Power Bank (P51L), built-in USB-C cable",
+    price: "£26.15, was £32.99 (Amazon shows 21% saving)",
+    asin: AMAZON_PICK_ASINS.iniu20k45w,
+  },
+  {
+    name: "INIU Ultra Mini 10,000mAh 45W Power Bank (P50)",
+    price: "£26.58",
+    asin: AMAZON_PICK_ASINS.iniu10k45w,
+  },
+  {
+    name: "INIU 20,000mAh 65W Laptop Power Bank (P62-E1 Mini)",
+    price: (
+      <>
+        <strong className="font-medium text-ink">check on Amazon</strong> (Amazon showed “no
+        featured offers”, so the buy box is unclear)
+      </>
+    ),
+    asin: AMAZON_PICK_ASINS.iniuP62,
+  },
+  {
+    name: "Belkin 5,000mAh Magnetic Wireless Power Bank",
+    price: (
+      <>
+        <strong className="font-medium text-ink">check on Amazon</strong> (two sellers shown:
+        £39.99 Amazon, £35.99 third party)
+      </>
+    ),
+    asin: AMAZON_PICK_ASINS.belkin5000,
+    shopSlug: "belkin-5000-magnetic-power-bank",
+  },
+];
+
+const BLACK_FRIDAY_DESK: BlackFridayRow[] = [
+  {
+    name: "Anker USB-C Hub, 7-in-1 (4K@60Hz HDMI, 85W max PD)",
+    price: "£15.99, was £24.99",
+    asin: AMAZON_PICK_ASINS.anker7in1,
+    shopSlug: "anker-7-in-1-usb-c-hub",
+  },
+  {
+    name: "UGREEN 6-in-1 Dual Monitor USB-C Dock (Revodok 206)",
+    price: "£22.99, RRP £29.99 as shown",
+    asin: AMAZON_PICK_ASINS.twinViewDock,
+    shopSlug: "ugreen-6-in-1-dual-monitor-dock",
+  },
+  {
+    name: "UGREEN Laptop Stand, adjustable aluminium, folds, carry bag",
+    price: "£13.24, was £17.99",
+    asin: AMAZON_PICK_ASINS.runwayRiser,
+    shopSlug: "ugreen-laptop-stand",
+  },
+];
+
+function BlackFridayTable({ rows }: { rows: BlackFridayRow[] }) {
+  return (
+    <div className="overflow-x-auto rounded-2xl shadow-[var(--shadow-border)]">
+      <table className="w-full text-left text-sm">
+        <thead className="bg-cream text-xs tracking-widest text-clay uppercase">
+          <tr>
+            <th className="p-3 font-medium">Product</th>
+            <th className="p-3 font-medium">Price (checked 19 Nov 2026)</th>
+            <th className="p-3 font-medium">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((row) => {
+            const product = row.shopSlug
+              ? catalog.find((item) => item.slug === row.shopSlug)
+              : undefined;
+            return (
+              <tr key={row.asin} className="border-t border-ink/10 align-top">
+                <td className="p-3">
+                  <div className="flex items-start gap-3">
+                    {product && isAmazonHostedImage(product.image) ? (
+                      <ProductImage
+                        product={product}
+                        alt={`${product.name} — ${product.tagline}`}
+                        className="size-14 shrink-0 rounded-lg bg-cream object-contain outline outline-1 -outline-offset-1 outline-ink/10"
+                      />
+                    ) : null}
+                    <span className="text-ink">
+                      {product ? <ShopLink slug={product.slug}>{row.name}</ShopLink> : row.name}
+                    </span>
+                  </div>
+                </td>
+                <td className="p-3 tabular-nums">{row.price}</td>
+                <td className="p-3">
+                  <AmazonText asin={row.asin}>Amazon UK</AmazonText>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function BlackFridayRoundupBody() {
+  return (
+    <>
+      <p>
+        All prices are Amazon UK buy-box prices{" "}
+        <strong className="font-medium text-ink">as checked 19 Nov 2026</strong>. Prices and
+        deals can change without notice. Delivery is Amazon’s. “Was” prices are shown only where
+        the Amazon page showed one.
+      </p>
+      <p>
+        UK Black Friday sales start today, 19 Nov. UGREEN, CUKTECH and soundcore run 19–30 Nov.
+        Black Friday is Fri 27 Nov and Cyber Monday is Mon 30 Nov.
+      </p>
+      <aside className="rounded-2xl bg-cream p-5 shadow-[var(--shadow-border)]">
+        <p className="text-xs font-medium tracking-widest text-clay uppercase">
+          Flying with a power bank?
+        </p>
+        <p className="mt-3 text-ink">
+          Flying with a power bank this Christmas? Read{" "}
+          <GuideLink slug="packing-power">/guides/packing-power</GuideLink> first. CAA rules:
+          cabin baggage only, maximum two power banks per person, no recharging them on board,
+          and under 100Wh unless the airline approves. Source:{" "}
+          <a
+            href={BLACK_FRIDAY_CAA_SOURCE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="break-all text-clay hover:text-clay-dark"
+          >
+            {BLACK_FRIDAY_CAA_SOURCE}
+          </a>
+        </p>
+      </aside>
+      <h2>Chargers</h2>
+      <BlackFridayTable rows={BLACK_FRIDAY_CHARGERS} />
+      <h2>Power banks</h2>
+      <BlackFridayTable rows={BLACK_FRIDAY_POWER_BANKS} />
+      <h2>Hubs, docks and stand</h2>
+      <BlackFridayTable rows={BLACK_FRIDAY_DESK} />
+      <h2>Also on sale</h2>
+      <ul>
+        <li>
+          <ShopLink slug="soundcore-liberty-4-nc">Anker Soundcore Liberty 4 NC earbuds</ShopLink>:
+          £45.59, was £79.99 (Amazon shows 43% saving).{" "}
+          <AmazonText asin={AMAZON_PICK_ASINS.liberty4Nc}>Amazon UK</AmazonText>
+        </li>
+        <li>
+          <ShopLink slug="soundcore-q20i">Soundcore Anker Q20i headphones</ShopLink>: £29.99 on
+          Amazon today. It is <strong className="font-medium text-ink">not</strong> presented as a
+          Black Friday discount here, and it is left out of the sale list.
+        </li>
+      </ul>
+      <p>
+        Keyboards: no keyboard is included in this roundup. (The{" "}
+        <ShopLink slug="omoton-75-iso-uk-keyboard">OMOTON 75% keyboard</ShopLink> on the shop is
+        ISO-UK layout. It is not part of this roundup.)
+      </p>
+      <p>
+        #ad As an Amazon Associate we earn from qualifying purchases. The Amazon UK links on this
+        page are tagged affiliate links (tag alsaidropship-21).
+      </p>
+    </>
+  );
+}
+
 const bodies: Record<string, () => ReactNode> = {
   "65w-gan-charger-travel": GanBody,
   "anc-headphones-vs-earbuds-commute": AncBody,
@@ -2688,6 +2892,7 @@ const bodies: Record<string, () => ReactNode> = {
   "power-bank-on-plane-rules-uk": PowerBankOnboardBody,
   "flying-christmas-tech-gifts-uk": ChristmasTechGiftsBody,
   "christmas-tech-gifts-under-50-uk": ChristmasUnder50Body,
+  "black-friday-tech-deals-uk-2026": BlackFridayRoundupBody,
   "portable-monitor-laptop-second-screen": PortableMonitorBody,
 };
 
