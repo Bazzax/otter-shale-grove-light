@@ -466,7 +466,7 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
   },
   {
     name: "INIU P62 20,000mAh 65W (P62-E1, Mini)",
-    description: "20,000mAh, about 73-74Wh, 65W USB-C, detachable 100W cable. Cabin-legal under 100Wh. £46.99, as checked 13 Nov 2026. If Amazon shows a Classic size, pick Mini / P62-E1.",
+    description: "20,000mAh, about 73-74Wh, 65W USB-C, detachable 100W cable. Cabin-legal under 100Wh. Check on Amazon: no featured offer on 19 Nov 2026. If Amazon shows a Classic size, pick Mini / P62-E1.",
     url: "https://www.amazon.co.uk/dp/B0DB89DSHV?tag=alsaidropship-21",
     brand: "INIU",
   },
@@ -496,7 +496,7 @@ export const BLACK_FRIDAY_2026_ITEMS: GuideListItem[] = [
   },
   {
     name: "Anker 25,000mAh Power Bank, 165W (A1695)",
-    description: "Check on Amazon. Amazon UK showed no featured offers and currently unavailable when checked 19 Nov 2026.",
+    description: "£65.55, was £89.98 (Amazon shows 27% saving), as checked 19 Nov 2026.",
     url: "https://www.amazon.co.uk/dp/B0DCBB2YTR?tag=alsaidropship-21",
     brand: "Anker",
   },

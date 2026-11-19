@@ -221,16 +221,16 @@ export const catalog: Product[] = [
     category: "Power",
     tagline: "White 65W GaN. Two USB-C ports. UK 3-pin plug.",
     description:
-      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. No featured buy box on Amazon UK as of 19 Nov 2026 — check on Amazon for current offers. This is an Amazon UK affiliate pick. Al does not dropship it.",
+      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. Price unclear on Amazon UK as of 19 Nov 2026 — check on Amazon for current offers. This is an Amazon UK affiliate pick. Al does not dropship it.",
     details: [
       "65W GaN · 2× USB-C · no USB-A",
       "65W max · 65W total when charging both",
       "UK 3-pin plug (BS 1363). Listing does not say folding",
       "White · sold by UGREEN GROUP LIMITED UK · dispatched by Amazon",
-      "No featured buy box on Amazon UK as of 19 Nov 2026 — check on Amazon for current offers",
+      "Price unclear on Amazon UK as of 19 Nov 2026 — check on Amazon for current offers",
     ],
     alNote:
-      "Amazon UK affiliate pick. Al does not dropship it. Dual USB-C, UK plug, 65W total if both ports are in use. No featured buy box on Amazon UK as of 19 Nov 2026 — check on Amazon.",
+      "Amazon UK affiliate pick. Al does not dropship it. Dual USB-C, UK plug, 65W total if both ports are in use. Price unclear on Amazon UK as of 19 Nov 2026 — check on Amazon.",
     image: AMAZON_PRODUCT_IMAGES.ugreen65w,
     brand: "UGREEN",
     asin: AMAZON_PICK_ASINS.ugreen65w,
