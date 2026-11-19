@@ -2682,8 +2682,8 @@ const BLACK_FRIDAY_CHARGERS: BlackFridayRow[] = [
     name: "UGREEN 65W GaN Charger, 2 USB-C, UK plug (white)",
     price: (
       <>
-        <strong className="font-medium text-ink">check on Amazon</strong> (Amazon showed “no
-        featured offers” when checked, so the buy box is unclear)
+        Price unclear on Amazon UK as of 19 Nov 2026 —{" "}
+        <strong className="font-medium text-ink">check on Amazon</strong>
       </>
     ),
     asin: AMAZON_PICK_ASINS.ugreen65w,

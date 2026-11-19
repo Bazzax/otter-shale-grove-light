@@ -482,7 +482,7 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
 export const BLACK_FRIDAY_2026_ITEMS: GuideListItem[] = [
   {
     name: "UGREEN 65W GaN Charger, 2 USB-C, UK plug (white)",
-    description: "Check on Amazon. Amazon UK showed no featured offers when checked 19 Nov 2026.",
+    description: "Price unclear on Amazon UK as of 19 Nov 2026 — check on Amazon.",
     path: "/shop/ugreen-65w-gan",
     image: AMAZON_PRODUCT_IMAGES.ugreen65w,
     brand: "UGREEN",
