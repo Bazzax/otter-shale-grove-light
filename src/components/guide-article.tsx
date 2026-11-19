@@ -457,7 +457,7 @@ function PackingPowerBody() {
         (ASIN B0DCBB2YTR) prints a nominal <strong className="font-medium text-ink">25,000mAh
         (90Wh)</strong> capacity. That is under 100Wh, so it is cabin-legal on all four if you
         stay inside two banks. A 3.7V sum from 25,000mAh is the wrong tool on this pack — use the
-        printed 90Wh. £65.55, price checked 13 Nov 2026 on Amazon.co.uk. The listing was in
+        printed 90Wh. £65.55, price checked 19 Nov 2026 on Amazon.co.uk. The listing was in
         stock that day. I did not re-check Anker UK’s own store, so that earlier £89.98
         figure is out of this log — check on Amazon if you want a non-Amazon price.
       </p>
@@ -2169,9 +2169,8 @@ function ChristmasUnder50Body() {
       <h3>UGREEN Laptop Stand</h3>
       <p>
         Aluminium, folds flat, comes with a carry bag, five height settings, and fits laptops
-        and tablets from 8 to 17.3 inches. Brand: UGREEN. On 13 Nov 2026 the Amazon UK buy box
-        was £15.99 for Prime members and £17.99 otherwise, dispatched by Amazon and sold by
-        UGREEN GROUP LIMITED UK, in stock. Both figures sit under £50.
+        and tablets from 8 to 17.3 inches. Brand: UGREEN. £13.24, as checked 19 Nov 2026, in
+        stock, sold by UGREEN GROUP LIMITED UK and dispatched by Amazon.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.runwayRiser} />
       <h2>Under £30</h2>
@@ -2179,8 +2178,8 @@ function ChristmasUnder50Body() {
       <p>
         A white 65W GaN brick with two USB-C ports and no USB-A. 65W max, and 65W total when
         charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. Brand:
-        UGREEN. £20.99, as checked 13 Nov 2026, in stock, sold by UGREEN GROUP LIMITED UK and
-        dispatched by Amazon. More on how I pick a travel 65W brick:{" "}
+        UGREEN. Check on Amazon: on 19 Nov 2026 Amazon UK showed only a Prime-member price, so
+        there is no clear buy box to stamp. More on how I pick a travel 65W brick:{" "}
         <GuideLink slug="65w-gan-charger-travel">65W GaN chargers that actually travel</GuideLink>
         .
       </p>
@@ -2203,7 +2202,7 @@ function ChristmasUnder50Body() {
         That sits under the CAA 100Wh line, so it needs no airline approval if you stay inside
         two banks and keep it in the cabin. Brand: INIU. The tagged listing is the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.iniu20k45w}>INIU P51L 20,000mAh 45W</AmazonText>{" "}
-        (ASIN B0DCZ82MGG). £27.53, as checked 13 Nov 2026, in stock. There is no separate shop
+        (ASIN B0DCZ82MGG). £26.15, as checked 19 Nov 2026, in stock. There is no separate shop
         card; the same bank sits on{" "}
         <GuideLink slug="packing-power">the packing-power guide</GuideLink>.
       </p>
@@ -2219,7 +2218,7 @@ function ChristmasUnder50Body() {
       <p>
         10,000mAh, about 37Wh at 3.7V nominal (10,000 × 3.7 ÷ 1000), 45W, detachable USB-C
         cable. Cabin-trivial under every Wh line in the packing-power airline table if you stay
-        inside two banks. Brand: INIU. Model P50, ASIN B0DQD385HN. £27.99, as checked 13 Nov
+        inside two banks. Brand: INIU. Model P50, ASIN B0DQD385HN. £26.58, as checked 19 Nov
         2026, in stock. Tagged listing:{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.iniu10k45w}>INIU P50 10,000mAh 45W</AmazonText>.
       </p>

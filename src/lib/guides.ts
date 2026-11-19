@@ -412,14 +412,14 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
   },
   {
     name: "UGREEN Laptop Stand",
-    description: "Aluminium stand, folds flat, carry bag, five height settings, fits 8 to 17.3 inch laptops and tablets. £15.99 for Prime members, otherwise £17.99, as checked 13 Nov 2026.",
+    description: "Aluminium stand, folds flat, carry bag, five height settings, fits 8 to 17.3 inch laptops and tablets. £13.24, as checked 19 Nov 2026.",
     path: "/shop/ugreen-laptop-stand",
     image: AMAZON_PRODUCT_IMAGES.ugreenStand,
     brand: "UGREEN",
   },
   {
     name: "UGREEN 65W GaN Charger (2 USB-C, UK plug)",
-    description: "White 65W GaN brick, two USB-C ports, no USB-A, UK 3-pin plug. The listing does not say the pins fold. £20.99, as checked 13 Nov 2026.",
+    description: "White 65W GaN brick, two USB-C ports, no USB-A, UK 3-pin plug. The listing does not say the pins fold. Check on Amazon: only a Prime-member price was shown on 19 Nov 2026.",
     path: "/shop/ugreen-65w-gan",
     image: AMAZON_PRODUCT_IMAGES.ugreen65w,
     brand: "UGREEN",
@@ -433,7 +433,7 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
   },
   {
     name: "INIU P51L 20,000mAh 45W",
-    description: "20,000mAh, about 74Wh at 3.7V, 45W USB-C, built-in cable. Cabin-legal under 100Wh. £27.53, as checked 13 Nov 2026. No shop card — tagged listing is on the packing-power guide.",
+    description: "20,000mAh, about 74Wh at 3.7V, 45W USB-C, built-in cable. Cabin-legal under 100Wh. £26.15, as checked 19 Nov 2026. No shop card — tagged listing is on the packing-power guide.",
     url: "https://www.amazon.co.uk/dp/B0DCZ82MGG?tag=alsaidropship-21",
     brand: "INIU",
   },
@@ -446,7 +446,7 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
   },
   {
     name: "INIU P50 10,000mAh 45W",
-    description: "10,000mAh, about 37Wh at 3.7V, 45W, detachable USB-C cable. Cabin-legal under 100Wh. £27.99, as checked 13 Nov 2026. No shop card — tagged listing is on the packing-power guide.",
+    description: "10,000mAh, about 37Wh at 3.7V, 45W, detachable USB-C cable. Cabin-legal under 100Wh. £26.58, as checked 19 Nov 2026. No shop card — tagged listing is on the packing-power guide.",
     url: "https://www.amazon.co.uk/dp/B0DQD385HN?tag=alsaidropship-21",
     brand: "INIU",
   },
@@ -758,6 +758,7 @@ export const guides: Guide[] = [
     description:
       "UK tech gifts under £50 from this site, re-checked on the Amazon UK buy box on 13 Nov 2026. Chargers, hubs, a cabin-legal power bank, and the Q20i headphones. Prices are snapshots — check Amazon.",
     published: "2026-11-13",
+    updated: "2026-11-19",
     faqs: CHRISTMAS_UNDER_50_FAQS,
     itemList: {
       name: "Christmas tech gifts under £50, checked 13 Nov 2026",
