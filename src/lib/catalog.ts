@@ -160,6 +160,9 @@ const PRICE_CHECKED =
 const PRICE_CHECKED_19_NOV =
   "Approx. UK price, checked 19 Nov 2026. Amazon's live checkout may differ.";
 
+const PRICE_CHECKED_23_NOV =
+  "Approx. UK price, checked 23 Nov 2026. Amazon's live checkout may differ.";
+
 export const catalog: Product[] = [
   {
     slug: "soundcore-q20i",
@@ -267,18 +270,21 @@ export const catalog: Product[] = [
     slug: "belkin-5000-magnetic-power-bank",
     name: "Belkin 5000mAh Magnetic Wireless Power Bank",
     amazonPick: true,
+    price: 27.99,
     category: "Power",
     tagline: "5,000 mAh MagSafe-compatible puck. 7.5W wireless. Kickstand.",
     description:
-      "Belkin 5000mAh Magnetic Wireless Power Bank, MagSafe-compatible, black. 7.5W wireless output, 10W input, USB-C, fold-out kickstand, pass-through charging. 5,000 mAh is about 18.5Wh at 3.7V (5,000 × 3.7 ÷ 1000), under the 100Wh cabin line. Buy box unclear on Amazon UK as of 19 Nov 2026 (two sellers shown) — check on Amazon for current offers. This is an Amazon UK affiliate pick. Al does not dropship it.",
+      "Belkin 5000mAh Magnetic Wireless Power Bank, MagSafe-compatible, black. 7.5W wireless output, 10W input, USB-C, fold-out kickstand, pass-through charging. 5,000 mAh is about 18.5Wh at 3.7V (5,000 × 3.7 ÷ 1000), under the 100Wh cabin line. In stock at £27.99 (was £39.99, 30% off), sold and dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_23_NOV,
     details: [
       "5,000 mAh · about 18.5Wh at 3.7V",
       "MagSafe-compatible wireless 7.5W · 10W input · USB-C",
       "Fold-out kickstand · pass-through charging · black",
-      "Buy box unclear on Amazon UK as of 19 Nov 2026 (two sellers shown) — check on Amazon for current offers",
+      "£27.99 (was £39.99, 30% off), in stock, sold and dispatched by Amazon, checked 23 Nov 2026",
     ],
     alNote:
-      "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. Buy box unclear on Amazon UK as of 19 Nov 2026 (two sellers shown) — check on Amazon for current offers. Amazon UK affiliate pick. Al does not dropship it.",
+      "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. £27.99 (was £39.99, 30% off), in stock, sold and dispatched by Amazon. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_23_NOV,
     image: AMAZON_PRODUCT_IMAGES.belkin5000,
     brand: "Belkin",
     asin: AMAZON_PICK_ASINS.belkin5000,
@@ -648,21 +654,21 @@ export const catalog: Product[] = [
     slug: "logitech-desk-mat-studio",
     name: "Logitech Desk Mat, Studio Series",
     amazonPick: true,
-    price: 11.99,
+    price: 11.51,
     category: "Desk",
     tagline: "30×70 cm Studio mat. Spill-repellent cloth. Grey.",
     description:
-      "Logitech Desk Mat, Studio Series. Rubber base, 30×70 cm, 286 g, spill-repellent cloth surface, grey. In stock at £11.99 (RRP £16.99). This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "Logitech Desk Mat, Studio Series. Rubber base, 30×70 cm, 286 g, spill-repellent cloth surface, grey. Only 1 left in stock at £11.51 (RRP £16.99), sold by FT Rudiscio Group, dispatched by Amazon — low stock, check on Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_23_NOV,
     details: [
       "Logitech Studio Series desk mat · grey",
       "30 × 70 cm · 286 g",
       "Spill-repellent cloth surface · rubber base",
-      "£11.99 (RRP £16.99), in stock, checked 10 Nov 2026",
+      "£11.51 (RRP £16.99), only 1 left in stock (low stock, check on Amazon), sold by FT Rudiscio Group, dispatched by Amazon, checked 23 Nov 2026",
     ],
     alNote:
-      "A mat. That is the whole job. Amazon UK affiliate pick. Al does not dropship Logitech. " +
-      PRICE_CHECKED,
+      "A mat. That is the whole job. Amazon UK affiliate pick. Al does not dropship Logitech. Only 1 left in stock at £11.51, sold by FT Rudiscio Group, dispatched by Amazon — low stock, check on Amazon. " +
+      PRICE_CHECKED_23_NOV,
     image: AMAZON_PRODUCT_IMAGES.deskMatStudio,
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.fieldMat,
