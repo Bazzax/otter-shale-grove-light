@@ -3,13 +3,22 @@ import { useId, type CSSProperties } from "react";
 const lightStyle = (delay: string): CSSProperties =>
   ({ "--xmas-twinkle-delay": delay }) as CSSProperties;
 
-export function HangarTree() {
+type HangarTreeProps = {
+  variant?: "hangar" | "hero";
+};
+
+export function HangarTree({ variant = "hangar" }: HangarTreeProps) {
   const uid = useId().replace(/:/g, "");
   const canopy = `${uid}-canopy`;
   const glow = `${uid}-glow`;
 
   return (
-    <svg className="xmas-tree" viewBox="0 0 140 220" aria-hidden="true" focusable="false">
+    <svg
+      className={`xmas-tree xmas-tree--${variant}`}
+      viewBox="0 0 140 220"
+      aria-hidden="true"
+      focusable="false"
+    >
       <defs>
         <linearGradient
           id={canopy}
@@ -49,11 +58,29 @@ export function HangarTree() {
 
       <circle className="xmas-light" cx="70" cy="48" r="3.2" style={lightStyle("0s")} />
       <circle className="xmas-light" cx="58" cy="78" r="2.8" style={lightStyle("0.45s")} />
-      <circle className="xmas-light" cx="84" cy="72" r="2.6" style={lightStyle("1.1s")} />
+      <circle
+        className={variant === "hero" ? "xmas-light xmas-light--warm" : "xmas-light"}
+        cx="84"
+        cy="72"
+        r="2.6"
+        style={lightStyle("1.1s")}
+      />
       <circle className="xmas-light" cx="50" cy="112" r="3" style={lightStyle("0.2s")} />
-      <circle className="xmas-light" cx="90" cy="108" r="2.7" style={lightStyle("1.7s")} />
+      <circle
+        className={variant === "hero" ? "xmas-light xmas-light--warm" : "xmas-light"}
+        cx="90"
+        cy="108"
+        r="2.7"
+        style={lightStyle("1.7s")}
+      />
       <circle className="xmas-light" cx="62" cy="148" r="3.1" style={lightStyle("0.9s")} />
-      <circle className="xmas-light" cx="96" cy="152" r="2.8" style={lightStyle("1.4s")} />
+      <circle
+        className={variant === "hero" ? "xmas-light xmas-light--warm" : "xmas-light"}
+        cx="96"
+        cy="152"
+        r="2.8"
+        style={lightStyle("1.4s")}
+      />
 
       <circle cx="70" cy="48" r="6" fill="var(--xmas-light)" opacity="0.16" />
       <circle cx="90" cy="108" r="5" fill="var(--xmas-light)" opacity="0.12" />

@@ -13,6 +13,7 @@
   --xmas-tree-lit: #1a4638;
   --xmas-needle: #246048;
   --xmas-light: var(--color-clay);
+  --xmas-light-warm: #e4b56a;
   --xmas-snow: color-mix(in srgb, var(--color-ink) 88%, white);
 }
 
@@ -89,22 +90,22 @@
 }
 
 .xmas-hat--hero {
-  left: 37.8%;
-  top: 5.2%;
+  left: 39.4%;
+  top: 4.4%;
   width: 20.5%;
 }
 
 @media (min-width: 1024px) {
   .xmas-hat--hero {
-    left: 38.4%;
-    top: 9%;
+    left: 40.4%;
+    top: 7.8%;
     width: 20%;
   }
 }
 
 .xmas-hat--portrait {
-  left: 28%;
-  top: 6.6%;
+  left: 26.8%;
+  top: 5.8%;
   width: 26%;
 }
 
@@ -156,6 +157,39 @@
   }
   50% {
     opacity: 1;
+  }
+}
+
+.xmas-light--warm {
+  fill: var(--xmas-light-warm);
+}
+
+.xmas-tree--hero {
+  left: 13.5%;
+  right: auto;
+  bottom: 15%;
+  z-index: 0;
+  height: 20%;
+  width: auto;
+  opacity: 0.7;
+  filter: blur(0.65px) drop-shadow(0 6px 10px rgb(4 6 10 / 0.35));
+}
+
+@media (min-width: 640px) {
+  .xmas-tree--hero {
+    left: 14%;
+    bottom: 16%;
+    height: 22%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .xmas-tree--hero {
+    left: 14.5%;
+    bottom: 17%;
+    height: 23%;
+    opacity: 0.55;
+    filter: blur(1.2px) drop-shadow(0 8px 12px rgb(4 6 10 / 0.4));
   }
 }
 
