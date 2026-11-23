@@ -1,0 +1,172 @@
+/* Seasonal hangar dressing. Loaded only from src/components/christmas. */
+
+.xmas-root {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  --xmas-hat: #c13d3d;
+  --xmas-hat-deep: #6f1b1b;
+  --xmas-hat-lit: #e07268;
+  --xmas-fur: var(--color-ink);
+  --xmas-tree-dark: #0c1c18;
+  --xmas-tree: #123028;
+  --xmas-tree-lit: #1a4638;
+  --xmas-needle: #246048;
+  --xmas-light: var(--color-clay);
+  --xmas-snow: color-mix(in srgb, var(--color-ink) 88%, white);
+}
+
+.xmas-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.xmas-snow {
+  container-type: size;
+  z-index: 1;
+}
+
+.xmas-snow--hero {
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 90%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 62%, transparent 90%);
+}
+
+.xmas-snow--hangar {
+  z-index: 2;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, transparent 46%, #000 72%);
+  mask-image: linear-gradient(90deg, transparent 0%, transparent 46%, #000 72%);
+}
+
+@media (max-width: 639px) {
+  .xmas-snow--hangar {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 52%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 52%);
+  }
+}
+
+.xmas-flake {
+  position: absolute;
+  left: var(--xmas-x);
+  top: var(--xmas-y);
+  width: var(--xmas-size);
+  height: var(--xmas-size);
+  border-radius: 50%;
+  background: var(--xmas-snow);
+  opacity: var(--xmas-opacity);
+  mix-blend-mode: screen;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--xmas-snow) 55%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .xmas-flake {
+    top: -6%;
+    animation-name: xmas-fall;
+    animation-duration: var(--xmas-dur);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: var(--xmas-delay);
+  }
+}
+
+@keyframes xmas-fall {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(var(--xmas-drift), 118cqh, 0);
+  }
+}
+
+.xmas-hat {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  overflow: visible;
+  transform-origin: 50% 84%;
+}
+
+.xmas-hat--hero {
+  left: 41.8%;
+  top: 7%;
+  width: 16.6%;
+  transform: perspective(640px) rotateX(14deg) rotateZ(-17deg);
+}
+
+@media (min-width: 1024px) {
+  .xmas-hat--hero {
+    left: 42.2%;
+    top: 9.8%;
+    width: 15.8%;
+    transform: perspective(680px) rotateX(12deg) rotateZ(-16deg);
+  }
+}
+
+.xmas-hat--portrait {
+  left: 33.8%;
+  top: 7.2%;
+  width: 21%;
+  transform: perspective(560px) rotateX(12deg) rotateZ(-12deg) rotateY(-8deg);
+}
+
+.xmas-tree {
+  position: absolute;
+  right: 0.35rem;
+  bottom: 1.25rem;
+  z-index: 3;
+  height: 7.25rem;
+  width: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 10px 14px rgb(4 6 10 / 0.55));
+}
+
+@media (min-width: 640px) {
+  .xmas-tree {
+    right: 1.25rem;
+    bottom: 1.75rem;
+    height: 10.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .xmas-tree {
+    right: 7%;
+    bottom: 10%;
+    height: 54%;
+  }
+}
+
+.xmas-light {
+  fill: var(--xmas-light);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .xmas-light {
+    animation-name: xmas-twinkle;
+    animation-duration: 2.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: var(--xmas-twinkle-delay, 0s);
+  }
+}
+
+@keyframes xmas-twinkle {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.xmas-hangar-copy {
+  padding-right: 5.5rem;
+}
+
+@media (min-width: 1024px) {
+  .xmas-hangar-copy {
+    padding-right: 0;
+  }
+}

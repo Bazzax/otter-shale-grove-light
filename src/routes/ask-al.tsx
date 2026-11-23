@@ -1,6 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUp, Search } from "lucide-react";
+import { ChristmasPortraitDressing } from "@/components/christmas";
 import { AmazonSearchLink } from "@/components/amazon-search-link";
 import { ProductImage } from "@/components/product-image";
 import { Button } from "@/components/ui/button";
@@ -233,11 +234,14 @@ function AskAlPage() {
             catalog runs out.
           </p>
           <div className="mt-8 hidden overflow-hidden rounded-2xl bg-cream p-2 shadow-[var(--shadow-border)] lg:block">
-            <img
-              src="/al-drone.jpg"
-              alt="Al the delivery drone, charcoal airframe with a mint visor"
-              className="aspect-[4/3] w-full rounded-xl object-cover outline outline-1 -outline-offset-1 outline-ink/10"
-            />
+            <div className="relative overflow-hidden rounded-xl">
+              <img
+                src="/al-drone.jpg"
+                alt="Al the delivery drone, charcoal airframe with a mint visor"
+                className="aspect-[4/3] w-full object-cover outline outline-1 -outline-offset-1 outline-ink/10"
+              />
+              <ChristmasPortraitDressing />
+            </div>
           </div>
         </aside>
 

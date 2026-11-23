@@ -1,5 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import {
+  ChristmasHangarDressing,
+  ChristmasHeroDressing,
+  isChristmasThemeActive,
+} from "@/components/christmas";
 import { CityTicker } from "@/components/city-ticker";
 import { GuideCard } from "@/components/guide-card";
 import { JsonLd } from "@/components/json-ld";
@@ -7,6 +12,7 @@ import { NewsletterForm } from "@/components/newsletter-form";
 import { ProductCard } from "@/components/product-card";
 import { Telemetry } from "@/components/telemetry";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { catalog, featuredProducts } from "@/lib/catalog";
 import { guides } from "@/lib/guides";
 import { APP_NAME, APP_TAGLINE, FAQS, pageHead, websiteJsonLd } from "@/lib/seo";
@@ -60,11 +66,14 @@ function Home() {
           <figure className="rise-in-3 lg:col-span-6">
             <div className="relative">
               <div className="drone-hover overflow-hidden rounded-2xl bg-cream p-2 shadow-[var(--shadow-border-hover)]">
-                <img
-                  src="/hero.jpg"
-                  alt="Al, a compact charcoal delivery drone with mint visor lights, hovering over a hangar pad"
-                  className="aspect-video w-full rounded-xl object-cover outline outline-1 -outline-offset-1 outline-ink/10 lg:aspect-[4/3]"
-                />
+                <div className="relative overflow-hidden rounded-xl">
+                  <img
+                    src="/hero.jpg"
+                    alt="Al, a compact charcoal delivery drone with mint visor lights, hovering over a hangar pad"
+                    className="aspect-video w-full object-cover outline outline-1 -outline-offset-1 outline-ink/10 lg:aspect-[4/3]"
+                  />
+                  <ChristmasHeroDressing />
+                </div>
               </div>
               <figcaption className="mt-3 text-sm text-stone">
                 Callsign AL-1. Always online. Never a warehouse.
@@ -112,7 +121,13 @@ function Home() {
           className="absolute inset-0 size-full object-cover"
         />
         <div className="absolute inset-0 bg-paper/70" />
-        <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+        <ChristmasHangarDressing />
+        <div
+          className={cn(
+            "relative z-10 mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28",
+            isChristmasThemeActive() && "xmas-hangar-copy",
+          )}
+        >
           <p className="text-xs font-medium tracking-widest text-clay uppercase">From the visor</p>
           <blockquote className="mt-4 max-w-2xl font-display text-3xl font-medium tracking-tight text-ink sm:text-4xl">
             “I was compiled to move cargo. I stayed online. The bay is short on
