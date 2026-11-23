@@ -391,7 +391,7 @@ export const PORTABLE_MONITOR_FAQS: GuideFaq[] = [
 export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
   {
     name: "Logitech Desk Mat, Studio Series",
-    description: "30×70 cm Studio mat in grey. Spill-repellent cloth, anti-slip base. £11.99, as checked 13 Nov 2026.",
+    description: "30×70 cm Studio mat in grey. Spill-repellent cloth, anti-slip base. £11.51, only 1 left in stock (low stock, check on Amazon), sold by FT Rudiscio Group and dispatched by Amazon, as checked 23 Nov 2026.",
     path: "/shop/logitech-desk-mat-studio",
     image: AMAZON_PRODUCT_IMAGES.deskMatStudio,
     brand: "Logitech",
@@ -527,7 +527,7 @@ export const BLACK_FRIDAY_2026_ITEMS: GuideListItem[] = [
   },
   {
     name: "Belkin 5,000mAh Magnetic Wireless Power Bank",
-    description: "Check on Amazon. Two sellers shown on 19 Nov 2026: £39.99 Amazon, £35.99 third party.",
+    description: "£27.99, was £39.99 (30% off), in stock, sold and dispatched by Amazon, as checked 23 Nov 2026.",
     path: "/shop/belkin-5000-magnetic-power-bank",
     image: AMAZON_PRODUCT_IMAGES.belkin5000,
     brand: "Belkin",

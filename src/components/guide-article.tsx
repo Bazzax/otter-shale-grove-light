@@ -420,8 +420,9 @@ function PackingPowerBody() {
         </ShopLink>{" "}
         is the catalog pick: 5,000 mAh, about{" "}
         <strong className="font-medium text-ink">18.5Wh at 3.7V nominal</strong> (5,000 × 3.7 ÷
-        1000). MagSafe-compatible, 7.5W wireless. This Baseus is the affiliate aisle if you need
-        it on a Tuesday.
+        1000). MagSafe-compatible, 7.5W wireless. £27.99, was £39.99 (30% off), in stock, sold
+        and dispatched by Amazon, checked 23 Nov 2026. This Baseus is the affiliate aisle if you
+        need it on a Tuesday.
       </p>
       <AmazonPick asin="B0G4CHTD53" />
       <h2>What USB-C hub belongs on a hotel desk?</h2>
@@ -1353,8 +1354,8 @@ function PowerBankLuggageBody() {
         fold-out kickstand, pass-through charging. Run the 3.7V maths and you are around 18.5Wh
         (5,000 × 3.7 ÷ 1000), cabin-trivial. It is a phone top-up, not a laptop brick. If the phone
         is not magnetic, skip the snap and use USB-C, or skip the puck. Amazon UK affiliate pick.
-        Delivery is Amazon's. No featured buy box on Amazon UK as of 10 Nov 2026 — check on Amazon
-        for current offers.
+        Delivery is Amazon's. £27.99, was £39.99 (30% off), in stock, sold and dispatched by
+        Amazon, checked 23 Nov 2026.
       </p>
       <h2>Anker MagGo 10,000mAh — the travel bank</h2>
       <p>
@@ -2147,8 +2148,8 @@ function ChristmasUnder50Body() {
       <h3>Logitech Desk Mat, Studio Series</h3>
       <p>
         A 30×70 cm Studio mat in grey, with a spill-repellent cloth surface and an anti-slip
-        base. Brand: Logitech. £11.99, as checked 13 Nov 2026, in stock, sold by Amazon and
-        dispatched by Amazon.
+        base. Brand: Logitech. £11.51, as checked 23 Nov 2026, only 1 left in stock (low stock,
+        check on Amazon), sold by FT Rudiscio Group and dispatched by Amazon.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.fieldMat} />
       <h3>Anker 240W Right-Angle USB-C Cable, 2-pack</h3>
@@ -2731,12 +2732,8 @@ const BLACK_FRIDAY_POWER_BANKS: BlackFridayRow[] = [
   },
   {
     name: "Belkin 5,000mAh Magnetic Wireless Power Bank",
-    price: (
-      <>
-        <strong className="font-medium text-ink">check on Amazon</strong> (two sellers shown:
-        £39.99 Amazon, £35.99 third party)
-      </>
-    ),
+    price:
+      "£27.99, was £39.99 (30% off), in stock, sold and dispatched by Amazon, checked 23 Nov 2026",
     asin: AMAZON_PICK_ASINS.belkin5000,
     shopSlug: "belkin-5000-magnetic-power-bank",
   },
