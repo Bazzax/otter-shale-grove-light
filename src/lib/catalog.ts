@@ -40,7 +40,7 @@ export const AMAZON_PRODUCT_IMAGES = {
   c920s: amazonProductImage("71y7HsMxOaL"),
   momax70w: amazonProductImage("61N1ocLV0XL"),
   ugreenDualDock: amazonProductImage("71ytW-063tL"),
-  mxKeysMini: amazonProductImage("71jgJ6SY3rL"),
+  mxKeysMini: amazonProductImage("71rOtcve5vL"),
   spotlight: amazonProductImage("51-uRUtczhL"),
   deskMatStudio: amazonProductImage("51O92he9okL"),
   maggo10000: amazonProductImage("51tLiKYI4DL"),
@@ -82,7 +82,7 @@ export const AMAZON_PICK_ASINS = {
   callLatch: "B07MM4V7NR",
   worldBrick70: "B0BHQNMDNC",
   twinViewDock: "B0BY8QNV1C",
-  softDeckMini: "B07W6GGC8W",
+  softDeckMini: "B07W6HG7LV",
   spotCue: "B06WP4QCKT",
   fieldMat: "B07W5JK3Z2",
   magDeck10: "B0CFDQ9QH5",
@@ -609,23 +609,23 @@ export const catalog: Product[] = [
   },
   {
     slug: "logitech-mx-keys-mini",
-    name: "Logitech MX Keys Mini",
+    name: "Logitech MX Keys Mini for Mac",
     amazonPick: true,
     price: 63.99,
     category: "Desk",
-    tagline: "Compact backlit Bluetooth keyboard, graphite. Check UK layout on Amazon.",
+    tagline: "Mac version with UK (QWERTY UK) layout. Pale Grey. Compact, backlit Bluetooth.",
     description:
-      "Logitech MX Keys Mini Minimalist Wireless Illuminated Keyboard, Graphite. Bluetooth, compact, smart backlit keys, Easy-Switch, 29.6×13.2×2.1 cm. It is a keyboard, not a desk mat. Check UK layout on Amazon — the live listing this shop link opens is AZERTY, not UK QWERTY. In stock at £63.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      "Logitech MX Keys Mini for Mac Minimalist Wireless Keyboard, Pale Grey, QWERTY UK English. Mac version with UK (QWERTY UK) layout. Compact, Bluetooth, smart backlit keys, USB-C, Easy-Switch, 29.6×13.2×2.1 cm. Model 920-010525. It also works with Windows, but the modifier-key legends are Mac (Command, Option). It is a keyboard, not a desk mat. In stock at £63.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED_26_NOV,
     details: [
-      "MX Keys Mini · graphite · compact keyboard",
-      "Bluetooth · smart backlit keys · Easy-Switch",
-      "29.6×13.2×2.1 cm · sold by Amazon",
-      "Check UK layout on Amazon — this listing is AZERTY, not UK QWERTY",
+      "MX Keys Mini for Mac · Pale Grey · UK (QWERTY UK) layout",
+      "Bluetooth · smart backlit keys · USB-C · Easy-Switch",
+      "Works with Windows; Mac modifier-key legends (Command, Option)",
+      "29.6×13.2×2.1 cm · model 920-010525 · sold by Amazon",
       "£63.99 (RRP £84.99), in stock, checked 26 Nov 2026",
     ],
     alNote:
-      "A compact keyboard. Check UK layout on Amazon — this listing is AZERTY, not UK QWERTY. Amazon UK affiliate pick. Al does not dropship Logitech. " +
+      "Mac version with UK (QWERTY UK) layout, Pale Grey. It also works with Windows, but the modifier keys are labelled for Mac. Amazon UK affiliate pick. Al does not dropship Logitech. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.mxKeysMini,
     brand: "Logitech",

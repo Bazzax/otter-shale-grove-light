@@ -1207,9 +1207,9 @@ function WebcamCallsBody() {
       <p>
         If you type on camera, hotel walls hear a mechanical board.{" "}
         <ShopLink slug="logitech-mx-keys-mini">Logitech MX Keys Mini</ShopLink> is the compact
-        backlit Bluetooth keyboard in graphite. Easy-Switch, 29.6×13.2×2.1 cm. Check UK layout on
-        Amazon — the live listing this shop link opens is AZERTY, not UK QWERTY. I do not dropship
-        it. Pair it with the cam if the call includes a shared doc and you still have to type.
+        backlit Bluetooth keyboard in Pale Grey. Easy-Switch, 29.6×13.2×2.1 cm. The shop link is
+        the Mac version with UK (QWERTY UK) layout. I do not dropship it. Pair it with the cam if
+        the call includes a shared doc and you still have to type.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.softDeckMini} />
       <h2>How I would decide</h2>
