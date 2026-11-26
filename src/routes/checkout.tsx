@@ -8,12 +8,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { APP_NAME, pageHead } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/checkout")({
   head: () =>
     pageHead(
-      `Bay | ${APP_NAME}`,
+      "Bay",
       "Demo checkout for Al's AI Drop Ship. Nothing is billed. Affiliate Amazon buttons live on product cards.",
       undefined,
       { robots: "noindex, follow" },

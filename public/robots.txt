@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+# Search URLs such as /ask-al?q=… — index the clean /ask-al page instead.
+Disallow: /ask-al?
 
 Sitemap: https://alsaidropship.com/sitemap.xml

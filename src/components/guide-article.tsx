@@ -290,7 +290,7 @@ function PackingPowerBody() {
         <p className="mt-3 text-sm text-stone">
           Full watt-hour maths, the March 2026 list, and the banks I would actually fly:{" "}
           <GuideLink slug="power-bank-hand-luggage-uk">
-            power banks in UK hand luggage
+            can you take a power bank on a plane
           </GuideLink>
           .
         </p>
@@ -693,7 +693,7 @@ function PackingPowerBody() {
         picks. Delivery is Amazon's. No surprise warehouse.
         Cabin rules, two-bank limit, and the Wh sum live on{" "}
         <GuideLink slug="power-bank-hand-luggage-uk">
-          power banks in UK hand luggage
+          can you take a power bank on a plane
         </GuideLink>
         . Using the bank once you sit down is a different question:{" "}
         <GuideLink slug="power-bank-on-plane-rules-uk">
@@ -768,18 +768,19 @@ function TravelDeskBody() {
         Leave one at the desk.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.twinLead240} />
-      <h2>Best portable monitor for travel: 16-inch USB-C</h2>
+      <h2>Portable monitor for laptop: 16-inch ARZOPA Z1FC</h2>
       <p>
-        One laptop panel means Slack eating half the spreadsheet.{" "}
-        <ShopLink slug="arzopa-z1fc-portable-monitor">ARZOPA Z1FC</ShopLink> is the
-        16-inch USB-C panel I would pack. Official manufacturer specs, not a guess: 16.1 inch FHD
+        One laptop panel means Slack eating half the spreadsheet. A portable monitor for laptop
+        work is the extra window.{" "}
+        <ShopLink slug="arzopa-z1fc-portable-monitor">ARZOPA Z1FC</ShopLink> is the ARZOPA
+        portable monitor I would pack. Official manufacturer specs, not a guess: 16.1 inch FHD
         1920×1080, 144Hz, 106% sRGB, net weight 1.72 lb / 780g. USB-C plug-and-play or Mini HDMI.
         One USB-C cable can carry video and power when the laptop supports DisplayPort Alt Mode
         and supplies enough wattage; HDMI devices still need a second power lead. Kickstand. Slim
         enough to sit beside the laptop. Mid-range, not OLED luxury. Sleeve the panel so it does
         not share scratches with the bricks. Size tradeoffs and the port test live in{" "}
         <GuideLink slug="portable-monitor-laptop-second-screen">
-          portable monitors as a second screen
+          portable monitor for laptop
         </GuideLink>
         .
       </p>
@@ -1236,10 +1237,10 @@ function PowerBankLuggageBody() {
   return (
     <>
       <p>
-        A power bank is a lithium battery with a USB socket. From a UK airport it belongs in hand
-        luggage, not the hold. That is the whole first rule. The second is watt-hours, not the
-        milliamp-hour number printed on the sleeve. The third is that this log is not your airline,
-        and it is not the CAA. Read the current{" "}
+        Yes. You can take a power bank on a plane — in hand luggage, not the hold. Under 100Wh is
+        generally fine with no approval. 100–160Wh usually needs airline approval. Over 160Wh is
+        not allowed in passenger baggage. Rules vary by airline, so check the one you booked. This
+        log is not your airline, and it is not the CAA. Read the current{" "}
         <a
           href="https://www.gov.uk/hand-luggage-restrictions/electronic-devices-and-electrical-items"
           target="_blank"
@@ -1257,7 +1258,7 @@ function PowerBankLuggageBody() {
         >
           CAA baggage guidance
         </a>
-        ,         then the carrier you actually booked. The CAA list in force since 27 March 2026 is
+        , then the carrier you actually booked. The CAA list in force since 27 March 2026 is
         below. I do not invent airline policy. Using the bank once you sit down — charging a
         phone from it, or plugging the bank into seat power — is a different log:{" "}
         <GuideLink slug="power-bank-on-plane-rules-uk">
@@ -1430,7 +1431,7 @@ function PowerBankOnboardBody() {
         This log is about using a power bank once you sit down. Taking one through security is a
         different question — that is{" "}
         <GuideLink slug="power-bank-hand-luggage-uk">
-          power banks in UK hand luggage
+          can you take a power bank on a plane
         </GuideLink>
         . The rest of the kit is{" "}
         <GuideLink slug="packing-power">what I would pack for travel power</GuideLink>. I do not
@@ -1938,7 +1939,7 @@ function ChristmasTechGiftsBody() {
         </GuideLink>
         . Carriage, watt-hours and the banks already in this bay:{" "}
         <GuideLink slug="power-bank-hand-luggage-uk">
-          power banks in UK hand luggage
+          can you take a power bank on a plane
         </GuideLink>
         .
       </p>
@@ -2337,9 +2338,10 @@ function PortableMonitorBody() {
       <p>
         A laptop panel is one window. Slack eats half of it. The other half is the spreadsheet you
         actually flew for. Remote workers, students, and anyone working a kitchen table already
-        know this. A portable monitor is the second window that goes back in the bag — trains,
-        hotels, a spare room that is also a guest room. It is not a desktop panel with the stand
-        sawn off. If you need two full hotel monitors, that is a{" "}
+        know this. A portable monitor is the second window that goes back in the bag. A portable
+        monitor for laptop work — trains, hotels, a spare room that is also a guest room — is that
+        extra window, not a desktop panel with the stand sawn off. This bay lists an ARZOPA
+        portable monitor: the ARZOPA Z1FC. If you need two full hotel monitors, that is a{" "}
         <GuideLink slug="usb-c-dock-dual-hdmi">dual-HDMI dock</GuideLink> job, and only when the
         room already has the screens.
       </p>

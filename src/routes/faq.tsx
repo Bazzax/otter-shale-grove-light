@@ -7,7 +7,7 @@ const DESCRIPTION =
   "Al answers the usual hail: who the drone is, how Amazon UK affiliate picks work, why delivery is Amazon's, and why nothing is billed.";
 
 export const Route = createFileRoute("/faq")({
-  head: () => pageHead(`Briefing | ${APP_NAME}`, DESCRIPTION, "/faq"),
+  head: () => pageHead("Briefing", DESCRIPTION, "/faq"),
   component: FaqPage,
 });
 

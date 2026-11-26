@@ -6,7 +6,7 @@ import { AmazonImageCredit, ProductImage } from "@/components/product-image";
 import { Badge } from "@/components/ui/badge";
 import { catalog, getProduct, isAmazonHostedImage, PRODUCT_SLUG_REDIRECTS } from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
-import { APP_NAME, pageHead, productJsonLd } from "@/lib/seo";
+import { pageHead, productJsonLd, productMetaDescription } from "@/lib/seo";
 
 export const Route = createFileRoute("/shop/$slug")({
   beforeLoad: ({ params }) => {
@@ -26,15 +26,10 @@ export const Route = createFileRoute("/shop/$slug")({
   },
   head: ({ loaderData }) => {
     const product = loaderData?.product;
-    if (!product) return pageHead(`Cargo | ${APP_NAME}`, "Product not in the bay.");
-    return pageHead(
-      `${product.name} — Amazon UK pick | ${APP_NAME}`,
-      product.price == null
-        ? `${product.tagline} Amazon UK affiliate pick. Check the live price on Amazon.`
-        : `${product.tagline} Amazon UK affiliate pick, about ${formatProductPrice(product)}. Shop the tagged listing. Amazon’s live price may differ.`,
-      `/shop/${product.slug}`,
-      { image: product.image },
-    );
+    if (!product) return pageHead("Cargo", "Product not in the bay.");
+    return pageHead(product.name, productMetaDescription(product), `/shop/${product.slug}`, {
+      image: product.image,
+    });
   },
   component: ProductPage,
 });

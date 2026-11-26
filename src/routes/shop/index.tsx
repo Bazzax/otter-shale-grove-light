@@ -3,7 +3,7 @@ import { useMemo, useState } from "react";
 import { ProductCard } from "@/components/product-card";
 import { Input } from "@/components/ui/input";
 import { CATEGORIES, catalog, type Category } from "@/lib/catalog";
-import { APP_NAME, pageHead } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 type ShopSearch = { q?: string };
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/shop/")({
   }),
   head: () =>
     pageHead(
-      `Cargo bay — Amazon UK affiliate picks | ${APP_NAME}`,
+      "Cargo bay — Amazon UK affiliate picks",
       "Amazon UK affiliate picks: ANC audio, GaN chargers, desk kit, SSDs, carry. Snapshot prices on every card. Delivery is Amazon's. Live checkout may differ.",
       "/shop",
     ),

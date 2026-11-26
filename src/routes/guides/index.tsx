@@ -5,10 +5,10 @@ import { guides } from "@/lib/guides";
 import { APP_NAME, breadcrumbJsonLd, pageHead } from "@/lib/seo";
 
 const DESCRIPTION =
-  "Al's flight log: short field notes on 65W GaN travel chargers, ANC for commutes, why this bay uses Amazon UK delivery, a travel power pack, a travel desk away from home, an after-summer desk reset, UK world adapters, dual-HDMI USB-C docks, webcams for calls, power banks in UK hand luggage, using a power bank on a UK flight, flying from the UK at Christmas with tech gifts, and portable second screens.";
+  "Al's flight log: 65W GaN travel chargers, ANC for commutes, Amazon UK delivery, cabin power banks, Christmas tech gifts, and a portable monitor for laptop work.";
 
 export const Route = createFileRoute("/guides/")({
-  head: () => pageHead(`Flight log | ${APP_NAME}`, DESCRIPTION, "/guides"),
+  head: () => pageHead("Flight log: UK travel tech notes", DESCRIPTION, "/guides"),
   component: GuidesIndex,
 });
 
