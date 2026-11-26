@@ -163,6 +163,9 @@ const PRICE_CHECKED_19_NOV =
 const PRICE_CHECKED_23_NOV =
   "Approx. UK price, checked 23 Nov 2026. Amazon's live checkout may differ.";
 
+const PRICE_CHECKED_26_NOV =
+  "Approx. UK price, checked 26 Nov 2026. Amazon's live checkout may differ.";
+
 export const catalog: Product[] = [
   {
     slug: "soundcore-q20i",
@@ -194,22 +197,22 @@ export const catalog: Product[] = [
     slug: "omoton-75-iso-uk-keyboard",
     name: "OMOTON 75% ISO-UK Mechanical Keyboard",
     amazonPick: true,
-    price: 69.99,
+    price: 48.44,
     category: "Desk",
     tagline: "75% ISO-UK layout. Tri-mode wireless. QMK/VIA.",
     description:
-      "OMOTON Mechanical Keyboard Gaming 75% ISO-UK, tri-mode wireless, QMK/VIA. ISO-UK layout, UK legends, large Enter key. Hot-swappable, gasket mount, RGB backlit, 4000mAh battery, volume knob. In stock at £69.99 when checked, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "OMOTON Mechanical Keyboard Gaming 75% ISO-UK, tri-mode wireless, QMK/VIA. ISO-UK layout, UK legends, large Enter key. Hot-swappable, gasket mount, RGB backlit, 4000mAh battery, volume knob. In stock at £48.44 when checked, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "ISO-UK layout · UK legends · large Enter key",
       "Tri-mode wireless",
       "QMK/VIA",
       "Hot-swappable · gasket mount · RGB backlit · 4000mAh battery · volume knob",
-      "£69.99, checked 10 Nov 2026",
+      "£48.44, checked 26 Nov 2026",
     ],
     alNote:
       "This is the UK ISO board on the card. US-layout 75% boards are a different listing. Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.omoton75,
     brand: "OMOTON",
     asin: AMAZON_PICK_ASINS.omoton75,
@@ -221,19 +224,22 @@ export const catalog: Product[] = [
     slug: "ugreen-65w-gan",
     name: "UGREEN 65W GaN Charger (2 USB-C, UK plug)",
     amazonPick: true,
+    price: 19.94,
     category: "Power",
     tagline: "White 65W GaN. Two USB-C ports. UK 3-pin plug.",
     description:
-      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. Price unclear on Amazon UK as of 19 Nov 2026 — check on Amazon for current offers. This is an Amazon UK affiliate pick. Al does not dropship it.",
+      "UGREEN USB C Charger 65W Plug GaN 2C. White. Two USB-C ports, no USB-A. 65W max, and 65W total when charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. In stock at £19.94 (RRP £29.99). This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "65W GaN · 2× USB-C · no USB-A",
       "65W max · 65W total when charging both",
       "UK 3-pin plug (BS 1363). Listing does not say folding",
       "White · sold by UGREEN GROUP LIMITED UK · dispatched by Amazon",
-      "Price unclear on Amazon UK as of 19 Nov 2026 — check on Amazon for current offers",
+      "£19.94 (RRP £29.99), in stock, checked 26 Nov 2026",
     ],
     alNote:
-      "Amazon UK affiliate pick. Al does not dropship it. Dual USB-C, UK plug, 65W total if both ports are in use. Price unclear on Amazon UK as of 19 Nov 2026 — check on Amazon.",
+      "Amazon UK affiliate pick. Al does not dropship it. Dual USB-C, UK plug, 65W total if both ports are in use. £19.94 (RRP £29.99), in stock. " +
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.ugreen65w,
     brand: "UGREEN",
     asin: AMAZON_PICK_ASINS.ugreen65w,
@@ -245,11 +251,11 @@ export const catalog: Product[] = [
     slug: "samsung-t7-ssd-2tb",
     name: "Samsung T7 Portable SSD 2TB",
     amazonPick: true,
-    price: 389.99,
+    price: 307.97,
     category: "Storage",
     tagline: "Portable 2TB SSD. USB 3.0. Indigo blue.",
     description:
-      "Samsung T7 Portable SSD in indigo-blue, 2 TB. The Amazon UK listing calls it a portable solid-state drive with a 2.5-inch form factor, USB 3.0 interface, and USB connectivity. Compatible devices listed: laptop, desktop, smartphone, and television. In the box: the portable SSD, USB Type-C to C and Type-A to A cables, and a user manual. Samsung’s brand comparison table on that page states a transfer speed of up to 1,050 MB/s; the feature bullets do not. Approx. UK price is a snapshot from 10 Nov 2026 — Amazon’s live checkout may differ.",
+      "Samsung T7 Portable SSD in indigo-blue, 2 TB. The Amazon UK listing calls it a portable solid-state drive with a 2.5-inch form factor, USB 3.0 interface, and USB connectivity. Compatible devices listed: laptop, desktop, smartphone, and television. In the box: the portable SSD, USB Type-C to C and Type-A to A cables, and a user manual. Samsung’s brand comparison table on that page states a transfer speed of up to 1,050 MB/s; the feature bullets do not. Approx. UK price is a snapshot from 26 Nov 2026 — Amazon’s live checkout may differ.",
     details: [
       "2 TB portable SSD · indigo blue · 2.5-inch form factor",
       "USB 3.0 interface (listing overview) · USB connectivity",
@@ -321,22 +327,22 @@ export const catalog: Product[] = [
     slug: "benq-screenbar",
     name: "BenQ ScreenBar Monitor Light Bar",
     amazonPick: true,
-    price: 89,
+    price: 75.65,
     category: "Desk",
     tagline: "Monitor light bar. Auto-dimming. 2700K-6500K. USB-powered.",
     description:
-      "BenQ ScreenBar Monitor Light Bar. Auto dimming, glare-free, adjustable colour temperature, universal clamp, USB-powered. Clamp for 1-3 cm monitors. Touch control. 2700K-6500K, 230-955 lux. Aluminium, 800 g. In stock at £89.00, BenQ UK Webstore, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "BenQ ScreenBar Monitor Light Bar. Auto dimming, glare-free, adjustable colour temperature, universal clamp, USB-powered. Clamp for 1-3 cm monitors. Touch control. 2700K-6500K, 230-955 lux. Aluminium, 800 g. In stock at £75.65 (RRP £89), BenQ UK Webstore, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "Auto-dimming sensor · touch control",
       "2700K-6500K · 230-955 lux",
       "Clamp for 1-3 cm monitors · USB-powered",
       "Aluminium · 800 g · BenQ UK Webstore · dispatched by Amazon",
-      "£89.00, in stock, checked 10 Nov 2026",
+      "£75.65 (RRP £89), in stock, checked 26 Nov 2026",
     ],
     alNote:
       "A light bar that sits on the monitor, not a desk lamp. Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.benqScreenbar,
     brand: "BenQ",
     asin: AMAZON_PICK_ASINS.benqScreenbar,
@@ -374,22 +380,22 @@ export const catalog: Product[] = [
     slug: "tomtoc-14-laptop-case",
     name: "tomtoc 360 Protective 14-inch Laptop Case",
     amazonPick: true,
-    price: 27.99,
+    price: 22.39,
     category: "Carry",
     tagline: "Structured 14-inch case. 360 CornerArmor. Navy. Not a sleeve.",
     description:
-      "tomtoc 360 Protective Laptop Case for 14-inch MacBook Pro. Also fits Dell XPS 14 and 13.8-inch Surface Laptop. Water-resistant. 360 CornerArmor, drop-tested. GRS recycled water-resistant fabric, YKK zips, front pocket and strap. Navy blue. It is a structured protective case, not a plain sleeve. In stock at £27.99, tomtoc EU Official, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "tomtoc 360 Protective Laptop Case for 14-inch MacBook Pro. Also fits Dell XPS 14 and 13.8-inch Surface Laptop. Water-resistant. 360 CornerArmor, drop-tested. GRS recycled water-resistant fabric, YKK zips, front pocket and strap. Navy blue. It is a structured protective case, not a plain sleeve. In stock at £22.39, tomtoc EU Official, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "Structured 360 protective case for 14-inch MacBook Pro",
       "Also listed for Dell XPS 14 and 13.8-inch Surface Laptop",
       "360 CornerArmor, drop-tested · GRS recycled water-resistant fabric",
       "YKK zips · front pocket and strap · navy blue",
-      "£27.99, in stock, tomtoc EU Official, dispatched by Amazon, checked 10 Nov 2026",
+      "£22.39, in stock, tomtoc EU Official, dispatched by Amazon, checked 26 Nov 2026",
     ],
     alNote:
       "A structured case with a pocket, not a thin sleeve. Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.tomtoc14,
     brand: "tomtoc",
     asin: AMAZON_PICK_ASINS.tomtoc14,
@@ -452,20 +458,21 @@ export const catalog: Product[] = [
     slug: "logitech-mx-master-3s",
     name: "Logitech MX Master 3S",
     amazonPick: true,
+    price: 76.49,
     category: "Desk",
     tagline: "MX Master 3S, graphite. 8000 DPI. Quiet clicks. MagSpeed.",
     description:
-      "Logitech MX Master 3S wireless mouse, Graphite. 8000 DPI, quiet clicks, MagSpeed scrolling, ergonomic. Bluetooth + USB-C. Logi Options+ / FLOW. No new featured offer when checked 10 Nov 2026; check the live price on Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "Logitech MX Master 3S wireless mouse, Graphite. 8000 DPI, quiet clicks, MagSpeed scrolling, ergonomic. Bluetooth + USB-C. Logi Options+ / FLOW. In stock at £76.49. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "MX Master 3S · graphite",
       "8000 DPI · quiet clicks · MagSpeed scrolling · ergonomic",
       "Bluetooth + USB-C · Logi Options+ / FLOW",
-      "No new featured offer, checked 10 Nov 2026 — check on Amazon",
+      "£76.49, in stock, checked 26 Nov 2026",
     ],
     alNote:
       "A work mouse, not a toy. Amazon UK affiliate pick. Al does not dropship Logitech. " +
-      PRICE_CHECKED,
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.mxMaster3s,
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.cabinCursor,
@@ -476,22 +483,22 @@ export const catalog: Product[] = [
     slug: "anker-240w-right-angle-cable",
     name: "Anker 240W Right-Angle USB-C Cable, 2-pack",
     amazonPick: true,
-    price: 11.99,
+    price: 15.19,
     category: "Power",
     tagline: "240W right-angle USB-C, 2-pack, 6 ft, braided.",
     description:
-      "Anker USB C Cable Right Angle, 240W, 2-pack, 6 ft, braided. 90-degree connectors, 10,000+ bends, 24-month warranty. In stock at £11.99, AnkerDirect UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "Anker USB C Cable Right Angle, 240W, 2-pack, 6 ft, braided. 90-degree connectors, 10,000+ bends, 24-month warranty. In stock at £15.19, AnkerDirect UK. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "240W USB-C to USB-C · 2-pack · 6 ft each",
       "Right-angle / 90° connectors · braided",
       "10,000+ bends · 24-month warranty",
       "AnkerDirect UK",
-      "£11.99 · list £18.99, in stock, checked 10 Nov 2026",
+      "£15.19 · list £18.99, in stock, checked 26 Nov 2026",
     ],
     alNote:
       "A pair of right-angle leads. The brick cannot outrun a tired cable. Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.anker240wCable,
     brand: "Anker",
     asin: AMAZON_PICK_ASINS.twinLead240,
@@ -502,20 +509,22 @@ export const catalog: Product[] = [
     slug: "arzopa-z1fc-portable-monitor",
     name: "ARZOPA Z1FC 16.1-inch Portable Monitor",
     amazonPick: true,
-    price: 89.96,
+    price: 85.46,
     category: "Desk",
     tagline: "16.1 inch FHD 144Hz. Matte. 2× USB-C + mini HDMI.",
     description:
-      "ARZOPA 16.1-inch 144Hz Portable Gaming Monitor, FHD, 106% sRGB, HDR, ultra slim, Z1FC. 1920×1080, 144 Hz, matte, 2× USB-C + mini HDMI, dual speakers, black. In stock at £89.96, ARZOPA Official Store. This is an Amazon UK affiliate pick. Al does not dropship it. Approx. UK price, checked 9 Nov 2026. Amazon's live checkout may differ.",
+      "ARZOPA 16.1-inch 144Hz Portable Gaming Monitor, FHD, 106% sRGB, HDR, ultra slim, Z1FC. 1920×1080, 144 Hz, matte, 2× USB-C + mini HDMI, dual speakers, black. In stock at £85.46, ARZOPA Official Store. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "16.1 in FHD 1920×1080 · 144 Hz · Z1FC",
       "106% sRGB · HDR · matte · black",
       "2× USB-C + mini HDMI · dual speakers",
       "ARZOPA Official Store",
-      "£89.96 when checked 9 Nov 2026",
+      "£85.46, in stock, checked 26 Nov 2026",
     ],
     alNote:
-      "A backpack panel, not a desktop. Your USB-C port has to do video. Amazon UK affiliate pick. Al does not dropship it. Approx. UK price, checked 9 Nov 2026. Amazon's live checkout may differ.",
+      "A backpack panel, not a desktop. Your USB-C port has to do video. Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.arzopaZ1fc,
     brand: "ARZOPA",
     asin: AMAZON_PICK_ASINS.secondWindow16,
@@ -526,21 +535,21 @@ export const catalog: Product[] = [
     slug: "logitech-c920s-webcam",
     name: "Logitech C920S HD Pro Webcam",
     amazonPick: true,
-    price: 39.99,
+    price: 37.99,
     category: "Desk",
     tagline: "1080p/30fps webcam. Privacy shutter. Dual stereo mics.",
     description:
-      "Logitech C920S HD Pro Webcam, Full HD 1080p/30fps. Built-in privacy shutter, dual stereo mics, autofocus, black. It is a webcam, not a cover or clip. In stock at £39.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "Logitech C920S HD Pro Webcam, Full HD 1080p/30fps. Built-in privacy shutter, dual stereo mics, autofocus, black. It is a webcam, not a cover or clip. In stock at £37.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "Logitech C920S HD Pro · 1080p/30fps webcam",
       "Built-in privacy shutter · dual stereo mics · autofocus",
       "Black · sold by Amazon",
-      "£39.99 (RRP £84.99), in stock, checked 10 Nov 2026",
+      "£37.99 (RRP £84.99), in stock, checked 26 Nov 2026",
     ],
     alNote:
       "A webcam. Close the shutter when you leave. Amazon UK affiliate pick. Al does not dropship Logitech. " +
-      PRICE_CHECKED,
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.c920s,
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.callLatch,
@@ -551,21 +560,21 @@ export const catalog: Product[] = [
     slug: "momax-70w-travel-adapter",
     name: "MOMAX 70W GaN Universal Travel Adapter",
     amazonPick: true,
-    price: 29.98,
+    price: 28.48,
     category: "Power",
     tagline: "70W GaN world adapter. UK/EU/AU/US. Black.",
     description:
-      "MOMAX Universal Travel Adapter 70W GaN, UK/EU/AU/US. Also listed for JP/CN sockets. 150+ countries. 7.7×5.5×5.3 cm, black. In stock at £29.98 (RRP £39.99), MOMAX GLOBAL. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "MOMAX Universal Travel Adapter 70W GaN, UK/EU/AU/US. Also listed for JP/CN sockets. 150+ countries. 7.7×5.5×5.3 cm, black. In stock at £28.48 (RRP £39.99), MOMAX GLOBAL. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "70W GaN · UK / EU / AU / US sockets (+JP/CN listed)",
       "150+ countries · 7.7×5.5×5.3 cm · black",
       "MOMAX GLOBAL",
-      "£29.98 (RRP £39.99), in stock, checked 10 Nov 2026",
+      "£28.48 (RRP £39.99), in stock, checked 26 Nov 2026",
     ],
     alNote:
       "The UK-plug bricks cover a UK socket. This one covers the socket in the other country. Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.momax70w,
     brand: "MOMAX",
     asin: AMAZON_PICK_ASINS.worldBrick70,
@@ -604,20 +613,20 @@ export const catalog: Product[] = [
     amazonPick: true,
     price: 63.99,
     category: "Desk",
-    tagline: "Compact backlit Bluetooth keyboard, graphite. Listing does not state the layout.",
+    tagline: "Compact backlit Bluetooth keyboard, graphite. Check UK layout on Amazon.",
     description:
-      "Logitech MX Keys Mini Minimalist Wireless Illuminated Keyboard, Graphite. Bluetooth, compact, smart backlit keys, Easy-Switch, 29.6×13.2×2.1 cm. It is a keyboard, not a desk mat. The Amazon listing does not state the keyboard layout. Check the layout in the product photos and reviews before buying if you need UK keys. In stock at £63.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "Logitech MX Keys Mini Minimalist Wireless Illuminated Keyboard, Graphite. Bluetooth, compact, smart backlit keys, Easy-Switch, 29.6×13.2×2.1 cm. It is a keyboard, not a desk mat. Check UK layout on Amazon — the live listing this shop link opens is AZERTY, not UK QWERTY. In stock at £63.99 (RRP £84.99), sold by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "MX Keys Mini · graphite · compact keyboard",
       "Bluetooth · smart backlit keys · Easy-Switch",
       "29.6×13.2×2.1 cm · sold by Amazon",
-      "The Amazon listing does not state the keyboard layout. Check the layout in the product photos and reviews before buying if you need UK keys",
-      "£63.99 (RRP £84.99), in stock, checked 10 Nov 2026",
+      "Check UK layout on Amazon — this listing is AZERTY, not UK QWERTY",
+      "£63.99 (RRP £84.99), in stock, checked 26 Nov 2026",
     ],
     alNote:
-      "A compact keyboard. The Amazon listing does not state the keyboard layout. Check the layout in the product photos and reviews before buying if you need UK keys. Amazon UK affiliate pick. Al does not dropship Logitech. " +
-      PRICE_CHECKED,
+      "A compact keyboard. Check UK layout on Amazon — this listing is AZERTY, not UK QWERTY. Amazon UK affiliate pick. Al does not dropship Logitech. " +
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.mxKeysMini,
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.softDeckMini,
@@ -628,22 +637,22 @@ export const catalog: Product[] = [
     slug: "logitech-spotlight-remote",
     name: "Logitech Spotlight Presentation Remote",
     amazonPick: true,
-    price: 52.99,
+    price: 60,
     category: "Desk",
     tagline: "Wireless presentation remote. Highlight and magnify. Grey.",
     description:
-      "Logitech Spotlight Wireless Presentation Remote. Wireless, gyroscope cursor control, highlight and magnify, grey. It is a presentation remote, not a desk light. £52.99 (was £59.08), Quality Exchange LTD, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED,
+      "Logitech Spotlight Wireless Presentation Remote. Wireless, gyroscope cursor control, highlight and magnify, grey. It is a presentation remote, not a desk light. £60.00, Quality Exchange LTD, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "Logitech Spotlight · presentation remote · grey",
       "Wireless · gyroscope cursor control",
       "Highlight and magnify",
       "Quality Exchange LTD · dispatched by Amazon",
-      "£52.99 (was £59.08), checked 10 Nov 2026",
+      "£60.00, checked 26 Nov 2026",
     ],
     alNote:
       "A clicker for a slide, not a lamp for a desk. Amazon UK affiliate pick. Al does not dropship Logitech. " +
-      PRICE_CHECKED,
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.spotlight,
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.spotCue,
@@ -654,21 +663,21 @@ export const catalog: Product[] = [
     slug: "logitech-desk-mat-studio",
     name: "Logitech Desk Mat, Studio Series",
     amazonPick: true,
-    price: 11.51,
+    price: 16.99,
     category: "Desk",
     tagline: "30×70 cm Studio mat. Spill-repellent cloth. Grey.",
     description:
-      "Logitech Desk Mat, Studio Series. Rubber base, 30×70 cm, 286 g, spill-repellent cloth surface, grey. Only 1 left in stock at £11.51 (RRP £16.99), sold by FT Rudiscio Group, dispatched by Amazon — low stock, check on Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
-      PRICE_CHECKED_23_NOV,
+      "Logitech Desk Mat, Studio Series. Rubber base, 30×70 cm, 286 g, spill-repellent cloth surface, grey. In stock at £16.99, dispatched by Amazon. This is an Amazon UK affiliate pick. Al does not dropship it. " +
+      PRICE_CHECKED_26_NOV,
     details: [
       "Logitech Studio Series desk mat · grey",
       "30 × 70 cm · 286 g",
       "Spill-repellent cloth surface · rubber base",
-      "£11.51 (RRP £16.99), only 1 left in stock (low stock, check on Amazon), sold by FT Rudiscio Group, dispatched by Amazon, checked 23 Nov 2026",
+      "£16.99, in stock, dispatched by Amazon, checked 26 Nov 2026",
     ],
     alNote:
-      "A mat. That is the whole job. Amazon UK affiliate pick. Al does not dropship Logitech. Only 1 left in stock at £11.51, sold by FT Rudiscio Group, dispatched by Amazon — low stock, check on Amazon. " +
-      PRICE_CHECKED_23_NOV,
+      "A mat. That is the whole job. Amazon UK affiliate pick. Al does not dropship Logitech. " +
+      PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.deskMatStudio,
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.fieldMat,

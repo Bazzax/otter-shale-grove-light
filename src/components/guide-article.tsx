@@ -129,9 +129,8 @@ function GanBody() {
       <p>
         <ShopLink slug="ugreen-65w-gan">UGREEN 65W GaN Charger (2 USB-C, UK plug)</ShopLink> is a white
         65W GaN with two USB-C ports and a UK 3-pin plug (BS 1363). The listing does not say the
-        pins fold. 65W max, and 65W total when both ports charge. The price was unclear on
-        Amazon UK when I checked on 19 Nov 2026, so there is no price here — check on Amazon. This is
-        an Amazon UK affiliate pick. Al does not dropship it.
+        pins fold. 65W max, and 65W total when both ports charge. £19.94 (RRP £29.99), in stock,
+        checked 26 Nov 2026. This is an Amazon UK affiliate pick. Al does not dropship it.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.ugreen65w} />
       <ul>
@@ -552,7 +551,7 @@ function PackingPowerBody() {
               <td className="px-4 py-3">20,000mAh</td>
               <td className="px-4 py-3">about 73-74Wh</td>
               <td className="px-4 py-3">65W single USB-C</td>
-              <td className="px-4 py-3">£46.99, checked 10 Nov 2026</td>
+              <td className="px-4 py-3">No featured offer on Amazon UK, check on Amazon</td>
               <td className="px-4 py-3">
                 <AmazonText asin={AMAZON_PICK_ASINS.iniuP62}>Amazon UK</AmazonText>
               </td>
@@ -565,7 +564,7 @@ function PackingPowerBody() {
               <td className="px-4 py-3">27,000mAh</td>
               <td className="px-4 py-3">97.2Wh</td>
               <td className="px-4 py-3">140W USB-C</td>
-              <td className="px-4 py-3">£84.99 (regular £99.99), sold out when checked 10 Nov 2026</td>
+              <td className="px-4 py-3">£74.99 (regular £99.99), sold out when checked 26 Nov 2026</td>
               <td className="px-4 py-3">
                 <a
                   href="https://alogic.co.uk/products/ark-27-000mah-power-bank-with-140w-usb-c-charging"
@@ -585,7 +584,7 @@ function PackingPowerBody() {
               <td className="px-4 py-3">25,000mAh</td>
               <td className="px-4 py-3">92.5Wh</td>
               <td className="px-4 py-3">100W single USB-C</td>
-              <td className="px-4 py-3">£66.99, checked 10 Nov 2026</td>
+              <td className="px-4 py-3">£56.94, checked 26 Nov 2026</td>
               <td className="px-4 py-3">
                 <AmazonText asin="B0DBHGZ5QH">Amazon UK</AmazonText>
               </td>
@@ -604,7 +603,7 @@ function PackingPowerBody() {
           </tbody>
         </table>
       </div>
-      <p className="text-sm text-dust">Prices change daily; comparison table checked 10 Nov 2026.</p>
+      <p className="text-sm text-dust">Prices change daily; comparison table checked 26 Nov 2026.</p>
       <h3>INIU P62</h3>
       <p>
         The P62 is the smaller, cheaper 65W bank. 20,000mAh, about 73-74Wh. INIU's Cougar series
@@ -614,7 +613,7 @@ function PackingPowerBody() {
         inside the two-bank limit. Read the watt-hour rating printed on the case before you fly.
         Max output is 65W on USB-C1, with a second USB-C at 36W and a USB-A at 18W. Weight is about
         323g. It ships with a detachable 100W USB-C cable that can be used as a lanyard. It is not a
-        fixed built-in lead. £46.99, sold by Amazon, in stock on 10 Nov 2026. The tagged listing is
+        fixed built-in lead. No featured offer on Amazon UK, check on Amazon. The tagged listing is
         the{" "}
         <AmazonText asin={AMAZON_PICK_ASINS.iniuP62}>INIU P62-E1 Mini</AmazonText> (ASIN B0DB89DSHV).
         If Amazon shows a Classic size on the same page, pick Mini / P62-E1. This is an Amazon UK
@@ -639,7 +638,7 @@ function PackingPowerBody() {
       <h3>ALOGIC Ark</h3>
       <p>
         The ALOGIC Ark is very close to the 100Wh line, so make sure the rating on the case is
-        visible at security. 27,000mAh, 97.2Wh, 140W USB-C, 635g. £84.99 at{" "}
+        visible at security. 27,000mAh, 97.2Wh, 140W USB-C, 635g. £74.99 at{" "}
         <a
           href="https://alogic.co.uk/products/ark-27-000mah-power-bank-with-140w-usb-c-charging"
           target="_blank"
@@ -648,14 +647,14 @@ function PackingPowerBody() {
         >
           ALOGIC UK
         </a>{" "}
-        (regular £99.99). It was sold out on ALOGIC's UK store when checked 10 Nov 2026. It is not confirmed on Amazon UK.
+        (regular £99.99). It was sold out on ALOGIC's UK store when checked 26 Nov 2026. It is not confirmed on Amazon UK.
       </p>
       <h3>INIU P63</h3>
       <p>
         The{" "}
         <AmazonText asin="B0DBHGZ5QH">INIU P63</AmazonText> is 100W, which is enough for most 13-14
         inch laptops, and it is the cheapest of the three. 25,000mAh, 92.5Wh from INIU’s spec table
-        (25,000mAh × 3.7V), about 392g. £66.99, in stock on 10 Nov 2026. Read the
+        (25,000mAh × 3.7V), about 392g. £56.94, in stock on 26 Nov 2026. Read the
         rating on the case before flying.
       </p>
       <h3>Anker 737 PowerCore 24K</h3>
@@ -790,9 +789,10 @@ function TravelDeskBody() {
       </h3>
       <p>
         A short comparison against two panels people actually search — ViewSonic TD1656-2K and
-        SideTrak Solo Pro 13 — plus the ARZOPA Z1FC this card already is. Specs below are from
-        the manufacturer pages, not marketplace titles. UK prices are omitted; live Amazon
-        checkout is the only honest number, and I have not verified one for the two alternatives.
+        SideTrak Solo Pro — plus the ARZOPA Z1FC this card already is. Specs below are from
+        the manufacturer pages, not marketplace titles, except the Solo Pro 13-inch product
+        page, which is gone. UK prices are omitted; live Amazon checkout is the only honest
+        number, and I have not verified one for the two alternatives.
       </p>
       <div className="overflow-x-auto rounded-2xl bg-cream shadow-[var(--shadow-border)]">
         <table className="w-full min-w-[36rem] text-left text-sm">
@@ -830,14 +830,14 @@ function TravelDeskBody() {
             </tr>
             <tr className="border-t border-line">
               <td className="px-4 py-3 text-ink">
-                SideTrak Solo Pro 13
-                <span className="block text-xs text-dust">Luxor STFRHDTC13BL touch listing</span>
+                SideTrak Solo Pro
+                <span className="block text-xs text-dust">13-inch product page gone</span>
               </td>
-              <td className="px-4 py-3">13 in · 1920×1080 · 60Hz</td>
-              <td className="px-4 py-3">1.6 lb</td>
+              <td className="px-4 py-3">Not sourced here</td>
+              <td className="px-4 py-3">Not sourced here</td>
               <td className="px-4 py-3">
-                USB-C plus mini-HDMI on the official listing. Sell sheet claims a single-cord
-                setup with pass-through; I have not independently tested it
+                The old 13-inch product listing now redirects to Luxor’s freestanding portable
+                monitors category. I am not repeating specs from a page that is no longer live.
               </td>
             </tr>
           </tbody>
@@ -864,14 +864,14 @@ function TravelDeskBody() {
         </a>
         ,{" "}
         <a
-          href="https://www.luxorworkspaces.com/solo-pro-fhd-touch-monitor-13-3-inch-black"
+          href="https://www.luxorworkspaces.com/portable-monitors/freestanding"
           target="_blank"
           rel="noopener noreferrer"
           className="text-clay hover:text-clay-dark"
         >
-          Luxor SideTrak Solo Pro 13
-        </a>
-        . No UK prices on this table.
+          Luxor freestanding portable monitors
+        </a>{" "}
+        (the 13-inch Solo Pro product page now redirects here). No UK prices on this table.
       </p>
       <h2>How I would pack the kit</h2>
       <ul>
@@ -1207,10 +1207,9 @@ function WebcamCallsBody() {
       <p>
         If you type on camera, hotel walls hear a mechanical board.{" "}
         <ShopLink slug="logitech-mx-keys-mini">Logitech MX Keys Mini</ShopLink> is the compact
-        backlit Bluetooth keyboard in graphite. Easy-Switch, 29.6×13.2×2.1 cm. The Amazon listing
-        does not state the keyboard layout. Check the layout in the product photos and reviews
-        before buying if you need UK keys. I do not dropship it. Pair it with the cam if the call
-        includes a shared doc and you still have to type.
+        backlit Bluetooth keyboard in graphite. Easy-Switch, 29.6×13.2×2.1 cm. Check UK layout on
+        Amazon — the live listing this shop link opens is AZERTY, not UK QWERTY. I do not dropship
+        it. Pair it with the cam if the call includes a shared doc and you still have to type.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.softDeckMini} />
       <h2>How I would decide</h2>
@@ -1294,7 +1293,7 @@ function PowerBankLuggageBody() {
       <p>
         Some airlines ask passengers not to store power banks in overhead lockers. The{" "}
         <a
-          href="https://www.caa.co.uk/air-passengers/about-your-trip/baggage/pack-right-safe-flight/"
+          href={CAA_PACK_RIGHT}
           target="_blank"
           rel="noopener noreferrer"
           className="text-clay hover:text-clay-dark"
@@ -2149,14 +2148,13 @@ function ChristmasUnder50Body() {
       <h3>Logitech Desk Mat, Studio Series</h3>
       <p>
         A 30×70 cm Studio mat in grey, with a spill-repellent cloth surface and an anti-slip
-        base. Brand: Logitech. £11.51, as checked 23 Nov 2026, only 1 left in stock (low stock,
-        check on Amazon), sold by FT Rudiscio Group and dispatched by Amazon.
+        base. Brand: Logitech. £16.99, as checked 26 Nov 2026, in stock, dispatched by Amazon.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.fieldMat} />
       <h3>Anker 240W Right-Angle USB-C Cable, 2-pack</h3>
       <p>
         Two 6 ft braided USB-C to USB-C cables with a 90-degree plug, rated 240W. Brand: Anker.
-        £11.99, as checked 13 Nov 2026, in stock, sold by AnkerDirect UK and dispatched by
+        £15.19, as checked 26 Nov 2026, in stock, sold by AnkerDirect UK and dispatched by
         Amazon.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.twinLead240} />
@@ -2180,8 +2178,8 @@ function ChristmasUnder50Body() {
       <p>
         A white 65W GaN brick with two USB-C ports and no USB-A. 65W max, and 65W total when
         charging both. UK 3-pin plug (BS 1363). The listing does not say the pins fold. Brand:
-        UGREEN. Check on Amazon: on 19 Nov 2026 Amazon UK showed only a Prime-member price, so
-        there is no clear buy box to stamp. More on how I pick a travel 65W brick:{" "}
+        UGREEN. £19.94 (RRP £29.99), in stock, as checked 26 Nov 2026. More on how I pick a travel
+        65W brick:{" "}
         <GuideLink slug="65w-gan-charger-travel">65W GaN chargers that actually travel</GuideLink>
         .
       </p>
@@ -2212,7 +2210,7 @@ function ChristmasUnder50Body() {
       <h3>tomtoc 360 Protective 14-inch Laptop Case</h3>
       <p>
         A 360° protective sleeve for a 14-inch laptop, with extra pocket space. Brand: tomtoc.
-        £27.99, as checked 13 Nov 2026, in stock, sold by tomtoc EU Official and dispatched by
+        £22.39, as checked 26 Nov 2026, in stock, sold by tomtoc EU Official and dispatched by
         Amazon.
       </p>
       <AmazonPick asin={AMAZON_PICK_ASINS.tomtoc14} />
@@ -2683,12 +2681,7 @@ const BLACK_FRIDAY_CAA_SOURCE =
 const BLACK_FRIDAY_CHARGERS: BlackFridayRow[] = [
   {
     name: "UGREEN 65W GaN Charger, 2 USB-C, UK plug (white)",
-    price: (
-      <>
-        Price unclear on Amazon UK as of 19 Nov 2026 —{" "}
-        <strong className="font-medium text-ink">check on Amazon</strong>
-      </>
-    ),
+    price: "£19.94 (RRP £29.99), in stock, checked 26 Nov 2026",
     asin: AMAZON_PICK_ASINS.ugreen65w,
     shopSlug: "ugreen-65w-gan",
   },
