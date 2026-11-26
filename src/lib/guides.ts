@@ -36,12 +36,12 @@ export type Guide = {
 };
 
 export const CAA_PACK_RIGHT =
-  "https://www.caa.co.uk/air-passengers/about-your-trip/baggage/pack-right-safe-flight/";
+  "https://www.caa.co.uk/air-passengers/about-your-trip/baggage/safety-advice-on-what-to-pack/";
 
 export const AIRLINE_POWER_BANK_SOURCES = {
   ryanair: "https://help.ryanair.com/hc/en-gb/articles/12890774807569-What-items-are-permitted-on-board",
   easyjetRestricted: "https://www.easyjet.com/en/help/baggage/restricted-and-unusual-items",
-  easyjetDangerous: "https://www.easyjet.com/en/terms-and-conditions/dangerous-goods",
+  easyjetDangerous: "https://www.easyjet.com/en/help-centre/baggage/dangerous-goods",
   easyjetCheckin: "https://www.easyjet.com/en/checkin/dangerousgoods",
   ba: "https://www.britishairways.com/content/information/baggage-essentials/liquids-and-restrictions",
   jet2: "https://www.jet2.com/en/dangerous-goods",
@@ -361,7 +361,7 @@ export const CHRISTMAS_UNDER_50_FAQS: GuideFaq[] = [
 
 export const PORTABLE_MONITOR_SOURCES = {
   z1fc: "https://www.arzopa.com/products/arzopa-z1fc-gray-144hz-portable-gaming-monitor-16-1-screen",
-  amazonUk: "https://www.amazon.co.uk/dp/B0CJCBQYDY",
+  amazonUk: "https://www.amazon.co.uk/dp/B0CJCBQYDY?tag=alsaidropship-21",
   msiSpec: "https://us.msi.com/Portable-Monitor/PRO-MP161-E2U/Specification",
   msiUk: "https://uk.msi.com/Portable-Monitor/PRO-MP161-E2U/Overview",
   asus: "https://www.asus.com/uk/displays-desktops/monitors/zenscreen/asus-zenscreen-mb16ahv/techspec/",
@@ -390,14 +390,14 @@ export const PORTABLE_MONITOR_FAQS: GuideFaq[] = [
 export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
   {
     name: "Logitech Desk Mat, Studio Series",
-    description: "30×70 cm Studio mat in grey. Spill-repellent cloth, anti-slip base. £11.51, only 1 left in stock (low stock, check on Amazon), sold by FT Rudiscio Group and dispatched by Amazon, as checked 23 Nov 2026.",
+    description: "30×70 cm Studio mat in grey. Spill-repellent cloth, anti-slip base. £16.99, in stock, as checked 26 Nov 2026.",
     path: "/shop/logitech-desk-mat-studio",
     image: AMAZON_PRODUCT_IMAGES.deskMatStudio,
     brand: "Logitech",
   },
   {
     name: "Anker 240W Right-Angle USB-C Cable, 2-pack",
-    description: "6 ft braided USB-C to USB-C, 90-degree plug, 240W, two cables in the pack. £11.99, as checked 13 Nov 2026.",
+    description: "6 ft braided USB-C to USB-C, 90-degree plug, 240W, two cables in the pack. £15.19, as checked 26 Nov 2026.",
     path: "/shop/anker-240w-right-angle-cable",
     image: AMAZON_PRODUCT_IMAGES.anker240wCable,
     brand: "Anker",
@@ -418,7 +418,7 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
   },
   {
     name: "UGREEN 65W GaN Charger (2 USB-C, UK plug)",
-    description: "White 65W GaN brick, two USB-C ports, no USB-A, UK 3-pin plug. The listing does not say the pins fold. Check on Amazon: only a Prime-member price was shown on 19 Nov 2026.",
+    description: "White 65W GaN brick, two USB-C ports, no USB-A, UK 3-pin plug. The listing does not say the pins fold. £19.94 (RRP £29.99), in stock, as checked 26 Nov 2026.",
     path: "/shop/ugreen-65w-gan",
     image: AMAZON_PRODUCT_IMAGES.ugreen65w,
     brand: "UGREEN",
@@ -438,7 +438,7 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
   },
   {
     name: "tomtoc 360 Protective 14-inch Laptop Case",
-    description: "360° protective 14-inch sleeve with a carry pocket. £27.99, as checked 13 Nov 2026.",
+    description: "360° protective 14-inch sleeve with a carry pocket. £22.39, as checked 26 Nov 2026.",
     path: "/shop/tomtoc-14-laptop-case",
     image: AMAZON_PRODUCT_IMAGES.tomtoc14,
     brand: "tomtoc",
@@ -481,7 +481,7 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
 export const BLACK_FRIDAY_2026_ITEMS: GuideListItem[] = [
   {
     name: "UGREEN 65W GaN Charger, 2 USB-C, UK plug (white)",
-    description: "Price unclear on Amazon UK as of 19 Nov 2026 — check on Amazon.",
+    description: "£19.94 (RRP £29.99), in stock, as checked 26 Nov 2026.",
     path: "/shop/ugreen-65w-gan",
     image: AMAZON_PRODUCT_IMAGES.ugreen65w,
     brand: "UGREEN",
@@ -579,10 +579,10 @@ export const TRAVEL_DESK_MONITORS: GuideListItem[] = [
     brand: "ViewSonic",
   },
   {
-    name: "SideTrak Solo Pro 13",
+    name: "SideTrak Solo Pro",
     description:
-      "Official Luxor Solo Pro 13-inch touchscreen listing (STFRHDTC13BL): 1920×1080 Full HD, 1.6 lb, USB-C and mini-HDMI, built-in kickstand.",
-    url: "https://www.luxorworkspaces.com/solo-pro-fhd-touch-monitor-13-3-inch-black",
+      "The 13-inch Luxor Solo Pro product page is gone. It now redirects to Luxor’s freestanding portable monitors category. Specs for that old listing are no longer sourced here.",
+    url: "https://www.luxorworkspaces.com/portable-monitors/freestanding",
     brand: "SideTrak",
   },
 ];
@@ -595,7 +595,7 @@ export const guides: Guide[] = [
     description:
       "Al's field notes on 65W GaN bricks for UK travel: dual USB-C, a UK 3-pin plug, heat, and the UGREEN Amazon UK pick versus a 100W folding brick.",
     published: "2026-09-23",
-    updated: "2026-11-19",
+    updated: "2026-11-26",
     relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "tomtoc-14-laptop-case"],
     affiliateSlug: "ugreen-65w-gan",
   },
@@ -629,7 +629,7 @@ export const guides: Guide[] = [
     description:
       "Anker, UGREEN, Belkin, and a hotel-desk hub — plus the CAA cabin rule: power banks in hand luggage only, max two, under 100Wh. Tagged Amazon UK picks.",
     published: "2026-09-23",
-    updated: "2026-11-19",
+    updated: "2026-11-26",
     faqs: PACKING_POWER_FAQS,
     relatedSlugs: ["ugreen-65w-gan", "belkin-5000-magnetic-power-bank", "anker-7-in-1-usb-c-hub", "anker-maggo-10000-power-bank"],
     affiliateSlug: "ugreen-65w-gan",
@@ -642,11 +642,11 @@ export const guides: Guide[] = [
     description:
       "Honest Amazon UK travel-desk kit: 100W GaN, a fold-flat stand, a quiet mouse, high-watt leads, and a 16-inch USB-C portable monitor. Tagged links.",
     published: "2026-09-24",
-    updated: "2026-11-03",
+    updated: "2026-11-26",
     itemList: {
       name: "Portable monitors compared for a travel desk",
       description:
-        "ARZOPA Z1FC versus ViewSonic TD1656-2K and SideTrak Solo Pro 13. Specs from manufacturer pages. No UK prices.",
+        "ARZOPA Z1FC versus ViewSonic TD1656-2K. The old 13-inch SideTrak Solo Pro listing now redirects to Luxor’s freestanding portable monitors category. Specs from manufacturer pages where still live. No UK prices.",
       items: TRAVEL_DESK_MONITORS,
     },
     relatedSlugs: [
@@ -706,7 +706,7 @@ export const guides: Guide[] = [
     description:
       "Laptop cams lie. Al's notes on 1080p webcams, shutters, light, and the compact desk kit around the Logitech C920S for hotel and remote-work calls.",
     published: "2026-09-27",
-    updated: "2026-11-03",
+    updated: "2026-11-26",
     relatedSlugs: ["logitech-c920s-webcam", "benq-screenbar", "ugreen-laptop-stand", "logitech-mx-keys-mini"],
     affiliateSlug: "logitech-c920s-webcam",
   },
@@ -731,7 +731,7 @@ export const guides: Guide[] = [
     description:
       "Since March 2026 you can't recharge a power bank on board, and most UK airlines ban using one. Who allows it, where to stow it and what to do if it overheats.",
     published: "2026-10-26",
-    updated: "2026-11-03",
+    updated: "2026-11-26",
     faqs: ONBOARD_POWER_BANK_FAQS,
     relatedSlugs: ["anker-maggo-10000-power-bank", "anker-100w-gan-charger", "ugreen-65w-gan"],
     affiliateSlug: "anker-maggo-10000-power-bank",
@@ -758,7 +758,7 @@ export const guides: Guide[] = [
     description:
       "UK tech gifts under £50, re-checked on Amazon UK on 13 Nov 2026. Chargers, hubs, a cabin-legal power bank and Q20i headphones. Prices are snapshots.",
     published: "2026-11-13",
-    updated: "2026-11-19",
+    updated: "2026-11-26",
     faqs: CHRISTMAS_UNDER_50_FAQS,
     itemList: {
       name: "Christmas tech gifts under £50, checked 13 Nov 2026",
@@ -784,6 +784,7 @@ export const guides: Guide[] = [
     description:
       "Black Friday 2026 Amazon UK prices for chargers, power banks, hubs and a stand on this site, checked 19 Nov 2026. Prices change — check on Amazon.",
     published: "2026-11-19",
+    updated: "2026-11-26",
     itemList: {
       name: "Black Friday 2026 UK tech roundup, checked 19 Nov 2026",
       description:
