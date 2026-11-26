@@ -18,7 +18,7 @@ import {
   type Product,
 } from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
-import { APP_NAME, pageHead } from "@/lib/seo";
+import { pageHead, robotsForQueryParams } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
 type AskSearch = { about?: string; q?: string };
@@ -28,11 +28,14 @@ export const Route = createFileRoute("/ask-al")({
     about: typeof search.about === "string" ? search.about : undefined,
     q: typeof search.q === "string" ? search.q : undefined,
   }),
-  head: () =>
+  loaderDeps: ({ search: { q, about } }) => ({ q, about }),
+  loader: ({ deps }) => deps,
+  head: ({ loaderData }) =>
     pageHead(
-      `Hail Al | ${APP_NAME}`,
-      "Search Amazon UK tech with a tagged affiliate link, or radio the drone. Al matches the bay and will not invent products or ratings. Amazon pick prices are approx. snapshots.",
+      "Hail Al: Amazon UK tech search",
+      "Search Amazon UK tech with a tagged affiliate link, or radio the drone. Al matches the bay and will not invent products. Prices are approx. snapshots.",
       "/ask-al",
+      { robots: robotsForQueryParams(loaderData?.q, loaderData?.about) },
     ),
   component: AskAlPage,
 });

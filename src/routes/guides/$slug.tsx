@@ -31,7 +31,7 @@ export const Route = createFileRoute("/guides/$slug")({
   },
   head: ({ loaderData }) => {
     const guide = loaderData?.guide;
-    if (!guide) return pageHead(`Flight log | ${APP_NAME}`, "That log is empty air.");
+    if (!guide) return pageHead("Flight log", "That log is empty air.");
     return pageHead(guideMetaTitle(guide), guide.description, `/guides/${guide.slug}`, {
       type: "article",
     });

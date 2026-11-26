@@ -1,9 +1,13 @@
-import { PRICE_CURRENCY } from "./format";
+import { PRICE_CURRENCY, formatProductPrice } from "./format.ts";
 
 export const APP_NAME = "Al's AI Drop Ship";
 export const APP_TAGLINE = "A sentient dropship drone, online, programmed to deliver.";
 export const APP_DESCRIPTION =
   "Al is a mock sentient delivery drone. Hail Al for a short tech catalog of Amazon UK affiliate picks: GaN chargers, ANC audio, desk kit. Delivery is Amazon's. Demo checkout; nothing is billed.";
+export const TITLE_MAX = 60;
+export const META_DESCRIPTION_MAX = 160;
+const TITLE_FULL_SUFFIX = ` | ${APP_NAME}`;
+const TITLE_SHORT_SUFFIX = " | Al";
 export const CONTACT_EMAIL = "alsaidropship@gmail.com";
 export const SITE_ORIGIN = "https://alsaidropship.com";
 export const FORMSUBMIT_ACTION = `https://formsubmit.co/${CONTACT_EMAIL}`;
@@ -15,29 +19,91 @@ export function absoluteImageUrl(image?: string) {
   return `${SITE_ORIGIN}${image}`;
 }
 
+function clipAtWord(text: string, max: number): string {
+  const t = text.trim().replace(/\s+/g, " ");
+  if (t.length <= max) return t;
+  const slice = t.slice(0, max);
+  const at = slice.lastIndexOf(" ");
+  const cut = at >= Math.floor(max * 0.7) ? slice.slice(0, at) : slice;
+  return cut.replace(/[\s|–—:,;.\-/]+$/, "");
+}
+
+function stripBrandSuffix(pageTitle: string): string {
+  if (pageTitle.endsWith(TITLE_FULL_SUFFIX)) {
+    return pageTitle.slice(0, -TITLE_FULL_SUFFIX.length).trim();
+  }
+  if (pageTitle.endsWith(TITLE_SHORT_SUFFIX)) {
+    return pageTitle.slice(0, -TITLE_SHORT_SUFFIX.length).trim();
+  }
+  return pageTitle;
+}
+
+/**
+ * SERP titles: land at or under 60 characters. Keep a brand suffix when it
+ * fits; shorten to " | Al", then drop it, rather than truncating the page name.
+ */
+export function documentTitle(pageTitle: string, options?: { branded?: boolean }): string {
+  const page = stripBrandSuffix(pageTitle.trim());
+  if (options?.branded || page.includes(APP_NAME) || page.includes("Al's Drop Ship")) {
+    return clipAtWord(page, TITLE_MAX);
+  }
+  const withFull = `${page}${TITLE_FULL_SUFFIX}`;
+  if (withFull.length <= TITLE_MAX) return withFull;
+  const withShort = `${page}${TITLE_SHORT_SUFFIX}`;
+  if (withShort.length <= TITLE_MAX) return withShort;
+  if (page.length <= TITLE_MAX) return page;
+  return clipAtWord(page, TITLE_MAX);
+}
+
+export function clipMetaDescription(text: string, max = META_DESCRIPTION_MAX): string {
+  const t = text.trim().replace(/\s+/g, " ");
+  if (t.length <= max) return t;
+  const cut = clipAtWord(t, max - 1);
+  return /[.!?]$/.test(cut) ? cut : `${cut}.`;
+}
+
+export function productMetaDescription(product: { tagline: string; price?: number }): string {
+  return product.price == null
+    ? `${product.tagline} Amazon UK affiliate pick. Check the live price on Amazon.`
+    : `${product.tagline} Amazon UK affiliate pick, about ${formatProductPrice(product)}. Live checkout may differ.`;
+}
+
+/** noindex query variants so crawlers keep following links to the clean URL. */
+export function robotsForQueryParams(...values: Array<string | undefined>): string {
+  const hasQuery = values.some((value) => Boolean(value?.trim()));
+  return hasQuery ? "noindex, follow" : "index, follow";
+}
+
 export function pageHead(
   title: string,
   description: string,
   path?: string,
-  options?: { type?: "website" | "article"; robots?: string; image?: string },
+  options?: {
+    type?: "website" | "article";
+    robots?: string;
+    image?: string;
+    branded?: boolean;
+  },
 ) {
   const url = path ? `${SITE_ORIGIN}${path}` : SITE_ORIGIN;
   const image = absoluteImageUrl(options?.image);
   const type = options?.type ?? "website";
+  const resolvedTitle = documentTitle(title, { branded: options?.branded });
+  const resolvedDescription = clipMetaDescription(description);
   return {
     meta: [
-      { title },
-      { name: "description", content: description },
+      { title: resolvedTitle },
+      { name: "description", content: resolvedDescription },
       { name: "robots", content: options?.robots ?? "index, follow" },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
+      { property: "og:title", content: resolvedTitle },
+      { property: "og:description", content: resolvedDescription },
       { property: "og:type", content: type },
       { property: "og:url", content: url },
       { property: "og:image", content: image },
       { property: "og:site_name", content: APP_NAME },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: title },
-      { name: "twitter:description", content: description },
+      { name: "twitter:title", content: resolvedTitle },
+      { name: "twitter:description", content: resolvedDescription },
       { name: "twitter:image", content: image },
     ],
     ...(path ? { links: [{ rel: "canonical", href: url }] } : {}),

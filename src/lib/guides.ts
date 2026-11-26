@@ -1,5 +1,4 @@
 import { AMAZON_PRODUCT_IMAGES, getProduct } from "@/lib/catalog";
-import { APP_NAME } from "@/lib/seo";
 
 export type GuideFaq = { q: string; a: string };
 
@@ -605,7 +604,7 @@ export const guides: Guide[] = [
     title: "ANC headphones vs earbuds for the commute",
     kicker: "Audio",
     description:
-      "Over-ear isolation or buds you can pocket? Al compares Soundcore Q20i hybrid ANC headphones and Liberty 4 NC adaptive ANC earbuds for trains, bikes, and offices, and when to jump Amazon UK instead.",
+      "Over-ear isolation or buds you can pocket? Al compares Soundcore Q20i hybrid ANC headphones and Liberty 4 NC earbuds for trains, bikes and offices.",
     published: "2026-09-23",
     updated: "2026-11-19",
     relatedSlugs: ["soundcore-q20i", "soundcore-liberty-4-nc"],
@@ -641,7 +640,7 @@ export const guides: Guide[] = [
     heading: "What I'd actually pack for a desk away from home",
     kicker: "Desk",
     description:
-      "Honest Amazon UK travel-desk kit — 100W GaN, a fold-flat stand, a quiet mouse, high-watt leads, and a 16-inch USB-C portable monitor. Tagged links. No gimmicks.",
+      "Honest Amazon UK travel-desk kit: 100W GaN, a fold-flat stand, a quiet mouse, high-watt leads, and a 16-inch USB-C portable monitor. Tagged links.",
     published: "2026-09-24",
     updated: "2026-11-03",
     itemList: {
@@ -664,7 +663,7 @@ export const guides: Guide[] = [
     title: "Summer's unpacked. Here's what stays on the desk.",
     kicker: "Desk",
     description:
-      "Five bits of travel kit that earn their place once you're home: hub, laptop stand, mouse, portable monitor, 100W charger and cables, plus the power bank for the commute.",
+      "Five bits of travel kit that stay useful at home: hub, laptop stand, mouse, portable monitor, 100W charger and cables, plus a commute power bank.",
     published: "2026-09-24",
     updated: "2026-11-03",
     relatedSlugs: [
@@ -680,6 +679,7 @@ export const guides: Guide[] = [
     slug: "travel-power-adapter-uk",
     title: "How to pick a travel power adapter that actually works from the UK",
     heading: "How to pick a world travel adapter from a UK bag",
+    metaTitle: "How to Pick a UK Travel Power Adapter",
     kicker: "Power",
     description:
       "UK pins, EU sockets, hotel desks: what a 70W world charger must do, and when the MOMAX 70W adapter beats a pouch of plugs or a single-country GaN.",
@@ -712,13 +712,13 @@ export const guides: Guide[] = [
   },
   {
     slug: "power-bank-hand-luggage-uk",
-    title: "Can you take a power bank on a plane from the UK?",
-    heading: "Power banks in UK hand luggage: what flies, what stays home",
+    title: "Can you take a power bank on a plane?",
+    heading: "Can you take a power bank on a plane?",
     kicker: "Power",
     description:
-      "Cabin bag, not the hold. CAA rules since 27 March 2026: two banks, no charging on board. How watt-hours work, the Belkin 5000mAh and Anker MagGo 10,000mAh, and why you still check the airline.",
+      "Yes. A power bank goes in hand luggage, not the hold. Under 100Wh is fine; 100–160Wh needs airline approval; over 160Wh is not allowed. Check your airline.",
     published: "2026-10-12",
-    updated: "2026-11-03",
+    updated: "2026-11-26",
     relatedSlugs: ["belkin-5000-magnetic-power-bank", "anker-maggo-10000-power-bank", "anker-100w-gan-charger"],
     affiliateSlug: "anker-maggo-10000-power-bank",
   },
@@ -740,10 +740,10 @@ export const guides: Guide[] = [
     slug: "flying-christmas-tech-gifts-uk",
     title: "Flying from the UK at Christmas with tech gifts",
     heading: "Flying from the UK at Christmas with tech gifts: wrapping, security and lithium batteries",
-    metaTitle: "Flying from the UK at Christmas with Tech Gifts: Wrapping and Lithium Rules",
+    metaTitle: "Christmas Tech Gifts on a UK Flight",
     kicker: "Power",
     description:
-      "Leave presents unwrapped for security. Power banks cabin only, max two per person since 27 March 2026. Devices in the hold fully off. Sourced from the CAA and gov.uk. Check your airline.",
+      "Leave presents unwrapped for security. Power banks cabin only, max two per person. Devices in the hold fully off. From the CAA and gov.uk. Check your airline.",
     published: "2026-11-09",
     faqs: CHRISTMAS_TECH_GIFT_FAQS,
     relatedSlugs: ["anker-maggo-10000-power-bank", "belkin-5000-magnetic-power-bank", "anker-100w-gan-charger"],
@@ -756,7 +756,7 @@ export const guides: Guide[] = [
     metaTitle: "Christmas Tech Gifts Under £50 (UK)",
     kicker: "Desk",
     description:
-      "UK tech gifts under £50 from this site, re-checked on the Amazon UK buy box on 13 Nov 2026. Chargers, hubs, a cabin-legal power bank, and the Q20i headphones. Prices are snapshots — check Amazon.",
+      "UK tech gifts under £50, re-checked on Amazon UK on 13 Nov 2026. Chargers, hubs, a cabin-legal power bank and Q20i headphones. Prices are snapshots.",
     published: "2026-11-13",
     updated: "2026-11-19",
     faqs: CHRISTMAS_UNDER_50_FAQS,
@@ -782,7 +782,7 @@ export const guides: Guide[] = [
     metaTitle: "Black Friday 2026 UK Tech Deals: Chargers & Power Banks",
     kicker: "Power",
     description:
-      "Black Friday 2026 Amazon UK buy-box prices for chargers, power banks, hubs and a stand already on this site, as checked 19 Nov 2026. Was-prices only where Amazon showed one. Prices change — check on Amazon.",
+      "Black Friday 2026 Amazon UK prices for chargers, power banks, hubs and a stand on this site, checked 19 Nov 2026. Prices change — check on Amazon.",
     published: "2026-11-19",
     itemList: {
       name: "Black Friday 2026 UK tech roundup, checked 19 Nov 2026",
@@ -801,13 +801,13 @@ export const guides: Guide[] = [
   },
   {
     slug: "portable-monitor-laptop-second-screen",
-    title: "Portable monitors: a second screen for trains, hotels and the kitchen table",
-    heading: "A second screen that fits a bag, not a desk",
+    title: "Portable monitor for laptop: ARZOPA Z1FC",
+    heading: "Portable monitor for laptop: ARZOPA portable monitor (Z1FC)",
     kicker: "Desk",
     description:
-      "13-16 inch tradeoffs, USB-C video that actually works, HDMI fallback, and the kit around the ARZOPA Z1FC for remote days that are not at a desk.",
+      "A portable monitor for laptop work: USB-C video, HDMI fallback, and the ARZOPA portable monitor this bay lists — the ARZOPA Z1FC. For trains and hotel desks.",
     published: "2026-09-30",
-    updated: "2026-11-09",
+    updated: "2026-11-26",
     faqs: PORTABLE_MONITOR_FAQS,
     relatedSlugs: [
       "arzopa-z1fc-portable-monitor",
@@ -831,7 +831,7 @@ export function getGuide(slug: string) {
 }
 
 export function guideMetaTitle(guide: Guide) {
-  return `${guide.metaTitle ?? guide.title} | ${APP_NAME}`;
+  return guide.metaTitle ?? guide.title;
 }
 
 export function relatedProducts(guide: Guide) {
