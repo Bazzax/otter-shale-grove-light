@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/json-ld";
 import { ProductCard } from "@/components/product-card";
 import { AmazonImageCredit, ProductImage } from "@/components/product-image";
 import { Badge } from "@/components/ui/badge";
-import { catalog, getProduct, isAmazonHostedImage, PRODUCT_SLUG_REDIRECTS } from "@/lib/catalog";
+import { catalog, getProduct, productShowsAmazonImage, PRODUCT_SLUG_REDIRECTS } from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
 import { pageHead, productJsonLd, productMetaDescription } from "@/lib/seo";
 
@@ -59,10 +59,16 @@ function ProductPage() {
               product={product}
               alt={`${product.name} — ${product.tagline}`}
               className="aspect-[4/3] w-full rounded-xl outline outline-1 -outline-offset-1 outline-ink/10"
+              linked={!product.lifestyleImage}
+              priority
             />
           </div>
-          {isAmazonHostedImage(product.image) ? (
+          {productShowsAmazonImage(product) ? (
             <AmazonImageCredit className="mt-2" />
+          ) : product.lifestyleImage ? (
+            <p className="mt-2 text-xs text-dust">
+              Illustrative photo. See Amazon for the exact product.
+            </p>
           ) : null}
         </div>
         <div className="lg:col-span-5">

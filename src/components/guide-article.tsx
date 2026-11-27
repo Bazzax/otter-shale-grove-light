@@ -6,8 +6,8 @@ import {
   AMAZON_PICK_ASINS,
   affiliateProduct,
   catalog,
-  isAmazonHostedImage,
   isAmazonPick,
+  productShowsAmazonImage,
 } from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
 import {
@@ -50,10 +50,10 @@ function GuideLink({ slug, children }: { slug: string; children: ReactNode }) {
 
 function AmazonPick({ asin }: { asin: string }) {
   const product = catalog.find((item) => item.asin === asin && isAmazonPick(item));
-  const amazonImage = product ? isAmazonHostedImage(product.image) : false;
+  const amazonImage = product ? productShowsAmazonImage(product) : false;
   return (
     <div className="flex flex-col gap-3">
-      {product && amazonImage ? (
+      {product ? (
         <div className="max-w-xs overflow-hidden rounded-xl bg-cream p-2 shadow-[var(--shadow-border)]">
           <ProductImage
             product={product}
@@ -2775,11 +2775,11 @@ function BlackFridayTable({ rows }: { rows: BlackFridayRow[] }) {
               <tr key={row.asin} className="border-t border-ink/10 align-top">
                 <td className="p-3">
                   <div className="flex items-start gap-3">
-                    {product && isAmazonHostedImage(product.image) ? (
+                    {product ? (
                       <ProductImage
                         product={product}
                         alt={`${product.name} — ${product.tagline}`}
-                        className="size-14 shrink-0 rounded-lg bg-cream object-contain outline outline-1 -outline-offset-1 outline-ink/10"
+                        className="size-14 shrink-0 rounded-lg bg-cream outline outline-1 -outline-offset-1 outline-ink/10"
                       />
                     ) : null}
                     <span className="text-ink">

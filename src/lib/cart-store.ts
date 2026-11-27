@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { catalog, getProduct, isAmazonPick } from "./catalog";
+import { catalog, getProduct, isAmazonPick, productDisplaySrc } from "./catalog";
 
 export type Line = { slug: string; qty: number };
 
@@ -83,7 +83,7 @@ export const useCart = create<CartState>()(
               qty: l.qty,
               name: product.name,
               price: product.price,
-              image: product.image,
+              image: productDisplaySrc(product),
             };
           })
           .filter((l): l is OrderLine => l !== null);
