@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ProductImage } from "@/components/product-image";
 import { Badge } from "@/components/ui/badge";
-import { isAmazonHostedImage, isAmazonPick, type Product } from "@/lib/catalog";
+import { isAmazonPick, type Product } from "@/lib/catalog";
 import { formatProductPrice } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
@@ -12,7 +12,6 @@ export function ProductCard({
   product: Product;
   size?: "md" | "lg";
 }) {
-  const amazonImage = isAmazonHostedImage(product.image);
   const imgClass = cn(
     "w-full outline outline-1 -outline-offset-1 outline-ink/10 transition-transform duration-300 ease-out group-hover:scale-[1.04]",
     size === "lg" ? "aspect-[4/3] lg:aspect-[4/5] lg:min-h-full" : "aspect-[4/3]",
@@ -27,13 +26,7 @@ export function ProductCard({
       )}
     >
       <div className="relative overflow-hidden rounded-xl bg-paper">
-        {amazonImage ? (
-          <ProductImage product={product} alt={alt} className={imgClass} />
-        ) : (
-          <Link to="/shop/$slug" params={{ slug: product.slug }}>
-            <img src={product.image} alt={alt} className={cn("object-cover", imgClass)} />
-          </Link>
-        )}
+        <ProductImage product={product} alt={alt} className={imgClass} />
         {product.featured ? (
           <Badge variant="clay" className="absolute top-3 left-3">
             Priority cargo

@@ -1,5 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent, type ReactNode } from "react";
+import { ProductImage } from "@/components/product-image";
 import { useHydrated } from "@/hooks/use-hydrated";
 import { getProduct, isAmazonPick } from "@/lib/catalog";
 import { cartCount, cartTotal, useCart } from "@/lib/cart-store";
@@ -165,10 +166,11 @@ function CheckoutPage() {
               if (!product || isAmazonPick(product)) return null;
               return (
                 <li key={line.slug} className="flex gap-3">
-                  <img
-                    src={product.image}
+                  <ProductImage
+                    product={product}
                     alt=""
-                    className="size-16 rounded-lg object-cover outline outline-1 -outline-offset-1 outline-ink/10"
+                    linked={false}
+                    className="size-16 rounded-lg outline outline-1 -outline-offset-1 outline-ink/10"
                   />
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium">{product.name}</p>

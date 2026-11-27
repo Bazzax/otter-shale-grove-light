@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { ShoppingBag } from "lucide-react";
+import { ProductImage } from "@/components/product-image";
 import { useHydrated } from "@/hooks/use-hydrated";
 import { getProduct, isAmazonPick } from "@/lib/catalog";
 import { cartCount, cartTotal, useCart } from "@/lib/cart-store";
@@ -67,10 +68,11 @@ export function CartSheet({
                         onClick={() => onOpenChange(false)}
                         className="size-20 shrink-0 overflow-hidden rounded-lg bg-cream"
                       >
-                        <img
-                          src={product.image}
+                        <ProductImage
+                          product={product}
                           alt={product.name}
-                          className="size-full object-cover outline outline-1 -outline-offset-1 outline-ink/10"
+                          linked={false}
+                          className="size-full outline outline-1 -outline-offset-1 outline-ink/10"
                         />
                       </Link>
                       <div className="flex min-w-0 flex-1 flex-col gap-2">

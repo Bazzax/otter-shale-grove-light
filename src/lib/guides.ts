@@ -1,4 +1,9 @@
-import { AMAZON_PRODUCT_IMAGES, getProduct } from "@/lib/catalog";
+import { getProduct, productDisplaySrc } from "@/lib/catalog";
+
+function catalogItemImage(slug: string) {
+  const product = getProduct(slug);
+  return product ? productDisplaySrc(product) : undefined;
+}
 
 export type GuideFaq = { q: string; a: string };
 
@@ -392,42 +397,42 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
     name: "Logitech Desk Mat, Studio Series",
     description: "30×70 cm Studio mat in grey. Spill-repellent cloth, anti-slip base. £16.99, in stock, as checked 26 Nov 2026.",
     path: "/shop/logitech-desk-mat-studio",
-    image: AMAZON_PRODUCT_IMAGES.deskMatStudio,
+    image: catalogItemImage("logitech-desk-mat-studio"),
     brand: "Logitech",
   },
   {
     name: "Anker 240W Right-Angle USB-C Cable, 2-pack",
     description: "6 ft braided USB-C to USB-C, 90-degree plug, 240W, two cables in the pack. £15.19, as checked 26 Nov 2026.",
     path: "/shop/anker-240w-right-angle-cable",
-    image: AMAZON_PRODUCT_IMAGES.anker240wCable,
+    image: catalogItemImage("anker-240w-right-angle-cable"),
     brand: "Anker",
   },
   {
     name: "Anker USB-C Hub, 7-in-1",
     description: "4K@60Hz HDMI, 85W max PD, two USB-A 3.0 and one USB-C data port, SD/TF. Charger not included. £15.99, as checked 13 Nov 2026.",
     path: "/shop/anker-7-in-1-usb-c-hub",
-    image: AMAZON_PRODUCT_IMAGES.anker7in1,
+    image: catalogItemImage("anker-7-in-1-usb-c-hub"),
     brand: "Anker",
   },
   {
     name: "UGREEN Laptop Stand",
     description: "Aluminium stand, folds flat, carry bag, five height settings, fits 8 to 17.3 inch laptops and tablets. £13.24, as checked 19 Nov 2026.",
     path: "/shop/ugreen-laptop-stand",
-    image: AMAZON_PRODUCT_IMAGES.ugreenStand,
+    image: catalogItemImage("ugreen-laptop-stand"),
     brand: "UGREEN",
   },
   {
     name: "UGREEN 65W GaN Charger (2 USB-C, UK plug)",
     description: "White 65W GaN brick, two USB-C ports, no USB-A, UK 3-pin plug. The listing does not say the pins fold. £19.94 (RRP £29.99), in stock, as checked 26 Nov 2026.",
     path: "/shop/ugreen-65w-gan",
-    image: AMAZON_PRODUCT_IMAGES.ugreen65w,
+    image: catalogItemImage("ugreen-65w-gan"),
     brand: "UGREEN",
   },
   {
     name: "UGREEN 6-in-1 Dual Monitor USB-C Dock",
     description: "Two HDMI ports at 4K@60Hz, 100W PD, three 5Gbps USB data ports. On a MacBook the two external displays will be identical. £22.99, as checked 13 Nov 2026.",
     path: "/shop/ugreen-6-in-1-dual-monitor-dock",
-    image: AMAZON_PRODUCT_IMAGES.ugreenDualDock,
+    image: catalogItemImage("ugreen-6-in-1-dual-monitor-dock"),
     brand: "UGREEN",
   },
   {
@@ -440,7 +445,7 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
     name: "tomtoc 360 Protective 14-inch Laptop Case",
     description: "360° protective 14-inch sleeve with a carry pocket. £22.39, as checked 26 Nov 2026.",
     path: "/shop/tomtoc-14-laptop-case",
-    image: AMAZON_PRODUCT_IMAGES.tomtoc14,
+    image: catalogItemImage("tomtoc-14-laptop-case"),
     brand: "tomtoc",
   },
   {
@@ -453,14 +458,14 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
     name: "Soundcore Anker Q20i hybrid ANC foldable headphones",
     description: "Foldable hybrid ANC over-ears. Up to 40 hours with ANC on; 5 minutes of charging gives 4 hours; multipoint; 3.5 mm jack. £29.99, as checked 13 Nov 2026.",
     path: "/shop/soundcore-q20i",
-    image: AMAZON_PRODUCT_IMAGES.soundcoreQ20i,
+    image: catalogItemImage("soundcore-q20i"),
     brand: "Soundcore",
   },
   {
     name: "Anker 100W USB-C GaN Charger",
     description: "3-port GaN charger with a smart display, touch control and a foldable plug. 69 × 55 × 34 mm. 100W max on USB-C1 and USB-C2. £37.99, as checked 13 Nov 2026.",
     path: "/shop/anker-100w-gan-charger",
-    image: AMAZON_PRODUCT_IMAGES.anker100w,
+    image: catalogItemImage("anker-100w-gan-charger"),
     brand: "Anker",
   },
   {
@@ -473,7 +478,7 @@ export const CHRISTMAS_UNDER_50_ITEMS: GuideListItem[] = [
     name: "Anker MagGo 10,000mAh Qi2 Power Bank",
     description: "10,000mAh, about 37Wh at 3.7V, Qi2 15W wireless, USB-C, smart display, white, foldable stand. Cabin-legal under 100Wh. £49.99, as checked 13 Nov 2026.",
     path: "/shop/anker-maggo-10000-power-bank",
-    image: AMAZON_PRODUCT_IMAGES.maggo10000,
+    image: catalogItemImage("anker-maggo-10000-power-bank"),
     brand: "Anker",
   },
 ];
@@ -483,14 +488,14 @@ export const BLACK_FRIDAY_2026_ITEMS: GuideListItem[] = [
     name: "UGREEN 65W GaN Charger, 2 USB-C, UK plug (white)",
     description: "£19.94 (RRP £29.99), in stock, as checked 26 Nov 2026.",
     path: "/shop/ugreen-65w-gan",
-    image: AMAZON_PRODUCT_IMAGES.ugreen65w,
+    image: catalogItemImage("ugreen-65w-gan"),
     brand: "UGREEN",
   },
   {
     name: "Anker 100W USB-C GaN Charger",
     description: "3 ports, smart display, foldable plug. £37.99, as checked 19 Nov 2026.",
     path: "/shop/anker-100w-gan-charger",
-    image: AMAZON_PRODUCT_IMAGES.anker100w,
+    image: catalogItemImage("anker-100w-gan-charger"),
     brand: "Anker",
   },
   {
@@ -503,7 +508,7 @@ export const BLACK_FRIDAY_2026_ITEMS: GuideListItem[] = [
     name: "Anker MagGo 10,000mAh Qi2 Power Bank",
     description: "£49.99, was £55.99 as shown on the Amazon page, as checked 19 Nov 2026.",
     path: "/shop/anker-maggo-10000-power-bank",
-    image: AMAZON_PRODUCT_IMAGES.maggo10000,
+    image: catalogItemImage("anker-maggo-10000-power-bank"),
     brand: "Anker",
   },
   {
@@ -528,35 +533,35 @@ export const BLACK_FRIDAY_2026_ITEMS: GuideListItem[] = [
     name: "Belkin 5,000mAh Magnetic Wireless Power Bank",
     description: "£27.99, was £39.99 (30% off), in stock, sold and dispatched by Amazon, as checked 23 Nov 2026.",
     path: "/shop/belkin-5000-magnetic-power-bank",
-    image: AMAZON_PRODUCT_IMAGES.belkin5000,
+    image: catalogItemImage("belkin-5000-magnetic-power-bank"),
     brand: "Belkin",
   },
   {
     name: "Anker USB-C Hub, 7-in-1",
     description: "4K@60Hz HDMI, 85W max PD. £15.99, was £24.99, as checked 19 Nov 2026.",
     path: "/shop/anker-7-in-1-usb-c-hub",
-    image: AMAZON_PRODUCT_IMAGES.anker7in1,
+    image: catalogItemImage("anker-7-in-1-usb-c-hub"),
     brand: "Anker",
   },
   {
     name: "UGREEN 6-in-1 Dual Monitor USB-C Dock (Revodok 206)",
     description: "£22.99, RRP £29.99 as shown, as checked 19 Nov 2026.",
     path: "/shop/ugreen-6-in-1-dual-monitor-dock",
-    image: AMAZON_PRODUCT_IMAGES.ugreenDualDock,
+    image: catalogItemImage("ugreen-6-in-1-dual-monitor-dock"),
     brand: "UGREEN",
   },
   {
     name: "UGREEN Laptop Stand",
     description: "Adjustable aluminium, folds, carry bag. £13.24, was £17.99, as checked 19 Nov 2026.",
     path: "/shop/ugreen-laptop-stand",
-    image: AMAZON_PRODUCT_IMAGES.ugreenStand,
+    image: catalogItemImage("ugreen-laptop-stand"),
     brand: "UGREEN",
   },
   {
     name: "Anker Soundcore Liberty 4 NC earbuds",
     description: "£45.59, was £79.99 (Amazon shows 43% saving), as checked 19 Nov 2026.",
     path: "/shop/soundcore-liberty-4-nc",
-    image: AMAZON_PRODUCT_IMAGES.liberty4Nc,
+    image: catalogItemImage("soundcore-liberty-4-nc"),
     brand: "Soundcore",
   },
 ];
@@ -568,7 +573,7 @@ export const TRAVEL_DESK_MONITORS: GuideListItem[] = [
     description:
       "16.1-inch FHD 1920×1080, 144Hz portable monitor. Official net weight 1.72 lb / 780g. USB-C can carry video and power on one cable when the laptop supports DisplayPort Alt Mode.",
     path: "/shop/arzopa-z1fc-portable-monitor",
-    image: AMAZON_PRODUCT_IMAGES.arzopaZ1fc,
+    image: catalogItemImage("arzopa-z1fc-portable-monitor"),
     brand: "ARZOPA",
   },
   {

@@ -1,4 +1,4 @@
-import { formatProductPrice } from "./format";
+import { formatProductPrice } from "./format.ts";
 
 export const AMAZON_ASSOCIATE_TAG = "alsaidropship-21";
 const AMAZON_UK_DP = "https://www.amazon.co.uk/dp";
@@ -20,6 +20,29 @@ export function amazonProductImage(imageId: string, size = "SL1000") {
 
 export function isAmazonHostedImage(src: string) {
   return src.startsWith(`${AMAZON_MEDIA_HOST}/`);
+}
+
+/** Native size of local lifestyle photos in `public/images/products/`. */
+export const LIFESTYLE_IMAGE_SIZE = { width: 1200, height: 896 } as const;
+
+export function lifestyleImageSrc(slug: string) {
+  return `/images/products/${slug}.webp`;
+}
+
+/** On-page photo: lifestyle when present, otherwise the Amazon listing image. */
+export function productDisplaySrc(product: Pick<ProductBase, "image" | "lifestyleImage">) {
+  return product.lifestyleImage ?? product.image;
+}
+
+export function productShowsAmazonImage(product: Pick<ProductBase, "image" | "lifestyleImage">) {
+  return isAmazonHostedImage(productDisplaySrc(product));
+}
+
+function lifestylePhoto(slug: string, alt: string) {
+  return {
+    lifestyleImage: lifestyleImageSrc(slug),
+    lifestyleAlt: alt,
+  };
 }
 
 export const AMAZON_PRODUCT_IMAGES = {
@@ -137,6 +160,9 @@ type ProductBase = {
   details: string[];
   alNote: string;
   image: string;
+  /** Local lifestyle photo shown on-site. `image` stays the Amazon listing URL. */
+  lifestyleImage?: string;
+  lifestyleAlt?: string;
   /** Manufacturer brand when the Amazon listing names one. */
   brand?: string;
   asin: string;
@@ -187,6 +213,10 @@ export const catalog: Product[] = [
     alNote:
       "Over-ear hybrid ANC for a packed train. I do not dropship Soundcore. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: AMAZON_PRODUCT_IMAGES.soundcoreQ20i,
+    ...lifestylePhoto(
+      "soundcore-q20i",
+      "Black Soundcore Q20i foldable headphones resting on an armchair by a rainy London sash window",
+    ),
     brand: "Soundcore",
     asin: AMAZON_PICK_ASINS.soundcoreQ20i,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.soundcoreQ20i),
@@ -214,6 +244,10 @@ export const catalog: Product[] = [
       "This is the UK ISO board on the card. US-layout 75% boards are a different listing. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.omoton75,
+    ...lifestylePhoto(
+      "omoton-75-iso-uk-keyboard",
+      "OMOTON 75% mechanical keyboard with UK ISO layout on a walnut desk in a lamp-lit home office",
+    ),
     brand: "OMOTON",
     asin: AMAZON_PICK_ASINS.omoton75,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.omoton75),
@@ -241,6 +275,10 @@ export const catalog: Product[] = [
       "Amazon UK affiliate pick. Al does not dropship it. Dual USB-C, UK plug, 65W total if both ports are in use. £19.94 (RRP £29.99), in stock. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.ugreen65w,
+    ...lifestylePhoto(
+      "ugreen-65w-gan",
+      "White UGREEN 65W GaN charger in a UK wall socket charging a laptop on a kitchen worktop",
+    ),
     brand: "UGREEN",
     asin: AMAZON_PICK_ASINS.ugreen65w,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.ugreen65w),
@@ -267,6 +305,10 @@ export const catalog: Product[] = [
     alNote:
       "Cloud is fine until a tarmac has no signal. This is the 2TB T7 the affiliate link actually opens. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: AMAZON_PRODUCT_IMAGES.samsungT7,
+    ...lifestylePhoto(
+      "samsung-t7-ssd-2tb",
+      "Blue Samsung T7 portable SSD connected to a laptop beside a camera on an oak desk",
+    ),
     brand: "Samsung",
     asin: AMAZON_PICK_ASINS.samsungT7,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.samsungT7),
@@ -292,6 +334,10 @@ export const catalog: Product[] = [
       "Airline-safe capacity if you use the 3.7V sum: about 18.5Wh. Magnetic phones only for the snap. £27.99 (was £39.99, 30% off), in stock, sold and dispatched by Amazon. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED_23_NOV,
     image: AMAZON_PRODUCT_IMAGES.belkin5000,
+    ...lifestylePhoto(
+      "belkin-5000-magnetic-power-bank",
+      "Black Belkin magnetic power bank attached to a phone on a coffee-shop table",
+    ),
     brand: "Belkin",
     asin: AMAZON_PICK_ASINS.belkin5000,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.belkin5000),
@@ -318,6 +364,10 @@ export const catalog: Product[] = [
       "A 7-in-1 stick, not a dual-monitor dock. 85W max PD, charger not in the box. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     image: AMAZON_PRODUCT_IMAGES.anker7in1,
+    ...lifestylePhoto(
+      "anker-7-in-1-usb-c-hub",
+      "Grey Anker 7-in-1 USB-C hub plugged into a laptop on a desk at dusk, with Al the drone outside the window",
+    ),
     brand: "Anker",
     asin: AMAZON_PICK_ASINS.anker7in1,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.anker7in1),
@@ -344,6 +394,10 @@ export const catalog: Product[] = [
       "A light bar that sits on the monitor, not a desk lamp. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.benqScreenbar,
+    ...lifestylePhoto(
+      "benq-screenbar",
+      "BenQ ScreenBar light bar on a monitor lighting a notebook in an evening home office",
+    ),
     brand: "BenQ",
     asin: AMAZON_PICK_ASINS.benqScreenbar,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.benqScreenbar),
@@ -371,6 +425,10 @@ export const catalog: Product[] = [
     alNote:
       "Q20i if you sit. Liberty 4 NC if you walk. I do not dropship Soundcore. Approx. UK price is on the card — Amazon’s live checkout may differ.",
     image: AMAZON_PRODUCT_IMAGES.liberty4Nc,
+    ...lifestylePhoto(
+      "soundcore-liberty-4-nc",
+      "Soundcore Liberty 4 NC earbuds in their open case on a UK train table",
+    ),
     brand: "Soundcore",
     asin: AMAZON_PICK_ASINS.liberty4Nc,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.liberty4Nc),
@@ -397,6 +455,10 @@ export const catalog: Product[] = [
       "A structured case with a pocket, not a thin sleeve. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.tomtoc14,
+    ...lifestylePhoto(
+      "tomtoc-14-laptop-case",
+      "Navy tomtoc 14-inch laptop sleeve with a laptop inside on a co-working table",
+    ),
     brand: "tomtoc",
     asin: AMAZON_PICK_ASINS.tomtoc14,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.tomtoc14),
@@ -423,6 +485,10 @@ export const catalog: Product[] = [
       "One socket, three ports, a display. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     image: AMAZON_PRODUCT_IMAGES.anker100w,
+    ...lifestylePhoto(
+      "anker-100w-gan-charger",
+      "Black Anker 100W GaN charger in a UK bedside socket charging a phone and laptop",
+    ),
     brand: "Anker",
     asin: AMAZON_PICK_ASINS.flightbrick100,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.flightbrick100),
@@ -449,6 +515,10 @@ export const catalog: Product[] = [
       "A fold-flat riser, not a standing desk. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED_19_NOV,
     image: AMAZON_PRODUCT_IMAGES.ugreenStand,
+    ...lifestylePhoto(
+      "ugreen-laptop-stand",
+      "Silver UGREEN laptop stand raising a laptop on a kitchen table in morning light",
+    ),
     brand: "UGREEN",
     asin: AMAZON_PICK_ASINS.runwayRiser,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.runwayRiser),
@@ -474,6 +544,10 @@ export const catalog: Product[] = [
       "A work mouse, not a toy. Amazon UK affiliate pick. Al does not dropship Logitech. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.mxMaster3s,
+    ...lifestylePhoto(
+      "logitech-mx-master-3s",
+      "Graphite Logitech MX Master 3S mouse on a wooden desk beside a laptop",
+    ),
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.cabinCursor,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.cabinCursor),
@@ -500,6 +574,10 @@ export const catalog: Product[] = [
       "A pair of right-angle leads. The brick cannot outrun a tired cable. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.anker240wCable,
+    ...lifestylePhoto(
+      "anker-240w-right-angle-cable",
+      "Black braided Anker 240W right-angle USB-C cable charging a phone on a sofa, with the second cable coiled beside it",
+    ),
     brand: "Anker",
     asin: AMAZON_PICK_ASINS.twinLead240,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.twinLead240),
@@ -526,6 +604,10 @@ export const catalog: Product[] = [
       "A backpack panel, not a desktop. Your USB-C port has to do video. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.arzopaZ1fc,
+    ...lifestylePhoto(
+      "arzopa-z1fc-portable-monitor",
+      "ARZOPA Z1FC portable monitor on its stand beside a laptop, with Al the drone hovering behind",
+    ),
     brand: "ARZOPA",
     asin: AMAZON_PICK_ASINS.secondWindow16,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.secondWindow16),
@@ -551,6 +633,10 @@ export const catalog: Product[] = [
       "A webcam. Close the shutter when you leave. Amazon UK affiliate pick. Al does not dropship Logitech. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.c920s,
+    ...lifestylePhoto(
+      "logitech-c920s-webcam",
+      "Logitech C920S webcam with its privacy shutter open, clipped on a home-office monitor",
+    ),
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.callLatch,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.callLatch),
@@ -576,6 +662,10 @@ export const catalog: Product[] = [
       "The UK-plug bricks cover a UK socket. This one covers the socket in the other country. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.momax70w,
+    ...lifestylePhoto(
+      "momax-70w-travel-adapter",
+      "Black MOMAX 70W travel adapter in a UK hotel socket charging a phone, with Al the drone by the window",
+    ),
     brand: "MOMAX",
     asin: AMAZON_PICK_ASINS.worldBrick70,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.worldBrick70),
@@ -628,6 +718,10 @@ export const catalog: Product[] = [
       "Mac version with UK (QWERTY UK) layout, Pale Grey. It also works with Windows, but the modifier keys are labelled for Mac. Amazon UK affiliate pick. Al does not dropship Logitech. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.mxKeysMini,
+    ...lifestylePhoto(
+      "logitech-mx-keys-mini",
+      "Pale Grey Logitech MX Keys Mini for Mac with UK layout on a light oak desk beside a laptop",
+    ),
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.softDeckMini,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.softDeckMini),
@@ -654,6 +748,10 @@ export const catalog: Product[] = [
       "A clicker for a slide, not a lamp for a desk. Amazon UK affiliate pick. Al does not dropship Logitech. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.spotlight,
+    ...lifestylePhoto(
+      "logitech-spotlight-remote",
+      "Logitech Spotlight presentation remote held in a meeting room, with Al the drone hovering nearby",
+    ),
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.spotCue,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.spotCue),
@@ -679,6 +777,10 @@ export const catalog: Product[] = [
       "A mat. That is the whole job. Amazon UK affiliate pick. Al does not dropship Logitech. " +
       PRICE_CHECKED_26_NOV,
     image: AMAZON_PRODUCT_IMAGES.deskMatStudio,
+    ...lifestylePhoto(
+      "logitech-desk-mat-studio",
+      "Grey Logitech Studio Series desk mat with a keyboard, mouse and mug on an oak desk",
+    ),
     brand: "Logitech",
     asin: AMAZON_PICK_ASINS.fieldMat,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.fieldMat),
@@ -704,6 +806,10 @@ export const catalog: Product[] = [
       "Ten thousand milliamp-hours at 3.7V is about 37Wh. Amazon UK affiliate pick. Al does not dropship it. " +
       PRICE_CHECKED,
     image: AMAZON_PRODUCT_IMAGES.maggo10000,
+    ...lifestylePhoto(
+      "anker-maggo-10000-power-bank",
+      "White Anker MagGo 10,000mAh power bank propping up a phone on an airport café table",
+    ),
     brand: "Anker",
     asin: AMAZON_PICK_ASINS.magDeck10,
     affiliateUrl: affiliateProduct(AMAZON_PICK_ASINS.magDeck10),
